@@ -20,20 +20,6 @@ type RefreshTokenResponse struct {
 }
 
 // RefreshToken gets a new access token from a refresh token.
-//
-//	ctx := context.Background()
-//	// Get a new http client with mTLS certs attached.
-//	cli, _ := cdr.NewFromEnv()
-//
-//	// Get the token endpoint from the data holders well known config
-//	tokenEndpoint := "https://identity-mtls.cdr-api.bankaust.com.au/token"
-//	refreshToken  := "my-refresh-token"
-//	clientID      := "data-holders-client-id-for-me"
-//	signer, _     := assertions.NewSignerFromEnv()
-//	assertion     := signer.ClientAssertions(clientID, tokenEndpoint)
-//
-//	tokenResponse, err := cdr.RefreshToken(ctx, cli, tokenEndpoint, refreshToken, clientID, assertion)
-//
 func RefreshToken(ctx context.Context, cli *http.Client, tokenEndpoint string, refreshToken string, clientID string, clientAssertion string) (RefreshTokenResponse, error) {
 
 	requestParams := url.Values{}

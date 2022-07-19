@@ -10,6 +10,7 @@ import (
 	"testing"
 
 	"github.com/fiskil/cdr"
+	"github.com/fiskil/cdr/assertions"
 	"github.com/matryer/is"
 )
 
@@ -49,4 +50,22 @@ func TestRefreshToken(t *testing.T) {
 	is.Equal(res.AccessToken, "access")
 	is.Equal(res.CDRArrangement, "1")
 
+}
+
+func ExampleRefreshToken() {
+
+	ctx := context.Background()
+	// Get a new http client with mTLS certs attached.
+	cli, _ := cdr.NewFromEnv()
+
+	// Get the token endpoint from the data holders well known config
+	tokenEndpoint := "https://identity-mtls.cdr-api.bankaust.com.au/token"
+	refreshToken := "my-refresh-token"
+	clientID := "data-holders-client-id-for-me"
+	signer, _ := assertions.NewSignerFromEnv()
+	assertion, _ := signer.ClientAssertions(clientID, tokenEndpoint)
+
+	tokenResponse, _ := cdr.RefreshToken(ctx, cli, tokenEndpoint, refreshToken, clientID, assertion)
+
+	_ = tokenResponse
 }
