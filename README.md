@@ -1,6 +1,8 @@
 # cdr
 
 [![GoDoc](https://godoc.org/github.com/fiskil/cdr?status.svg)](https://godoc.org/github.com/fiskil/cdr)
+[![Go Report Card](https://goreportcard.com/badge/github.com/fiskil/cdr)](https://goreportcard.com/report/github.com/fiskil/cdr)
+
 
 This is a library and set of tools to ease some of the issues we at Fiskil have had with configuring and testing interactions with other CDR entities.
 
