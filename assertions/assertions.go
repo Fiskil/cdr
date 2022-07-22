@@ -82,13 +82,13 @@ func (s *SingleKeySigner) GenerateToken(claims jwt.Claims) (string, error) {
 //	signer := cdr.NewSingleKeySignerFromEnv()
 //	token, err := signer.ClientAssertions("my-client-id-with-bank-australia", "https://identity-mtls.cdr-api.bankaust.com.au/par")
 func (s *SingleKeySigner) ClientAssertions(sub string, aud string) (string, error) {
-	claims := jwt.RegisteredClaims{
-		ExpiresAt: jwt.NewNumericDate(time.Now().UTC().Add(10 * time.Minute)),
-		IssuedAt:  jwt.NewNumericDate(time.Now().UTC()),
-		ID:        ksuid.New().String(),
-		Issuer:    sub,
-		Subject:   sub,
-		Audience:  []string{aud},
+	claims := jwt.MapClaims{
+		"exp": jwt.NewNumericDate(time.Now().UTC().Add(10 * time.Minute)),
+		"iat": jwt.NewNumericDate(time.Now().UTC()),
+		"jti": ksuid.New().String(),
+		"iss": sub,
+		"sub": sub,
+		"aud": aud,
 	}
 
 	return s.GenerateToken(claims)

@@ -60,3 +60,11 @@ go run ./cmd access fetch aus_bank
 
 # You will again be prompted for the decryption secret.
 ```
+
+## Testing
+
+Endpoints provide unit tests ensure each function parses the correct type of data, but these tests often miss networking nuances. This library makes use of integration-like tests to run acutal queries against real data holders. These tests require lots of configuration and take more time to run. These tests should be removed from the commit phase using the short flag `go test ./... -short`. After these unit tests have run the integration test can be run in the production like environment.
+
+Automatic configuration of these tests is still a work in progress, for now the best approach is to have the configuration files that export environment variables for each environment you want to test against.
+
+We are working on a local data store with encryption to store integration tests configuration.
