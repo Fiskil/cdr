@@ -6,7 +6,9 @@
 
 This is a library and set of tools to ease some of the issues we at Fiskil have had with configuring and testing interactions with other CDR entities.
 
-This is still a work in progress and does not have complete coverage over the CDR specification.
+## Who is this library for?
+
+This library is for accredited data recipients. This client uses the CDR specification which is restricted to data recipients registered with CDR. To become an ADR follow the instructions [here](https://www.cdr.gov.au/for-providers/become-accredited-data-recipient); alternatively, [Fiskil](https://fiskil.com.au/) provides similar APIs without the requirement of becoming a data recipient. If Fiskil isn't for you there is a list of other data recipients [here](https://www.cdr.gov.au/find-a-provider?providerType=Data%2520Recipient).
 
 ## Getting started with the library
 
