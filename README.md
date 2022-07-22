@@ -61,7 +61,7 @@ go run ./cmd access fetch aus_bank
 
 An easy way to test interacting with the CDR is to setup a temporary test. The file `my_test.go` and directory `my_tests` are added to gitignore to encourage you to write your own stockpile of examples and references.
 
-```
+```go
 func TestTransactions(t *testing.T) {
 
 	// Arrange
