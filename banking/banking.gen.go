@@ -17,6 +17,2423 @@ import (
 	"github.com/deepmap/oapi-codegen/pkg/runtime"
 )
 
+// Defines values for BankingAccountOpenStatus.
+const (
+	BankingAccountOpenStatusCLOSED BankingAccountOpenStatus = "CLOSED"
+	BankingAccountOpenStatusOPEN   BankingAccountOpenStatus = "OPEN"
+)
+
+// Defines values for BankingAccountDetailV2FeaturesFeatureType.
+const (
+	BankingAccountDetailV2FeaturesFeatureTypeADDITIONALCARDS               BankingAccountDetailV2FeaturesFeatureType = "ADDITIONAL_CARDS"
+	BankingAccountDetailV2FeaturesFeatureTypeBALANCETRANSFERS              BankingAccountDetailV2FeaturesFeatureType = "BALANCE_TRANSFERS"
+	BankingAccountDetailV2FeaturesFeatureTypeBILLPAYMENT                   BankingAccountDetailV2FeaturesFeatureType = "BILL_PAYMENT"
+	BankingAccountDetailV2FeaturesFeatureTypeBONUSREWARDS                  BankingAccountDetailV2FeaturesFeatureType = "BONUS_REWARDS"
+	BankingAccountDetailV2FeaturesFeatureTypeCARDACCESS                    BankingAccountDetailV2FeaturesFeatureType = "CARD_ACCESS"
+	BankingAccountDetailV2FeaturesFeatureTypeCASHBACKOFFER                 BankingAccountDetailV2FeaturesFeatureType = "CASHBACK_OFFER"
+	BankingAccountDetailV2FeaturesFeatureTypeCOMPLEMENTARYPRODUCTDISCOUNTS BankingAccountDetailV2FeaturesFeatureType = "COMPLEMENTARY_PRODUCT_DISCOUNTS"
+	BankingAccountDetailV2FeaturesFeatureTypeDIGITALBANKING                BankingAccountDetailV2FeaturesFeatureType = "DIGITAL_BANKING"
+	BankingAccountDetailV2FeaturesFeatureTypeDIGITALWALLET                 BankingAccountDetailV2FeaturesFeatureType = "DIGITAL_WALLET"
+	BankingAccountDetailV2FeaturesFeatureTypeDONATEINTEREST                BankingAccountDetailV2FeaturesFeatureType = "DONATE_INTEREST"
+	BankingAccountDetailV2FeaturesFeatureTypeEXTRAREPAYMENTS               BankingAccountDetailV2FeaturesFeatureType = "EXTRA_REPAYMENTS"
+	BankingAccountDetailV2FeaturesFeatureTypeFRAUDPROTECTION               BankingAccountDetailV2FeaturesFeatureType = "FRAUD_PROTECTION"
+	BankingAccountDetailV2FeaturesFeatureTypeFREETXNS                      BankingAccountDetailV2FeaturesFeatureType = "FREE_TXNS"
+	BankingAccountDetailV2FeaturesFeatureTypeFREETXNSALLOWANCE             BankingAccountDetailV2FeaturesFeatureType = "FREE_TXNS_ALLOWANCE"
+	BankingAccountDetailV2FeaturesFeatureTypeGUARANTOR                     BankingAccountDetailV2FeaturesFeatureType = "GUARANTOR"
+	BankingAccountDetailV2FeaturesFeatureTypeINSTALMENTPLAN                BankingAccountDetailV2FeaturesFeatureType = "INSTALMENT_PLAN"
+	BankingAccountDetailV2FeaturesFeatureTypeINSURANCE                     BankingAccountDetailV2FeaturesFeatureType = "INSURANCE"
+	BankingAccountDetailV2FeaturesFeatureTypeINTERESTFREE                  BankingAccountDetailV2FeaturesFeatureType = "INTEREST_FREE"
+	BankingAccountDetailV2FeaturesFeatureTypeINTERESTFREETRANSFERS         BankingAccountDetailV2FeaturesFeatureType = "INTEREST_FREE_TRANSFERS"
+	BankingAccountDetailV2FeaturesFeatureTypeLOYALTYPROGRAM                BankingAccountDetailV2FeaturesFeatureType = "LOYALTY_PROGRAM"
+	BankingAccountDetailV2FeaturesFeatureTypeNOTIFICATIONS                 BankingAccountDetailV2FeaturesFeatureType = "NOTIFICATIONS"
+	BankingAccountDetailV2FeaturesFeatureTypeNPPENABLED                    BankingAccountDetailV2FeaturesFeatureType = "NPP_ENABLED"
+	BankingAccountDetailV2FeaturesFeatureTypeNPPPAYID                      BankingAccountDetailV2FeaturesFeatureType = "NPP_PAYID"
+	BankingAccountDetailV2FeaturesFeatureTypeOFFSET                        BankingAccountDetailV2FeaturesFeatureType = "OFFSET"
+	BankingAccountDetailV2FeaturesFeatureTypeOTHER                         BankingAccountDetailV2FeaturesFeatureType = "OTHER"
+	BankingAccountDetailV2FeaturesFeatureTypeOVERDRAFT                     BankingAccountDetailV2FeaturesFeatureType = "OVERDRAFT"
+	BankingAccountDetailV2FeaturesFeatureTypeREDRAW                        BankingAccountDetailV2FeaturesFeatureType = "REDRAW"
+	BankingAccountDetailV2FeaturesFeatureTypeRELATIONSHIPMANAGEMENT        BankingAccountDetailV2FeaturesFeatureType = "RELATIONSHIP_MANAGEMENT"
+	BankingAccountDetailV2FeaturesFeatureTypeUNLIMITEDTXNS                 BankingAccountDetailV2FeaturesFeatureType = "UNLIMITED_TXNS"
+)
+
+// Defines values for BankingAccountDetailV2OpenStatus.
+const (
+	BankingAccountDetailV2OpenStatusCLOSED BankingAccountDetailV2OpenStatus = "CLOSED"
+	BankingAccountDetailV2OpenStatusOPEN   BankingAccountDetailV2OpenStatus = "OPEN"
+)
+
+// Defines values for BankingAccountDetailV2SpecificAccountUType.
+const (
+	CreditCard  BankingAccountDetailV2SpecificAccountUType = "creditCard"
+	Loan        BankingAccountDetailV2SpecificAccountUType = "loan"
+	TermDeposit BankingAccountDetailV2SpecificAccountUType = "termDeposit"
+)
+
+// Defines values for BankingDigitalWalletPayeeProvider.
+const (
+	BankingDigitalWalletPayeeProviderOTHER    BankingDigitalWalletPayeeProvider = "OTHER"
+	BankingDigitalWalletPayeeProviderPAYPALAU BankingDigitalWalletPayeeProvider = "PAYPAL_AU"
+)
+
+// Defines values for BankingDigitalWalletPayeeType.
+const (
+	BankingDigitalWalletPayeeTypeCONTACTNAME BankingDigitalWalletPayeeType = "CONTACT_NAME"
+	BankingDigitalWalletPayeeTypeEMAIL       BankingDigitalWalletPayeeType = "EMAIL"
+	BankingDigitalWalletPayeeTypeTELEPHONE   BankingDigitalWalletPayeeType = "TELEPHONE"
+)
+
+// Defines values for BankingDomesticPayeePayeeAccountUType.
+const (
+	Account BankingDomesticPayeePayeeAccountUType = "account"
+	Card    BankingDomesticPayeePayeeAccountUType = "card"
+	PayId   BankingDomesticPayeePayeeAccountUType = "payId"
+)
+
+// Defines values for BankingDomesticPayeePayIdType.
+const (
+	BankingDomesticPayeePayIdTypeABN           BankingDomesticPayeePayIdType = "ABN"
+	BankingDomesticPayeePayIdTypeEMAIL         BankingDomesticPayeePayIdType = "EMAIL"
+	BankingDomesticPayeePayIdTypeORGIDENTIFIER BankingDomesticPayeePayIdType = "ORG_IDENTIFIER"
+	BankingDomesticPayeePayIdTypeTELEPHONE     BankingDomesticPayeePayIdType = "TELEPHONE"
+)
+
+// Defines values for BankingLoanAccountV2RepaymentType.
+const (
+	BankingLoanAccountV2RepaymentTypeINTERESTONLY         BankingLoanAccountV2RepaymentType = "INTEREST_ONLY"
+	BankingLoanAccountV2RepaymentTypePRINCIPALANDINTEREST BankingLoanAccountV2RepaymentType = "PRINCIPAL_AND_INTEREST"
+)
+
+// Defines values for BankingPayeeDetailV2PayeeUType.
+const (
+	BankingPayeeDetailV2PayeeUTypeBiller        BankingPayeeDetailV2PayeeUType = "biller"
+	BankingPayeeDetailV2PayeeUTypeDigitalWallet BankingPayeeDetailV2PayeeUType = "digitalWallet"
+	BankingPayeeDetailV2PayeeUTypeDomestic      BankingPayeeDetailV2PayeeUType = "domestic"
+	BankingPayeeDetailV2PayeeUTypeInternational BankingPayeeDetailV2PayeeUType = "international"
+)
+
+// Defines values for BankingPayeeDetailV2Type.
+const (
+	BankingPayeeDetailV2TypeBILLER        BankingPayeeDetailV2Type = "BILLER"
+	BankingPayeeDetailV2TypeDIGITALWALLET BankingPayeeDetailV2Type = "DIGITAL_WALLET"
+	BankingPayeeDetailV2TypeDOMESTIC      BankingPayeeDetailV2Type = "DOMESTIC"
+	BankingPayeeDetailV2TypeINTERNATIONAL BankingPayeeDetailV2Type = "INTERNATIONAL"
+)
+
+// Defines values for BankingPayeeV2Type.
+const (
+	BankingPayeeV2TypeBILLER        BankingPayeeV2Type = "BILLER"
+	BankingPayeeV2TypeDIGITALWALLET BankingPayeeV2Type = "DIGITAL_WALLET"
+	BankingPayeeV2TypeDOMESTIC      BankingPayeeV2Type = "DOMESTIC"
+	BankingPayeeV2TypeINTERNATIONAL BankingPayeeV2Type = "INTERNATIONAL"
+)
+
+// Defines values for BankingProductCategory.
+const (
+	BUSINESSLOANS           BankingProductCategory = "BUSINESS_LOANS"
+	CREDANDCHRGCARDS        BankingProductCategory = "CRED_AND_CHRG_CARDS"
+	LEASES                  BankingProductCategory = "LEASES"
+	MARGINLOANS             BankingProductCategory = "MARGIN_LOANS"
+	OVERDRAFTS              BankingProductCategory = "OVERDRAFTS"
+	PERSLOANS               BankingProductCategory = "PERS_LOANS"
+	REGULATEDTRUSTACCOUNTS  BankingProductCategory = "REGULATED_TRUST_ACCOUNTS"
+	RESIDENTIALMORTGAGES    BankingProductCategory = "RESIDENTIAL_MORTGAGES"
+	TERMDEPOSITS            BankingProductCategory = "TERM_DEPOSITS"
+	TRADEFINANCE            BankingProductCategory = "TRADE_FINANCE"
+	TRANSANDSAVINGSACCOUNTS BankingProductCategory = "TRANS_AND_SAVINGS_ACCOUNTS"
+	TRAVELCARDS             BankingProductCategory = "TRAVEL_CARDS"
+)
+
+// Defines values for BankingProductConstraintConstraintType.
+const (
+	MAXBALANCE     BankingProductConstraintConstraintType = "MAX_BALANCE"
+	MAXLIMIT       BankingProductConstraintConstraintType = "MAX_LIMIT"
+	MINBALANCE     BankingProductConstraintConstraintType = "MIN_BALANCE"
+	MINLIMIT       BankingProductConstraintConstraintType = "MIN_LIMIT"
+	OPENINGBALANCE BankingProductConstraintConstraintType = "OPENING_BALANCE"
+)
+
+// Defines values for BankingProductDepositRateDepositRateType.
+const (
+	BankingProductDepositRateDepositRateTypeBONUS        BankingProductDepositRateDepositRateType = "BONUS"
+	BankingProductDepositRateDepositRateTypeBUNDLEBONUS  BankingProductDepositRateDepositRateType = "BUNDLE_BONUS"
+	BankingProductDepositRateDepositRateTypeFIXED        BankingProductDepositRateDepositRateType = "FIXED"
+	BankingProductDepositRateDepositRateTypeFLOATING     BankingProductDepositRateDepositRateType = "FLOATING"
+	BankingProductDepositRateDepositRateTypeINTRODUCTORY BankingProductDepositRateDepositRateType = "INTRODUCTORY"
+	BankingProductDepositRateDepositRateTypeMARKETLINKED BankingProductDepositRateDepositRateType = "MARKET_LINKED"
+	BankingProductDepositRateDepositRateTypeVARIABLE     BankingProductDepositRateDepositRateType = "VARIABLE"
+)
+
+// Defines values for BankingProductDiscountDiscountType.
+const (
+	BALANCE         BankingProductDiscountDiscountType = "BALANCE"
+	DEPOSITS        BankingProductDiscountDiscountType = "DEPOSITS"
+	ELIGIBILITYONLY BankingProductDiscountDiscountType = "ELIGIBILITY_ONLY"
+	FEECAP          BankingProductDiscountDiscountType = "FEE_CAP"
+	PAYMENTS        BankingProductDiscountDiscountType = "PAYMENTS"
+)
+
+// Defines values for BankingProductDiscountEligibilityDiscountEligibilityType.
+const (
+	BankingProductDiscountEligibilityDiscountEligibilityTypeBUSINESS         BankingProductDiscountEligibilityDiscountEligibilityType = "BUSINESS"
+	BankingProductDiscountEligibilityDiscountEligibilityTypeEMPLOYMENTSTATUS BankingProductDiscountEligibilityDiscountEligibilityType = "EMPLOYMENT_STATUS"
+	BankingProductDiscountEligibilityDiscountEligibilityTypeINTRODUCTORY     BankingProductDiscountEligibilityDiscountEligibilityType = "INTRODUCTORY"
+	BankingProductDiscountEligibilityDiscountEligibilityTypeMAXAGE           BankingProductDiscountEligibilityDiscountEligibilityType = "MAX_AGE"
+	BankingProductDiscountEligibilityDiscountEligibilityTypeMINAGE           BankingProductDiscountEligibilityDiscountEligibilityType = "MIN_AGE"
+	BankingProductDiscountEligibilityDiscountEligibilityTypeMININCOME        BankingProductDiscountEligibilityDiscountEligibilityType = "MIN_INCOME"
+	BankingProductDiscountEligibilityDiscountEligibilityTypeMINTURNOVER      BankingProductDiscountEligibilityDiscountEligibilityType = "MIN_TURNOVER"
+	BankingProductDiscountEligibilityDiscountEligibilityTypeNATURALPERSON    BankingProductDiscountEligibilityDiscountEligibilityType = "NATURAL_PERSON"
+	BankingProductDiscountEligibilityDiscountEligibilityTypeOTHER            BankingProductDiscountEligibilityDiscountEligibilityType = "OTHER"
+	BankingProductDiscountEligibilityDiscountEligibilityTypePENSIONRECIPIENT BankingProductDiscountEligibilityDiscountEligibilityType = "PENSION_RECIPIENT"
+	BankingProductDiscountEligibilityDiscountEligibilityTypeRESIDENCYSTATUS  BankingProductDiscountEligibilityDiscountEligibilityType = "RESIDENCY_STATUS"
+	BankingProductDiscountEligibilityDiscountEligibilityTypeSTAFF            BankingProductDiscountEligibilityDiscountEligibilityType = "STAFF"
+	BankingProductDiscountEligibilityDiscountEligibilityTypeSTUDENT          BankingProductDiscountEligibilityDiscountEligibilityType = "STUDENT"
+)
+
+// Defines values for BankingProductEligibilityEligibilityType.
+const (
+	BankingProductEligibilityEligibilityTypeBUSINESS         BankingProductEligibilityEligibilityType = "BUSINESS"
+	BankingProductEligibilityEligibilityTypeEMPLOYMENTSTATUS BankingProductEligibilityEligibilityType = "EMPLOYMENT_STATUS"
+	BankingProductEligibilityEligibilityTypeMAXAGE           BankingProductEligibilityEligibilityType = "MAX_AGE"
+	BankingProductEligibilityEligibilityTypeMINAGE           BankingProductEligibilityEligibilityType = "MIN_AGE"
+	BankingProductEligibilityEligibilityTypeMININCOME        BankingProductEligibilityEligibilityType = "MIN_INCOME"
+	BankingProductEligibilityEligibilityTypeMINTURNOVER      BankingProductEligibilityEligibilityType = "MIN_TURNOVER"
+	BankingProductEligibilityEligibilityTypeNATURALPERSON    BankingProductEligibilityEligibilityType = "NATURAL_PERSON"
+	BankingProductEligibilityEligibilityTypeOTHER            BankingProductEligibilityEligibilityType = "OTHER"
+	BankingProductEligibilityEligibilityTypePENSIONRECIPIENT BankingProductEligibilityEligibilityType = "PENSION_RECIPIENT"
+	BankingProductEligibilityEligibilityTypeRESIDENCYSTATUS  BankingProductEligibilityEligibilityType = "RESIDENCY_STATUS"
+	BankingProductEligibilityEligibilityTypeSTAFF            BankingProductEligibilityEligibilityType = "STAFF"
+	BankingProductEligibilityEligibilityTypeSTUDENT          BankingProductEligibilityEligibilityType = "STUDENT"
+)
+
+// Defines values for BankingProductFeatureV2FeatureType.
+const (
+	BankingProductFeatureV2FeatureTypeADDITIONALCARDS               BankingProductFeatureV2FeatureType = "ADDITIONAL_CARDS"
+	BankingProductFeatureV2FeatureTypeBALANCETRANSFERS              BankingProductFeatureV2FeatureType = "BALANCE_TRANSFERS"
+	BankingProductFeatureV2FeatureTypeBILLPAYMENT                   BankingProductFeatureV2FeatureType = "BILL_PAYMENT"
+	BankingProductFeatureV2FeatureTypeBONUSREWARDS                  BankingProductFeatureV2FeatureType = "BONUS_REWARDS"
+	BankingProductFeatureV2FeatureTypeCARDACCESS                    BankingProductFeatureV2FeatureType = "CARD_ACCESS"
+	BankingProductFeatureV2FeatureTypeCASHBACKOFFER                 BankingProductFeatureV2FeatureType = "CASHBACK_OFFER"
+	BankingProductFeatureV2FeatureTypeCOMPLEMENTARYPRODUCTDISCOUNTS BankingProductFeatureV2FeatureType = "COMPLEMENTARY_PRODUCT_DISCOUNTS"
+	BankingProductFeatureV2FeatureTypeDIGITALBANKING                BankingProductFeatureV2FeatureType = "DIGITAL_BANKING"
+	BankingProductFeatureV2FeatureTypeDIGITALWALLET                 BankingProductFeatureV2FeatureType = "DIGITAL_WALLET"
+	BankingProductFeatureV2FeatureTypeDONATEINTEREST                BankingProductFeatureV2FeatureType = "DONATE_INTEREST"
+	BankingProductFeatureV2FeatureTypeEXTRAREPAYMENTS               BankingProductFeatureV2FeatureType = "EXTRA_REPAYMENTS"
+	BankingProductFeatureV2FeatureTypeFRAUDPROTECTION               BankingProductFeatureV2FeatureType = "FRAUD_PROTECTION"
+	BankingProductFeatureV2FeatureTypeFREETXNS                      BankingProductFeatureV2FeatureType = "FREE_TXNS"
+	BankingProductFeatureV2FeatureTypeFREETXNSALLOWANCE             BankingProductFeatureV2FeatureType = "FREE_TXNS_ALLOWANCE"
+	BankingProductFeatureV2FeatureTypeGUARANTOR                     BankingProductFeatureV2FeatureType = "GUARANTOR"
+	BankingProductFeatureV2FeatureTypeINSTALMENTPLAN                BankingProductFeatureV2FeatureType = "INSTALMENT_PLAN"
+	BankingProductFeatureV2FeatureTypeINSURANCE                     BankingProductFeatureV2FeatureType = "INSURANCE"
+	BankingProductFeatureV2FeatureTypeINTERESTFREE                  BankingProductFeatureV2FeatureType = "INTEREST_FREE"
+	BankingProductFeatureV2FeatureTypeINTERESTFREETRANSFERS         BankingProductFeatureV2FeatureType = "INTEREST_FREE_TRANSFERS"
+	BankingProductFeatureV2FeatureTypeLOYALTYPROGRAM                BankingProductFeatureV2FeatureType = "LOYALTY_PROGRAM"
+	BankingProductFeatureV2FeatureTypeNOTIFICATIONS                 BankingProductFeatureV2FeatureType = "NOTIFICATIONS"
+	BankingProductFeatureV2FeatureTypeNPPENABLED                    BankingProductFeatureV2FeatureType = "NPP_ENABLED"
+	BankingProductFeatureV2FeatureTypeNPPPAYID                      BankingProductFeatureV2FeatureType = "NPP_PAYID"
+	BankingProductFeatureV2FeatureTypeOFFSET                        BankingProductFeatureV2FeatureType = "OFFSET"
+	BankingProductFeatureV2FeatureTypeOTHER                         BankingProductFeatureV2FeatureType = "OTHER"
+	BankingProductFeatureV2FeatureTypeOVERDRAFT                     BankingProductFeatureV2FeatureType = "OVERDRAFT"
+	BankingProductFeatureV2FeatureTypeREDRAW                        BankingProductFeatureV2FeatureType = "REDRAW"
+	BankingProductFeatureV2FeatureTypeRELATIONSHIPMANAGEMENT        BankingProductFeatureV2FeatureType = "RELATIONSHIP_MANAGEMENT"
+	BankingProductFeatureV2FeatureTypeUNLIMITEDTXNS                 BankingProductFeatureV2FeatureType = "UNLIMITED_TXNS"
+)
+
+// Defines values for BankingProductFeeFeeType.
+const (
+	BankingProductFeeFeeTypeDEPOSIT     BankingProductFeeFeeType = "DEPOSIT"
+	BankingProductFeeFeeTypeEVENT       BankingProductFeeFeeType = "EVENT"
+	BankingProductFeeFeeTypeEXIT        BankingProductFeeFeeType = "EXIT"
+	BankingProductFeeFeeTypePAYMENT     BankingProductFeeFeeType = "PAYMENT"
+	BankingProductFeeFeeTypePERIODIC    BankingProductFeeFeeType = "PERIODIC"
+	BankingProductFeeFeeTypePURCHASE    BankingProductFeeFeeType = "PURCHASE"
+	BankingProductFeeFeeTypeTRANSACTION BankingProductFeeFeeType = "TRANSACTION"
+	BankingProductFeeFeeTypeUPFRONT     BankingProductFeeFeeType = "UPFRONT"
+	BankingProductFeeFeeTypeVARIABLE    BankingProductFeeFeeType = "VARIABLE"
+	BankingProductFeeFeeTypeWITHDRAWAL  BankingProductFeeFeeType = "WITHDRAWAL"
+)
+
+// Defines values for BankingProductLendingRateV2InterestPaymentDue.
+const (
+	INADVANCE BankingProductLendingRateV2InterestPaymentDue = "IN_ADVANCE"
+	INARREARS BankingProductLendingRateV2InterestPaymentDue = "IN_ARREARS"
+)
+
+// Defines values for BankingProductLendingRateV2LendingRateType.
+const (
+	BankingProductLendingRateV2LendingRateTypeBUNDLEDISCOUNTFIXED    BankingProductLendingRateV2LendingRateType = "BUNDLE_DISCOUNT_FIXED"
+	BankingProductLendingRateV2LendingRateTypeBUNDLEDISCOUNTVARIABLE BankingProductLendingRateV2LendingRateType = "BUNDLE_DISCOUNT_VARIABLE"
+	BankingProductLendingRateV2LendingRateTypeCASHADVANCE            BankingProductLendingRateV2LendingRateType = "CASH_ADVANCE"
+	BankingProductLendingRateV2LendingRateTypeDISCOUNT               BankingProductLendingRateV2LendingRateType = "DISCOUNT"
+	BankingProductLendingRateV2LendingRateTypeFIXED                  BankingProductLendingRateV2LendingRateType = "FIXED"
+	BankingProductLendingRateV2LendingRateTypeFLOATING               BankingProductLendingRateV2LendingRateType = "FLOATING"
+	BankingProductLendingRateV2LendingRateTypeINTRODUCTORY           BankingProductLendingRateV2LendingRateType = "INTRODUCTORY"
+	BankingProductLendingRateV2LendingRateTypeMARKETLINKED           BankingProductLendingRateV2LendingRateType = "MARKET_LINKED"
+	BankingProductLendingRateV2LendingRateTypePENALTY                BankingProductLendingRateV2LendingRateType = "PENALTY"
+	BankingProductLendingRateV2LendingRateTypePURCHASE               BankingProductLendingRateV2LendingRateType = "PURCHASE"
+	BankingProductLendingRateV2LendingRateTypeVARIABLE               BankingProductLendingRateV2LendingRateType = "VARIABLE"
+)
+
+// Defines values for BankingProductLendingRateV2LoanPurpose.
+const (
+	INVESTMENT    BankingProductLendingRateV2LoanPurpose = "INVESTMENT"
+	OWNEROCCUPIED BankingProductLendingRateV2LoanPurpose = "OWNER_OCCUPIED"
+)
+
+// Defines values for BankingProductLendingRateV2RepaymentType.
+const (
+	BankingProductLendingRateV2RepaymentTypeINTERESTONLY         BankingProductLendingRateV2RepaymentType = "INTEREST_ONLY"
+	BankingProductLendingRateV2RepaymentTypePRINCIPALANDINTEREST BankingProductLendingRateV2RepaymentType = "PRINCIPAL_AND_INTEREST"
+)
+
+// Defines values for BankingProductRateTierV3RateApplicationMethod.
+const (
+	PERTIER      BankingProductRateTierV3RateApplicationMethod = "PER_TIER"
+	WHOLEBALANCE BankingProductRateTierV3RateApplicationMethod = "WHOLE_BALANCE"
+)
+
+// Defines values for BankingProductRateTierV3UnitOfMeasure.
+const (
+	DAY     BankingProductRateTierV3UnitOfMeasure = "DAY"
+	DOLLAR  BankingProductRateTierV3UnitOfMeasure = "DOLLAR"
+	MONTH   BankingProductRateTierV3UnitOfMeasure = "MONTH"
+	PERCENT BankingProductRateTierV3UnitOfMeasure = "PERCENT"
+)
+
+// Defines values for BankingScheduledPaymentStatus.
+const (
+	ACTIVE   BankingScheduledPaymentStatus = "ACTIVE"
+	INACTIVE BankingScheduledPaymentStatus = "INACTIVE"
+	SKIP     BankingScheduledPaymentStatus = "SKIP"
+)
+
+// Defines values for BankingScheduledPaymentRecurrenceRecurrenceUType.
+const (
+	EventBased       BankingScheduledPaymentRecurrenceRecurrenceUType = "eventBased"
+	IntervalSchedule BankingScheduledPaymentRecurrenceRecurrenceUType = "intervalSchedule"
+	LastWeekDay      BankingScheduledPaymentRecurrenceRecurrenceUType = "lastWeekDay"
+	OnceOff          BankingScheduledPaymentRecurrenceRecurrenceUType = "onceOff"
+)
+
+// Defines values for BankingScheduledPaymentRecurrenceIntervalScheduleNonBusinessDayTreatment.
+const (
+	BankingScheduledPaymentRecurrenceIntervalScheduleNonBusinessDayTreatmentAFTER  BankingScheduledPaymentRecurrenceIntervalScheduleNonBusinessDayTreatment = "AFTER"
+	BankingScheduledPaymentRecurrenceIntervalScheduleNonBusinessDayTreatmentBEFORE BankingScheduledPaymentRecurrenceIntervalScheduleNonBusinessDayTreatment = "BEFORE"
+	BankingScheduledPaymentRecurrenceIntervalScheduleNonBusinessDayTreatmentON     BankingScheduledPaymentRecurrenceIntervalScheduleNonBusinessDayTreatment = "ON"
+	BankingScheduledPaymentRecurrenceIntervalScheduleNonBusinessDayTreatmentONLY   BankingScheduledPaymentRecurrenceIntervalScheduleNonBusinessDayTreatment = "ONLY"
+)
+
+// Defines values for BankingScheduledPaymentRecurrenceLastWeekdayLastWeekDay.
+const (
+	FRI BankingScheduledPaymentRecurrenceLastWeekdayLastWeekDay = "FRI"
+	MON BankingScheduledPaymentRecurrenceLastWeekdayLastWeekDay = "MON"
+	SAT BankingScheduledPaymentRecurrenceLastWeekdayLastWeekDay = "SAT"
+	SUN BankingScheduledPaymentRecurrenceLastWeekdayLastWeekDay = "SUN"
+	THU BankingScheduledPaymentRecurrenceLastWeekdayLastWeekDay = "THU"
+	TUE BankingScheduledPaymentRecurrenceLastWeekdayLastWeekDay = "TUE"
+	WED BankingScheduledPaymentRecurrenceLastWeekdayLastWeekDay = "WED"
+)
+
+// Defines values for BankingScheduledPaymentRecurrenceLastWeekdayNonBusinessDayTreatment.
+const (
+	BankingScheduledPaymentRecurrenceLastWeekdayNonBusinessDayTreatmentAFTER  BankingScheduledPaymentRecurrenceLastWeekdayNonBusinessDayTreatment = "AFTER"
+	BankingScheduledPaymentRecurrenceLastWeekdayNonBusinessDayTreatmentBEFORE BankingScheduledPaymentRecurrenceLastWeekdayNonBusinessDayTreatment = "BEFORE"
+	BankingScheduledPaymentRecurrenceLastWeekdayNonBusinessDayTreatmentON     BankingScheduledPaymentRecurrenceLastWeekdayNonBusinessDayTreatment = "ON"
+	BankingScheduledPaymentRecurrenceLastWeekdayNonBusinessDayTreatmentONLY   BankingScheduledPaymentRecurrenceLastWeekdayNonBusinessDayTreatment = "ONLY"
+)
+
+// Defines values for BankingScheduledPaymentToToUType.
+const (
+	BankingScheduledPaymentToToUTypeAccountId     BankingScheduledPaymentToToUType = "accountId"
+	BankingScheduledPaymentToToUTypeBiller        BankingScheduledPaymentToToUType = "biller"
+	BankingScheduledPaymentToToUTypeDomestic      BankingScheduledPaymentToToUType = "domestic"
+	BankingScheduledPaymentToToUTypeInternational BankingScheduledPaymentToToUType = "international"
+	BankingScheduledPaymentToToUTypePayeeId       BankingScheduledPaymentToToUType = "payeeId"
+)
+
+// Defines values for BankingTermDepositAccountMaturityInstructions.
+const (
+	HOLDONMATURITY    BankingTermDepositAccountMaturityInstructions = "HOLD_ON_MATURITY"
+	PAIDOUTATMATURITY BankingTermDepositAccountMaturityInstructions = "PAID_OUT_AT_MATURITY"
+	ROLLEDOVER        BankingTermDepositAccountMaturityInstructions = "ROLLED_OVER"
+)
+
+// Defines values for BankingTransactionStatus.
+const (
+	BankingTransactionStatusPENDING BankingTransactionStatus = "PENDING"
+	BankingTransactionStatusPOSTED  BankingTransactionStatus = "POSTED"
+)
+
+// Defines values for BankingTransactionType.
+const (
+	BankingTransactionTypeDIRECTDEBIT      BankingTransactionType = "DIRECT_DEBIT"
+	BankingTransactionTypeFEE              BankingTransactionType = "FEE"
+	BankingTransactionTypeINTERESTCHARGED  BankingTransactionType = "INTEREST_CHARGED"
+	BankingTransactionTypeINTERESTPAID     BankingTransactionType = "INTEREST_PAID"
+	BankingTransactionTypeOTHER            BankingTransactionType = "OTHER"
+	BankingTransactionTypePAYMENT          BankingTransactionType = "PAYMENT"
+	BankingTransactionTypeTRANSFERINCOMING BankingTransactionType = "TRANSFER_INCOMING"
+	BankingTransactionTypeTRANSFEROUTGOING BankingTransactionType = "TRANSFER_OUTGOING"
+)
+
+// Defines values for BankingTransactionDetailExtendedDataExtensionUType.
+const (
+	X2p101Payload BankingTransactionDetailExtendedDataExtensionUType = "x2p101Payload"
+)
+
+// Defines values for BankingTransactionDetailExtendedDataService.
+const (
+	X2P101 BankingTransactionDetailExtendedDataService = "X2P1.01"
+)
+
+// Defines values for BankingTransactionDetailStatus.
+const (
+	BankingTransactionDetailStatusPENDING BankingTransactionDetailStatus = "PENDING"
+	BankingTransactionDetailStatusPOSTED  BankingTransactionDetailStatus = "POSTED"
+)
+
+// Defines values for BankingTransactionDetailType.
+const (
+	BankingTransactionDetailTypeDIRECTDEBIT      BankingTransactionDetailType = "DIRECT_DEBIT"
+	BankingTransactionDetailTypeFEE              BankingTransactionDetailType = "FEE"
+	BankingTransactionDetailTypeINTERESTCHARGED  BankingTransactionDetailType = "INTEREST_CHARGED"
+	BankingTransactionDetailTypeINTERESTPAID     BankingTransactionDetailType = "INTEREST_PAID"
+	BankingTransactionDetailTypeOTHER            BankingTransactionDetailType = "OTHER"
+	BankingTransactionDetailTypePAYMENT          BankingTransactionDetailType = "PAYMENT"
+	BankingTransactionDetailTypeTRANSFERINCOMING BankingTransactionDetailType = "TRANSFER_INCOMING"
+	BankingTransactionDetailTypeTRANSFEROUTGOING BankingTransactionDetailType = "TRANSFER_OUTGOING"
+)
+
+// Defines values for CommonPhysicalAddressAddressUType.
+const (
+	Paf    CommonPhysicalAddressAddressUType = "paf"
+	Simple CommonPhysicalAddressAddressUType = "simple"
+)
+
+// BankingAccount defines model for BankingAccount.
+type BankingAccount struct {
+	// A unique ID of the account adhering to the standards for ID permanence
+	AccountId string `json:"accountId"`
+
+	// Date that the account was created (if known)
+	CreationDate *string `json:"creationDate,omitempty"`
+
+	// The display name of the account as defined by the bank. This should not incorporate account numbers or PANs. If it does the values should be masked according to the rules of the MaskedAccountString common type.
+	DisplayName string `json:"displayName"`
+
+	// Flag indicating that the customer associated with the authorisation is an owner of the account. Does not indicate sole ownership, however. If not present then 'true' is assumed
+	IsOwned *bool `json:"isOwned,omitempty"`
+
+	// A masked version of the account. Whether BSB/Account Number, Credit Card PAN or another number
+	MaskedNumber string `json:"maskedNumber"`
+
+	// A customer supplied nick name for the account
+	Nickname *string `json:"nickname,omitempty"`
+
+	// Open or closed status for the account. If not present then OPEN is assumed
+	OpenStatus *BankingAccountOpenStatus `json:"openStatus,omitempty"`
+
+	// The category to which a product or account belongs. See [here](#product-categories) for more details
+	ProductCategory BankingProductCategory `json:"productCategory"`
+
+	// The unique identifier of the account as defined by the data holder (akin to model number for the account)
+	ProductName string `json:"productName"`
+}
+
+// Open or closed status for the account. If not present then OPEN is assumed
+type BankingAccountOpenStatus string
+
+// BankingAccountDetailV2 defines model for BankingAccountDetailV2.
+type BankingAccountDetailV2 struct {
+	// A unique ID of the account adhering to the standards for ID permanence
+	AccountId string `json:"accountId"`
+
+	// The unmasked account number for the account. Should not be supplied if the account number is a PAN requiring PCI compliance. Is expected to be formatted as digits only with leading zeros included and no punctuation or spaces
+	AccountNumber *string `json:"accountNumber,omitempty"`
+
+	// The addresses for the account to be used for correspondence
+	Addresses *[]CommonPhysicalAddress `json:"addresses,omitempty"`
+
+	// The unmasked BSB for the account. Is expected to be formatted as digits only with leading zeros included and no punctuation or spaces
+	Bsb *string `json:"bsb,omitempty"`
+
+	// Optional field to indicate if this account is part of a bundle that is providing additional benefit for to the customer
+	BundleName *string `json:"bundleName,omitempty"`
+
+	// Date that the account was created (if known)
+	CreationDate *string                   `json:"creationDate,omitempty"`
+	CreditCard   *BankingCreditCardAccount `json:"creditCard,omitempty"`
+
+	// current rate to calculate interest earned being applied to deposit balances as it stands at the time of the API call
+	DepositRate *string `json:"depositRate,omitempty"`
+
+	// Fully described deposit rates for this account based on the equivalent structure in Product Reference
+	DepositRates *[]BankingProductDepositRate `json:"depositRates,omitempty"`
+
+	// The display name of the account as defined by the bank. This should not incorporate account numbers or PANs. If it does the values should be masked according to the rules of the MaskedAccountString common type.
+	DisplayName string `json:"displayName"`
+
+	// Array of features of the account based on the equivalent structure in Product Reference with the following additional field
+	Features *[]struct {
+		// Display text providing more information on the feature. Mandatory if the [feature type](#tocSproductfeaturetypedoc) is set to OTHER
+		AdditionalInfo *string `json:"additionalInfo,omitempty"`
+
+		// Link to a web page with more information on this feature
+		AdditionalInfoUri *string `json:"additionalInfoUri,omitempty"`
+
+		// Generic field containing additional information relevant to the [featureType](#tocSproductfeaturetypedoc) specified. Whether mandatory or not is dependent on the value of the [featureType.](#tocSproductfeaturetypedoc)
+		AdditionalValue *string `json:"additionalValue,omitempty"`
+
+		// The type of feature described
+		FeatureType BankingAccountDetailV2FeaturesFeatureType `json:"featureType"`
+
+		// True if the feature is already activated and false if the feature is available for activation. Defaults to true if absent. (note this is an additional field appended to the feature object defined in the Product Reference payload)
+		IsActivated *bool `json:"isActivated,omitempty"`
+	} `json:"features,omitempty"`
+
+	// Fees and charges applicable to the account based on the equivalent structure in Product Reference
+	Fees *[]BankingProductFee `json:"fees,omitempty"`
+
+	// Flag indicating that the customer associated with the authorisation is an owner of the account. Does not indicate sole ownership, however. If not present then 'true' is assumed
+	IsOwned *bool `json:"isOwned,omitempty"`
+
+	// The current rate to calculate interest payable being applied to lending balances as it stands at the time of the API call
+	LendingRate *string `json:"lendingRate,omitempty"`
+
+	// Fully described deposit rates for this account based on the equivalent structure in Product Reference
+	LendingRates *[]BankingProductLendingRateV2 `json:"lendingRates,omitempty"`
+	Loan         *BankingLoanAccountV2          `json:"loan,omitempty"`
+
+	// A masked version of the account. Whether BSB/Account Number, Credit Card PAN or another number
+	MaskedNumber string `json:"maskedNumber"`
+
+	// A customer supplied nick name for the account
+	Nickname *string `json:"nickname,omitempty"`
+
+	// Open or closed status for the account. If not present then OPEN is assumed
+	OpenStatus *BankingAccountDetailV2OpenStatus `json:"openStatus,omitempty"`
+
+	// The category to which a product or account belongs. See [here](#product-categories) for more details
+	ProductCategory BankingProductCategory `json:"productCategory"`
+
+	// The unique identifier of the account as defined by the data holder (akin to model number for the account)
+	ProductName string `json:"productName"`
+
+	// The type of structure to present account specific fields.
+	SpecificAccountUType *BankingAccountDetailV2SpecificAccountUType `json:"specificAccountUType,omitempty"`
+	TermDeposit          *[]BankingTermDepositAccount                `json:"termDeposit,omitempty"`
+}
+
+// The type of feature described
+type BankingAccountDetailV2FeaturesFeatureType string
+
+// Open or closed status for the account. If not present then OPEN is assumed
+type BankingAccountDetailV2OpenStatus string
+
+// The type of structure to present account specific fields.
+type BankingAccountDetailV2SpecificAccountUType string
+
+// BankingAuthorisedEntity defines model for BankingAuthorisedEntity.
+type BankingAuthorisedEntity struct {
+	// Australian Business Number for the authorised entity
+	Abn *string `json:"abn,omitempty"`
+
+	// Australian Company Number for the authorised entity
+	Acn *string `json:"acn,omitempty"`
+
+	// Australian Registered Body Number for the authorised entity
+	Arbn *string `json:"arbn,omitempty"`
+
+	// Description of the authorised entity derived from previously executed direct debits
+	Description *string `json:"description,omitempty"`
+
+	// Name of the financial institution through which the direct debit will be executed. Is required unless the payment is made via a credit card scheme
+	FinancialInstitution *string `json:"financialInstitution,omitempty"`
+}
+
+// BankingBalance defines model for BankingBalance.
+type BankingBalance struct {
+	// A unique ID of the account adhering to the standards for ID permanence
+	AccountId string `json:"accountId"`
+
+	// Object representing the available limit amortised according to payment schedule. Assumed to be zero if absent
+	AmortisedLimit *string `json:"amortisedLimit,omitempty"`
+
+	// Balance representing the amount of funds available for transfer. Assumed to be zero or positive
+	AvailableBalance string `json:"availableBalance"`
+
+	// Object representing the maximum amount of credit that is available for this account. Assumed to be zero if absent
+	CreditLimit *string `json:"creditLimit,omitempty"`
+
+	// The currency for the balance amounts. If absent assumed to be AUD
+	Currency *string `json:"currency,omitempty"`
+
+	// The balance of the account at this time. Should align to the balance available via other channels such as Internet Banking. Assumed to be negative if the customer has money owing
+	CurrentBalance string `json:"currentBalance"`
+
+	// Optional array of balances for the account in other currencies. Included to support accounts that support multi-currency purses such as Travel Cards
+	Purses *[]BankingBalancePurse `json:"purses,omitempty"`
+}
+
+// BankingBalancePurse defines model for BankingBalancePurse.
+type BankingBalancePurse struct {
+	// The balance available for this additional currency purse
+	Amount string `json:"amount"`
+
+	// The currency for the purse
+	Currency *string `json:"currency,omitempty"`
+}
+
+// BankingBillerPayee defines model for BankingBillerPayee.
+type BankingBillerPayee struct {
+	// BPAY Biller Code of the Biller
+	BillerCode string `json:"billerCode"`
+
+	// Name of the Biller
+	BillerName string `json:"billerName"`
+
+	// BPAY CRN of the Biller (if available).<br/>Where the CRN contains sensitive information, it should be masked in line with how the Data Holder currently displays account identifiers in their existing online banking channels. If the contents of the CRN match the format of a Credit Card PAN they should be masked according to the rules applicable for MaskedPANString. If the contents are are otherwise sensitive, then it should be masked using the rules applicable for the MaskedAccountString common type.
+	Crn *string `json:"crn,omitempty"`
+}
+
+// BankingCreditCardAccount defines model for BankingCreditCardAccount.
+type BankingCreditCardAccount struct {
+	// The minimum payment amount due for the next card payment
+	MinPaymentAmount string `json:"minPaymentAmount"`
+
+	// If absent assumes AUD
+	PaymentCurrency *string `json:"paymentCurrency,omitempty"`
+
+	// The amount due for the next card payment
+	PaymentDueAmount string `json:"paymentDueAmount"`
+
+	// Date that the next payment for the card is due
+	PaymentDueDate string `json:"paymentDueDate"`
+}
+
+// BankingDigitalWalletPayee defines model for BankingDigitalWalletPayee.
+type BankingDigitalWalletPayee struct {
+	// The identifier of the digital wallet (dependent on type)
+	Identifier string `json:"identifier"`
+
+	// The name assigned to the digital wallet by the owner of the wallet, else the display name provided by the digital wallet provider
+	Name string `json:"name"`
+
+	// The provider of the digital wallet
+	Provider BankingDigitalWalletPayeeProvider `json:"provider"`
+
+	// The type of the digital wallet identifier
+	Type BankingDigitalWalletPayeeType `json:"type"`
+}
+
+// The provider of the digital wallet
+type BankingDigitalWalletPayeeProvider string
+
+// The type of the digital wallet identifier
+type BankingDigitalWalletPayeeType string
+
+// BankingDirectDebit defines model for BankingDirectDebit.
+type BankingDirectDebit struct {
+	// A unique ID of the account adhering to the standards for ID permanence.
+	AccountId        string                  `json:"accountId"`
+	AuthorisedEntity BankingAuthorisedEntity `json:"authorisedEntity"`
+
+	// The amount of the last debit executed under this authorisation
+	LastDebitAmount *string `json:"lastDebitAmount,omitempty"`
+
+	// The date and time of the last debit executed under this authorisation
+	LastDebitDateTime *string `json:"lastDebitDateTime,omitempty"`
+}
+
+// BankingDomesticPayee defines model for BankingDomesticPayee.
+type BankingDomesticPayee struct {
+	Account *BankingDomesticPayeeAccount `json:"account,omitempty"`
+	Card    *BankingDomesticPayeeCard    `json:"card,omitempty"`
+	PayId   *BankingDomesticPayeePayId   `json:"payId,omitempty"`
+
+	// Type of account object included. Valid values are: **account** A standard Australian account defined by BSB/Account Number. **card** A credit or charge card to pay to (note that PANs are masked). **payId** A PayID recognised by NPP
+	PayeeAccountUType BankingDomesticPayeePayeeAccountUType `json:"payeeAccountUType"`
+}
+
+// Type of account object included. Valid values are: **account** A standard Australian account defined by BSB/Account Number. **card** A credit or charge card to pay to (note that PANs are masked). **payId** A PayID recognised by NPP
+type BankingDomesticPayeePayeeAccountUType string
+
+// BankingDomesticPayeeAccount defines model for BankingDomesticPayeeAccount.
+type BankingDomesticPayeeAccount struct {
+	// Name of the account to pay to
+	AccountName *string `json:"accountName,omitempty"`
+
+	// Number of the account to pay to
+	AccountNumber string `json:"accountNumber"`
+
+	// BSB of the account to pay to
+	Bsb string `json:"bsb"`
+}
+
+// BankingDomesticPayeeCard defines model for BankingDomesticPayeeCard.
+type BankingDomesticPayeeCard struct {
+	// Name of the account to pay to
+	CardNumber string `json:"cardNumber"`
+}
+
+// BankingDomesticPayeePayId defines model for BankingDomesticPayeePayId.
+type BankingDomesticPayeePayId struct {
+	// The identifier of the PayID (dependent on type)
+	Identifier string `json:"identifier"`
+
+	// The name assigned to the PayID by the owner of the PayID
+	Name *string `json:"name,omitempty"`
+
+	// The type of the PayID
+	Type BankingDomesticPayeePayIdType `json:"type"`
+}
+
+// The type of the PayID
+type BankingDomesticPayeePayIdType string
+
+// BankingInternationalPayee defines model for BankingInternationalPayee.
+type BankingInternationalPayee struct {
+	BankDetails struct {
+		// Account Targeted for payment
+		AccountNumber string `json:"accountNumber"`
+		BankAddress   *struct {
+			// Address of the recipient Bank
+			Address string `json:"address"`
+
+			// Name of the recipient Bank
+			Name string `json:"name"`
+		} `json:"bankAddress,omitempty"`
+
+		// Swift bank code.  Aligns with standard [ISO 9362](https://www.iso.org/standard/60390.html)
+		BeneficiaryBankBIC *string `json:"beneficiaryBankBIC,omitempty"`
+
+		// Number for the Clearing House Interbank Payments System
+		ChipNumber *string `json:"chipNumber,omitempty"`
+
+		// Country of the recipient institution. A valid [ISO 3166 Alpha-3](https://www.iso.org/iso-3166-country-codes.html) country code
+		Country string `json:"country"`
+
+		// Number for Fedwire payment (Federal Reserve Wire Network)
+		FedWireNumber *string `json:"fedWireNumber,omitempty"`
+
+		// The legal entity identifier (LEI) for the beneficiary.  Aligns with [ISO 17442](https://www.iso.org/standard/59771.html)
+		LegalEntityIdentifier *string `json:"legalEntityIdentifier,omitempty"`
+
+		// International bank routing number
+		RoutingNumber *string `json:"routingNumber,omitempty"`
+
+		// Sort code used for account identification in some jurisdictions
+		SortCode *string `json:"sortCode,omitempty"`
+	} `json:"bankDetails"`
+	BeneficiaryDetails struct {
+		// Country where the beneficiary resides. A valid [ISO 3166 Alpha-3](https://www.iso.org/iso-3166-country-codes.html) country code
+		Country string `json:"country"`
+
+		// Response message for the payment
+		Message *string `json:"message,omitempty"`
+
+		// Name of the beneficiary
+		Name *string `json:"name,omitempty"`
+	} `json:"beneficiaryDetails"`
+}
+
+// BankingLoanAccountV2 defines model for BankingLoanAccountV2.
+type BankingLoanAccountV2 struct {
+	// Date that the loan is due to be repaid in full
+	LoanEndDate *string `json:"loanEndDate,omitempty"`
+
+	// Maximum amount of funds that can be redrawn. If not present redraw is not available even if the feature exists for the account
+	MaxRedraw *string `json:"maxRedraw,omitempty"`
+
+	// If absent assumes AUD
+	MaxRedrawCurrency *string `json:"maxRedrawCurrency,omitempty"`
+
+	// Minimum amount of next instalment
+	MinInstalmentAmount *string `json:"minInstalmentAmount,omitempty"`
+
+	// If absent assumes AUD
+	MinInstalmentCurrency *string `json:"minInstalmentCurrency,omitempty"`
+
+	// Minimum redraw amount
+	MinRedraw *string `json:"minRedraw,omitempty"`
+
+	// If absent assumes AUD
+	MinRedrawCurrency *string `json:"minRedrawCurrency,omitempty"`
+
+	// Next date that an instalment is required
+	NextInstalmentDate *string `json:"nextInstalmentDate,omitempty"`
+
+	// Set to true if one or more offset accounts are configured for this loan account
+	OffsetAccountEnabled *bool `json:"offsetAccountEnabled,omitempty"`
+
+	// The accountIDs of the configured offset accounts attached to this loan. Only offset accounts that can be accessed under the current authorisation should be included. It is expected behaviour that offsetAccountEnabled is set to true but the offsetAccountIds field is absent or empty. This represents a situation where an offset account exists but details can not be accessed under the current authorisation
+	OffsetAccountIds *[]string `json:"offsetAccountIds,omitempty"`
+
+	// Optional original loan value
+	OriginalLoanAmount *string `json:"originalLoanAmount,omitempty"`
+
+	// If absent assumes AUD
+	OriginalLoanCurrency *string `json:"originalLoanCurrency,omitempty"`
+
+	// Optional original start date for the loan
+	OriginalStartDate *string `json:"originalStartDate,omitempty"`
+
+	// The expected or required repayment frequency. Formatted according to [ISO 8601 Durations](https://en.wikipedia.org/wiki/ISO_8601#Durations) (excludes recurrence syntax)
+	RepaymentFrequency *string `json:"repaymentFrequency,omitempty"`
+
+	// Options in place for repayments. If absent defaults to PRINCIPAL_AND_INTEREST
+	RepaymentType *BankingLoanAccountV2RepaymentType `json:"repaymentType,omitempty"`
+}
+
+// Options in place for repayments. If absent defaults to PRINCIPAL_AND_INTEREST
+type BankingLoanAccountV2RepaymentType string
+
+// BankingPayeeDetailV2 defines model for BankingPayeeDetailV2.
+type BankingPayeeDetailV2 struct {
+	Biller *BankingBillerPayee `json:"biller,omitempty"`
+
+	// The date the payee was created by the customer
+	CreationDate *string `json:"creationDate,omitempty"`
+
+	// A description of the payee provided by the customer
+	Description   *string                    `json:"description,omitempty"`
+	DigitalWallet *BankingDigitalWalletPayee `json:"digitalWallet,omitempty"`
+	Domestic      *BankingDomesticPayee      `json:"domestic,omitempty"`
+	International *BankingInternationalPayee `json:"international,omitempty"`
+
+	// The short display name of the payee as provided by the customer. Where a customer has not provided a nickname, a display name derived by the bank for the payee consistent with existing digital banking channels
+	Nickname string `json:"nickname"`
+
+	// ID of the payee adhering to the rules of ID permanence
+	PayeeId string `json:"payeeId"`
+
+	// Type of object included that describes the payee in detail
+	PayeeUType BankingPayeeDetailV2PayeeUType `json:"payeeUType"`
+
+	// The type of payee.<br/>DOMESTIC means a registered payee for domestic payments including NPP. <br/>INTERNATIONAL means a registered payee for international payments. <br/>BILLER means a registered payee for BPAY. <br/>DIGITAL_WALLET means a registered payee for a bank's digital wallet
+	Type BankingPayeeDetailV2Type `json:"type"`
+}
+
+// Type of object included that describes the payee in detail
+type BankingPayeeDetailV2PayeeUType string
+
+// The type of payee.<br/>DOMESTIC means a registered payee for domestic payments including NPP. <br/>INTERNATIONAL means a registered payee for international payments. <br/>BILLER means a registered payee for BPAY. <br/>DIGITAL_WALLET means a registered payee for a bank's digital wallet
+type BankingPayeeDetailV2Type string
+
+// BankingPayeeV2 defines model for BankingPayeeV2.
+type BankingPayeeV2 struct {
+	// The date the payee was created by the customer
+	CreationDate *string `json:"creationDate,omitempty"`
+
+	// A description of the payee provided by the customer
+	Description *string `json:"description,omitempty"`
+
+	// The short display name of the payee as provided by the customer. Where a customer has not provided a nickname, a display name derived by the bank for the payee consistent with existing digital banking channels
+	Nickname string `json:"nickname"`
+
+	// ID of the payee adhering to the rules of ID permanence
+	PayeeId string `json:"payeeId"`
+
+	// The type of payee.<br/>DOMESTIC means a registered payee for domestic payments including NPP. <br/>INTERNATIONAL means a registered payee for international payments. <br/>BILLER means a registered payee for BPAY. <br/>DIGITAL_WALLET means a registered payee for a bank's digital wallet
+	Type BankingPayeeV2Type `json:"type"`
+}
+
+// The type of payee.<br/>DOMESTIC means a registered payee for domestic payments including NPP. <br/>INTERNATIONAL means a registered payee for international payments. <br/>BILLER means a registered payee for BPAY. <br/>DIGITAL_WALLET means a registered payee for a bank's digital wallet
+type BankingPayeeV2Type string
+
+// Object that contains links to additional information on specific topics
+type BankingProductAdditionalInformationV2 struct {
+	// An array of additional bundles for the product, if applicable. To be treated as secondary documents to the `bundleUri`. Only to be used if there is a primary `bundleUri`.
+	AdditionalBundleUris *[]BankingProductAdditionalInformationV2AdditionalInformationUris `json:"additionalBundleUris,omitempty"`
+
+	// An array of additional eligibility rules and criteria for the product, if applicable. To be treated as secondary documents to the `eligibilityUri`. Only to be used if there is a primary `eligibilityUri`.
+	AdditionalEligibilityUris *[]BankingProductAdditionalInformationV2AdditionalInformationUris `json:"additionalEligibilityUris,omitempty"`
+
+	// An array of additional fees, pricing, discounts, exemptions and bonuses for the product, if applicable. To be treated as secondary documents to the `feesAndPricingUri`. Only to be used if there is a primary `feesAndPricingUri`.
+	AdditionalFeesAndPricingUris *[]BankingProductAdditionalInformationV2AdditionalInformationUris `json:"additionalFeesAndPricingUris,omitempty"`
+
+	// An array of additional general overviews for the product or features of the product, if applicable. To be treated as secondary documents to the `overviewUri`. Only to be used if there is a primary `overviewUri`.
+	AdditionalOverviewUris *[]BankingProductAdditionalInformationV2AdditionalInformationUris `json:"additionalOverviewUris,omitempty"`
+
+	// An array of additional terms and conditions for the product, if applicable. To be treated as secondary documents to the `termsUri`. Only to be used if there is a primary `termsUri`.
+	AdditionalTermsUris *[]BankingProductAdditionalInformationV2AdditionalInformationUris `json:"additionalTermsUris,omitempty"`
+
+	// Description of a bundle that this product can be part of. Mandatory if `additionalBundleUris` includes one or more supporting documents.
+	BundleUri *string `json:"bundleUri,omitempty"`
+
+	// Eligibility rules and criteria for the product. Mandatory if `additionalEligibilityUris` includes one or more supporting documents.
+	EligibilityUri *string `json:"eligibilityUri,omitempty"`
+
+	// Description of fees, pricing, discounts, exemptions and bonuses for the product. Mandatory if `additionalFeesAndPricingUris` includes one or more supporting documents.
+	FeesAndPricingUri *string `json:"feesAndPricingUri,omitempty"`
+
+	// General overview of the product. Mandatory if `additionalOverviewUris` includes one or more supporting documents.
+	OverviewUri *string `json:"overviewUri,omitempty"`
+
+	// Terms and conditions for the product. Mandatory if `additionalTermsUris` includes one or more supporting documents.
+	TermsUri *string `json:"termsUri,omitempty"`
+}
+
+// BankingProductAdditionalInformationV2AdditionalInformationUris defines model for BankingProductAdditionalInformationV2_additionalInformationUris.
+type BankingProductAdditionalInformationV2AdditionalInformationUris struct {
+	// The URI describing the additional information
+	AdditionalInfoUri string `json:"additionalInfoUri"`
+
+	// Display text providing more information about the document URI
+	Description *string `json:"description,omitempty"`
+}
+
+// BankingProductBundle defines model for BankingProductBundle.
+type BankingProductBundle struct {
+	// Display text providing more information on the bundle
+	AdditionalInfo *string `json:"additionalInfo,omitempty"`
+
+	// Link to a web page with more information on the bundle criteria and benefits
+	AdditionalInfoUri *string `json:"additionalInfoUri,omitempty"`
+
+	// Description of the bundle
+	Description string `json:"description"`
+
+	// Name of the bundle
+	Name string `json:"name"`
+
+	// Array of product IDs for products included in the bundle that are available via the product end points.  Note that this array is not intended to represent a comprehensive model of the products included in the bundle and some products available for the bundle may not be available via the product reference end points
+	ProductIds *[]string `json:"productIds,omitempty"`
+}
+
+// The category to which a product or account belongs. See [here](#product-categories) for more details
+type BankingProductCategory string
+
+// BankingProductConstraint defines model for BankingProductConstraint.
+type BankingProductConstraint struct {
+	// Display text providing more information the constraint
+	AdditionalInfo *string `json:"additionalInfo,omitempty"`
+
+	// Link to a web page with more information on the constraint
+	AdditionalInfoUri *string `json:"additionalInfoUri,omitempty"`
+
+	// Generic field containing additional information relevant to the [constraintType](#tocSproductconstrainttypedoc) specified.  Whether mandatory or not is dependent on the value of [constraintType](#tocSproductconstrainttypedoc)
+	AdditionalValue *string `json:"additionalValue,omitempty"`
+
+	// The type of constraint described.  See the next section for an overview of valid values and their meaning
+	ConstraintType BankingProductConstraintConstraintType `json:"constraintType"`
+}
+
+// The type of constraint described.  See the next section for an overview of valid values and their meaning
+type BankingProductConstraintConstraintType string
+
+// BankingProductDepositRate defines model for BankingProductDepositRate.
+type BankingProductDepositRate struct {
+	// Display text providing more information on the rate
+	AdditionalInfo *string `json:"additionalInfo,omitempty"`
+
+	// Link to a web page with more information on this rate
+	AdditionalInfoUri *string `json:"additionalInfoUri,omitempty"`
+
+	// Generic field containing additional information relevant to the [depositRateType](#tocSproductdepositratetypedoc) specified. Whether mandatory or not is dependent on the value of [depositRateType](#tocSproductdepositratetypedoc)
+	AdditionalValue *string `json:"additionalValue,omitempty"`
+
+	// The period after which the calculated amount(s) (see calculationFrequency) are 'applied' (i.e. debited or credited) to the account. Formatted according to [ISO 8601 Durations](https://en.wikipedia.org/wiki/ISO_8601#Durations) (excludes recurrence syntax)
+	ApplicationFrequency *string `json:"applicationFrequency,omitempty"`
+
+	// The period after which the rate is applied to the balance to calculate the amount due for the period. Calculation of the amount is often daily (as balances may change) but accumulated until the total amount is 'applied' to the account (see applicationFrequency). Formatted according to [ISO 8601 Durations](https://en.wikipedia.org/wiki/ISO_8601#Durations) (excludes recurrence syntax)
+	CalculationFrequency *string `json:"calculationFrequency,omitempty"`
+
+	// The type of rate (base, bonus, etc). See the next section for an overview of valid values and their meaning
+	DepositRateType BankingProductDepositRateDepositRateType `json:"depositRateType"`
+
+	// The rate to be applied
+	Rate string `json:"rate"`
+
+	// Rate tiers applicable for this rate
+	Tiers *[]BankingProductRateTierV3 `json:"tiers,omitempty"`
+}
+
+// The type of rate (base, bonus, etc). See the next section for an overview of valid values and their meaning
+type BankingProductDepositRateDepositRateType string
+
+// BankingProductDetailV4 defines model for BankingProductDetailV4.
+type BankingProductDetailV4 struct {
+	// Object that contains links to additional information on specific topics
+	AdditionalInformation *BankingProductAdditionalInformationV2 `json:"additionalInformation,omitempty"`
+
+	// A link to an application web page where this product can be applied for.
+	ApplicationUri *string `json:"applicationUri,omitempty"`
+
+	// A label of the brand for the product. Able to be used for filtering. For data holders with single brands this value is still required
+	Brand string `json:"brand"`
+
+	// An optional display name of the brand
+	BrandName *string `json:"brandName,omitempty"`
+
+	// An array of bundles that this product participates in.  Each bundle is described by free form information but also by a list of product IDs of the other products that are included in the bundle.  It is assumed that the current product is included in the bundle also
+	Bundles *[]BankingProductBundle `json:"bundles,omitempty"`
+
+	// An array of card art images
+	CardArt *[]struct {
+		// URI reference to a PNG, JPG or GIF image with proportions defined by ISO 7810 ID-1 and width no greater than 512 pixels. The URI reference may be a link or url-encoded data URI according to **[[RFC2397]](#nref-RFC2397)**
+		ImageUri string `json:"imageUri"`
+
+		// Display label for the specific image
+		Title *string `json:"title,omitempty"`
+	} `json:"cardArt,omitempty"`
+
+	// Constraints on the application for or operation of the product such as minimum balances or limit thresholds
+	Constraints *[]BankingProductConstraint `json:"constraints,omitempty"`
+
+	// Interest rates available for deposits
+	DepositRates *[]BankingProductDepositRate `json:"depositRates,omitempty"`
+
+	// A description of the product
+	Description string `json:"description"`
+
+	// The date and time from which this product is effective (ie. is available for origination).  Used to enable the articulation of products to the regime before they are available for customers to originate
+	EffectiveFrom *string `json:"effectiveFrom,omitempty"`
+
+	// The date and time at which this product will be retired and will no longer be offered.  Used to enable the managed deprecation of products
+	EffectiveTo *string `json:"effectiveTo,omitempty"`
+
+	// Eligibility criteria for the product
+	Eligibility *[]BankingProductEligibility `json:"eligibility,omitempty"`
+
+	// Array of features available for the product
+	Features *[]BankingProductFeatureV2 `json:"features,omitempty"`
+
+	// Fees applicable for the product
+	Fees *[]BankingProductFee `json:"fees,omitempty"`
+
+	// Indicates whether the product is specifically tailored to a circumstance.  In this case fees and prices are significantly negotiated depending on context. While all products are open to a degree of tailoring this flag indicates that tailoring is expected and thus that the provision of specific fees and rates is not applicable
+	IsTailored bool `json:"isTailored"`
+
+	// The last date and time that the information for this product was changed (or the creation date for the product if it has never been altered)
+	LastUpdated string `json:"lastUpdated"`
+
+	// Interest rates charged against lending balances
+	LendingRates *[]BankingProductLendingRateV2 `json:"lendingRates,omitempty"`
+
+	// The display name of the product
+	Name string `json:"name"`
+
+	// The category to which a product or account belongs. See [here](#product-categories) for more details
+	ProductCategory BankingProductCategory `json:"productCategory"`
+
+	// A data holder specific unique identifier for this product. This identifier must be unique to a product but does not otherwise need to adhere to ID permanence guidelines.
+	ProductId string `json:"productId"`
+}
+
+// BankingProductDiscount defines model for BankingProductDiscount.
+type BankingProductDiscount struct {
+	// A discount rate calculated based on a proportion of the calculated interest accrued on the account. Note that the currency of the fee discount is expected to be the same as the currency of the fee itself. One of amount, balanceRate, transactionRate, accruedRate and feeRate is mandatory. Unless noted in additionalInfo, assumes the application and calculation frequency are the same as the corresponding fee
+	AccruedRate *string `json:"accruedRate,omitempty"`
+
+	// Display text providing more information on the discount
+	AdditionalInfo *string `json:"additionalInfo,omitempty"`
+
+	// Link to a web page with more information on this discount
+	AdditionalInfoUri *string `json:"additionalInfoUri,omitempty"`
+
+	// Generic field containing additional information relevant to the [discountType](#tocSproductdiscounttypedoc) specified. Whether mandatory or not is dependent on the value of [discountType](#tocSproductdiscounttypedoc)
+	AdditionalValue *string `json:"additionalValue,omitempty"`
+
+	// Dollar value of the discount. One of amount, balanceRate, transactionRate, accruedRate and feeRate is mandatory.
+	Amount *string `json:"amount,omitempty"`
+
+	// A discount rate calculated based on a proportion of the balance. Note that the currency of the fee discount is expected to be the same as the currency of the fee itself. One of amount, balanceRate, transactionRate, accruedRate and feeRate is mandatory. Unless noted in additionalInfo, assumes the application and calculation frequency are the same as the corresponding fee
+	BalanceRate *string `json:"balanceRate,omitempty"`
+
+	// Description of the discount
+	Description string `json:"description"`
+
+	// The type of discount. See the next section for an overview of valid values and their meaning
+	DiscountType BankingProductDiscountDiscountType `json:"discountType"`
+
+	// Eligibility constraints that apply to this discount. Mandatory if ``discountType`` is ``ELIGIBILITY_ONLY``.
+	Eligibility *[]BankingProductDiscountEligibility `json:"eligibility,omitempty"`
+
+	// A discount rate calculated based on a proportion of the fee to which this discount is attached. Note that the currency of the fee discount is expected to be the same as the currency of the fee itself. One of amount, balanceRate, transactionRate, accruedRate and feeRate is mandatory. Unless noted in additionalInfo, assumes the application and calculation frequency are the same as the corresponding fee
+	FeeRate *string `json:"feeRate,omitempty"`
+
+	// A discount rate calculated based on a proportion of a transaction. Note that the currency of the fee discount is expected to be the same as the currency of the fee itself. One of amount, balanceRate, transactionRate, accruedRate and feeRate is mandatory
+	TransactionRate *string `json:"transactionRate,omitempty"`
+}
+
+// The type of discount. See the next section for an overview of valid values and their meaning
+type BankingProductDiscountDiscountType string
+
+// BankingProductDiscountEligibility defines model for BankingProductDiscountEligibility.
+type BankingProductDiscountEligibility struct {
+	// Display text providing more information on this eligibility constraint. Whether mandatory or not is dependent on the value of [discountEligibilityType](#tocSproductdiscounteligibilitydoc)
+	AdditionalInfo *string `json:"additionalInfo,omitempty"`
+
+	// Link to a web page with more information on this eligibility constraint
+	AdditionalInfoUri *string `json:"additionalInfoUri,omitempty"`
+
+	// Generic field containing additional information relevant to the [discountEligibilityType](#tocSproductdiscounteligibilitydoc) specified. Whether mandatory or not is dependent on the value of [discountEligibilityType](#tocSproductdiscounteligibilitydoc)
+	AdditionalValue *string `json:"additionalValue,omitempty"`
+
+	// The type of the specific eligibility constraint for a discount
+	DiscountEligibilityType BankingProductDiscountEligibilityDiscountEligibilityType `json:"discountEligibilityType"`
+}
+
+// The type of the specific eligibility constraint for a discount
+type BankingProductDiscountEligibilityDiscountEligibilityType string
+
+// BankingProductEligibility defines model for BankingProductEligibility.
+type BankingProductEligibility struct {
+	// Display text providing more information on the [eligibility](#tocSproducteligibilitytypedoc) criteria. Mandatory if the field is set to OTHER
+	AdditionalInfo *string `json:"additionalInfo,omitempty"`
+
+	// Link to a web page with more information on this eligibility criteria
+	AdditionalInfoUri *string `json:"additionalInfoUri,omitempty"`
+
+	// Generic field containing additional information relevant to the [eligibilityType](#tocSproducteligibilitytypedoc) specified. Whether mandatory or not is dependent on the value of [eligibilityType](#tocSproducteligibilitytypedoc)
+	AdditionalValue *string `json:"additionalValue,omitempty"`
+
+	// The type of eligibility criteria described.  See the next section for an overview of valid values and their meaning
+	EligibilityType BankingProductEligibilityEligibilityType `json:"eligibilityType"`
+}
+
+// The type of eligibility criteria described.  See the next section for an overview of valid values and their meaning
+type BankingProductEligibilityEligibilityType string
+
+// BankingProductFeatureV2 defines model for BankingProductFeatureV2.
+type BankingProductFeatureV2 struct {
+	// Display text providing more information on the feature. Mandatory if the [feature type](#tocSproductfeaturetypedoc) is set to OTHER
+	AdditionalInfo *string `json:"additionalInfo,omitempty"`
+
+	// Link to a web page with more information on this feature
+	AdditionalInfoUri *string `json:"additionalInfoUri,omitempty"`
+
+	// Generic field containing additional information relevant to the [featureType](#tocSproductfeaturetypedoc) specified. Whether mandatory or not is dependent on the value of the [featureType.](#tocSproductfeaturetypedoc)
+	AdditionalValue *string `json:"additionalValue,omitempty"`
+
+	// The type of feature described
+	FeatureType BankingProductFeatureV2FeatureType `json:"featureType"`
+}
+
+// The type of feature described
+type BankingProductFeatureV2FeatureType string
+
+// BankingProductFee defines model for BankingProductFee.
+type BankingProductFee struct {
+	// The indicative frequency with which the fee is calculated on the account. Only applies if balanceRate or accruedRate is also present. Formatted according to [ISO 8601 Durations](https://en.wikipedia.org/wiki/ISO_8601#Durations) (excludes recurrence syntax)
+	AccrualFrequency *string `json:"accrualFrequency,omitempty"`
+
+	// A fee rate calculated based on a proportion of the calculated interest accrued on the account. One of amount, balanceRate, transactionRate and accruedRate is mandatory unless the *feeType* "VARIABLE" is supplied
+	AccruedRate *string `json:"accruedRate,omitempty"`
+
+	// Display text providing more information on the fee
+	AdditionalInfo *string `json:"additionalInfo,omitempty"`
+
+	// Link to a web page with more information on this fee
+	AdditionalInfoUri *string `json:"additionalInfoUri,omitempty"`
+
+	// Generic field containing additional information relevant to the [feeType](#tocSproductfeetypedoc) specified. Whether mandatory or not is dependent on the value of [feeType](#tocSproductfeetypedoc)
+	AdditionalValue *string `json:"additionalValue,omitempty"`
+
+	// The amount charged for the fee. One of amount, balanceRate, transactionRate and accruedRate is mandatory unless the *feeType* "VARIABLE" is supplied
+	Amount *string `json:"amount,omitempty"`
+
+	// A fee rate calculated based on a proportion of the balance. One of amount, balanceRate, transactionRate and accruedRate is mandatory unless the *feeType* "VARIABLE" is supplied.
+	BalanceRate *string `json:"balanceRate,omitempty"`
+
+	// The currency the fee will be charged in. Assumes AUD if absent
+	Currency *string `json:"currency,omitempty"`
+
+	// An optional list of discounts to this fee that may be available
+	Discounts *[]BankingProductDiscount `json:"discounts,omitempty"`
+
+	// The type of fee
+	FeeType BankingProductFeeFeeType `json:"feeType"`
+
+	// Name of the fee
+	Name string `json:"name"`
+
+	// A fee rate calculated based on a proportion of a transaction. One of amount, balanceRate, transactionRate and accruedRate is mandatory unless the *feeType* "VARIABLE" is supplied
+	TransactionRate *string `json:"transactionRate,omitempty"`
+}
+
+// The type of fee
+type BankingProductFeeFeeType string
+
+// BankingProductLendingRateV2 defines model for BankingProductLendingRateV2.
+type BankingProductLendingRateV2 struct {
+	// Display text providing more information on the rate.
+	AdditionalInfo *string `json:"additionalInfo,omitempty"`
+
+	// Link to a web page with more information on this rate
+	AdditionalInfoUri *string `json:"additionalInfoUri,omitempty"`
+
+	// Generic field containing additional information relevant to the [lendingRateType](#tocSproductlendingratetypedoc) specified. Whether mandatory or not is dependent on the value of [lendingRateType](#tocSproductlendingratetypedoc)
+	AdditionalValue *string `json:"additionalValue,omitempty"`
+
+	// The period after which the calculated amount(s) (see calculationFrequency) are 'applied' (i.e. debited or credited) to the account. Formatted according to [ISO 8601 Durations](https://en.wikipedia.org/wiki/ISO_8601#Durations) (excludes recurrence syntax)
+	ApplicationFrequency *string `json:"applicationFrequency,omitempty"`
+
+	// The period after which the rate is applied to the balance to calculate the amount due for the period. Calculation of the amount is often daily (as balances may change) but accumulated until the total amount is 'applied' to the account (see applicationFrequency). Formatted according to [ISO 8601 Durations](https://en.wikipedia.org/wiki/ISO_8601#Durations) (excludes recurrence syntax)
+	CalculationFrequency *string `json:"calculationFrequency,omitempty"`
+
+	// A comparison rate equivalent for this rate
+	ComparisonRate *string `json:"comparisonRate,omitempty"`
+
+	// When loan payments are due to be paid within each period. The investment benefit of earlier payments affect the rate that can be offered
+	InterestPaymentDue *BankingProductLendingRateV2InterestPaymentDue `json:"interestPaymentDue,omitempty"`
+
+	// The type of rate (fixed, variable, etc). See the next section for an overview of valid values and their meaning
+	LendingRateType BankingProductLendingRateV2LendingRateType `json:"lendingRateType"`
+
+	// The reason for taking out the loan. If absent, the lending rate is applicable to all loan purposes
+	LoanPurpose *BankingProductLendingRateV2LoanPurpose `json:"loanPurpose,omitempty"`
+
+	// The rate to be applied
+	Rate string `json:"rate"`
+
+	// Options in place for repayments. If absent, the lending rate is applicable to all repayment types
+	RepaymentType *BankingProductLendingRateV2RepaymentType `json:"repaymentType,omitempty"`
+
+	// Rate tiers applicable for this rate
+	Tiers *[]BankingProductRateTierV3 `json:"tiers,omitempty"`
+}
+
+// When loan payments are due to be paid within each period. The investment benefit of earlier payments affect the rate that can be offered
+type BankingProductLendingRateV2InterestPaymentDue string
+
+// The type of rate (fixed, variable, etc). See the next section for an overview of valid values and their meaning
+type BankingProductLendingRateV2LendingRateType string
+
+// The reason for taking out the loan. If absent, the lending rate is applicable to all loan purposes
+type BankingProductLendingRateV2LoanPurpose string
+
+// Options in place for repayments. If absent, the lending rate is applicable to all repayment types
+type BankingProductLendingRateV2RepaymentType string
+
+// Defines a condition for the applicability of a tiered rate
+type BankingProductRateCondition struct {
+	// Display text providing more information on the condition
+	AdditionalInfo *string `json:"additionalInfo,omitempty"`
+
+	// Link to a web page with more information on this condition
+	AdditionalInfoUri *string `json:"additionalInfoUri,omitempty"`
+}
+
+// Defines the criteria and conditions for which a rate applies
+type BankingProductRateTierV3 struct {
+	// Display text providing more information on the rate tier.
+	AdditionalInfo *string `json:"additionalInfo,omitempty"`
+
+	// Link to a web page with more information on this rate tier
+	AdditionalInfoUri *string `json:"additionalInfoUri,omitempty"`
+
+	// Defines a condition for the applicability of a tiered rate
+	ApplicabilityConditions *BankingProductRateCondition `json:"applicabilityConditions,omitempty"`
+
+	// The number of tierUnitOfMeasure units that form the upper bound of the tier or band. For a tier with a discrete value (as opposed to a range of values e.g. 1 month) this must be the same as tierValueMinimum. Where this is the same as the tierValueMinimum value of the next-higher tier the referenced tier should be exclusive of this value. For example a term deposit of 2 months falls into the upper tier of the following tiers: (1 – 2 months, 2 – 3 months). If absent the tier's range has no upper bound.
+	MaximumValue *float32 `json:"maximumValue,omitempty"`
+
+	// The number of tierUnitOfMeasure units that form the lower bound of the tier. The tier should be inclusive of this value
+	MinimumValue float32 `json:"minimumValue"`
+
+	// A display name for the tier
+	Name string `json:"name"`
+
+	// The method used to calculate the amount to be applied using one or more tiers. A single rate may be applied to the entire balance or each applicable tier rate is applied to the portion of the balance that falls into that tier (referred to as 'bands' or 'steps')
+	RateApplicationMethod *BankingProductRateTierV3RateApplicationMethod `json:"rateApplicationMethod,omitempty"`
+
+	// The unit of measure that applies to the tierValueMinimum and tierValueMaximum values e.g. a **DOLLAR** amount. **PERCENT** (in the case of loan-to-value ratio or LVR). Tier term period representing a discrete number of **MONTH**'s or **DAY**'s (in the case of term deposit tiers)
+	UnitOfMeasure BankingProductRateTierV3UnitOfMeasure `json:"unitOfMeasure"`
+}
+
+// The method used to calculate the amount to be applied using one or more tiers. A single rate may be applied to the entire balance or each applicable tier rate is applied to the portion of the balance that falls into that tier (referred to as 'bands' or 'steps')
+type BankingProductRateTierV3RateApplicationMethod string
+
+// The unit of measure that applies to the tierValueMinimum and tierValueMaximum values e.g. a **DOLLAR** amount. **PERCENT** (in the case of loan-to-value ratio or LVR). Tier term period representing a discrete number of **MONTH**'s or **DAY**'s (in the case of term deposit tiers)
+type BankingProductRateTierV3UnitOfMeasure string
+
+// BankingProductV4 defines model for BankingProductV4.
+type BankingProductV4 struct {
+	// Object that contains links to additional information on specific topics
+	AdditionalInformation *BankingProductAdditionalInformationV2 `json:"additionalInformation,omitempty"`
+
+	// A link to an application web page where this product can be applied for.
+	ApplicationUri *string `json:"applicationUri,omitempty"`
+
+	// A label of the brand for the product. Able to be used for filtering. For data holders with single brands this value is still required
+	Brand string `json:"brand"`
+
+	// An optional display name of the brand
+	BrandName *string `json:"brandName,omitempty"`
+
+	// An array of card art images
+	CardArt *[]struct {
+		// URI reference to a PNG, JPG or GIF image with proportions defined by ISO 7810 ID-1 and width no greater than 512 pixels. The URI reference may be a link or url-encoded data URI according to **[[RFC2397]](#nref-RFC2397)**
+		ImageUri string `json:"imageUri"`
+
+		// Display label for the specific image
+		Title *string `json:"title,omitempty"`
+	} `json:"cardArt,omitempty"`
+
+	// A description of the product
+	Description string `json:"description"`
+
+	// The date and time from which this product is effective (ie. is available for origination).  Used to enable the articulation of products to the regime before they are available for customers to originate
+	EffectiveFrom *string `json:"effectiveFrom,omitempty"`
+
+	// The date and time at which this product will be retired and will no longer be offered.  Used to enable the managed deprecation of products
+	EffectiveTo *string `json:"effectiveTo,omitempty"`
+
+	// Indicates whether the product is specifically tailored to a circumstance.  In this case fees and prices are significantly negotiated depending on context. While all products are open to a degree of tailoring this flag indicates that tailoring is expected and thus that the provision of specific fees and rates is not applicable
+	IsTailored bool `json:"isTailored"`
+
+	// The last date and time that the information for this product was changed (or the creation date for the product if it has never been altered)
+	LastUpdated string `json:"lastUpdated"`
+
+	// The display name of the product
+	Name string `json:"name"`
+
+	// The category to which a product or account belongs. See [here](#product-categories) for more details
+	ProductCategory BankingProductCategory `json:"productCategory"`
+
+	// A data holder specific unique identifier for this product. This identifier must be unique to a product but does not otherwise need to adhere to ID permanence guidelines.
+	ProductId string `json:"productId"`
+}
+
+// BankingScheduledPayment defines model for BankingScheduledPayment.
+type BankingScheduledPayment struct {
+	// Object containing details of the source of the payment. Currently only specifies an account ID but provided as an object to facilitate future extensibility and consistency with the to object
+	From BankingScheduledPaymentFrom `json:"from"`
+
+	// The short display name of the scheduled payment as provided by the customer if provided. Where a customer has not provided a nickname, a display name derived by the bank for the scheduled payment should be provided that is consistent with existing digital banking channels
+	Nickname *string `json:"nickname,omitempty"`
+
+	// The reference for the transaction, if applicable, that will be provided by the originating institution for all payments in the payment set. Empty string if no data provided
+	PayeeReference *string `json:"payeeReference,omitempty"`
+
+	// The reference for the transaction that will be used by the originating institution for the purposes of constructing a statement narrative on the payer’s account. Empty string if no data provided
+	PayerReference string                       `json:"payerReference"`
+	PaymentSet     []BankingScheduledPaymentSet `json:"paymentSet"`
+
+	// Object containing the detail of the schedule for the payment
+	Recurrence BankingScheduledPaymentRecurrence `json:"recurrence"`
+
+	// A unique ID of the scheduled payment adhering to the standards for ID permanence
+	ScheduledPaymentId string `json:"scheduledPaymentId"`
+
+	// Indicates whether the schedule is currently active. The value SKIP is equivalent to ACTIVE except that the customer has requested the next normal occurrence to be skipped.
+	Status BankingScheduledPaymentStatus `json:"status"`
+}
+
+// Indicates whether the schedule is currently active. The value SKIP is equivalent to ACTIVE except that the customer has requested the next normal occurrence to be skipped.
+type BankingScheduledPaymentStatus string
+
+// Object containing details of the source of the payment. Currently only specifies an account ID but provided as an object to facilitate future extensibility and consistency with the to object
+type BankingScheduledPaymentFrom struct {
+	// ID of the account that is the source of funds for the payment
+	AccountId string `json:"accountId"`
+}
+
+// BankingScheduledPaymentInterval defines model for BankingScheduledPaymentInterval.
+type BankingScheduledPaymentInterval struct {
+	// Uses an interval to define the ordinal day within the interval defined by the interval field on which the payment occurs. If the resulting duration is 0 days in length or larger than the number of days in the interval then the payment will occur on the last day of the interval. A duration of 1 day indicates the first day of the interval. If absent the assumed value is P1D. Formatted according to [ISO 8601 Durations](https://en.wikipedia.org/wiki/ISO_8601#Durations) (excludes recurrence syntax) with components less than a day in length ignored. The first day of a week is considered to be Monday.
+	DayInInterval *string `json:"dayInInterval,omitempty"`
+
+	// An interval for the payment. Formatted according to [ISO 8601 Durations](https://en.wikipedia.org/wiki/ISO_8601#Durations)  (excludes recurrence syntax) with components less than a day in length ignored. This duration defines the period between payments starting with nextPaymentDate
+	Interval string `json:"interval"`
+}
+
+// Object containing the detail of the schedule for the payment
+type BankingScheduledPaymentRecurrence struct {
+	// Indicates that the schedule of payments is defined according to an external event that cannot be predetermined. Mandatory if recurrenceUType is set to eventBased
+	EventBased *BankingScheduledPaymentRecurrenceEventBased `json:"eventBased,omitempty"`
+
+	// Indicates that the schedule of payments is defined by a series of intervals. Mandatory if recurrenceUType is set to intervalSchedule
+	IntervalSchedule *BankingScheduledPaymentRecurrenceIntervalSchedule `json:"intervalSchedule,omitempty"`
+
+	// Indicates that the schedule of payments is defined according to the last occurrence of a specific weekday in an interval. Mandatory if recurrenceUType is set to lastWeekDay
+	LastWeekDay *BankingScheduledPaymentRecurrenceLastWeekday `json:"lastWeekDay,omitempty"`
+
+	// The date of the next payment under the recurrence schedule
+	NextPaymentDate *string `json:"nextPaymentDate,omitempty"`
+
+	// Indicates that the payment is a once off payment on a specific future date. Mandatory if recurrenceUType is set to onceOff
+	OnceOff *BankingScheduledPaymentRecurrenceOnceOff `json:"onceOff,omitempty"`
+
+	// The type of recurrence used to define the schedule
+	RecurrenceUType BankingScheduledPaymentRecurrenceRecurrenceUType `json:"recurrenceUType"`
+}
+
+// The type of recurrence used to define the schedule
+type BankingScheduledPaymentRecurrenceRecurrenceUType string
+
+// Indicates that the schedule of payments is defined according to an external event that cannot be predetermined. Mandatory if recurrenceUType is set to eventBased
+type BankingScheduledPaymentRecurrenceEventBased struct {
+	// Description of the event and conditions that will result in the payment. Expected to be formatted for display to a customer
+	Description string `json:"description"`
+}
+
+// Indicates that the schedule of payments is defined by a series of intervals. Mandatory if recurrenceUType is set to intervalSchedule
+type BankingScheduledPaymentRecurrenceIntervalSchedule struct {
+	// The limit date after which no more payments should be made using this schedule. If both finalPaymentDate and paymentsRemaining are present then payments will stop according to the most constraining value. If neither field is present the payments will continue indefinitely
+	FinalPaymentDate *string `json:"finalPaymentDate,omitempty"`
+
+	// An array of interval objects defining the payment schedule.  Each entry in the array is additive, in that it adds payments to the overall payment schedule.  If multiple intervals result in a payment on the same day then only one payment will be made. Must have at least one entry
+	Intervals []BankingScheduledPaymentInterval `json:"intervals"`
+
+	// Enumerated field giving the treatment where a scheduled payment date is not a business day. If absent assumed to be ON.<br/>**AFTER** - If a scheduled payment date is a non-business day the payment will be made on the first business day after the scheduled payment date.<br/>**BEFORE** - If a scheduled payment date is a non-business day the payment will be made on the first business day before the scheduled payment date.<br/>**ON** - If a scheduled payment date is a non-business day the payment will be made on that day regardless.<br/>**ONLY** - Payments only occur on business days. If a scheduled payment date is a non-business day the payment will be ignored
+	NonBusinessDayTreatment *BankingScheduledPaymentRecurrenceIntervalScheduleNonBusinessDayTreatment `json:"nonBusinessDayTreatment,omitempty"`
+
+	// Indicates the number of payments remaining in the schedule. If both finalPaymentDate and paymentsRemaining are present then payments will stop according to the most constraining value, If neither field is present the payments will continue indefinitely
+	PaymentsRemaining *int `json:"paymentsRemaining,omitempty"`
+}
+
+// Enumerated field giving the treatment where a scheduled payment date is not a business day. If absent assumed to be ON.<br/>**AFTER** - If a scheduled payment date is a non-business day the payment will be made on the first business day after the scheduled payment date.<br/>**BEFORE** - If a scheduled payment date is a non-business day the payment will be made on the first business day before the scheduled payment date.<br/>**ON** - If a scheduled payment date is a non-business day the payment will be made on that day regardless.<br/>**ONLY** - Payments only occur on business days. If a scheduled payment date is a non-business day the payment will be ignored
+type BankingScheduledPaymentRecurrenceIntervalScheduleNonBusinessDayTreatment string
+
+// Indicates that the schedule of payments is defined according to the last occurrence of a specific weekday in an interval. Mandatory if recurrenceUType is set to lastWeekDay
+type BankingScheduledPaymentRecurrenceLastWeekday struct {
+	// The limit date after which no more payments should be made using this schedule. If both finalPaymentDate and paymentsRemaining are present then payments will stop according to the most constraining value. If neither field is present the payments will continue indefinitely
+	FinalPaymentDate *string `json:"finalPaymentDate,omitempty"`
+
+	// The interval for the payment. Formatted according to [ISO 8601 Durations](https://en.wikipedia.org/wiki/ISO_8601#Durations) (excludes recurrence syntax) with components less than a day in length ignored. This duration defines the period between payments starting with nextPaymentDate
+	Interval string `json:"interval"`
+
+	// The weekDay specified. The payment will occur on the last occurrence of this weekday in the interval.
+	LastWeekDay BankingScheduledPaymentRecurrenceLastWeekdayLastWeekDay `json:"lastWeekDay"`
+
+	// Enumerated field giving the treatment where a scheduled payment date is not a business day. If absent assumed to be ON.<br/>**AFTER** - If a scheduled payment date is a non-business day the payment will be made on the first business day after the scheduled payment date.<br/>**BEFORE** - If a scheduled payment date is a non-business day the payment will be made on the first business day before the scheduled payment date.<br/>**ON** - If a scheduled payment date is a non-business day the payment will be made on that day regardless.<br/>**ONLY** - Payments only occur on business days. If a scheduled payment date is a non-business day the payment will be ignored
+	NonBusinessDayTreatment *BankingScheduledPaymentRecurrenceLastWeekdayNonBusinessDayTreatment `json:"nonBusinessDayTreatment,omitempty"`
+
+	// Indicates the number of payments remaining in the schedule. If both finalPaymentDate and paymentsRemaining are present then payments will stop according to the most constraining value. If neither field is present the payments will continue indefinitely
+	PaymentsRemaining *int `json:"paymentsRemaining,omitempty"`
+}
+
+// The weekDay specified. The payment will occur on the last occurrence of this weekday in the interval.
+type BankingScheduledPaymentRecurrenceLastWeekdayLastWeekDay string
+
+// Enumerated field giving the treatment where a scheduled payment date is not a business day. If absent assumed to be ON.<br/>**AFTER** - If a scheduled payment date is a non-business day the payment will be made on the first business day after the scheduled payment date.<br/>**BEFORE** - If a scheduled payment date is a non-business day the payment will be made on the first business day before the scheduled payment date.<br/>**ON** - If a scheduled payment date is a non-business day the payment will be made on that day regardless.<br/>**ONLY** - Payments only occur on business days. If a scheduled payment date is a non-business day the payment will be ignored
+type BankingScheduledPaymentRecurrenceLastWeekdayNonBusinessDayTreatment string
+
+// Indicates that the payment is a once off payment on a specific future date. Mandatory if recurrenceUType is set to onceOff
+type BankingScheduledPaymentRecurrenceOnceOff struct {
+	// The scheduled date for the once off payment
+	PaymentDate string `json:"paymentDate"`
+}
+
+// The set of payment amounts and destination accounts for this payment accommodating multi-part payments. A single entry indicates a simple payment with one destination account. Must have at least one entry
+type BankingScheduledPaymentSet struct {
+	// The amount of the next payment if known. Mandatory unless the isAmountCalculated field is set to true. Must be zero or positive if present
+	Amount *string `json:"amount,omitempty"`
+
+	// The currency for the payment. AUD assumed if not present
+	Currency *string `json:"currency,omitempty"`
+
+	// Flag indicating whether the amount of the payment is calculated based on the context of the event. For instance a payment to reduce the balance of a credit card to zero. If absent then false is assumed
+	IsAmountCalculated *bool `json:"isAmountCalculated,omitempty"`
+
+	// Object containing details of the destination of the payment. Used to specify a variety of payment destination types
+	To BankingScheduledPaymentTo `json:"to"`
+}
+
+// Object containing details of the destination of the payment. Used to specify a variety of payment destination types
+type BankingScheduledPaymentTo struct {
+	// Present if toUType is set to accountId. Indicates that the payment is to another account that is accessible under the current consent
+	AccountId     *string                    `json:"accountId,omitempty"`
+	Biller        *BankingBillerPayee        `json:"biller,omitempty"`
+	Domestic      *BankingDomesticPayee      `json:"domestic,omitempty"`
+	International *BankingInternationalPayee `json:"international,omitempty"`
+
+	// The short display name of the payee as provided by the customer unless toUType is set to payeeId. Where a customer has not provided a nickname, a display name derived by the bank for payee should be provided that is consistent with existing digital banking channels
+	Nickname *string `json:"nickname,omitempty"`
+
+	// Present if toUType is set to payeeId. Indicates that the payment is to registered payee that can be accessed using the payee end point. If the Bank Payees scope has not been consented to then a payeeId should not be provided and the full payee details should be provided instead
+	PayeeId *string `json:"payeeId,omitempty"`
+
+	// The reference for the transaction, if applicable, that will be provided by the originating institution for the specific payment. If not empty, it overrides the value provided at the BankingScheduledPayment level.
+	PayeeReference *string `json:"payeeReference,omitempty"`
+
+	// The type of object provided that specifies the destination of the funds for the payment.
+	ToUType BankingScheduledPaymentToToUType `json:"toUType"`
+}
+
+// The type of object provided that specifies the destination of the funds for the payment.
+type BankingScheduledPaymentToToUType string
+
+// BankingTermDepositAccount defines model for BankingTermDepositAccount.
+type BankingTermDepositAccount struct {
+	// The lodgement date of the original deposit
+	LodgementDate string `json:"lodgementDate"`
+
+	// Amount to be paid upon maturity. If absent it implies the amount to paid is variable and cannot currently be calculated
+	MaturityAmount *string `json:"maturityAmount,omitempty"`
+
+	// If absent assumes AUD
+	MaturityCurrency *string `json:"maturityCurrency,omitempty"`
+
+	// Maturity date for the term deposit
+	MaturityDate string `json:"maturityDate"`
+
+	// Current instructions on action to be taken at maturity. This includes default actions that may be specified in the terms and conditions for the product e.g. roll-over to the same term and frequency of interest payments
+	MaturityInstructions BankingTermDepositAccountMaturityInstructions `json:"maturityInstructions"`
+}
+
+// Current instructions on action to be taken at maturity. This includes default actions that may be specified in the terms and conditions for the product e.g. roll-over to the same term and frequency of interest payments
+type BankingTermDepositAccountMaturityInstructions string
+
+// BankingTransaction defines model for BankingTransaction.
+type BankingTransaction struct {
+	// ID of the account for which transactions are provided
+	AccountId string `json:"accountId"`
+
+	// The value of the transaction. Negative values mean money was outgoing from the account
+	Amount string `json:"amount"`
+
+	// 6 Digit APCA number for the initiating institution. The field is fixed-width and padded with leading zeros if applicable.
+	ApcaNumber *string `json:"apcaNumber,omitempty"`
+
+	// BPAY Biller Code for the transaction (if available)
+	BillerCode *string `json:"billerCode,omitempty"`
+
+	// Name of the BPAY biller for the transaction (if available)
+	BillerName *string `json:"billerName,omitempty"`
+
+	// BPAY CRN for the transaction (if available).<br/>Where the CRN contains sensitive information, it should be masked in line with how the Data Holder currently displays account identifiers in their existing online banking channels. If the contents of the CRN match the format of a Credit Card PAN they should be masked according to the rules applicable for MaskedPANString. If the contents are are otherwise sensitive, then it should be masked using the rules applicable for the MaskedAccountString common type.
+	Crn *string `json:"crn,omitempty"`
+
+	// The currency for the transaction amount. AUD assumed if not present
+	Currency *string `json:"currency,omitempty"`
+
+	// The transaction description as applied by the financial institution
+	Description string `json:"description"`
+
+	// The time the transaction was executed by the originating customer, if available
+	ExecutionDateTime *string `json:"executionDateTime,omitempty"`
+
+	// True if extended information is available using the transaction detail end point. False if extended data is not available
+	IsDetailAvailable bool `json:"isDetailAvailable"`
+
+	// The merchant category code (or MCC) for an outgoing payment to a merchant
+	MerchantCategoryCode *string `json:"merchantCategoryCode,omitempty"`
+
+	// Name of the merchant for an outgoing payment to a merchant
+	MerchantName *string `json:"merchantName,omitempty"`
+
+	// The time the transaction was posted. This field is Mandatory if the transaction has status POSTED.  This is the time that appears on a standard statement
+	PostingDateTime *string `json:"postingDateTime,omitempty"`
+
+	// The reference for the transaction provided by the originating institution. Empty string if no data provided
+	Reference string `json:"reference"`
+
+	// Status of the transaction whether pending or posted. Note that there is currently no provision in the standards to guarantee the ability to correlate a pending transaction with an associated posted transaction
+	Status BankingTransactionStatus `json:"status"`
+
+	// A unique ID of the transaction adhering to the standards for ID permanence.  This is mandatory (through hashing if necessary) unless there are specific and justifiable technical reasons why a transaction cannot be uniquely identified for a particular account type. It is mandatory if `isDetailAvailable` is set to true.
+	TransactionId *string `json:"transactionId,omitempty"`
+
+	// The type of the transaction
+	Type BankingTransactionType `json:"type"`
+
+	// Date and time at which assets become available to the account owner in case of a credit entry, or cease to be available to the account owner in case of a debit transaction entry
+	ValueDateTime *string `json:"valueDateTime,omitempty"`
+}
+
+// Status of the transaction whether pending or posted. Note that there is currently no provision in the standards to guarantee the ability to correlate a pending transaction with an associated posted transaction
+type BankingTransactionStatus string
+
+// The type of the transaction
+type BankingTransactionType string
+
+// BankingTransactionDetail defines model for BankingTransactionDetail.
+type BankingTransactionDetail struct {
+	// ID of the account for which transactions are provided
+	AccountId string `json:"accountId"`
+
+	// The value of the transaction. Negative values mean money was outgoing from the account
+	Amount string `json:"amount"`
+
+	// 6 Digit APCA number for the initiating institution. The field is fixed-width and padded with leading zeros if applicable.
+	ApcaNumber *string `json:"apcaNumber,omitempty"`
+
+	// BPAY Biller Code for the transaction (if available)
+	BillerCode *string `json:"billerCode,omitempty"`
+
+	// Name of the BPAY biller for the transaction (if available)
+	BillerName *string `json:"billerName,omitempty"`
+
+	// BPAY CRN for the transaction (if available).<br/>Where the CRN contains sensitive information, it should be masked in line with how the Data Holder currently displays account identifiers in their existing online banking channels. If the contents of the CRN match the format of a Credit Card PAN they should be masked according to the rules applicable for MaskedPANString. If the contents are are otherwise sensitive, then it should be masked using the rules applicable for the MaskedAccountString common type.
+	Crn *string `json:"crn,omitempty"`
+
+	// The currency for the transaction amount. AUD assumed if not present
+	Currency *string `json:"currency,omitempty"`
+
+	// The transaction description as applied by the financial institution
+	Description string `json:"description"`
+
+	// The time the transaction was executed by the originating customer, if available
+	ExecutionDateTime *string `json:"executionDateTime,omitempty"`
+	ExtendedData      struct {
+		// Optional extended data provided specific to transaction originated via NPP
+		ExtensionUType *BankingTransactionDetailExtendedDataExtensionUType `json:"extensionUType,omitempty"`
+
+		// Label of the target PayID.  Mandatory for an outbound payment. The name assigned to the BSB/Account Number or PayID (by the owner of the PayID)
+		Payee *string `json:"payee,omitempty"`
+
+		// Label of the originating payer. Mandatory for inbound payment
+		Payer *string `json:"payer,omitempty"`
+
+		// Identifier of the applicable overlay service. Valid values are: X2P1.01
+		Service       BankingTransactionDetailExtendedDataService `json:"service"`
+		X2p101Payload *struct {
+			// An end to end ID for the payment created at initiation
+			EndToEndId *string `json:"endToEndId,omitempty"`
+
+			// An extended string description. Only present if specified by the extensionUType field
+			ExtendedDescription string `json:"extendedDescription"`
+
+			// Purpose of the payment.  Format is defined by NPP standards for the x2p1.01 overlay service
+			PurposeCode *string `json:"purposeCode,omitempty"`
+		} `json:"x2p101Payload,omitempty"`
+	} `json:"extendedData"`
+
+	// True if extended information is available using the transaction detail end point. False if extended data is not available
+	IsDetailAvailable bool `json:"isDetailAvailable"`
+
+	// The merchant category code (or MCC) for an outgoing payment to a merchant
+	MerchantCategoryCode *string `json:"merchantCategoryCode,omitempty"`
+
+	// Name of the merchant for an outgoing payment to a merchant
+	MerchantName *string `json:"merchantName,omitempty"`
+
+	// The time the transaction was posted. This field is Mandatory if the transaction has status POSTED.  This is the time that appears on a standard statement
+	PostingDateTime *string `json:"postingDateTime,omitempty"`
+
+	// The reference for the transaction provided by the originating institution. Empty string if no data provided
+	Reference string `json:"reference"`
+
+	// Status of the transaction whether pending or posted. Note that there is currently no provision in the standards to guarantee the ability to correlate a pending transaction with an associated posted transaction
+	Status BankingTransactionDetailStatus `json:"status"`
+
+	// A unique ID of the transaction adhering to the standards for ID permanence.  This is mandatory (through hashing if necessary) unless there are specific and justifiable technical reasons why a transaction cannot be uniquely identified for a particular account type. It is mandatory if `isDetailAvailable` is set to true.
+	TransactionId *string `json:"transactionId,omitempty"`
+
+	// The type of the transaction
+	Type BankingTransactionDetailType `json:"type"`
+
+	// Date and time at which assets become available to the account owner in case of a credit entry, or cease to be available to the account owner in case of a debit transaction entry
+	ValueDateTime *string `json:"valueDateTime,omitempty"`
+}
+
+// Optional extended data provided specific to transaction originated via NPP
+type BankingTransactionDetailExtendedDataExtensionUType string
+
+// Identifier of the applicable overlay service. Valid values are: X2P1.01
+type BankingTransactionDetailExtendedDataService string
+
+// Status of the transaction whether pending or posted. Note that there is currently no provision in the standards to guarantee the ability to correlate a pending transaction with an associated posted transaction
+type BankingTransactionDetailStatus string
+
+// The type of the transaction
+type BankingTransactionDetailType string
+
+// Australian address formatted according to the file format defined by the [PAF file format](https://auspost.com.au/content/dam/auspost_corp/media/documents/australia-post-data-guide.pdf)
+type CommonPAFAddress struct {
+	// Building/Property name 1
+	BuildingName1 *string `json:"buildingName1,omitempty"`
+
+	// Building/Property name 2
+	BuildingName2 *string `json:"buildingName2,omitempty"`
+
+	// Unique identifier for an address as defined by Australia Post.  Also known as Delivery Point Identifier
+	Dpid *string `json:"dpid,omitempty"`
+
+	// Unit number (including suffix, if applicable)
+	FlatUnitNumber *string `json:"flatUnitNumber,omitempty"`
+
+	// Type of flat or unit for the address
+	FlatUnitType *string `json:"flatUnitType,omitempty"`
+
+	// Floor or level number (including alpha characters)
+	FloorLevelNumber *string `json:"floorLevelNumber,omitempty"`
+
+	// Type of floor or level for the address
+	FloorLevelType *string `json:"floorLevelType,omitempty"`
+
+	// Full name of locality
+	LocalityName string `json:"localityName"`
+
+	// Allotment number for the address
+	LotNumber *string `json:"lotNumber,omitempty"`
+
+	// Postal delivery number if the address is a postal delivery type
+	PostalDeliveryNumber *int `json:"postalDeliveryNumber,omitempty"`
+
+	// Postal delivery number prefix related to the postal delivery number
+	PostalDeliveryNumberPrefix *string `json:"postalDeliveryNumberPrefix,omitempty"`
+
+	// Postal delivery number suffix related to the postal delivery number
+	PostalDeliveryNumberSuffix *string `json:"postalDeliveryNumberSuffix,omitempty"`
+
+	// Postal delivery type. (eg. PO BOX). Valid enumeration defined by Australia Post PAF code file
+	PostalDeliveryType *string `json:"postalDeliveryType,omitempty"`
+
+	// Postcode for the locality
+	Postcode string `json:"postcode"`
+
+	// State in which the address belongs. Valid enumeration defined by Australia Post PAF code file [State Type Abbreviation](https://auspost.com.au/content/dam/auspost_corp/media/documents/australia-post-data-guide.pdf). NSW, QLD, VIC, NT, WA, SA, TAS, ACT, AAT
+	State string `json:"state"`
+
+	// The name of the street
+	StreetName *string `json:"streetName,omitempty"`
+
+	// The street type suffix. Valid enumeration defined by Australia Post PAF code file
+	StreetSuffix *string `json:"streetSuffix,omitempty"`
+
+	// The street type. Valid enumeration defined by Australia Post PAF code file
+	StreetType *string `json:"streetType,omitempty"`
+
+	// Thoroughfare number for a property (first number in a property ranged address)
+	ThoroughfareNumber1 *int `json:"thoroughfareNumber1,omitempty"`
+
+	// Suffix for the thoroughfare number. Only relevant is thoroughfareNumber1 is populated
+	ThoroughfareNumber1Suffix *string `json:"thoroughfareNumber1Suffix,omitempty"`
+
+	// Second thoroughfare number (only used if the property has a ranged address eg 23-25)
+	ThoroughfareNumber2 *int `json:"thoroughfareNumber2,omitempty"`
+
+	// Suffix for the second thoroughfare number. Only relevant is thoroughfareNumber2 is populated
+	ThoroughfareNumber2Suffix *string `json:"thoroughfareNumber2Suffix,omitempty"`
+}
+
+// CommonPhysicalAddress defines model for CommonPhysicalAddress.
+type CommonPhysicalAddress struct {
+	// The type of address object present
+	AddressUType CommonPhysicalAddressAddressUType `json:"addressUType"`
+
+	// Australian address formatted according to the file format defined by the [PAF file format](https://auspost.com.au/content/dam/auspost_corp/media/documents/australia-post-data-guide.pdf)
+	Paf    *CommonPAFAddress    `json:"paf,omitempty"`
+	Simple *CommonSimpleAddress `json:"simple,omitempty"`
+}
+
+// The type of address object present
+type CommonPhysicalAddressAddressUType string
+
+// CommonSimpleAddress defines model for CommonSimpleAddress.
+type CommonSimpleAddress struct {
+	// First line of the standard address object
+	AddressLine1 string `json:"addressLine1"`
+
+	// Second line of the standard address object
+	AddressLine2 *string `json:"addressLine2,omitempty"`
+
+	// Third line of the standard address object
+	AddressLine3 *string `json:"addressLine3,omitempty"`
+
+	// Name of the city or locality
+	City string `json:"city"`
+
+	// A valid [ISO 3166 Alpha-3](https://www.iso.org/iso-3166-country-codes.html) country code. Australia (AUS) is assumed if country is not present.
+	Country *string `json:"country,omitempty"`
+
+	// Name of the individual or business formatted for inclusion in an address used for physical mail
+	MailingName *string `json:"mailingName,omitempty"`
+
+	// Mandatory for Australian addresses
+	Postcode *string `json:"postcode,omitempty"`
+
+	// Free text if the country is not Australia. If country is Australia then must be one of the values defined by the [State Type Abbreviation](https://auspost.com.au/content/dam/auspost_corp/media/documents/australia-post-data-guide.pdf) in the PAF file format. NSW, QLD, VIC, NT, WA, SA, TAS, ACT, AAT
+	State string `json:"state"`
+}
+
+// Links defines model for Links.
+type Links struct {
+	// Fully qualified link that generated the current response document
+	Self string `json:"self"`
+}
+
+// LinksPaginated defines model for LinksPaginated.
+type LinksPaginated struct {
+	// URI to the first page of this set. Mandatory if this response is not the first page
+	First *string `json:"first,omitempty"`
+
+	// URI to the last page of this set. Mandatory if this response is not the last page
+	Last *string `json:"last,omitempty"`
+
+	// URI to the next page of this set. Mandatory if this response is not the last page
+	Next *string `json:"next,omitempty"`
+
+	// URI to the previous page of this set. Mandatory if this response is not the first page
+	Prev *string `json:"prev,omitempty"`
+
+	// Fully qualified link that generated the current response document
+	Self string `json:"self"`
+}
+
+// Meta defines model for Meta.
+type Meta = map[string]interface{}
+
+// Additional data for customised error codes
+type MetaError struct {
+	// The CDR error code URN which the application-specific error code extends. Mandatory if the error `code` is an application-specific error rather than a standardised error code.
+	Urn *string `json:"urn,omitempty"`
+}
+
+// MetaPaginated defines model for MetaPaginated.
+type MetaPaginated struct {
+	// The total number of pages in the full set. See [pagination](#pagination).
+	TotalPages int `json:"totalPages"`
+
+	// The total number of records in the full set. See [pagination](#pagination).
+	TotalRecords int `json:"totalRecords"`
+}
+
+// RequestAccountIds defines model for RequestAccountIds.
+type RequestAccountIds struct {
+	Data struct {
+		AccountIds []string `json:"accountIds"`
+	} `json:"data"`
+	Meta *Meta `json:"meta,omitempty"`
+}
+
+// ResponseBankingAccountByIdV2 defines model for ResponseBankingAccountByIdV2.
+type ResponseBankingAccountByIdV2 struct {
+	Data  BankingAccountDetailV2 `json:"data"`
+	Links Links                  `json:"links"`
+	Meta  *Meta                  `json:"meta,omitempty"`
+}
+
+// ResponseBankingAccountList defines model for ResponseBankingAccountList.
+type ResponseBankingAccountList struct {
+	Data struct {
+		// The list of accounts returned. If the filter results in an empty set then this array may have no records
+		Accounts []BankingAccount `json:"accounts"`
+	} `json:"data"`
+	Links LinksPaginated `json:"links"`
+	Meta  MetaPaginated  `json:"meta"`
+}
+
+// ResponseBankingAccountsBalanceById defines model for ResponseBankingAccountsBalanceById.
+type ResponseBankingAccountsBalanceById struct {
+	Data  BankingBalance `json:"data"`
+	Links Links          `json:"links"`
+	Meta  *Meta          `json:"meta,omitempty"`
+}
+
+// ResponseBankingAccountsBalanceList defines model for ResponseBankingAccountsBalanceList.
+type ResponseBankingAccountsBalanceList struct {
+	Data struct {
+		// The list of balances returned
+		Balances []BankingBalance `json:"balances"`
+	} `json:"data"`
+	Links LinksPaginated `json:"links"`
+	Meta  MetaPaginated  `json:"meta"`
+}
+
+// ResponseBankingDirectDebitAuthorisationList defines model for ResponseBankingDirectDebitAuthorisationList.
+type ResponseBankingDirectDebitAuthorisationList struct {
+	Data struct {
+		// The list of authorisations returned
+		DirectDebitAuthorisations []BankingDirectDebit `json:"directDebitAuthorisations"`
+	} `json:"data"`
+	Links LinksPaginated `json:"links"`
+	Meta  MetaPaginated  `json:"meta"`
+}
+
+// ResponseBankingPayeeByIdV2 defines model for ResponseBankingPayeeByIdV2.
+type ResponseBankingPayeeByIdV2 struct {
+	Data  BankingPayeeDetailV2 `json:"data"`
+	Links Links                `json:"links"`
+	Meta  *Meta                `json:"meta,omitempty"`
+}
+
+// ResponseBankingPayeeListV2 defines model for ResponseBankingPayeeListV2.
+type ResponseBankingPayeeListV2 struct {
+	Data struct {
+		// The list of payees returned
+		Payees []BankingPayeeV2 `json:"payees"`
+	} `json:"data"`
+	Links LinksPaginated `json:"links"`
+	Meta  MetaPaginated  `json:"meta"`
+}
+
+// ResponseBankingProductByIdV4 defines model for ResponseBankingProductByIdV4.
+type ResponseBankingProductByIdV4 struct {
+	Data  BankingProductDetailV4 `json:"data"`
+	Links Links                  `json:"links"`
+	Meta  *Meta                  `json:"meta,omitempty"`
+}
+
+// ResponseBankingProductListV2 defines model for ResponseBankingProductListV2.
+type ResponseBankingProductListV2 struct {
+	Data struct {
+		// The list of products returned.  If the filter results in an empty set then this array may have no records
+		Products []BankingProductV4 `json:"products"`
+	} `json:"data"`
+	Links LinksPaginated `json:"links"`
+	Meta  MetaPaginated  `json:"meta"`
+}
+
+// ResponseBankingScheduledPaymentsList defines model for ResponseBankingScheduledPaymentsList.
+type ResponseBankingScheduledPaymentsList struct {
+	Data struct {
+		// The list of scheduled payments to return
+		ScheduledPayments []BankingScheduledPayment `json:"scheduledPayments"`
+	} `json:"data"`
+	Links LinksPaginated `json:"links"`
+	Meta  MetaPaginated  `json:"meta"`
+}
+
+// ResponseBankingTransactionById defines model for ResponseBankingTransactionById.
+type ResponseBankingTransactionById struct {
+	Data  BankingTransactionDetail `json:"data"`
+	Links Links                    `json:"links"`
+	Meta  *Meta                    `json:"meta,omitempty"`
+}
+
+// ResponseBankingTransactionList defines model for ResponseBankingTransactionList.
+type ResponseBankingTransactionList struct {
+	Data struct {
+		Transactions []BankingTransaction `json:"transactions"`
+	} `json:"data"`
+	Links LinksPaginated `json:"links"`
+	Meta  MetaPaginated  `json:"meta"`
+}
+
+// ResponseErrorListV2 defines model for ResponseErrorListV2.
+type ResponseErrorListV2 struct {
+	Errors []struct {
+		// The code of the error encountered. Where the error is specific to the respondent, an application-specific error code, expressed as a string value. If the error is application-specific, the URN code that the specific error extends must be provided in the meta object. Otherwise, the value is the error code URN.
+		Code string `json:"code"`
+
+		// A human-readable explanation specific to this occurrence of the problem.
+		Detail string `json:"detail"`
+
+		// Additional data for customised error codes
+		Meta *MetaError `json:"meta,omitempty"`
+
+		// A short, human-readable summary of the problem that MUST NOT change from occurrence to occurrence of the problem represented by the error code.
+		Title string `json:"title"`
+	} `json:"errors"`
+}
+
+// ListAccountsParams defines parameters for ListAccounts.
+type ListAccountsParams struct {
+	// Used to filter results on the productCategory field applicable to accounts. Any one of the valid values for this field can be supplied. If absent then all accounts returned.
+	ProductCategory *ListAccountsParamsProductCategory `form:"product-category,omitempty" json:"product-category,omitempty"`
+
+	// Used to filter results according to open/closed status. Values can be OPEN, CLOSED or ALL. If absent then ALL is assumed
+	OpenStatus *ListAccountsParamsOpenStatus `form:"open-status,omitempty" json:"open-status,omitempty"`
+
+	// Filters accounts based on whether they are owned by the authorised customer.  True for owned accounts, false for unowned accounts and absent for all accounts
+	IsOwned *bool `form:"is-owned,omitempty" json:"is-owned,omitempty"`
+
+	// Page of results to request (standard pagination)
+	Page *int `form:"page,omitempty" json:"page,omitempty"`
+
+	// Page size to request. Default is 25 (standard pagination)
+	PageSize *int `form:"page-size,omitempty" json:"page-size,omitempty"`
+
+	// Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
+	XV string `json:"x-v"`
+
+	// Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
+	XMinV *string `json:"x-min-v,omitempty"`
+
+	// An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
+
+	// The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
+
+	// The customer's original IP address if the customer is currently logged in to the Data Recipient Software Product. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
+
+	// The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the Data Recipient Software Product. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
+}
+
+// ListAccountsParamsProductCategory defines parameters for ListAccounts.
+type ListAccountsParamsProductCategory string
+
+// ListAccountsParamsOpenStatus defines parameters for ListAccounts.
+type ListAccountsParamsOpenStatus string
+
+// ListBalancesBulkParams defines parameters for ListBalancesBulk.
+type ListBalancesBulkParams struct {
+	// Used to filter results on the productCategory field applicable to accounts. Any one of the valid values for this field can be supplied. If absent then all accounts returned.
+	ProductCategory *ListBalancesBulkParamsProductCategory `form:"product-category,omitempty" json:"product-category,omitempty"`
+
+	// Used to filter results according to open/closed status. Values can be OPEN, CLOSED or ALL. If absent then ALL is assumed
+	OpenStatus *ListBalancesBulkParamsOpenStatus `form:"open-status,omitempty" json:"open-status,omitempty"`
+
+	// Filters accounts based on whether they are owned by the authorised customer.  True for owned accounts, false for unowned accounts and absent for all accounts
+	IsOwned *bool `form:"is-owned,omitempty" json:"is-owned,omitempty"`
+
+	// Page of results to request (standard pagination)
+	Page *int `form:"page,omitempty" json:"page,omitempty"`
+
+	// Page size to request. Default is 25 (standard pagination)
+	PageSize *int `form:"page-size,omitempty" json:"page-size,omitempty"`
+
+	// Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
+	XV string `json:"x-v"`
+
+	// Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
+	XMinV *string `json:"x-min-v,omitempty"`
+
+	// An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
+
+	// The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
+
+	// The customer's original IP address if the customer is currently logged in to the Data Recipient Software Product. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
+
+	// The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the Data Recipient Software Product. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
+}
+
+// ListBalancesBulkParamsProductCategory defines parameters for ListBalancesBulk.
+type ListBalancesBulkParamsProductCategory string
+
+// ListBalancesBulkParamsOpenStatus defines parameters for ListBalancesBulk.
+type ListBalancesBulkParamsOpenStatus string
+
+// ListBalancesSpecificAccountsJSONBody defines parameters for ListBalancesSpecificAccounts.
+type ListBalancesSpecificAccountsJSONBody = RequestAccountIds
+
+// ListBalancesSpecificAccountsParams defines parameters for ListBalancesSpecificAccounts.
+type ListBalancesSpecificAccountsParams struct {
+	// Page of results to request (standard pagination)
+	Page *int `form:"page,omitempty" json:"page,omitempty"`
+
+	// Page size to request. Default is 25 (standard pagination)
+	PageSize *int `form:"page-size,omitempty" json:"page-size,omitempty"`
+
+	// Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
+	XV string `json:"x-v"`
+
+	// Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
+	XMinV *string `json:"x-min-v,omitempty"`
+
+	// An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
+
+	// The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
+
+	// The customer's original IP address if the customer is currently logged in to the Data Recipient Software Product. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
+
+	// The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the Data Recipient Software Product. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
+}
+
+// ListDirectDebitsBulkParams defines parameters for ListDirectDebitsBulk.
+type ListDirectDebitsBulkParams struct {
+	// Used to filter results on the productCategory field applicable to accounts. Any one of the valid values for this field can be supplied. If absent then all accounts returned.
+	ProductCategory *ListDirectDebitsBulkParamsProductCategory `form:"product-category,omitempty" json:"product-category,omitempty"`
+
+	// Used to filter results according to open/closed status. Values can be OPEN, CLOSED or ALL. If absent then ALL is assumed
+	OpenStatus *ListDirectDebitsBulkParamsOpenStatus `form:"open-status,omitempty" json:"open-status,omitempty"`
+
+	// Filters accounts based on whether they are owned by the authorised customer.  True for owned accounts, false for unowned accounts and absent for all accounts
+	IsOwned *bool `form:"is-owned,omitempty" json:"is-owned,omitempty"`
+
+	// Page of results to request (standard pagination)
+	Page *int `form:"page,omitempty" json:"page,omitempty"`
+
+	// Page size to request. Default is 25 (standard pagination)
+	PageSize *int `form:"page-size,omitempty" json:"page-size,omitempty"`
+
+	// Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
+	XV string `json:"x-v"`
+
+	// Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
+	XMinV *string `json:"x-min-v,omitempty"`
+
+	// An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
+
+	// The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
+
+	// The customer's original IP address if the customer is currently logged in to the Data Recipient Software Product. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
+
+	// The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the Data Recipient Software Product. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
+}
+
+// ListDirectDebitsBulkParamsProductCategory defines parameters for ListDirectDebitsBulk.
+type ListDirectDebitsBulkParamsProductCategory string
+
+// ListDirectDebitsBulkParamsOpenStatus defines parameters for ListDirectDebitsBulk.
+type ListDirectDebitsBulkParamsOpenStatus string
+
+// ListDirectDebitsSpecificAccountsJSONBody defines parameters for ListDirectDebitsSpecificAccounts.
+type ListDirectDebitsSpecificAccountsJSONBody = RequestAccountIds
+
+// ListDirectDebitsSpecificAccountsParams defines parameters for ListDirectDebitsSpecificAccounts.
+type ListDirectDebitsSpecificAccountsParams struct {
+	// Page of results to request (standard pagination)
+	Page *int `form:"page,omitempty" json:"page,omitempty"`
+
+	// Page size to request. Default is 25 (standard pagination)
+	PageSize *int `form:"page-size,omitempty" json:"page-size,omitempty"`
+
+	// Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
+	XV string `json:"x-v"`
+
+	// Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
+	XMinV *string `json:"x-min-v,omitempty"`
+
+	// An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
+
+	// The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
+
+	// The customer's original IP address if the customer is currently logged in to the Data Recipient Software Product. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
+
+	// The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the Data Recipient Software Product. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
+}
+
+// GetAccountDetailParams defines parameters for GetAccountDetail.
+type GetAccountDetailParams struct {
+	// Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
+	XV string `json:"x-v"`
+
+	// Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
+	XMinV *string `json:"x-min-v,omitempty"`
+
+	// An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
+
+	// The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
+
+	// The customer's original IP address if the customer is currently logged in to the Data Recipient Software Product. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
+
+	// The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the Data Recipient Software Product. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
+}
+
+// GetBalanceParams defines parameters for GetBalance.
+type GetBalanceParams struct {
+	// Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
+	XV string `json:"x-v"`
+
+	// Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
+	XMinV *string `json:"x-min-v,omitempty"`
+
+	// An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
+
+	// The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
+
+	// The customer's original IP address if the customer is currently logged in to the Data Recipient Software Product. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
+
+	// The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the Data Recipient Software Product. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
+}
+
+// ListDirectDebitsParams defines parameters for ListDirectDebits.
+type ListDirectDebitsParams struct {
+	// Page of results to request (standard pagination)
+	Page *int `form:"page,omitempty" json:"page,omitempty"`
+
+	// Page size to request. Default is 25 (standard pagination)
+	PageSize *int `form:"page-size,omitempty" json:"page-size,omitempty"`
+
+	// Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
+	XV string `json:"x-v"`
+
+	// Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
+	XMinV *string `json:"x-min-v,omitempty"`
+
+	// An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
+
+	// The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
+
+	// The customer's original IP address if the customer is currently logged in to the Data Recipient Software Product. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
+
+	// The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the Data Recipient Software Product. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
+}
+
+// ListScheduledPaymentsParams defines parameters for ListScheduledPayments.
+type ListScheduledPaymentsParams struct {
+	// Page of results to request (standard pagination)
+	Page *int `form:"page,omitempty" json:"page,omitempty"`
+
+	// Page size to request. Default is 25 (standard pagination)
+	PageSize *int `form:"page-size,omitempty" json:"page-size,omitempty"`
+
+	// Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
+	XV string `json:"x-v"`
+
+	// Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
+	XMinV *string `json:"x-min-v,omitempty"`
+
+	// An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
+
+	// The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
+
+	// The customer's original IP address if the customer is currently logged in to the Data Recipient Software Product. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
+
+	// The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the Data Recipient Software Product. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
+}
+
+// GetTransactionsParams defines parameters for GetTransactions.
+type GetTransactionsParams struct {
+	// Constrain the transaction history request to transactions with effective time at or after this date/time. If absent defaults to newest-time minus 90 days.  Format is aligned to DateTimeString common type
+	OldestTime *string `form:"oldest-time,omitempty" json:"oldest-time,omitempty"`
+
+	// Constrain the transaction history request to transactions with effective time at or before this date/time.  If absent defaults to today.  Format is aligned to DateTimeString common type
+	NewestTime *string `form:"newest-time,omitempty" json:"newest-time,omitempty"`
+
+	// Filter transactions to only transactions with amounts higher or equal to than this amount
+	MinAmount *string `form:"min-amount,omitempty" json:"min-amount,omitempty"`
+
+	// Filter transactions to only transactions with amounts less than or equal to than this amount
+	MaxAmount *string `form:"max-amount,omitempty" json:"max-amount,omitempty"`
+
+	// Filter transactions to only transactions where this string value is found as a substring of either the reference or description fields. Format is arbitrary ASCII string. This parameter is optionally implemented by data holders. If it is not implemented then a response should be provided as normal without text filtering applied and an additional boolean field named isQueryParamUnsupported should be included in the meta object and set to true (whether the text parameter is supplied or not)
+	Text *string `form:"text,omitempty" json:"text,omitempty"`
+
+	// Page of results to request (standard pagination)
+	Page *int `form:"page,omitempty" json:"page,omitempty"`
+
+	// Page size to request. Default is 25 (standard pagination)
+	PageSize *int `form:"page-size,omitempty" json:"page-size,omitempty"`
+
+	// Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
+	XV string `json:"x-v"`
+
+	// Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
+	XMinV *string `json:"x-min-v,omitempty"`
+
+	// An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
+
+	// The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
+
+	// The customer's original IP address if the customer is currently logged in to the Data Recipient Software Product. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
+
+	// The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the Data Recipient Software Product. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
+}
+
+// GetTransactionDetailParams defines parameters for GetTransactionDetail.
+type GetTransactionDetailParams struct {
+	// Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
+	XV string `json:"x-v"`
+
+	// Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
+	XMinV *string `json:"x-min-v,omitempty"`
+
+	// An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
+
+	// The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
+
+	// The customer's original IP address if the customer is currently logged in to the Data Recipient Software Product. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
+
+	// The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the Data Recipient Software Product. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
+}
+
+// ListPayeesParams defines parameters for ListPayees.
+type ListPayeesParams struct {
+	// Filter on the payee type field.  In addition to normal type field values, ALL can be specified to retrieve all payees.  If absent the assumed value is ALL
+	Type *ListPayeesParamsType `form:"type,omitempty" json:"type,omitempty"`
+
+	// Page of results to request (standard pagination)
+	Page *int `form:"page,omitempty" json:"page,omitempty"`
+
+	// Page size to request. Default is 25 (standard pagination)
+	PageSize *int `form:"page-size,omitempty" json:"page-size,omitempty"`
+
+	// Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
+	XV string `json:"x-v"`
+
+	// Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
+	XMinV *string `json:"x-min-v,omitempty"`
+
+	// An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
+
+	// The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
+
+	// The customer's original IP address if the customer is currently logged in to the Data Recipient Software Product. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
+
+	// The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the Data Recipient Software Product. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
+}
+
+// ListPayeesParamsType defines parameters for ListPayees.
+type ListPayeesParamsType string
+
+// GetPayeeDetailParams defines parameters for GetPayeeDetail.
+type GetPayeeDetailParams struct {
+	// Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
+	XV string `json:"x-v"`
+
+	// Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
+	XMinV *string `json:"x-min-v,omitempty"`
+
+	// An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
+
+	// The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
+
+	// The customer's original IP address if the customer is currently logged in to the Data Recipient Software Product. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
+
+	// The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the Data Recipient Software Product. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
+}
+
+// ListScheduledPaymentsBulkParams defines parameters for ListScheduledPaymentsBulk.
+type ListScheduledPaymentsBulkParams struct {
+	// Used to filter results on the productCategory field applicable to accounts. Any one of the valid values for this field can be supplied. If absent then all accounts returned.
+	ProductCategory *ListScheduledPaymentsBulkParamsProductCategory `form:"product-category,omitempty" json:"product-category,omitempty"`
+
+	// Used to filter results according to open/closed status. Values can be OPEN, CLOSED or ALL. If absent then ALL is assumed
+	OpenStatus *ListScheduledPaymentsBulkParamsOpenStatus `form:"open-status,omitempty" json:"open-status,omitempty"`
+
+	// Filters accounts based on whether they are owned by the authorised customer.  True for owned accounts, false for unowned accounts and absent for all accounts
+	IsOwned *bool `form:"is-owned,omitempty" json:"is-owned,omitempty"`
+
+	// Page of results to request (standard pagination)
+	Page *int `form:"page,omitempty" json:"page,omitempty"`
+
+	// Page size to request. Default is 25 (standard pagination)
+	PageSize *int `form:"page-size,omitempty" json:"page-size,omitempty"`
+
+	// Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
+	XV string `json:"x-v"`
+
+	// Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
+	XMinV *string `json:"x-min-v,omitempty"`
+
+	// An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
+
+	// The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
+
+	// The customer's original IP address if the customer is currently logged in to the Data Recipient Software Product. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
+
+	// The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the Data Recipient Software Product. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
+}
+
+// ListScheduledPaymentsBulkParamsProductCategory defines parameters for ListScheduledPaymentsBulk.
+type ListScheduledPaymentsBulkParamsProductCategory string
+
+// ListScheduledPaymentsBulkParamsOpenStatus defines parameters for ListScheduledPaymentsBulk.
+type ListScheduledPaymentsBulkParamsOpenStatus string
+
+// ListScheduledPaymentsSpecificAccountsJSONBody defines parameters for ListScheduledPaymentsSpecificAccounts.
+type ListScheduledPaymentsSpecificAccountsJSONBody = RequestAccountIds
+
+// ListScheduledPaymentsSpecificAccountsParams defines parameters for ListScheduledPaymentsSpecificAccounts.
+type ListScheduledPaymentsSpecificAccountsParams struct {
+	// Page of results to request (standard pagination)
+	Page *int `form:"page,omitempty" json:"page,omitempty"`
+
+	// Page size to request. Default is 25 (standard pagination)
+	PageSize *int `form:"page-size,omitempty" json:"page-size,omitempty"`
+
+	// Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
+	XV string `json:"x-v"`
+
+	// Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
+	XMinV *string `json:"x-min-v,omitempty"`
+
+	// An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
+
+	// The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
+
+	// The customer's original IP address if the customer is currently logged in to the Data Recipient Software Product. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
+
+	// The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the Data Recipient Software Product. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
+}
+
+// ListProductsParams defines parameters for ListProducts.
+type ListProductsParams struct {
+	// Allows for the filtering of products based on whether the current time is within the period of time defined as effective by the effectiveFrom and effectiveTo fields. Valid values are ‘CURRENT’, ‘FUTURE’ and ‘ALL’. If absent defaults to 'CURRENT'
+	Effective *ListProductsParamsEffective `form:"effective,omitempty" json:"effective,omitempty"`
+
+	// Only include products that have been updated after the specified date and time. If absent defaults to include all products
+	UpdatedSince *string `form:"updated-since,omitempty" json:"updated-since,omitempty"`
+
+	// Filter results based on a specific brand
+	Brand *string `form:"brand,omitempty" json:"brand,omitempty"`
+
+	// Used to filter results on the productCategory field applicable to accounts. Any one of the valid values for this field can be supplied. If absent then all accounts returned.
+	ProductCategory *ListProductsParamsProductCategory `form:"product-category,omitempty" json:"product-category,omitempty"`
+
+	// Page of results to request (standard pagination)
+	Page *int `form:"page,omitempty" json:"page,omitempty"`
+
+	// Page size to request. Default is 25 (standard pagination)
+	PageSize *int `form:"page-size,omitempty" json:"page-size,omitempty"`
+
+	// Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
+	XV string `json:"x-v"`
+
+	// Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
+	XMinV *string `json:"x-min-v,omitempty"`
+}
+
+// ListProductsParamsEffective defines parameters for ListProducts.
+type ListProductsParamsEffective string
+
+// ListProductsParamsProductCategory defines parameters for ListProducts.
+type ListProductsParamsProductCategory string
+
+// GetProductDetailParams defines parameters for GetProductDetail.
+type GetProductDetailParams struct {
+	// Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
+	XV string `json:"x-v"`
+
+	// Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
+	XMinV *string `json:"x-min-v,omitempty"`
+}
+
+// ListBalancesSpecificAccountsJSONRequestBody defines body for ListBalancesSpecificAccounts for application/json ContentType.
+type ListBalancesSpecificAccountsJSONRequestBody = ListBalancesSpecificAccountsJSONBody
+
+// ListDirectDebitsSpecificAccountsJSONRequestBody defines body for ListDirectDebitsSpecificAccounts for application/json ContentType.
+type ListDirectDebitsSpecificAccountsJSONRequestBody = ListDirectDebitsSpecificAccountsJSONBody
+
+// ListScheduledPaymentsSpecificAccountsJSONRequestBody defines body for ListScheduledPaymentsSpecificAccounts for application/json ContentType.
+type ListScheduledPaymentsSpecificAccountsJSONRequestBody = ListScheduledPaymentsSpecificAccountsJSONBody
+
 // RequestEditorFn  is the function signature for the RequestEditor callback function
 type RequestEditorFn func(ctx context.Context, req *http.Request) error
 
