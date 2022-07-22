@@ -3,11 +3,9 @@ package cmd
 import (
 	"bufio"
 	"fmt"
-	"io/ioutil"
 	"os"
 	"strings"
 
-	"github.com/fiskil/cdr"
 	"github.com/fiskil/cdr/storage"
 	"github.com/jrapoport/chestnut/encryptor/crypto"
 	"github.com/spf13/cobra"
@@ -51,11 +49,6 @@ var fetchCmd = &cobra.Command{
 
 		access, err := store.AccessToken(cmd.Context(), tokenName)
 		if err != nil {
-			resErr, ok := err.(*cdr.ErrNon2xxResponse)
-			if ok {
-				b, err := ioutil.ReadAll(resErr.Response)
-				fmt.Println(string(b), err)
-			}
 			fmt.Println(err)
 			return
 		}

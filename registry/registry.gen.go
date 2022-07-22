@@ -11,9 +11,647 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
+	"time"
 
 	"github.com/deepmap/oapi-codegen/pkg/runtime"
+	openapi_types "github.com/deepmap/oapi-codegen/pkg/types"
 )
+
+// Defines values for DataHolderBrandSummaryIndustries.
+const (
+	DataHolderBrandSummaryIndustriesBanking DataHolderBrandSummaryIndustries = "banking"
+	DataHolderBrandSummaryIndustriesEnergy  DataHolderBrandSummaryIndustries = "energy"
+	DataHolderBrandSummaryIndustriesTelco   DataHolderBrandSummaryIndustries = "telco"
+)
+
+// Defines values for DataHolderStatusStatus.
+const (
+	DataHolderStatusStatusACTIVE  DataHolderStatusStatus = "ACTIVE"
+	DataHolderStatusStatusREMOVED DataHolderStatusStatus = "REMOVED"
+)
+
+// Defines values for DataRecipientBrandMetaDataStatus.
+const (
+	DataRecipientBrandMetaDataStatusACTIVE   DataRecipientBrandMetaDataStatus = "ACTIVE"
+	DataRecipientBrandMetaDataStatusINACTIVE DataRecipientBrandMetaDataStatus = "INACTIVE"
+	DataRecipientBrandMetaDataStatusREMOVED  DataRecipientBrandMetaDataStatus = "REMOVED"
+)
+
+// Defines values for DataRecipientStatusStatus.
+const (
+	DataRecipientStatusStatusACTIVE      DataRecipientStatusStatus = "ACTIVE"
+	DataRecipientStatusStatusREVOKED     DataRecipientStatusStatus = "REVOKED"
+	DataRecipientStatusStatusSURRENDERED DataRecipientStatusStatus = "SURRENDERED"
+	DataRecipientStatusStatusSUSPENDED   DataRecipientStatusStatus = "SUSPENDED"
+)
+
+// Defines values for LegalEntityDetailOrganisationType.
+const (
+	COMPANY          LegalEntityDetailOrganisationType = "COMPANY"
+	GOVERNMENTENTITY LegalEntityDetailOrganisationType = "GOVERNMENT_ENTITY"
+	OTHER            LegalEntityDetailOrganisationType = "OTHER"
+	PARTNERSHIP      LegalEntityDetailOrganisationType = "PARTNERSHIP"
+	SOLETRADER       LegalEntityDetailOrganisationType = "SOLE_TRADER"
+	TRUST            LegalEntityDetailOrganisationType = "TRUST"
+)
+
+// Defines values for LegalEntityDetailStatus.
+const (
+	LegalEntityDetailStatusACTIVE  LegalEntityDetailStatus = "ACTIVE"
+	LegalEntityDetailStatusREMOVED LegalEntityDetailStatus = "REMOVED"
+)
+
+// Defines values for RegisterDataHolderAuthRegisterUType.
+const (
+	SIGNEDJWT RegisterDataHolderAuthRegisterUType = "SIGNED-JWT"
+)
+
+// Defines values for RegisterDataHolderBrandIndustries.
+const (
+	RegisterDataHolderBrandIndustriesBanking RegisterDataHolderBrandIndustries = "banking"
+	RegisterDataHolderBrandIndustriesEnergy  RegisterDataHolderBrandIndustries = "energy"
+	RegisterDataHolderBrandIndustriesTelco   RegisterDataHolderBrandIndustries = "telco"
+)
+
+// Defines values for RegisterDataHolderBrandStatus.
+const (
+	RegisterDataHolderBrandStatusACTIVE   RegisterDataHolderBrandStatus = "ACTIVE"
+	RegisterDataHolderBrandStatusINACTIVE RegisterDataHolderBrandStatus = "INACTIVE"
+	RegisterDataHolderBrandStatusREMOVED  RegisterDataHolderBrandStatus = "REMOVED"
+)
+
+// Defines values for RegisterDataRecipientAccreditationLevel.
+const (
+	SPONSORED    RegisterDataRecipientAccreditationLevel = "SPONSORED"
+	UNRESTRICTED RegisterDataRecipientAccreditationLevel = "UNRESTRICTED"
+)
+
+// Defines values for RegisterDataRecipientStatus.
+const (
+	RegisterDataRecipientStatusACTIVE      RegisterDataRecipientStatus = "ACTIVE"
+	RegisterDataRecipientStatusREVOKED     RegisterDataRecipientStatus = "REVOKED"
+	RegisterDataRecipientStatusSURRENDERED RegisterDataRecipientStatus = "SURRENDERED"
+	RegisterDataRecipientStatusSUSPENDED   RegisterDataRecipientStatus = "SUSPENDED"
+)
+
+// Defines values for SoftwareProductMetaDataStatus.
+const (
+	SoftwareProductMetaDataStatusACTIVE   SoftwareProductMetaDataStatus = "ACTIVE"
+	SoftwareProductMetaDataStatusINACTIVE SoftwareProductMetaDataStatus = "INACTIVE"
+	SoftwareProductMetaDataStatusREMOVED  SoftwareProductMetaDataStatus = "REMOVED"
+)
+
+// Defines values for SoftwareProductStatusStatus.
+const (
+	SoftwareProductStatusStatusACTIVE   SoftwareProductStatusStatus = "ACTIVE"
+	SoftwareProductStatusStatusINACTIVE SoftwareProductStatusStatus = "INACTIVE"
+	SoftwareProductStatusStatusREMOVED  SoftwareProductStatusStatus = "REMOVED"
+)
+
+// DataHolderBrandSummary defines model for DataHolderBrandSummary.
+type DataHolderBrandSummary struct {
+	// Australian Business Number for the organisation
+	Abn *string `json:"abn,omitempty"`
+
+	// Australian Company Number for the organisation
+	Acn *string `json:"acn,omitempty"`
+
+	// Australian Registered Body Number.  ARBNs are issued to registrable Australian bodies and foreign companies
+	Arbn *string `json:"arbn,omitempty"`
+
+	// The name of Data Holder Brand
+	BrandName string `json:"brandName"`
+
+	// Unique id of the Data Holder Brand issued by the CDR Register
+	DataHolderBrandId *string `json:"dataHolderBrandId,omitempty"`
+
+	// The industries the Data Holder Brand belongs to. Please note that the CDR Register entity model is constrained to one industry per brand which is planned to be relaxed in the future.
+	Industries []DataHolderBrandSummaryIndustries `json:"industries"`
+
+	// Interim id of the Data Holder Brand issued by the CDR Register. This is to be used to uniquely identify the record when dataHolderBrandId is not populated and is not to be reused
+	InterimId *string `json:"interimId,omitempty"`
+
+	// The date/time that the Data Holder Brand data was last updated in the Register
+	LastUpdated time.Time `json:"lastUpdated"`
+
+	// Brand logo URI
+	LogoUri string `json:"logoUri"`
+
+	// Base URI for the Data Holder's Consumer Data Standard public endpoints
+	PublicBaseUri string `json:"publicBaseUri"`
+}
+
+// DataHolderBrandSummaryIndustries defines model for DataHolderBrandSummary.Industries.
+type DataHolderBrandSummaryIndustries string
+
+// DataHolderStatus defines model for DataHolderStatus.
+type DataHolderStatus struct {
+	// Unique id of the Data Holder Legal Entity issued by the CDR Register.
+	LegalEntityId string `json:"legalEntityId"`
+
+	// Data Holder status in the CDR Register
+	Status DataHolderStatusStatus `json:"status"`
+}
+
+// Data Holder status in the CDR Register
+type DataHolderStatusStatus string
+
+// DataHoldersStatusList defines model for DataHoldersStatusList.
+type DataHoldersStatusList struct {
+	// Response data for the query
+	Data  []DataHolderStatus `json:"data"`
+	Links Links              `json:"links"`
+	Meta  Meta               `json:"meta"`
+}
+
+// Metadata related to Data Recipient Brand
+type DataRecipientBrandMetaData struct {
+	// Data Recipient Brand name
+	BrandName string `json:"brandName"`
+
+	// Unique id of the Data Recipient brand issued by the CDR Register
+	DataRecipientBrandId string `json:"dataRecipientBrandId"`
+
+	// Data Recipient Brand logo URI
+	LogoUri          string                     `json:"logoUri"`
+	SoftwareProducts *[]SoftwareProductMetaData `json:"softwareProducts,omitempty"`
+
+	// Data Recipient Brand status in the CDR Register
+	Status DataRecipientBrandMetaDataStatus `json:"status"`
+}
+
+// Data Recipient Brand status in the CDR Register
+type DataRecipientBrandMetaDataStatus string
+
+// DataRecipientStatus defines model for DataRecipientStatus.
+type DataRecipientStatus struct {
+	// Unique id of the Data Recipient Legal Entity issued by the CDR Register
+	LegalEntityId string `json:"legalEntityId"`
+
+	// Data Recipient status in the CDR Register
+	Status DataRecipientStatusStatus `json:"status"`
+}
+
+// Data Recipient status in the CDR Register
+type DataRecipientStatusStatus string
+
+// DataRecipientsStatusList defines model for DataRecipientsStatusList.
+type DataRecipientsStatusList struct {
+	// Response data for the query
+	Data  []DataRecipientStatus `json:"data"`
+	Links Links                 `json:"links"`
+	Meta  Meta                  `json:"meta"`
+}
+
+// Object representing a JSON Web Key
+type JWK struct {
+	// The "alg" (algorithm) parameter identifies the algorithm intended for use with the key
+	Alg string `json:"alg"`
+
+	// The "e" RSA public exponent parameter
+	E string `json:"e"`
+
+	// The "key_ops" (key operations) parameter identifies the operation(s) for which the key is intended to be used
+	KeyOps []string `json:"key_ops"`
+
+	// The "kid" (key ID) parameter is partially used to match a specific key. Note the "kid" parameter is not guaranteed unique and additional parameters should be used to progressively to identify a key within a set
+	Kid string `json:"kid"`
+
+	// The "kty" (key type) parameter identifies the cryptographic algorithm family used with the key
+	Kty string `json:"kty"`
+
+	// The "n" RSA public modulus parameter
+	N string `json:"n"`
+}
+
+// The data that is common to all organisations, regardless of the type (e.g. company, trust, partnership, government)
+type LegalEntityDetail struct {
+	// Australian Business Number for the organisation
+	Abn *string `json:"abn,omitempty"`
+
+	// Australian Company Number for the organisation
+	Acn *string `json:"acn,omitempty"`
+
+	// ANZSIC division of the organisation. **[[ANZSIC-2006]](#iref-ANZSIC-2006)**
+	AnzsicDivision *string `json:"anzsicDivision,omitempty"`
+
+	// Australian Registered Body Number.  ARBNs are issued to registrable Australian bodies and foreign companies
+	Arbn *string `json:"arbn,omitempty"`
+
+	// Unique id of the organisation issued by the CDR Register
+	LegalEntityId string `json:"legalEntityId"`
+
+	// Unique legal name of the organisation
+	LegalEntityName string `json:"legalEntityName"`
+
+	// Legal Entity logo URI
+	LogoUri string `json:"logoUri"`
+
+	// Legal organisation type
+	OrganisationType *LegalEntityDetailOrganisationType `json:"organisationType,omitempty"`
+
+	// Country of registeration (if the company is registered outside Australia)
+	RegisteredCountry *string `json:"registeredCountry,omitempty"`
+
+	// Date of registration (if the company is registered outside Australia)
+	RegistrationDate *openapi_types.Date `json:"registrationDate,omitempty"`
+
+	// Unique registration number (if the company is registered outside Australia)
+	RegistrationNumber *string                 `json:"registrationNumber,omitempty"`
+	Status             LegalEntityDetailStatus `json:"status"`
+}
+
+// Legal organisation type
+type LegalEntityDetailOrganisationType string
+
+// LegalEntityDetailStatus defines model for LegalEntityDetail.Status.
+type LegalEntityDetailStatus string
+
+// Links defines model for Links.
+type Links struct {
+	// Fully qualified link to this API call
+	Self string `json:"self"`
+}
+
+// LinksPaginated defines model for LinksPaginated.
+type LinksPaginated struct {
+	// URI to the first page of this set. Mandatory if this response is not the first page
+	First *string `json:"first,omitempty"`
+
+	// URI to the last page of this set. Mandatory if this response is not the last page
+	Last *string `json:"last,omitempty"`
+
+	// URI to the next page of this set. Mandatory if this response is not the last page
+	Next *string `json:"next,omitempty"`
+
+	// URI to the previous page of this set. Mandatory if this response is not the first page
+	Prev *string `json:"prev,omitempty"`
+
+	// Fully qualified link to this API call
+	Self string `json:"self"`
+}
+
+// Meta defines model for Meta.
+type Meta = map[string]interface{}
+
+// Additional data for customised error codes
+type MetaError struct {
+	// The CDR error code URN which the application-specific error code extends. Mandatory if the error `code` is an application-specific error rather than a standardised error code.
+	Urn *string `json:"urn,omitempty"`
+}
+
+// MetaPaginated defines model for MetaPaginated.
+type MetaPaginated struct {
+	// The total number of pages in the full set
+	TotalPages int32 `json:"totalPages"`
+
+	// The total number of records in the full set
+	TotalRecords int32 `json:"totalRecords"`
+}
+
+// Defines the mechanism used and associated endpoints for Data Holder to Data Recipient authentication
+type RegisterDataHolderAuth struct {
+	// JWKS endpoint used for authentication by the Data Holder with the Data Recipient
+	JwksEndpoint string `json:"jwksEndpoint"`
+
+	// The type of authentication and authorisation mechanism in use
+	RegisterUType RegisterDataHolderAuthRegisterUType `json:"registerUType"`
+}
+
+// The type of authentication and authorisation mechanism in use
+type RegisterDataHolderAuthRegisterUType string
+
+// RegisterDataHolderBrand defines model for RegisterDataHolderBrand.
+type RegisterDataHolderBrand struct {
+	AuthDetails []RegisterDataHolderAuth `json:"authDetails"`
+
+	// The name of Data Holder Brand
+	BrandName string `json:"brandName"`
+
+	// Unique id of the Data Holder Brand issued by the CDR Register
+	DataHolderBrandId string `json:"dataHolderBrandId"`
+
+	// Endpoints related to Data Holder Brand services
+	EndpointDetail RegisterDataHolderBrandServiceEndpoint `json:"endpointDetail"`
+
+	// The industries the Data Holder Brand belongs to. Please note that the CDR Register entity model is constrained to one industry per brand which is planned to be relaxed in the future.
+	Industries []RegisterDataHolderBrandIndustries `json:"industries"`
+
+	// The date/time that the Data Holder Brand data was last updated in the Register
+	LastUpdated time.Time `json:"lastUpdated"`
+
+	// The data that is common to all organisations, regardless of the type (e.g. company, trust, partnership, government)
+	LegalEntity LegalEntityDetail `json:"legalEntity"`
+
+	// Brand logo URI
+	LogoUri string                        `json:"logoUri"`
+	Status  RegisterDataHolderBrandStatus `json:"status"`
+}
+
+// RegisterDataHolderBrandIndustries defines model for RegisterDataHolderBrand.Industries.
+type RegisterDataHolderBrandIndustries string
+
+// RegisterDataHolderBrandStatus defines model for RegisterDataHolderBrand.Status.
+type RegisterDataHolderBrandStatus string
+
+// Endpoints related to Data Holder Brand services
+type RegisterDataHolderBrandServiceEndpoint struct {
+	// Base URI for the Data Holder extension endpoints to the Consumer Data Standard (optional)
+	ExtensionBaseUri *string `json:"extensionBaseUri,omitempty"`
+
+	// Base URI for the Data Holder's Consumer Data Standard information security endpoints
+	InfosecBaseUri string `json:"infosecBaseUri"`
+
+	// Base URI for the Data Holder's Consumer Data Standard public endpoints
+	PublicBaseUri string `json:"publicBaseUri"`
+
+	// Base URI for the Data Holder's Consumer Data Standard resource endpoints
+	ResourceBaseUri string `json:"resourceBaseUri"`
+
+	// The major version of the high level standards. This is not the version of the endpoint or the payload being requested but the version of the overall standards being applied. This version number will be "v" followed by the major version of the standards as a positive integer (e.g. v1, v12 or v76)
+	Version string `json:"version"`
+
+	// Publicly available website or web resource URI
+	WebsiteUri string `json:"websiteUri"`
+}
+
+// RegisterDataRecipient defines model for RegisterDataRecipient.
+type RegisterDataRecipient struct {
+	// Accreditation level of the Data Recipient in the CDR Register
+	AccreditationLevel RegisterDataRecipientAccreditationLevel `json:"accreditationLevel"`
+
+	// CDR Register issued human readable unique number given to Data Recipients upon accreditation
+	AccreditationNumber string                        `json:"accreditationNumber"`
+	DataRecipientBrands *[]DataRecipientBrandMetaData `json:"dataRecipientBrands,omitempty"`
+
+	// The date/time that the Legal Entity was last updated in the CDR Register
+	LastUpdated time.Time `json:"lastUpdated"`
+
+	// Unique id of the Data Recipient Legal Entity issued by the CDR Register.
+	LegalEntityId string `json:"legalEntityId"`
+
+	// Legal name of the Data Recipient
+	LegalEntityName string `json:"legalEntityName"`
+
+	// Legal Entity logo URI
+	LogoUri string `json:"logoUri"`
+
+	// Data Recipient status in the CDR Register
+	Status RegisterDataRecipientStatus `json:"status"`
+}
+
+// Accreditation level of the Data Recipient in the CDR Register
+type RegisterDataRecipientAccreditationLevel string
+
+// Data Recipient status in the CDR Register
+type RegisterDataRecipientStatus string
+
+// ResponseDataHoldersBrandSummaryList defines model for ResponseDataHoldersBrandSummaryList.
+type ResponseDataHoldersBrandSummaryList struct {
+	// Response data for the query
+	Data  []DataHolderBrandSummary `json:"data"`
+	Links Links                    `json:"links"`
+	Meta  Meta                     `json:"meta"`
+}
+
+// ResponseErrorListV2 defines model for ResponseErrorListV2.
+type ResponseErrorListV2 struct {
+	Errors []ResponseErrorListV2Errors `json:"errors"`
+}
+
+// ResponseErrorListV2Errors defines model for ResponseErrorListV2_errors.
+type ResponseErrorListV2Errors struct {
+	// The code of the error encountered. Where the error is specific to the respondent, an application-specific error code, expressed as a string value. If the error is application-specific, the URN code that the specific error extends must be provided in the meta object. Otherwise, the value is the error code URN.
+	Code string `json:"code"`
+
+	// A human-readable explanation specific to this occurrence of the problem.
+	Detail string `json:"detail"`
+
+	// Additional data for customised error codes
+	Meta *MetaError `json:"meta,omitempty"`
+
+	// A short, human-readable summary of the problem that MUST NOT change from occurrence to occurrence of the problem represented by the error code.
+	Title string `json:"title"`
+}
+
+// Response containing the JSON Web Key Set
+type ResponseJWKS struct {
+	// The value of the "keys" parameter is an array of JWK values
+	Keys []JWK `json:"keys"`
+}
+
+// Response containing the Open ID Provider Configuration Metadata
+type ResponseOpenIDProviderConfigMetadata struct {
+	// JSON array containing a list of the Claim Names of the Claims that the CDR Register supplies values for
+	ClaimsSupported []string `json:"claims_supported"`
+
+	// JSON array containing a list of Proof Key for Code Exchange (PKCE) **[[RFC7636]](#nref-RFC7636)** code challenge methods supported by this authorization server. Given the CDR Register does not support PKCE, this field can be safely ignored
+	CodeChallengeMethodsSupported []string `json:"code_challenge_methods_supported"`
+
+	// JSON array containing a list of the OAuth 2.0 Grant Type values that the CDR Register supports
+	GrantTypesSupported []string `json:"grant_types_supported"`
+
+	// JSON array containing a list of the JWS signing algorithms (alg values) supported by the CDR Register for the ID Token to encode the Claims in a JWT. Given the CDR Register does not issue ID tokens, this field can be safely ignored
+	IdTokenSigningAlgValuesSupported []string `json:"id_token_signing_alg_values_supported"`
+
+	// URL using the https scheme with no query or fragment component that the CDR Register asserts as its Issuer Identifier
+	Issuer string `json:"issuer"`
+
+	// URL of the CDR Register's JSON Web Key Set **[[JWK]](#nref-JWK)** document. This contains the signing key(s) used to validate access tokens issued from the CDR Register. Note that this differs from the JWKS endpoint used to validate SSAs and CDR Register client authentication
+	JwksUri string `json:"jwks_uri"`
+
+	// JSON array containing a list of the OAuth 2.0 response_type values that the CDR Registrer supports
+	ResponseTypesSupported []string `json:"response_types_supported"`
+
+	// JSON array containing a list of the OAuth 2.0 **[[RFC6749]](#nref-RFC6749)** scope values that the CDR Register supports
+	ScopesSupported []string `json:"scopes_supported"`
+
+	// JSON array containing a list of the Subject Identifier types that the CDR Register supports. Given the CDR Register does not issue ID tokens, this field can be safely ignored
+	SubjectTypesSupported []string `json:"subject_types_supported"`
+
+	// Boolean value indicating server support for mutual TLS client certificate bound access tokens
+	TlsClientCertificateBoundAccessTokens bool `json:"tls_client_certificate_bound_access_tokens"`
+
+	// URL of the CDR Register's OAuth 2.0 Token Endpoint
+	TokenEndpoint string `json:"token_endpoint"`
+
+	// JSON array containing a list of Client Authentication methods supported by this Token Endpoint
+	TokenEndpointAuthMethodsSupported []string `json:"token_endpoint_auth_methods_supported"`
+
+	// JSON array containing a list of the JWS signing algorithms (alg values) supported by the token endpoint for the signature on the JWT **[[JWT]](#nref-JWT)** used to authenticate the client at the token endpoint for the \"private_key_jwt\" authentication method
+	TokenEndpointAuthSigningAlgValuesSupported []string `json:"token_endpoint_auth_signing_alg_values_supported"`
+}
+
+// Response containing a list of CDR Register Data Holder Brand objects
+type ResponseRegisterDataHolderBrandList struct {
+	// Response data for the query
+	Data  []RegisterDataHolderBrand `json:"data"`
+	Links LinksPaginated            `json:"links"`
+	Meta  MetaPaginated             `json:"meta"`
+}
+
+// Response containing a list of Data Recipients in the CDR Register
+type ResponseRegisterDataRecipientList struct {
+	// Response data for the query
+	Data  []RegisterDataRecipient `json:"data"`
+	Links Links                   `json:"links"`
+	Meta  Meta                    `json:"meta"`
+}
+
+// Data Recipient Brand Software Products
+type SoftwareProductMetaData struct {
+	// Software product logo URI
+	LogoUri string `json:"logoUri"`
+
+	// Description of the software product
+	SoftwareProductDescription *string `json:"softwareProductDescription,omitempty"`
+
+	// Unique id of the Data Recipient software product issued by the CDR Register
+	SoftwareProductId string `json:"softwareProductId"`
+
+	// Name of the software product
+	SoftwareProductName string `json:"softwareProductName"`
+
+	// Software Product status in the CDR Register
+	Status SoftwareProductMetaDataStatus `json:"status"`
+}
+
+// Software Product status in the CDR Register
+type SoftwareProductMetaDataStatus string
+
+// SoftwareProductStatus defines model for SoftwareProductStatus.
+type SoftwareProductStatus struct {
+	// Unique id of the software product issued by the CDR Register
+	SoftwareProductId string `json:"softwareProductId"`
+
+	// Software product status in the CDR Register
+	Status SoftwareProductStatusStatus `json:"status"`
+}
+
+// Software product status in the CDR Register
+type SoftwareProductStatusStatus string
+
+// SoftwareProductsStatusList defines model for SoftwareProductsStatusList.
+type SoftwareProductsStatusList struct {
+	// Response data for the query
+	Data  []SoftwareProductStatus `json:"data"`
+	Links Links                   `json:"links"`
+	Meta  Meta                    `json:"meta"`
+}
+
+// GetDataHolderBrandsParams defines parameters for GetDataHolderBrands.
+type GetDataHolderBrandsParams struct {
+	// query filter returns results updated since the specified date-time
+	UpdatedSince *time.Time `form:"updated-since,omitempty" json:"updated-since,omitempty"`
+
+	// the page number to return
+	Page *int32 `form:"page,omitempty" json:"page,omitempty"`
+
+	// the number of records to return per page
+	PageSize *int32 `form:"page-size,omitempty" json:"page-size,omitempty"`
+
+	// An Authorisation Token as per **[[RFC6750]](#nref-RFC6750)**.
+	Authorization string `json:"Authorization"`
+
+	// The version of the API end point requested by the client. Must be set to a positive integer.
+	XV *string `json:"x-v,omitempty"`
+
+	// The [minimum version](https://consumerdatastandardsaustralia.github.io/standards/#http-headers) of the API end point requested by the client. Must be set to a positive integer if provided.
+	XMinV *string `json:"x-min-v,omitempty"`
+}
+
+// GetDataHolderBrandsParamsIndustry defines parameters for GetDataHolderBrands.
+type GetDataHolderBrandsParamsIndustry string
+
+// GetDataHolderBrandsSummaryParams defines parameters for GetDataHolderBrandsSummary.
+type GetDataHolderBrandsSummaryParams struct {
+	// The version of the API end point requested by the client. Must be set to a positive integer.
+	XV string `json:"x-v"`
+
+	// The [minimum version](https://consumerdatastandardsaustralia.github.io/standards/#http-headers) of the API end point requested by the client. Must be set to a positive integer if provided.
+	XMinV *string `json:"x-min-v,omitempty"`
+
+	// Makes the request method conditional on a recipient cache or origin server not having any current representation of the target resource with an entity-tag that does not match any of those listed in the field-value.
+	IfNoneMatch *string `json:"If-None-Match,omitempty"`
+}
+
+// GetDataHolderBrandsSummaryParamsIndustry defines parameters for GetDataHolderBrandsSummary.
+type GetDataHolderBrandsSummaryParamsIndustry string
+
+// GetDataHolderStatusesParams defines parameters for GetDataHolderStatuses.
+type GetDataHolderStatusesParams struct {
+	// The version of the API end point requested by the client. Must be set to a positive integer.
+	XV *string `json:"x-v,omitempty"`
+
+	// The [minimum version](https://consumerdatastandardsaustralia.github.io/standards/#http-headers) of the API end point requested by the client. Must be set to a positive integer if provided.
+	XMinV *string `json:"x-min-v,omitempty"`
+
+	// Makes the request method conditional on a recipient cache or origin server not having any current representation of the target resource with an entity-tag that does not match any of those listed in the field-value.
+	IfNoneMatch *string `json:"If-None-Match,omitempty"`
+}
+
+// GetDataHolderStatusesParamsIndustry defines parameters for GetDataHolderStatuses.
+type GetDataHolderStatusesParamsIndustry string
+
+// GetDataRecipientsParams defines parameters for GetDataRecipients.
+type GetDataRecipientsParams struct {
+	// The version of the API end point requested by the client. Must be set to a positive integer.
+	XV *string `json:"x-v,omitempty"`
+
+	// The [minimum version](https://consumerdatastandardsaustralia.github.io/standards/#http-headers) of the API end point requested by the client. Must be set to a positive integer if provided.
+	XMinV *string `json:"x-min-v,omitempty"`
+
+	// Makes the request method conditional on a recipient cache or origin server not having any current representation of the target resource with an entity-tag that does not match any of those listed in the field-value.
+	IfNoneMatch *string `json:"If-None-Match,omitempty"`
+}
+
+// GetDataRecipientsParamsIndustry defines parameters for GetDataRecipients.
+type GetDataRecipientsParamsIndustry string
+
+// GetSoftwareProductsStatusesParams defines parameters for GetSoftwareProductsStatuses.
+type GetSoftwareProductsStatusesParams struct {
+	// The version of the API end point requested by the client. Must be set to a positive integer.
+	XV *string `json:"x-v,omitempty"`
+
+	// The [minimum version](https://consumerdatastandardsaustralia.github.io/standards/#http-headers) of the API end point requested by the client. Must be set to a positive integer if provided.
+	XMinV *string `json:"x-min-v,omitempty"`
+
+	// Makes the request method conditional on a recipient cache or origin server not having any current representation of the target resource with an entity-tag that does not match any of those listed in the field-value.
+	IfNoneMatch *string `json:"If-None-Match,omitempty"`
+}
+
+// GetSoftwareProductsStatusesParamsIndustry defines parameters for GetSoftwareProductsStatuses.
+type GetSoftwareProductsStatusesParamsIndustry string
+
+// GetSoftwareStatementAssertionParams defines parameters for GetSoftwareStatementAssertion.
+type GetSoftwareStatementAssertionParams struct {
+	// The version of the API end point requested by the client. Must be set to a positive integer.
+	XV *string `json:"x-v,omitempty"`
+
+	// The [minimum version](https://consumerdatastandardsaustralia.github.io/standards/#http-headers) of the API end point requested by the client. Must be set to a positive integer if provided.
+	XMinV *string `json:"x-min-v,omitempty"`
+
+	// An Authorisation Token as per **[[RFC6750]](#nref-RFC6750)**.
+	Authorization string `json:"Authorization"`
+}
+
+// GetSoftwareStatementAssertionParamsIndustry defines parameters for GetSoftwareStatementAssertion.
+type GetSoftwareStatementAssertionParamsIndustry string
+
+// GetDataRecipientsStatusesParams defines parameters for GetDataRecipientsStatuses.
+type GetDataRecipientsStatusesParams struct {
+	// The version of the API end point requested by the client. Must be set to a positive integer.
+	XV *string `json:"x-v,omitempty"`
+
+	// The [minimum version](https://consumerdatastandardsaustralia.github.io/standards/#http-headers) of the API end point requested by the client. Must be set to a positive integer if provided.
+	XMinV *string `json:"x-min-v,omitempty"`
+
+	// Makes the request method conditional on a recipient cache or origin server not having any current representation of the target resource with an entity-tag that does not match any of those listed in the field-value.
+	IfNoneMatch *string `json:"If-None-Match,omitempty"`
+}
+
+// GetDataRecipientsStatusesParamsIndustry defines parameters for GetDataRecipientsStatuses.
+type GetDataRecipientsStatusesParamsIndustry string
 
 // RequestEditorFn  is the function signature for the RequestEditor callback function
 type RequestEditorFn func(ctx context.Context, req *http.Request) error

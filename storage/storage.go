@@ -122,4 +122,5 @@ func (s *Store) AccessToken(ctx context.Context, id string) (string, error) {
 	}
 
 	return refresh.AccessToken, nil
+
 }

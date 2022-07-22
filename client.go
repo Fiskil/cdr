@@ -3,8 +3,14 @@ package cdr
 import (
 	"crypto/tls"
 	"crypto/x509"
+	"fmt"
 	"net/http"
 	"os"
+)
+
+var (
+	// ErrInvalidKeys is when certificates cannot be created for an http client.
+	ErrInvalidKeys = fmt.Errorf("cdr : invalid mTLS cert/key combination")
 )
 
 // New creates a new http client with certificates attached to it. Most of the funcitons in this cdr package require a *http.Client as an argument. This is the way to build that client.

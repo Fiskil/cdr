@@ -63,8 +63,38 @@ go run ./cmd access fetch aus_bank
 
 ## Testing
 
-Endpoints provide unit tests ensure each function parses the correct type of data, but these tests often miss networking nuances. This library makes use of integration-like tests to run acutal queries against real data holders. These tests require lots of configuration and take more time to run. These tests should be removed from the commit phase using the short flag `go test ./... -short`. After these unit tests have run the integration test can be run in the production like environment.
+An easy way to test interacting with the CDR is to setup a temporary test:
 
-Automatic configuration of these tests is still a work in progress, for now the best approach is to have the configuration files that export environment variables for each environment you want to test against.
+```
+func TestTransactions(t *testing.T) {
 
-We are working on a local data store with encryption to store integration tests configuration.
+	// Arrange
+	is := is.New(t)
+	ctx := context.Background()
+	cli, err := cdr.NewFromEnv()
+	is.NoErr(err)
+	cdrCli, err := banking.NewClientWithResponses("https://resource.cdr-api.bankaust.com.au/cds-au/v1", banking.WithHTTPClient(cli))
+	is.NoErr(err)
+	tok := "insert-your-token-here"
+
+	// Act
+	res, err := cdrCli.ListAccountsWithResponse(ctx, &banking.ListAccountsParams{
+		XV: "1",
+	}, func(ctx context.Context, req *http.Request) error {
+		req.Header.Set("Authorization", fmt.Sprintf("Bearer %s", tok))
+		return nil
+	})
+
+	// Assert
+	is.NoErr(err)
+	if res.StatusCode() > 299 {
+		is.NoErr(fmt.Errorf("non 2xx response"))
+	}
+
+	bytes, err := json.Marshal(res.JSON200.Data)
+	fmt.Println(string(bytes), err)
+
+}
+
+// Output: {"accounts":[{"accountId":"1","creationDate":"2022-05-19","displayName":"Everyday Access","isOwned":true,"maskedNumber":"xxxx7889","openStatus":"OPEN","productCategory":"TRANS_AND_SAVINGS_ACCOUNTS","productName":"Everyday Access"},{"accountId":"2","creationDate":"2022-06-04","displayName":"Bonus Saver","isOwned":true,"maskedNumber":"xxxx0241","nickname":"Bonus Saver","openStatus":"OPEN","productCategory":"TRANS_AND_SAVINGS_ACCOUNTS","productName":"Bonus Saver"}]}
+```
