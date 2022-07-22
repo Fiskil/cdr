@@ -38,10 +38,6 @@ cli, err := cdr.New(cert, privKey)
 
 The `cdr.New` returns an `*http.Client` with certificates attached. This http client can now be used as an argument to other functions in the libary.
 
-```go 
-transactions, err := cdr.GetTransactionsByAccount(ctx, cli, other args ...)
-```
-
 ### Access Tokens
 
 We have found that getting an access token for a specific data holder quickly can be challenging. To deal with this issue there is a tool attached to this library for managing refresh tokens and cdr arrangements. 
@@ -63,7 +59,7 @@ go run ./cmd access fetch aus_bank
 
 ## Testing
 
-An easy way to test interacting with the CDR is to setup a temporary test:
+An easy way to test interacting with the CDR is to setup a temporary test. The file `my_test.go` and directory `my_tests` are added to gitignore to encourage you to write your own stockpile of examples and references.
 
 ```
 func TestTransactions(t *testing.T) {
