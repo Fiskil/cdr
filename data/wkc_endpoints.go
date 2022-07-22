@@ -4,4 +4,5 @@ package data
 const (
 	CDRBaseSecureURL = "https://secure.api.cdr.gov.au"
 	CDRBaseURL       = "https://api.cdr.gov.au"
+	BankAustBaseURL  = "https://identity-mtls.cdr-api.bankaust.com.au"
 )
