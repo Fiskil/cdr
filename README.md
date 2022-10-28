@@ -3,7 +3,6 @@
 [![GoDoc](https://godoc.org/github.com/fiskil/cdr?status.svg)](https://godoc.org/github.com/fiskil/cdr)
 [![Go Report Card](https://goreportcard.com/badge/github.com/fiskil/cdr)](https://goreportcard.com/report/github.com/fiskil/cdr)
 
-
 This is a library and set of tools to ease some of the issues we at Fiskil have had with configuring and testing interactions with other CDR entities.
 
 ## Who is this library for?
@@ -42,7 +41,7 @@ The `cdr.New` returns an `*http.Client` with certificates attached. This http cl
 
 ### Access Tokens
 
-We have found that getting an access token for a specific data holder quickly can be challenging. To deal with this issue there is a tool attached to this library for managing refresh tokens and cdr arrangements. 
+We have found that getting an access token for a specific data holder quickly can be challenging. To deal with this issue there is a tool attached to this library for managing refresh tokens and cdr arrangements.
 
 Refresh tokens are stored locally with encryption at rest and associated access tokens can be easily accessed.
 
@@ -95,4 +94,10 @@ func TestTransactions(t *testing.T) {
 }
 
 // Output: {"accounts":[{"accountId":"1","creationDate":"2022-05-19","displayName":"Everyday Access","isOwned":true,"maskedNumber":"xxxx7889","openStatus":"OPEN","productCategory":"TRANS_AND_SAVINGS_ACCOUNTS","productName":"Everyday Access"},{"accountId":"2","creationDate":"2022-06-04","displayName":"Bonus Saver","isOwned":true,"maskedNumber":"xxxx0241","nickname":"Bonus Saver","openStatus":"OPEN","productCategory":"TRANS_AND_SAVINGS_ACCOUNTS","productName":"Bonus Saver"}]}
+```
+
+## Generating Go
+
+```
+oapi-codegen --old-config-style -generate client,types -package registry cdr_registry.swagger.yaml > registry.gen.go
 ```
