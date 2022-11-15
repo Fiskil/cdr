@@ -1084,40 +1084,31 @@ type EnergyAccountListResponseV2 struct {
 
 // EnergyAccountV2 defines model for EnergyAccountV2.
 type EnergyAccountV2 struct {
-	// The ID of the account.  To be created in accordance with CDR ID permanence requirements
-	AccountId string `json:"accountId"`
+	AccountId string `json:"accountId" example:"1bbc12c2-ae16-4875-a0f9-8c4ce79c770e"` // The ID of the account.  To be created in accordance with CDR ID permanence requirements
 
-	// Optional identifier of the account as defined by the data holder.  This must be the value presented on physical statements (if it exists) and must not be used for the value of accountId
-	AccountNumber *string `json:"accountNumber,omitempty"`
+	AccountNumber *string `json:"accountNumber,omitempty" example:"1bbc12c2-ae16-4875-a0f9-8c4ce79c770e"` // Optional identifier of the account as defined by the data holder.  This must be the value presented on physical statements (if it exists) and must not be used for the value of accountId
 
-	// The date that the account was created or opened. Mandatory if openStatus is OPEN
-	CreationDate *string `json:"creationDate,omitempty"`
+	CreationDate *string `json:"creationDate,omitempty" example:"2022-01-01"`                     // The date that the account was created or opened. Mandatory if openStatus is OPEN
+	
+	DisplayName *string `json:"displayName,omitempty" example:"Albert Wood"`                      // An optional display name for the account if one exists or can be derived.  The content of this field is at the discretion of the data holder
 
-	// An optional display name for the account if one exists or can be derived.  The content of this field is at the discretion of the data holder
-	DisplayName *string `json:"displayName,omitempty"`
-
-	// Open or closed status for the account. If not present then OPEN is assumed
-	OpenStatus *EnergyAccountV2OpenStatus `json:"openStatus,omitempty"`
+	OpenStatus *EnergyAccountV2OpenStatus `json:"openStatus,omitempty" example:"OPEN"`                               // Open or closed status for the account. If not present then OPEN is assumed
 
 	// The array of plans containing service points and associated plan details
 	Plans []struct {
-		// Optional display name for the plan provided by the customer to help differentiate multiple plans
-		Nickname *string `json:"nickname,omitempty"`
+		Nickname *string `json:"nickname,omitempty"` // Optional display name for the plan provided by the customer to help differentiate multiple plans
 
 		// Mandatory if openStatus is OPEN
 		PlanOverview *struct {
-			// The name of the plan if one exists
-			DisplayName *string `json:"displayName,omitempty"`
+			
+			DisplayName *string `json:"displayName,omitempty"  example:"Albert Wood"` // The name of the plan if one exists
 
-			// The end date of the applicability of this plan
-			EndDate *string `json:"endDate,omitempty"`
+			EndDate *string `json:"endDate,omitempty" example:"2022-01-01"` // The end date of the applicability of this plan
 
-			// The start date of the applicability of this plan
-			StartDate string `json:"startDate"`
+			StartDate string `json:"startDate" example:"2022-01-01"` // The start date of the applicability of this plan
 		} `json:"planOverview,omitempty"`
-
-		// An array of servicePointIds, representing NMIs, that this plan is linked to.  If there are no service points allocated to this plan then an empty array would be expected
-		ServicePointIds []string `json:"servicePointIds"`
+		
+		ServicePointIds []string `json:"servicePointIds" example:"servicepointid1,servicepointid2"` // An array of servicePointIds, representing NMIs, that this plan is linked to.  If there are no service points allocated to this plan then an empty array would be expected
 	} `json:"plans"`
 }
 
