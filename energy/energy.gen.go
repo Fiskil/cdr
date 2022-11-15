@@ -1096,12 +1096,12 @@ type EnergyAccountV2 struct {
 
 	// The array of plans containing service points and associated plan details
 	Plans []struct {
-		Nickname *string `json:"nickname,omitempty"` // Optional display name for the plan provided by the customer to help differentiate multiple plans
+		Nickname *string `json:"nickname,omitempty" example:"Nickname"` // Optional display name for the plan provided by the customer to help differentiate multiple plans
 
 		// Mandatory if openStatus is OPEN
 		PlanOverview *struct {
 			
-			DisplayName *string `json:"displayName,omitempty"  example:"Albert Wood"` // The name of the plan if one exists
+			DisplayName *string `json:"displayName,omitempty" example:"Albert Wood"` // The name of the plan if one exists
 
 			EndDate *string `json:"endDate,omitempty" example:"2022-01-01"` // The end date of the applicability of this plan
 
