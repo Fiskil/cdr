@@ -1141,7 +1141,7 @@ type EnergyAdjustments struct {
 }
 
 type EnergyCalculationFactors struct {
-	Type EnergyBillingDemandTransactionCalculationFactorsType `json:"type" example:""` // The type of the calculation factor
+	Type EnergyBillingDemandTransactionCalculationFactorsType `json:"type" example:"DLF"` // The type of the calculation factor
 	Value float32 `json:"value" example:"44.44"` // The value of the calculation factor
 }
 
