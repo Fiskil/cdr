@@ -1002,7 +1002,7 @@ type EnergyAccountDetailV2 struct {
 		AuthorisedContacts *[]struct {
 			// For people with single names this field need not be present. The single name should be in the lastName field
 			FirstName *string `json:"firstName,omitempty"`
-
+			EnergyAdjustments
 			// For people with single names the single name should be in this field
 			LastName string `json:"lastName"`
 
@@ -1084,15 +1084,15 @@ type EnergyAccountListResponseV2 struct {
 
 type EnergyPlanOverview struct {
 	DisplayName *string `json:"displayName,omitempty" example:"Albert Wood"` // The name of the plan if one exists
-	EndDate *string `json:"endDate,omitempty" example:"2022-01-01"` // The end date of the applicability of this plan
-	StartDate string `json:"startDate" example:"2022-01-01"` // The start date of the applicability of this plan
+	EndDate *string `json:"endDate,omitempty" example:"2007-05-01T15:43:00.12345Z"` // The end date of the applicability of this plan
+	StartDate string `json:"startDate" example:"2007-05-01T15:43:00.12345Z"` // The start date of the applicability of this plan
 }
 
 type EnergyPlans struct{
 	Nickname *string `json:"nickname,omitempty" example:"nickname"` // Optional display name for the plan provided by the customer to help differentiate multiple plans
 	// Mandatory if openStatus is OPEN
 	PlanOverview *EnergyPlanOverview `json:"planOverview,omitempty"`  
-	ServicePointIds []string `json:"servicePointIds" example:"servicepointid1,servicepointid2"` // An array of servicePointIds, representing NMIs, that this plan is linked to.  If there are no service points allocated to this plan then an empty array would be expected
+	ServicePointIds []string `json:"servicePointIds" example:"43,44,45"` // An array of servicePointIds, representing NMIs, that this plan is linked to.  If there are no service points allocated to this plan then an empty array would be expected
 }
 
 // EnergyAccountV2 defines model for EnergyAccountV2.
@@ -1136,13 +1136,13 @@ type EnergyBalanceResponse struct {
 }
 
 type EnergyAdjustments struct {
-	Amount string `json:"amount"` // The amount of the adjustment
-	Description string `json:"description"` // A free text description of the adjustment
+	Amount string `json:"amount" example:"88"` // The amount of the adjustment
+	Description string `json:"description" example:"description"` // A free text description of the adjustment
 }
 
 type EnergyCalculationFactors struct {
-	Type EnergyBillingDemandTransactionCalculationFactorsType `json:"type"` // The type of the calculation factor
-	Value float32 `json:"value"` // The value of the calculation factor
+	Type EnergyBillingDemandTransactionCalculationFactorsType `json:"type" example:""` // The type of the calculation factor
+	Value float32 `json:"value" example:"44.44"` // The value of the calculation factor
 }
 
 // EnergyBillingDemandTransaction defines model for EnergyBillingDemandTransaction.
@@ -1150,26 +1150,25 @@ type EnergyBillingDemandTransaction struct {
 
 	Adjustments *[]EnergyAdjustments `json:"adjustments,omitempty"` // Optional array of adjustments arising for this transaction
 
-	Amount string `json:"amount"` // The amount charged or credited for this transaction prior to any adjustments being applied.  A negative value indicates a credit
+	Amount string `json:"amount" example:"66"` // The amount charged or credited for this transaction prior to any adjustments being applied.  A negative value indicates a credit
 
 	CalculationFactors *[]EnergyCalculationFactors `json:"calculationFactors,omitempty"`  // Additional calculation factors that inform the transaction
 	
-	Description *string `json:"description,omitempty"` // Optional description of the transaction that can be used for display purposes
+	Description *string `json:"description,omitempty" example:"description"` // Optional description of the transaction that can be used for display purposes
 	
-	EndDate string `json:"endDate"` // Date and time when the demand period ends
+	EndDate string `json:"endDate" example:"2007-05-01T15:43:00.12345Z"` // Date and time when the demand period ends
 	
-	InvoiceNumber *string `json:"invoiceNumber,omitempty"` // The number of the invoice in which this transaction is included if it has been issued
+	InvoiceNumber *string `json:"invoiceNumber,omitempty" example:"4"` // The number of the invoice in which this transaction is included if it has been issued
 	
-	IsEstimate *bool `json:"isEstimate,omitempty"` // Flag indicating if the usage is estimated or actual.  True indicates estimate.  False or absent indicates actual
+	IsEstimate *bool `json:"isEstimate,omitempty" example:"true"` // Flag indicating if the usage is estimated or actual.  True indicates estimate.  False or absent indicates actual
 
-	Rate float32 `json:"rate"` // The rate for the demand charge in kVA.  A negative value indicates power generated
+	Rate float32 `json:"rate" example:"11.15"` // The rate for the demand charge in kVA.  A negative value indicates power generated
 
-	ServicePointId *string `json:"servicePointId,omitempty"` // The ID of the service point to which this transaction applies if any
+	ServicePointId *string `json:"servicePointId,omitempty" example:"11"` // The ID of the service point to which this transaction applies if any
 	
-	StartDate string `json:"startDate"` // Date and time when the demand period starts
-
+	StartDate string `json:"startDate" example:"2007-05-01T15:43:00.12345Z"` // Date and time when the demand period starts
 	
-	TimeOfUseType EnergyBillingDemandTransactionTimeOfUseType `json:"timeOfUseType"`
+	TimeOfUseType EnergyBillingDemandTransactionTimeOfUseType `json:"timeOfUseType" example:"AGGREGATE"`
 }
 
 // The type of the calculation factor
@@ -1191,34 +1190,34 @@ type EnergyBillingListResponse struct {
 // EnergyBillingOnceOffTransaction defines model for EnergyBillingOnceOffTransaction.
 type EnergyBillingOnceOffTransaction struct {
 	
-	Amount string `json:"amount"` // The amount of the charge or credit.  A positive value indicates a charge and a negative value indicates a credit
+	Amount string `json:"amount" example:"88"` // The amount of the charge or credit.  A positive value indicates a charge and a negative value indicates a credit
 	
-	Description string `json:"description"` // A free text description of the item
+	Description string `json:"description" example:"description"` // A free text description of the item
 
-	InvoiceNumber *string `json:"invoiceNumber,omitempty"` // The number of the invoice in which this transaction is included if it has been issued
+	InvoiceNumber *string `json:"invoiceNumber,omitempty" example:"12"` // The number of the invoice in which this transaction is included if it has been issued
 	
-	ServicePointId *string `json:"servicePointId,omitempty"` // The ID of the service point to which this transaction applies if any
+	ServicePointId *string `json:"servicePointId,omitempty" example:"765"` // The ID of the service point to which this transaction applies if any
 }
 
 // EnergyBillingOtherTransaction defines model for EnergyBillingOtherTransaction.
 type EnergyBillingOtherTransaction struct {
 	Adjustments *[]EnergyAdjustments `json:"adjustments,omitempty"`  // Optional array of adjustments arising for this transaction
 	
-	Amount string `json:"amount"` // The amount of the charge
+	Amount string `json:"amount" example:"33"` // The amount of the charge
 
 	CalculationFactors *[]EnergyCalculationFactors `json:"calculationFactors,omitempty"`  // Additional calculation factors that inform the transaction
 	 
-	Description string `json:"description"` // A free text description of the item
+	Description string `json:"description" example:"description"` // A free text description of the item
 
-	EndDate *string `json:"endDate,omitempty"` // Optional end date for the application of the charge
+	EndDate *string `json:"endDate,omitempty" example:"2007-05-01T15:43:00.12345Z"` // Optional end date for the application of the charge
 
-	InvoiceNumber *string `json:"invoiceNumber,omitempty"` // The number of the invoice in which this transaction is included if it has been issued
+	InvoiceNumber *string `json:"invoiceNumber,omitempty" example:"45"` // The number of the invoice in which this transaction is included if it has been issued
 
-	ServicePointId *string `json:"servicePointId,omitempty"` // The ID of the service point to which this transaction applies if any
+	ServicePointId *string `json:"servicePointId,omitempty" example:"100"` // The ID of the service point to which this transaction applies if any
 
-	StartDate *string `json:"startDate,omitempty"` // Optional start date for the application of the charge
+	StartDate *string `json:"startDate,omitempty" example:"2007-05-01T15:43:00.12345Z"` // Optional start date for the application of the charge
 
-	Type *EnergyBillingOtherTransactionType `json:"type,omitempty"` // Type of charge. Assumed to be other if absent
+	Type *EnergyBillingOtherTransactionType `json:"type,omitempty" example:"REGULATED"` // Type of charge. Assumed to be other if absent
 }
 
 // The type of the calculation factor
@@ -1229,8 +1228,8 @@ type EnergyBillingOtherTransactionType string
 
 // EnergyBillingPaymentTransaction defines model for EnergyBillingPaymentTransaction.
 type EnergyBillingPaymentTransaction struct {
-	Amount string `json:"amount"` // The amount paid
-	Method EnergyBillingPaymentTransactionMethod `json:"method"` // The method of payment
+	Amount string `json:"amount" example:"66"` // The amount paid
+	Method EnergyBillingPaymentTransactionMethod `json:"method" example:"CASH"` // The method of payment
 }
 
 // The method of payment
@@ -1238,14 +1237,14 @@ type EnergyBillingPaymentTransactionMethod string
 
 // EnergyBillingTransaction defines model for EnergyBillingTransaction.
 type EnergyBillingTransaction struct {
-	AccountId string                          `json:"accountId"` // The ID of the account for which transaction applies
+	AccountId string                          `json:"accountId" example:"1bbc12c2-ae16-4875-a0f9-8c4ce79c770e"` // The ID of the account for which transaction applies
 	Demand    *EnergyBillingDemandTransaction `json:"demand,omitempty"`
-	ExecutionDateTime string `json:"executionDateTime"` // The date and time that the transaction occurred
-	Gst          *string                          `json:"gst,omitempty"` // The GST incurred in the transaction.  Should not be included for credits or payments.  If absent zero is assumed
+	ExecutionDateTime string `json:"executionDateTime" example:"2007-05-01T15:43:00.12345Z"` // The date and time that the transaction occurred
+	Gst          *string                          `json:"gst,omitempty" example:"99"` // The GST incurred in the transaction.  Should not be included for credits or payments.  If absent zero is assumed
 	OnceOff      *EnergyBillingOnceOffTransaction `json:"onceOff,omitempty"`
 	OtherCharges *EnergyBillingOtherTransaction   `json:"otherCharges,omitempty"`
 	Payment      *EnergyBillingPaymentTransaction `json:"payment,omitempty"`
-	TransactionUType EnergyBillingTransactionTransactionUType `json:"transactionUType"` // Indicator of the type of transaction object present in this record
+	TransactionUType EnergyBillingTransactionTransactionUType `json:"transactionUType" example:"demand"` // Indicator of the type of transaction object present in this record
 	Usage            *EnergyBillingUsageTransaction           `json:"usage,omitempty"`
 }
 
@@ -1257,27 +1256,27 @@ type EnergyBillingUsageTransaction struct {
 
 	Adjustments *[]EnergyAdjustments `json:"adjustments,omitempty"`  // Optional array of adjustments arising for this transaction
 
-	Amount string `json:"amount"` // The amount charged or credited for this transaction prior to any adjustments being applied.  A negative value indicates a credit
+	Amount string `json:"amount"  example:"43.65"` // The amount charged or credited for this transaction prior to any adjustments being applied.  A negative value indicates a credit
 
 	CalculationFactors *[]EnergyCalculationFactors `json:"calculationFactors,omitempty"` // Additional calculation factors that inform the transaction
 	
-	Description *string `json:"description,omitempty"` // Optional description of the transaction that can be used for display purposes
+	Description *string `json:"description,omitempty" example:"description"` // Optional description of the transaction that can be used for display purposes
 
-	EndDate string `json:"endDate"` // Date and time when the usage period ends
+	EndDate string `json:"endDate" example:"2007-05-01T15:43:00.12345Z"` // Date and time when the usage period ends
 	
-	InvoiceNumber *string `json:"invoiceNumber,omitempty"` // The number of the invoice in which this transaction is included if it has been issued
+	InvoiceNumber *string `json:"invoiceNumber,omitempty" example:"8"` // The number of the invoice in which this transaction is included if it has been issued
 
-	IsEstimate *bool `json:"isEstimate,omitempty"` // Flag indicating if the usage is estimated or actual.  True indicates estimate.  False or absent indicates actual
+	IsEstimate *bool `json:"isEstimate,omitempty" example:"true"` // Flag indicating if the usage is estimated or actual.  True indicates estimate.  False or absent indicates actual
 	
-	MeasureUnit *EnergyBillingUsageTransactionMeasureUnit `json:"measureUnit,omitempty"` // The measurement unit of rate. Assumed to be KWH if absent
+	MeasureUnit *EnergyBillingUsageTransactionMeasureUnit `json:"measureUnit,omitempty" example:"KWH"` // The measurement unit of rate. Assumed to be KWH if absent
 	
-	ServicePointId *string `json:"servicePointId,omitempty"` // The ID of the service point to which this transaction applies if any
+	ServicePointId *string `json:"servicePointId,omitempty" example:"15"` // The ID of the service point to which this transaction applies if any
 
-	StartDate string `json:"startDate"` // Date and time when the usage period starts
+	StartDate string `json:"startDate" example:"2007-05-01T15:43:00.12345Z"` // Date and time when the usage period starts
 	
-	TimeOfUseType EnergyBillingUsageTransactionTimeOfUseType `json:"timeOfUseType"` // The time of use type that the transaction applies to
+	TimeOfUseType EnergyBillingUsageTransactionTimeOfUseType `json:"timeOfUseType" example:"PEAK"` // The time of use type that the transaction applies to
 
-	Usage float32 `json:"usage"` // The usage for the period in measure unit.  A negative value indicates power generated
+	Usage float32 `json:"usage" example:"32.55"` // The usage for the period in measure unit.  A negative value indicates power generated
 }
 
 // The type of the calculation factor
