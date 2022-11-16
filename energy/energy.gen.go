@@ -1089,7 +1089,7 @@ type EnergyPlanOverview struct {
 }
 
 type EnergyPlans struct{
-	Nickname *string `json:"nickname,omitempty" example:"Nickname"` // Optional display name for the plan provided by the customer to help differentiate multiple plans
+	Nickname *string `json:"nickname,omitempty" example:"nickname"` // Optional display name for the plan provided by the customer to help differentiate multiple plans
 	// Mandatory if openStatus is OPEN
 	PlanOverview *EnergyPlanOverview `json:"planOverview,omitempty"`  
 	ServicePointIds []string `json:"servicePointIds" example:"servicepointid1,servicepointid2"` // An array of servicePointIds, representing NMIs, that this plan is linked to.  If there are no service points allocated to this plan then an empty array would be expected
@@ -1101,7 +1101,7 @@ type EnergyAccountV2 struct {
 	AccountNumber *string `json:"accountNumber,omitempty" example:"1bbc12c2-ae16-4875-a0f9-8c4ce79c770e"` // Optional identifier of the account as defined by the data holder.  This must be the value presented on physical statements (if it exists) and must not be used for the value of accountId
 	CreationDate *string `json:"creationDate,omitempty" example:"2022-01-01"`                     // The date that the account was created or opened. Mandatory if openStatus is OPEN
 	DisplayName *string `json:"displayName,omitempty" example:"Albert Wood"`                      // An optional display name for the account if one exists or can be derived.  The content of this field is at the discretion of the data holder
-	OpenStatus *EnergyAccountV2OpenStatus `json:"openStatus,omitempty"`                               // Open or closed status for the account. If not present then OPEN is assumed
+	OpenStatus *EnergyAccountV2OpenStatus `json:"openStatus,omitempty" example:"OPEN"`                               // Open or closed status for the account. If not present then OPEN is assumed
 	Plans []EnergyPlans `json:"plans,omitempty"`   // The array of plans containing service points and associated plan details
 
 }
@@ -2756,54 +2756,54 @@ type EnergyUsageListResponse struct {
 }
 
 type EnergyReadQualities struct {
-	EndInterval int `json:"endInterval"` // End interval for read quality flag
+	EndInterval int `json:"endInterval" example:"1"` // End interval for read quality flag
 
-	Quality EnergyUsageReadIntervalReadReadQualitiesQuality `json:"quality"` // The quality of the read taken
+	Quality EnergyUsageReadIntervalReadReadQualitiesQuality `json:"quality" example:"SUBSTITUTE"` // The quality of the read taken
 
-	StartInterval int `json:"startInterval"` // Start interval for read quality flag. First read begins at 1
+	StartInterval int `json:"startInterval" example:"4"` // Start interval for read quality flag. First read begins at 1
 }
 
 type EnergyIntervalRead struct {
-	AggregateValue float32 `json:"aggregateValue"` // The aggregate sum of the interval read values. If positive then it means net consumption, if negative it means net export
+	AggregateValue float32 `json:"aggregateValue" example:"55.55"` // The aggregate sum of the interval read values. If positive then it means net consumption, if negative it means net export
 
-	IntervalReads *[]float32 `json:"intervalReads,omitempty"` // Array of Interval read values. If positive then it means consumption, if negative it means export. Required when interval-reads query parameter equals FULL or  MIN_30.<br>Each read value indicates the read for the interval specified by readIntervalLength beginning at midnight of readStartDate (for example 00:00 to 00:30 would be the first reading in a 30 minute Interval)
+	IntervalReads *[]float32 `json:"intervalReads,omitempty" example:"11.12,13.14"` // Array of Interval read values. If positive then it means consumption, if negative it means export. Required when interval-reads query parameter equals FULL or  MIN_30.<br>Each read value indicates the read for the interval specified by readIntervalLength beginning at midnight of readStartDate (for example 00:00 to 00:30 would be the first reading in a 30 minute Interval)
 
-	ReadIntervalLength *int `json:"readIntervalLength,omitempty"` // Read interval length in minutes. Required when interval-reads query parameter equals FULL or MIN_30
+	ReadIntervalLength *int `json:"readIntervalLength,omitempty" example:"2"` // Read interval length in minutes. Required when interval-reads query parameter equals FULL or MIN_30
 
 	ReadQualities *EnergyReadQualities `json:"readQualities,omitempty"` //  Specifies quality of reads that are not ACTUAL.  For read indices that are not specified, quality is assumed to be ACTUAL. If not present, all quality of all reads are assumed to be actual. Required when interval-reads query parameter equals FULL or MIN_30
 }
 
 type EnergyBasicRead struct {
 	
-	Quality *EnergyUsageReadBasicReadQuality `json:"quality,omitempty"` // The quality of the read taken.  If absent then assumed to be ACTUAL
+	Quality *EnergyUsageReadBasicReadQuality `json:"quality,omitempty" example:"ACTUAL"` // The quality of the read taken.  If absent then assumed to be ACTUAL
 	
-	Value float32 `json:"value"` // Meter read value.  If positive then it means consumption, if negative it means export
+	Value float32 `json:"value" example:"12.12"` // Meter read value.  If positive then it means consumption, if negative it means export
 }
 
 // EnergyUsageRead defines model for EnergyUsageRead.
 type EnergyUsageRead struct {
 	
-	BasicRead *bool `json:"basicRead,omitempty"` // Mandatory if readUType is set to basicRead
+	BasicRead *EnergyBasicRead `json:"basicRead,omitempty"` // Mandatory if readUType is set to basicRead
 
-	ControlledLoad *bool `json:"controlledLoad,omitempty"` // Indicates whether the energy recorded by this regirunningster is created under a Controlled Load regime
+	ControlledLoad *bool `json:"controlledLoad,omitempty" example:"true"` // Indicates whether the energy recorded by this regirunningster is created under a Controlled Load regime
 
 	IntervalRead *EnergyIntervalRead `json:"intervalRead,omitempty"` // Mandatory if readUType is set to intervalRead
 
-	MeterId *string `json:"meterId,omitempty"` // Meter id/serial number as it appears in customer’s bill. ID permanence rules do not apply.
+	MeterId *string `json:"meterId,omitempty" example:"7"` // Meter id/serial number as it appears in customer’s bill. ID permanence rules do not apply.
 
-	ReadEndDate *string `json:"readEndDate,omitempty"` // Date when the meter reads end in AEST.  If absent then assumed to be equal to readStartDate.  In this case the entry represents data for a single date specified by readStartDate.
+	ReadEndDate *string `json:"readEndDate,omitempty" example:"2007-05-01T15:43:00.12345Z"` // Date when the meter reads end in AEST.  If absent then assumed to be equal to readStartDate.  In this case the entry represents data for a single date specified by readStartDate.
 	
-	ReadStartDate string `json:"readStartDate"` // Date when the meter reads start in AEST and assumed to start from 12:00 am AEST.
+	ReadStartDate string `json:"readStartDate" example:"2007-05-01T15:43:00.12345Z"` // Date when the meter reads start in AEST and assumed to start from 12:00 am AEST.
 
-	ReadUType EnergyUsageReadReadUType `json:"readUType"` // Specify the type of the meter read data
+	ReadUType EnergyUsageReadReadUType `json:"readUType" example:"basicRead"` // Specify the type of the meter read data
 
-	RegisterId *string `json:"registerId,omitempty"` // Register ID of the meter register where the meter reads are obtained
+	RegisterId *string `json:"registerId,omitempty" example:"9"` // Register ID of the meter register where the meter reads are obtained
 
-	RegisterSuffix string `json:"registerSuffix"` // Register suffix of the meter register where the meter reads are obtained
+	RegisterSuffix string `json:"registerSuffix" example:"suffix"` // Register suffix of the meter register where the meter reads are obtained
 	
-	ServicePointId string `json:"servicePointId"` // Tokenised ID of the service point to be used for referring to the service point in the CDR API suite.  To be created in accordance with CDR ID permanence requirements
+	ServicePointId string `json:"servicePointId" example:"ServicePointId"` // Tokenised ID of the service point to be used for referring to the service point in the CDR API suite.  To be created in accordance with CDR ID permanence requirements
 
-	UnitOfMeasure *string `json:"unitOfMeasure,omitempty"` // Unit of measure of the meter reads. Refer to Appendix B of <a href='https://www.aemo.com.au/-/media/files/stakeholder_consultation/consultations/nem-consultations/2019/5ms-metering-package-2/final-determination/mdff-specification-nem12-nem13-v21-final-determination-clean.pdf?la=en&hash=03FCBA0D60E091DE00F2361AE76206EA'>MDFF Specification NEM12 NEM13 v2.1</a> for a list of possible values.
+	UnitOfMeasure *string `json:"unitOfMeasure,omitempty" example:"KHW"` // Unit of measure of the meter reads. Refer to Appendix B of <a href='https://www.aemo.com.au/-/media/files/stakeholder_consultation/consultations/nem-consultations/2019/5ms-metering-package-2/final-determination/mdff-specification-nem12-nem13-v21-final-determination-clean.pdf?la=en&hash=03FCBA0D60E091DE00F2361AE76206EA'>MDFF Specification NEM12 NEM13 v2.1</a> for a list of possible values.
 }
 
 // The quality of the read taken.  If absent then assumed to be ACTUAL
