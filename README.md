@@ -98,6 +98,9 @@ func TestTransactions(t *testing.T) {
 
 ## Generating Go
 
-```
-oapi-codegen --old-config-style -generate client,types -package registry cdr_registry.swagger.yaml > registry.gen.go
+```bash
+resource=energy
+cd ${resource}
+oapi-codegen --old-config-style -generate client,types -package ${resource} cdr_${resource}.swagger.json > ${resource}.gen.go
+cd -
 ```
