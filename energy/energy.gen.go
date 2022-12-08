@@ -1002,7 +1002,7 @@ type EnergyAccountDetailV2 struct {
 		AuthorisedContacts *[]struct {
 			// For people with single names this field need not be present. The single name should be in the lastName field
 			FirstName *string `json:"firstName,omitempty"`
-
+			EnergyAdjustments
 			// For people with single names the single name should be in this field
 			LastName string `json:"lastName"`
 
@@ -1082,43 +1082,28 @@ type EnergyAccountListResponseV2 struct {
 	Meta  MetaPaginated  `json:"meta"`
 }
 
+type EnergyPlanOverview struct {
+	DisplayName *string `json:"displayName,omitempty" example:"Albert Wood"` // The name of the plan if one exists
+	EndDate *string `json:"endDate,omitempty" example:"2007-05-01T15:43:00.12345Z"` // The end date of the applicability of this plan
+	StartDate string `json:"startDate" example:"2007-05-01T15:43:00.12345Z"` // The start date of the applicability of this plan
+}
+
+type EnergyPlans struct{
+	Nickname *string `json:"nickname,omitempty" example:"nickname"` // Optional display name for the plan provided by the customer to help differentiate multiple plans
+	// Mandatory if openStatus is OPEN
+	PlanOverview *EnergyPlanOverview `json:"planOverview,omitempty"`  
+	ServicePointIds []string `json:"servicePointIds" example:"43,44,45"` // An array of servicePointIds, representing NMIs, that this plan is linked to.  If there are no service points allocated to this plan then an empty array would be expected
+}
+
 // EnergyAccountV2 defines model for EnergyAccountV2.
 type EnergyAccountV2 struct {
-	// The ID of the account.  To be created in accordance with CDR ID permanence requirements
-	AccountId string `json:"accountId"`
+	AccountId string `json:"accountId" example:"1bbc12c2-ae16-4875-a0f9-8c4ce79c770e"` // The ID of the account.  To be created in accordance with CDR ID permanence requirements
+	AccountNumber *string `json:"accountNumber,omitempty" example:"1bbc12c2-ae16-4875-a0f9-8c4ce79c770e"` // Optional identifier of the account as defined by the data holder.  This must be the value presented on physical statements (if it exists) and must not be used for the value of accountId
+	CreationDate *string `json:"creationDate,omitempty" example:"2022-01-01"`                     // The date that the account was created or opened. Mandatory if openStatus is OPEN
+	DisplayName *string `json:"displayName,omitempty" example:"Albert Wood"`                      // An optional display name for the account if one exists or can be derived.  The content of this field is at the discretion of the data holder
+	OpenStatus *EnergyAccountV2OpenStatus `json:"openStatus,omitempty" example:"OPEN"`                               // Open or closed status for the account. If not present then OPEN is assumed
+	Plans []EnergyPlans `json:"plans,omitempty"`   // The array of plans containing service points and associated plan details
 
-	// Optional identifier of the account as defined by the data holder.  This must be the value presented on physical statements (if it exists) and must not be used for the value of accountId
-	AccountNumber *string `json:"accountNumber,omitempty"`
-
-	// The date that the account was created or opened. Mandatory if openStatus is OPEN
-	CreationDate *string `json:"creationDate,omitempty"`
-
-	// An optional display name for the account if one exists or can be derived.  The content of this field is at the discretion of the data holder
-	DisplayName *string `json:"displayName,omitempty"`
-
-	// Open or closed status for the account. If not present then OPEN is assumed
-	OpenStatus *EnergyAccountV2OpenStatus `json:"openStatus,omitempty"`
-
-	// The array of plans containing service points and associated plan details
-	Plans []struct {
-		// Optional display name for the plan provided by the customer to help differentiate multiple plans
-		Nickname *string `json:"nickname,omitempty"`
-
-		// Mandatory if openStatus is OPEN
-		PlanOverview *struct {
-			// The name of the plan if one exists
-			DisplayName *string `json:"displayName,omitempty"`
-
-			// The end date of the applicability of this plan
-			EndDate *string `json:"endDate,omitempty"`
-
-			// The start date of the applicability of this plan
-			StartDate string `json:"startDate"`
-		} `json:"planOverview,omitempty"`
-
-		// An array of servicePointIds, representing NMIs, that this plan is linked to.  If there are no service points allocated to this plan then an empty array would be expected
-		ServicePointIds []string `json:"servicePointIds"`
-	} `json:"plans"`
 }
 
 // Open or closed status for the account. If not present then OPEN is assumed
@@ -1150,52 +1135,40 @@ type EnergyBalanceResponse struct {
 	Meta  Meta  `json:"meta"`
 }
 
+type EnergyAdjustments struct {
+	Amount string `json:"amount" example:"88"` // The amount of the adjustment
+	Description string `json:"description" example:"description"` // A free text description of the adjustment
+}
+
+type EnergyCalculationFactors struct {
+	Type EnergyBillingDemandTransactionCalculationFactorsType `json:"type" example:"DLF"` // The type of the calculation factor
+	Value float32 `json:"value" example:"44.44"` // The value of the calculation factor
+}
+
 // EnergyBillingDemandTransaction defines model for EnergyBillingDemandTransaction.
 type EnergyBillingDemandTransaction struct {
-	// Optional array of adjustments arising for this transaction
-	Adjustments *[]struct {
-		// The amount of the adjustment
-		Amount string `json:"amount"`
 
-		// A free text description of the adjustment
-		Description string `json:"description"`
-	} `json:"adjustments,omitempty"`
+	Adjustments *[]EnergyAdjustments `json:"adjustments,omitempty"` // Optional array of adjustments arising for this transaction
 
-	// The amount charged or credited for this transaction prior to any adjustments being applied.  A negative value indicates a credit
-	Amount string `json:"amount"`
+	Amount string `json:"amount" example:"66"` // The amount charged or credited for this transaction prior to any adjustments being applied.  A negative value indicates a credit
 
-	// Additional calculation factors that inform the transaction
-	CalculationFactors *[]struct {
-		// The type of the calculation factor
-		Type EnergyBillingDemandTransactionCalculationFactorsType `json:"type"`
+	CalculationFactors *[]EnergyCalculationFactors `json:"calculationFactors,omitempty"`  // Additional calculation factors that inform the transaction
+	
+	Description *string `json:"description,omitempty" example:"description"` // Optional description of the transaction that can be used for display purposes
+	
+	EndDate string `json:"endDate" example:"2007-05-01T15:43:00.12345Z"` // Date and time when the demand period ends
+	
+	InvoiceNumber *string `json:"invoiceNumber,omitempty" example:"4"` // The number of the invoice in which this transaction is included if it has been issued
+	
+	IsEstimate *bool `json:"isEstimate,omitempty" example:"true"` // Flag indicating if the usage is estimated or actual.  True indicates estimate.  False or absent indicates actual
 
-		// The value of the calculation factor
-		Value float32 `json:"value"`
-	} `json:"calculationFactors,omitempty"`
+	Rate float32 `json:"rate" example:"11.15"` // The rate for the demand charge in kVA.  A negative value indicates power generated
 
-	// Optional description of the transaction that can be used for display purposes
-	Description *string `json:"description,omitempty"`
-
-	// Date and time when the demand period ends
-	EndDate string `json:"endDate"`
-
-	// The number of the invoice in which this transaction is included if it has been issued
-	InvoiceNumber *string `json:"invoiceNumber,omitempty"`
-
-	// Flag indicating if the usage is estimated or actual.  True indicates estimate.  False or absent indicates actual
-	IsEstimate *bool `json:"isEstimate,omitempty"`
-
-	// The rate for the demand charge in kVA.  A negative value indicates power generated
-	Rate float32 `json:"rate"`
-
-	// The ID of the service point to which this transaction applies if any
-	ServicePointId *string `json:"servicePointId,omitempty"`
-
-	// Date and time when the demand period starts
-	StartDate string `json:"startDate"`
-
-	// The time of use type that the transaction applies to
-	TimeOfUseType EnergyBillingDemandTransactionTimeOfUseType `json:"timeOfUseType"`
+	ServicePointId *string `json:"servicePointId,omitempty" example:"11"` // The ID of the service point to which this transaction applies if any
+	
+	StartDate string `json:"startDate" example:"2007-05-01T15:43:00.12345Z"` // Date and time when the demand period starts
+	
+	TimeOfUseType EnergyBillingDemandTransactionTimeOfUseType `json:"timeOfUseType" example:"AGGREGATE"`
 }
 
 // The type of the calculation factor
@@ -1216,59 +1189,35 @@ type EnergyBillingListResponse struct {
 
 // EnergyBillingOnceOffTransaction defines model for EnergyBillingOnceOffTransaction.
 type EnergyBillingOnceOffTransaction struct {
-	// The amount of the charge or credit.  A positive value indicates a charge and a negative value indicates a credit
-	Amount string `json:"amount"`
+	
+	Amount string `json:"amount" example:"88"` // The amount of the charge or credit.  A positive value indicates a charge and a negative value indicates a credit
+	
+	Description string `json:"description" example:"description"` // A free text description of the item
 
-	// A free text description of the item
-	Description string `json:"description"`
-
-	// The number of the invoice in which this transaction is included if it has been issued
-	InvoiceNumber *string `json:"invoiceNumber,omitempty"`
-
-	// The ID of the service point to which this transaction applies if any
-	ServicePointId *string `json:"servicePointId,omitempty"`
+	InvoiceNumber *string `json:"invoiceNumber,omitempty" example:"12"` // The number of the invoice in which this transaction is included if it has been issued
+	
+	ServicePointId *string `json:"servicePointId,omitempty" example:"765"` // The ID of the service point to which this transaction applies if any
 }
 
 // EnergyBillingOtherTransaction defines model for EnergyBillingOtherTransaction.
 type EnergyBillingOtherTransaction struct {
-	// Optional array of adjustments arising for this transaction
-	Adjustments *[]struct {
-		// The amount of the adjustment
-		Amount string `json:"amount"`
+	Adjustments *[]EnergyAdjustments `json:"adjustments,omitempty"`  // Optional array of adjustments arising for this transaction
+	
+	Amount string `json:"amount" example:"33"` // The amount of the charge
 
-		// A free text description of the adjustment
-		Description string `json:"description"`
-	} `json:"adjustments,omitempty"`
+	CalculationFactors *[]EnergyCalculationFactors `json:"calculationFactors,omitempty"`  // Additional calculation factors that inform the transaction
+	 
+	Description string `json:"description" example:"description"` // A free text description of the item
 
-	// The amount of the charge
-	Amount string `json:"amount"`
+	EndDate *string `json:"endDate,omitempty" example:"2007-05-01T15:43:00.12345Z"` // Optional end date for the application of the charge
 
-	// Additional calculation factors that inform the transaction
-	CalculationFactors *[]struct {
-		// The type of the calculation factor
-		Type EnergyBillingOtherTransactionCalculationFactorsType `json:"type"`
+	InvoiceNumber *string `json:"invoiceNumber,omitempty" example:"45"` // The number of the invoice in which this transaction is included if it has been issued
 
-		// The value of the calculation factor
-		Value float32 `json:"value"`
-	} `json:"calculationFactors,omitempty"`
+	ServicePointId *string `json:"servicePointId,omitempty" example:"100"` // The ID of the service point to which this transaction applies if any
 
-	// A free text description of the item
-	Description string `json:"description"`
+	StartDate *string `json:"startDate,omitempty" example:"2007-05-01T15:43:00.12345Z"` // Optional start date for the application of the charge
 
-	// Optional end date for the application of the charge
-	EndDate *string `json:"endDate,omitempty"`
-
-	// The number of the invoice in which this transaction is included if it has been issued
-	InvoiceNumber *string `json:"invoiceNumber,omitempty"`
-
-	// The ID of the service point to which this transaction applies if any
-	ServicePointId *string `json:"servicePointId,omitempty"`
-
-	// Optional start date for the application of the charge
-	StartDate *string `json:"startDate,omitempty"`
-
-	// Type of charge. Assumed to be other if absent
-	Type *EnergyBillingOtherTransactionType `json:"type,omitempty"`
+	Type *EnergyBillingOtherTransactionType `json:"type,omitempty" example:"REGULATED"` // Type of charge. Assumed to be other if absent
 }
 
 // The type of the calculation factor
@@ -1279,11 +1228,8 @@ type EnergyBillingOtherTransactionType string
 
 // EnergyBillingPaymentTransaction defines model for EnergyBillingPaymentTransaction.
 type EnergyBillingPaymentTransaction struct {
-	// The amount paid
-	Amount string `json:"amount"`
-
-	// The method of payment
-	Method EnergyBillingPaymentTransactionMethod `json:"method"`
+	Amount string `json:"amount" example:"66"` // The amount paid
+	Method EnergyBillingPaymentTransactionMethod `json:"method" example:"CASH"` // The method of payment
 }
 
 // The method of payment
@@ -1291,21 +1237,14 @@ type EnergyBillingPaymentTransactionMethod string
 
 // EnergyBillingTransaction defines model for EnergyBillingTransaction.
 type EnergyBillingTransaction struct {
-	// The ID of the account for which transaction applies
-	AccountId string                          `json:"accountId"`
+	AccountId string                          `json:"accountId" example:"1bbc12c2-ae16-4875-a0f9-8c4ce79c770e"` // The ID of the account for which transaction applies
 	Demand    *EnergyBillingDemandTransaction `json:"demand,omitempty"`
-
-	// The date and time that the transaction occurred
-	ExecutionDateTime string `json:"executionDateTime"`
-
-	// The GST incurred in the transaction.  Should not be included for credits or payments.  If absent zero is assumed
-	Gst          *string                          `json:"gst,omitempty"`
+	ExecutionDateTime string `json:"executionDateTime" example:"2007-05-01T15:43:00.12345Z"` // The date and time that the transaction occurred
+	Gst          *string                          `json:"gst,omitempty" example:"99"` // The GST incurred in the transaction.  Should not be included for credits or payments.  If absent zero is assumed
 	OnceOff      *EnergyBillingOnceOffTransaction `json:"onceOff,omitempty"`
 	OtherCharges *EnergyBillingOtherTransaction   `json:"otherCharges,omitempty"`
 	Payment      *EnergyBillingPaymentTransaction `json:"payment,omitempty"`
-
-	// Indicator of the type of transaction object present in this record
-	TransactionUType EnergyBillingTransactionTransactionUType `json:"transactionUType"`
+	TransactionUType EnergyBillingTransactionTransactionUType `json:"transactionUType" example:"demand"` // Indicator of the type of transaction object present in this record
 	Usage            *EnergyBillingUsageTransaction           `json:"usage,omitempty"`
 }
 
@@ -1314,53 +1253,30 @@ type EnergyBillingTransactionTransactionUType string
 
 // EnergyBillingUsageTransaction defines model for EnergyBillingUsageTransaction.
 type EnergyBillingUsageTransaction struct {
-	// Optional array of adjustments arising for this transaction
-	Adjustments *[]struct {
-		// The amount of the adjustment
-		Amount string `json:"amount"`
 
-		// A free text description of the adjustment
-		Description string `json:"description"`
-	} `json:"adjustments,omitempty"`
+	Adjustments *[]EnergyAdjustments `json:"adjustments,omitempty"`  // Optional array of adjustments arising for this transaction
 
-	// The amount charged or credited for this transaction prior to any adjustments being applied.  A negative value indicates a credit
-	Amount string `json:"amount"`
+	Amount string `json:"amount"  example:"43.65"` // The amount charged or credited for this transaction prior to any adjustments being applied.  A negative value indicates a credit
 
-	// Additional calculation factors that inform the transaction
-	CalculationFactors *[]struct {
-		// The type of the calculation factor
-		Type EnergyBillingUsageTransactionCalculationFactorsType `json:"type"`
+	CalculationFactors *[]EnergyCalculationFactors `json:"calculationFactors,omitempty"` // Additional calculation factors that inform the transaction
+	
+	Description *string `json:"description,omitempty" example:"description"` // Optional description of the transaction that can be used for display purposes
 
-		// The value of the calculation factor
-		Value float32 `json:"value"`
-	} `json:"calculationFactors,omitempty"`
+	EndDate string `json:"endDate" example:"2007-05-01T15:43:00.12345Z"` // Date and time when the usage period ends
+	
+	InvoiceNumber *string `json:"invoiceNumber,omitempty" example:"8"` // The number of the invoice in which this transaction is included if it has been issued
 
-	// Optional description of the transaction that can be used for display purposes
-	Description *string `json:"description,omitempty"`
+	IsEstimate *bool `json:"isEstimate,omitempty" example:"true"` // Flag indicating if the usage is estimated or actual.  True indicates estimate.  False or absent indicates actual
+	
+	MeasureUnit *EnergyBillingUsageTransactionMeasureUnit `json:"measureUnit,omitempty" example:"KWH"` // The measurement unit of rate. Assumed to be KWH if absent
+	
+	ServicePointId *string `json:"servicePointId,omitempty" example:"15"` // The ID of the service point to which this transaction applies if any
 
-	// Date and time when the usage period ends
-	EndDate string `json:"endDate"`
+	StartDate string `json:"startDate" example:"2007-05-01T15:43:00.12345Z"` // Date and time when the usage period starts
+	
+	TimeOfUseType EnergyBillingUsageTransactionTimeOfUseType `json:"timeOfUseType" example:"PEAK"` // The time of use type that the transaction applies to
 
-	// The number of the invoice in which this transaction is included if it has been issued
-	InvoiceNumber *string `json:"invoiceNumber,omitempty"`
-
-	// Flag indicating if the usage is estimated or actual.  True indicates estimate.  False or absent indicates actual
-	IsEstimate *bool `json:"isEstimate,omitempty"`
-
-	// The measurement unit of rate. Assumed to be KWH if absent
-	MeasureUnit *EnergyBillingUsageTransactionMeasureUnit `json:"measureUnit,omitempty"`
-
-	// The ID of the service point to which this transaction applies if any
-	ServicePointId *string `json:"servicePointId,omitempty"`
-
-	// Date and time when the usage period starts
-	StartDate string `json:"startDate"`
-
-	// The time of use type that the transaction applies to
-	TimeOfUseType EnergyBillingUsageTransactionTimeOfUseType `json:"timeOfUseType"`
-
-	// The usage for the period in measure unit.  A negative value indicates power generated
-	Usage float32 `json:"usage"`
+	Usage float32 `json:"usage" example:"32.55"` // The usage for the period in measure unit.  A negative value indicates power generated
 }
 
 // The type of the calculation factor
@@ -2838,67 +2754,51 @@ type EnergyUsageListResponse struct {
 	Meta  MetaPaginated  `json:"meta"`
 }
 
+type EnergyReadQualities struct {
+	EndInterval int `json:"endInterval" example:"1"` // End interval for read quality flag
+}
+
+type EnergyIntervalRead struct {
+	AggregateValue float32 `json:"aggregateValue" example:"55.55"` // The aggregate sum of the interval read values. If positive then it means net consumption, if negative it means net export
+
+	IntervalReads *[]float32 `json:"intervalReads,omitempty" example:"11.12,13.14"` // Array of Interval read values. If positive then it means consumption, if negative it means export. Required when interval-reads query parameter equals FULL or  MIN_30.<br>Each read value indicates the read for the interval specified by readIntervalLength beginning at midnight of readStartDate (for example 00:00 to 00:30 would be the first reading in a 30 minute Interval)
+
+	ReadIntervalLength *int `json:"readIntervalLength,omitempty" example:"2"` // Read interval length in minutes. Required when interval-reads query parameter equals FULL or MIN_30
+
+	ReadQualities *[]EnergyReadQualities `json:"readQualities,omitempty"` //  Specifies quality of reads that are not ACTUAL.  For read indices that are not specified, quality is assumed to be ACTUAL. If not present, all quality of all reads are assumed to be actual. Required when interval-reads query parameter equals FULL or MIN_30
+}
+
+type EnergyBasicRead struct {
+	
+	Quality *EnergyUsageReadBasicReadQuality `json:"quality,omitempty" example:"ACTUAL"` // The quality of the read taken.  If absent then assumed to be ACTUAL
+	
+	Value float32 `json:"value" example:"12.12"` // Meter read value.  If positive then it means consumption, if negative it means export
+}
+
 // EnergyUsageRead defines model for EnergyUsageRead.
 type EnergyUsageRead struct {
-	// Mandatory if readUType is set to basicRead
-	BasicRead *struct {
-		// The quality of the read taken.  If absent then assumed to be ACTUAL
-		Quality *EnergyUsageReadBasicReadQuality `json:"quality,omitempty"`
+	
+	BasicRead *EnergyBasicRead `json:"basicRead,omitempty"` // Mandatory if readUType is set to basicRead
 
-		// Meter read value.  If positive then it means consumption, if negative it means export
-		Value float32 `json:"value"`
-	} `json:"basicRead,omitempty"`
+	ControlledLoad *bool `json:"controlledLoad,omitempty" example:"true"` // Indicates whether the energy recorded by this regirunningster is created under a Controlled Load regime
 
-	// Indicates whether the energy recorded by this register is created under a Controlled Load regime
-	ControlledLoad *bool `json:"controlledLoad,omitempty"`
+	IntervalRead *EnergyIntervalRead `json:"intervalRead,omitempty"` // Mandatory if readUType is set to intervalRead
 
-	// Mandatory if readUType is set to intervalRead
-	IntervalRead *struct {
-		// The aggregate sum of the interval read values. If positive then it means net consumption, if negative it means net export
-		AggregateValue float32 `json:"aggregateValue"`
+	MeterId *string `json:"meterId,omitempty" example:"7"` // Meter id/serial number as it appears in customer’s bill. ID permanence rules do not apply.
 
-		// Array of Interval read values. If positive then it means consumption, if negative it means export. Required when interval-reads query parameter equals FULL or  MIN_30.<br>Each read value indicates the read for the interval specified by readIntervalLength beginning at midnight of readStartDate (for example 00:00 to 00:30 would be the first reading in a 30 minute Interval)
-		IntervalReads *[]float32 `json:"intervalReads,omitempty"`
+	ReadEndDate *string `json:"readEndDate,omitempty" example:"2007-05-01T15:43:00.12345Z"` // Date when the meter reads end in AEST.  If absent then assumed to be equal to readStartDate.  In this case the entry represents data for a single date specified by readStartDate.
+	
+	ReadStartDate string `json:"readStartDate" example:"2007-05-01T15:43:00.12345Z"` // Date when the meter reads start in AEST and assumed to start from 12:00 am AEST.
 
-		// Read interval length in minutes. Required when interval-reads query parameter equals FULL or MIN_30
-		ReadIntervalLength *int `json:"readIntervalLength,omitempty"`
+	ReadUType EnergyUsageReadReadUType `json:"readUType" example:"basicRead"` // Specify the type of the meter read data
 
-		//  Specifies quality of reads that are not ACTUAL.  For read indices that are not specified, quality is assumed to be ACTUAL. If not present, all quality of all reads are assumed to be actual. Required when interval-reads query parameter equals FULL or MIN_30
-		ReadQualities *[]struct {
-			// End interval for read quality flag
-			EndInterval int `json:"endInterval"`
+	RegisterId *string `json:"registerId,omitempty" example:"9"` // Register ID of the meter register where the meter reads are obtained
 
-			// The quality of the read taken
-			Quality EnergyUsageReadIntervalReadReadQualitiesQuality `json:"quality"`
+	RegisterSuffix string `json:"registerSuffix" example:"suffix"` // Register suffix of the meter register where the meter reads are obtained
+	
+	ServicePointId string `json:"servicePointId" example:"ServicePointId"` // Tokenised ID of the service point to be used for referring to the service point in the CDR API suite.  To be created in accordance with CDR ID permanence requirements
 
-			// Start interval for read quality flag. First read begins at 1
-			StartInterval int `json:"startInterval"`
-		} `json:"readQualities,omitempty"`
-	} `json:"intervalRead,omitempty"`
-
-	// Meter id/serial number as it appears in customer’s bill. ID permanence rules do not apply.
-	MeterId *string `json:"meterId,omitempty"`
-
-	// Date when the meter reads end in AEST.  If absent then assumed to be equal to readStartDate.  In this case the entry represents data for a single date specified by readStartDate.
-	ReadEndDate *string `json:"readEndDate,omitempty"`
-
-	// Date when the meter reads start in AEST and assumed to start from 12:00 am AEST.
-	ReadStartDate string `json:"readStartDate"`
-
-	// Specify the type of the meter read data
-	ReadUType EnergyUsageReadReadUType `json:"readUType"`
-
-	// Register ID of the meter register where the meter reads are obtained
-	RegisterId *string `json:"registerId,omitempty"`
-
-	// Register suffix of the meter register where the meter reads are obtained
-	RegisterSuffix string `json:"registerSuffix"`
-
-	// Tokenised ID of the service point to be used for referring to the service point in the CDR API suite.  To be created in accordance with CDR ID permanence requirements
-	ServicePointId string `json:"servicePointId"`
-
-	// Unit of measure of the meter reads. Refer to Appendix B of <a href='https://www.aemo.com.au/-/media/files/stakeholder_consultation/consultations/nem-consultations/2019/5ms-metering-package-2/final-determination/mdff-specification-nem12-nem13-v21-final-determination-clean.pdf?la=en&hash=03FCBA0D60E091DE00F2361AE76206EA'>MDFF Specification NEM12 NEM13 v2.1</a> for a list of possible values.
-	UnitOfMeasure *string `json:"unitOfMeasure,omitempty"`
+	UnitOfMeasure *string `json:"unitOfMeasure,omitempty" example:"KHW"` // Unit of measure of the meter reads. Refer to Appendix B of <a href='https://www.aemo.com.au/-/media/files/stakeholder_consultation/consultations/nem-consultations/2019/5ms-metering-package-2/final-determination/mdff-specification-nem12-nem13-v21-final-determination-clean.pdf?la=en&hash=03FCBA0D60E091DE00F2361AE76206EA'>MDFF Specification NEM12 NEM13 v2.1</a> for a list of possible values.
 }
 
 // The quality of the read taken.  If absent then assumed to be ACTUAL
