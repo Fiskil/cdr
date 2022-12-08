@@ -1378,10 +1378,10 @@ type EnergyDerRecord struct {
 			// The model number of the device. If absent then assumed to be “unknown”
 			ModelNumber *string `json:"modelNumber,omitempty"`
 
-			// Maximum output in kVA that is listed in the product specification by the manufacturer. This refers to the capacity of each unit within the device group
+			// Maximum output in kVA that is listed in the product specification by the manufacturer. This refers to the capacity of each unit within the device group. Default is 0 if value not known
 			NominalRatedCapacity float32 `json:"nominalRatedCapacity"`
 
-			// Maximum storage capacity in kVAh. This refers to the capacity of each storage module within the device group. Mandatory if type is equal to “STORAGE”
+			// Maximum storage capacity in kVAh. This refers to the capacity of each storage module within the device group. Mandatory if type is equal to “STORAGE”. Default is 0 if value not known
 			NominalStorageCapacity *float32 `json:"nominalStorageCapacity,omitempty"`
 
 			// Code used to indicate the status of the device. This will be used to identify if an inverter is active or inactive or decommissioned
@@ -1397,7 +1397,7 @@ type EnergyDerRecord struct {
 		// Indicates whether the DER device is connected via an inverter (and what category of inverter it is) or not (e.g. rotating machine). If absent, assume equipment type to be “OTHER”.
 		EquipmentType *EnergyDerRecordAcConnectionsEquipmentType `json:"equipmentType,omitempty"`
 
-		// The rated AC output power that is listed in the product specified by the manufacturer. Mandatory if equipmentType is INVERTER
+		// The rated AC output power that is listed in the product specified by the manufacturer. Mandatory if equipmentType is INVERTER. Default is 0 if value not known
 		InverterDeviceCapacity *float32 `json:"inverterDeviceCapacity,omitempty"`
 
 		// The inverter model number. Mandatory if equipmentType is INVERTER
@@ -1413,16 +1413,16 @@ type EnergyDerRecord struct {
 		Status EnergyDerRecordAcConnectionsStatus `json:"status"`
 	} `json:"acConnections"`
 
-	// Approved small generating unit capacity as agreed with NSP in the connection agreement, expressed in kVA
+	// Approved small generating unit capacity as agreed with NSP in the connection agreement, expressed in kVA. Value of 0 indicates no DER record exists for the given servicePointId
 	ApprovedCapacity float32 `json:"approvedCapacity"`
 
-	// The number of phases available for the installation of DER. Acceptable values are 1, 2 or 3.
+	// The number of phases available for the installation of DER. Acceptable values are 0, 1, 2 or 3. Value of 0 indicates no DER record exists for the given servicePointId
 	AvailablePhasesCount int `json:"availablePhasesCount"`
 
 	// For DER installations where NSPs specify the need for additional forms of protection above those inbuilt in an inverter.  If absent then assumed to be false
 	HasCentralProtectionControl *bool `json:"hasCentralProtectionControl,omitempty"`
 
-	// The number of phases that DER is connected to. Acceptable values are 1, 2 or 3.
+	// The number of phases that DER is connected to. Acceptable values are 0, 1, 2 or 3. Value of 0 indicates no DER record exists for the given servicePointId
 	InstalledPhasesCount int `json:"installedPhasesCount"`
 
 	// For identification of small generating units designed with the ability to operate in an islanded mode
@@ -2569,7 +2569,7 @@ type EnergyServicePoint struct {
 	// Code used to indicate the status of the service point. Note the details for the enumeration values below:<ul><li>**ACTIVE** - An active, energised, service point</li><li>**DE_ENERGISED** - The service point exists but is deenergised</li><li>**EXTINCT** - The service point has been permanently decommissioned</li><li>**GREENFIELD** - Applies to a service point that has never been energised</li><li>**OFF_MARKET** - Applies when the service point is no longer settled in the NEM</li></ul>
 	ServicePointStatus EnergyServicePointServicePointStatus `json:"servicePointStatus"`
 
-	// The start date from which this service point first became valid
+	// The latest start date from which the constituent data sets of this service point became valid
 	ValidFromDate string `json:"validFromDate"`
 }
 
@@ -2694,7 +2694,7 @@ type EnergyServicePointDetail struct {
 	// Code used to indicate the status of the service point. Note the details for the enumeration values below:<ul><li>**ACTIVE** - An active, energised, service point</li><li>**DE_ENERGISED** - The service point exists but is deenergised</li><li>**EXTINCT** - The service point has been permanently decommissioned</li><li>**GREENFIELD** - Applies to a service point that has never been energised</li><li>**OFF_MARKET** - Applies when the service point is no longer settled in the NEM</li></ul>
 	ServicePointStatus EnergyServicePointDetailServicePointStatus `json:"servicePointStatus"`
 
-	// The start date from which this service point first became valid
+	// The latest start date from which the constituent data sets of this service point became valid
 	ValidFromDate string `json:"validFromDate"`
 }
 
@@ -2756,10 +2756,6 @@ type EnergyUsageListResponse struct {
 
 type EnergyReadQualities struct {
 	EndInterval int `json:"endInterval" example:"1"` // End interval for read quality flag
-
-	Quality EnergyUsageReadIntervalReadReadQualitiesQuality `json:"quality" example:"SUBSTITUTE"` // The quality of the read taken
-
-	StartInterval int `json:"startInterval" example:"4"` // Start interval for read quality flag. First read begins at 1
 }
 
 type EnergyIntervalRead struct {
@@ -2769,7 +2765,7 @@ type EnergyIntervalRead struct {
 
 	ReadIntervalLength *int `json:"readIntervalLength,omitempty" example:"2"` // Read interval length in minutes. Required when interval-reads query parameter equals FULL or MIN_30
 
-	ReadQualities *EnergyReadQualities `json:"readQualities,omitempty"` //  Specifies quality of reads that are not ACTUAL.  For read indices that are not specified, quality is assumed to be ACTUAL. If not present, all quality of all reads are assumed to be actual. Required when interval-reads query parameter equals FULL or MIN_30
+	ReadQualities *[]EnergyReadQualities `json:"readQualities,omitempty"` //  Specifies quality of reads that are not ACTUAL.  For read indices that are not specified, quality is assumed to be ACTUAL. If not present, all quality of all reads are assumed to be actual. Required when interval-reads query parameter equals FULL or MIN_30
 }
 
 type EnergyBasicRead struct {
@@ -2879,11 +2875,17 @@ type IntervalReads string
 // NewestDate defines model for newest-date.
 type NewestDate = string
 
+// NewestDateInvoices defines model for newest-date-invoices.
+type NewestDateInvoices = string
+
 // NewestTime defines model for newest-time.
 type NewestTime = string
 
 // OldestDate defines model for oldest-date.
 type OldestDate = string
+
+// OldestDateInvoices defines model for oldest-date-invoices.
+type OldestDateInvoices = string
 
 // OldestTime defines model for oldest-time.
 type OldestTime = string
@@ -3136,11 +3138,11 @@ type ListBillingForAccountsParams struct {
 
 // ListInvoicesBulkParams defines parameters for ListInvoicesBulk.
 type ListInvoicesBulkParams struct {
-	// Constrain the request to records with effective date at or before this date.  If absent defaults to current date.  Format is aligned to DateString common type
-	NewestDate *NewestDate `form:"newest-date,omitempty" json:"newest-date,omitempty"`
+	// Constrain the request to records with issue date at or before this date.  If absent defaults to current date.  Format is aligned to DateString common type
+	NewestDate *NewestDateInvoices `form:"newest-date,omitempty" json:"newest-date,omitempty"`
 
-	// Constrain the request to records with effective date at or after this date. If absent defaults to newest-date minus 24 months.  Format is aligned to DateString common type
-	OldestDate *OldestDate `form:"oldest-date,omitempty" json:"oldest-date,omitempty"`
+	// Constrain the request to records with issue date at or after this date. If absent defaults to newest-date minus 24 months.  Format is aligned to DateString common type
+	OldestDate *OldestDateInvoices `form:"oldest-date,omitempty" json:"oldest-date,omitempty"`
 
 	// Page of results to request (standard pagination)
 	Page *Page `form:"page,omitempty" json:"page,omitempty"`
@@ -3169,11 +3171,11 @@ type ListInvoicesBulkParams struct {
 
 // ListInvoicesForAccountsParams defines parameters for ListInvoicesForAccounts.
 type ListInvoicesForAccountsParams struct {
-	// Constrain the request to records with effective date at or before this date.  If absent defaults to current date.  Format is aligned to DateString common type
-	NewestDate *NewestDate `form:"newest-date,omitempty" json:"newest-date,omitempty"`
+	// Constrain the request to records with issue date at or before this date.  If absent defaults to current date.  Format is aligned to DateString common type
+	NewestDate *NewestDateInvoices `form:"newest-date,omitempty" json:"newest-date,omitempty"`
 
-	// Constrain the request to records with effective date at or after this date. If absent defaults to newest-date minus 24 months.  Format is aligned to DateString common type
-	OldestDate *OldestDate `form:"oldest-date,omitempty" json:"oldest-date,omitempty"`
+	// Constrain the request to records with issue date at or after this date. If absent defaults to newest-date minus 24 months.  Format is aligned to DateString common type
+	OldestDate *OldestDateInvoices `form:"oldest-date,omitempty" json:"oldest-date,omitempty"`
 
 	// Page of results to request (standard pagination)
 	Page *Page `form:"page,omitempty" json:"page,omitempty"`
@@ -3304,11 +3306,11 @@ type GetConcessionsParams struct {
 
 // GetInvoicesForAccountParams defines parameters for GetInvoicesForAccount.
 type GetInvoicesForAccountParams struct {
-	// Constrain the request to records with effective date at or before this date.  If absent defaults to current date.  Format is aligned to DateString common type
-	NewestDate *NewestDate `form:"newest-date,omitempty" json:"newest-date,omitempty"`
+	// Constrain the request to records with issue date at or before this date.  If absent defaults to current date.  Format is aligned to DateString common type
+	NewestDate *NewestDateInvoices `form:"newest-date,omitempty" json:"newest-date,omitempty"`
 
-	// Constrain the request to records with effective date at or after this date. If absent defaults to newest-date minus 24 months.  Format is aligned to DateString common type
-	OldestDate *OldestDate `form:"oldest-date,omitempty" json:"oldest-date,omitempty"`
+	// Constrain the request to records with issue date at or after this date. If absent defaults to newest-date minus 24 months.  Format is aligned to DateString common type
+	OldestDate *OldestDateInvoices `form:"oldest-date,omitempty" json:"oldest-date,omitempty"`
 
 	// Page of results to request (standard pagination)
 	Page *Page `form:"page,omitempty" json:"page,omitempty"`
