@@ -16,56 +16,74 @@ import (
 	"github.com/deepmap/oapi-codegen/pkg/runtime"
 )
 
-// Defines values for BankingAccountOpenStatus.
+// Defines values for BankingAccountDetailV3AccountOwnership.
 const (
-	BankingAccountOpenStatusCLOSED BankingAccountOpenStatus = "CLOSED"
-	BankingAccountOpenStatusOPEN   BankingAccountOpenStatus = "OPEN"
+	BankingAccountDetailV3AccountOwnershipMANYPARTY BankingAccountDetailV3AccountOwnership = "MANY_PARTY"
+	BankingAccountDetailV3AccountOwnershipONEPARTY  BankingAccountDetailV3AccountOwnership = "ONE_PARTY"
+	BankingAccountDetailV3AccountOwnershipOTHER     BankingAccountDetailV3AccountOwnership = "OTHER"
+	BankingAccountDetailV3AccountOwnershipTWOPARTY  BankingAccountDetailV3AccountOwnership = "TWO_PARTY"
+	BankingAccountDetailV3AccountOwnershipUNKNOWN   BankingAccountDetailV3AccountOwnership = "UNKNOWN"
 )
 
-// Defines values for BankingAccountDetailV2FeaturesFeatureType.
+// Defines values for BankingAccountDetailV3FeaturesFeatureType.
 const (
-	BankingAccountDetailV2FeaturesFeatureTypeADDITIONALCARDS               BankingAccountDetailV2FeaturesFeatureType = "ADDITIONAL_CARDS"
-	BankingAccountDetailV2FeaturesFeatureTypeBALANCETRANSFERS              BankingAccountDetailV2FeaturesFeatureType = "BALANCE_TRANSFERS"
-	BankingAccountDetailV2FeaturesFeatureTypeBILLPAYMENT                   BankingAccountDetailV2FeaturesFeatureType = "BILL_PAYMENT"
-	BankingAccountDetailV2FeaturesFeatureTypeBONUSREWARDS                  BankingAccountDetailV2FeaturesFeatureType = "BONUS_REWARDS"
-	BankingAccountDetailV2FeaturesFeatureTypeCARDACCESS                    BankingAccountDetailV2FeaturesFeatureType = "CARD_ACCESS"
-	BankingAccountDetailV2FeaturesFeatureTypeCASHBACKOFFER                 BankingAccountDetailV2FeaturesFeatureType = "CASHBACK_OFFER"
-	BankingAccountDetailV2FeaturesFeatureTypeCOMPLEMENTARYPRODUCTDISCOUNTS BankingAccountDetailV2FeaturesFeatureType = "COMPLEMENTARY_PRODUCT_DISCOUNTS"
-	BankingAccountDetailV2FeaturesFeatureTypeDIGITALBANKING                BankingAccountDetailV2FeaturesFeatureType = "DIGITAL_BANKING"
-	BankingAccountDetailV2FeaturesFeatureTypeDIGITALWALLET                 BankingAccountDetailV2FeaturesFeatureType = "DIGITAL_WALLET"
-	BankingAccountDetailV2FeaturesFeatureTypeDONATEINTEREST                BankingAccountDetailV2FeaturesFeatureType = "DONATE_INTEREST"
-	BankingAccountDetailV2FeaturesFeatureTypeEXTRAREPAYMENTS               BankingAccountDetailV2FeaturesFeatureType = "EXTRA_REPAYMENTS"
-	BankingAccountDetailV2FeaturesFeatureTypeFRAUDPROTECTION               BankingAccountDetailV2FeaturesFeatureType = "FRAUD_PROTECTION"
-	BankingAccountDetailV2FeaturesFeatureTypeFREETXNS                      BankingAccountDetailV2FeaturesFeatureType = "FREE_TXNS"
-	BankingAccountDetailV2FeaturesFeatureTypeFREETXNSALLOWANCE             BankingAccountDetailV2FeaturesFeatureType = "FREE_TXNS_ALLOWANCE"
-	BankingAccountDetailV2FeaturesFeatureTypeGUARANTOR                     BankingAccountDetailV2FeaturesFeatureType = "GUARANTOR"
-	BankingAccountDetailV2FeaturesFeatureTypeINSTALMENTPLAN                BankingAccountDetailV2FeaturesFeatureType = "INSTALMENT_PLAN"
-	BankingAccountDetailV2FeaturesFeatureTypeINSURANCE                     BankingAccountDetailV2FeaturesFeatureType = "INSURANCE"
-	BankingAccountDetailV2FeaturesFeatureTypeINTERESTFREE                  BankingAccountDetailV2FeaturesFeatureType = "INTEREST_FREE"
-	BankingAccountDetailV2FeaturesFeatureTypeINTERESTFREETRANSFERS         BankingAccountDetailV2FeaturesFeatureType = "INTEREST_FREE_TRANSFERS"
-	BankingAccountDetailV2FeaturesFeatureTypeLOYALTYPROGRAM                BankingAccountDetailV2FeaturesFeatureType = "LOYALTY_PROGRAM"
-	BankingAccountDetailV2FeaturesFeatureTypeNOTIFICATIONS                 BankingAccountDetailV2FeaturesFeatureType = "NOTIFICATIONS"
-	BankingAccountDetailV2FeaturesFeatureTypeNPPENABLED                    BankingAccountDetailV2FeaturesFeatureType = "NPP_ENABLED"
-	BankingAccountDetailV2FeaturesFeatureTypeNPPPAYID                      BankingAccountDetailV2FeaturesFeatureType = "NPP_PAYID"
-	BankingAccountDetailV2FeaturesFeatureTypeOFFSET                        BankingAccountDetailV2FeaturesFeatureType = "OFFSET"
-	BankingAccountDetailV2FeaturesFeatureTypeOTHER                         BankingAccountDetailV2FeaturesFeatureType = "OTHER"
-	BankingAccountDetailV2FeaturesFeatureTypeOVERDRAFT                     BankingAccountDetailV2FeaturesFeatureType = "OVERDRAFT"
-	BankingAccountDetailV2FeaturesFeatureTypeREDRAW                        BankingAccountDetailV2FeaturesFeatureType = "REDRAW"
-	BankingAccountDetailV2FeaturesFeatureTypeRELATIONSHIPMANAGEMENT        BankingAccountDetailV2FeaturesFeatureType = "RELATIONSHIP_MANAGEMENT"
-	BankingAccountDetailV2FeaturesFeatureTypeUNLIMITEDTXNS                 BankingAccountDetailV2FeaturesFeatureType = "UNLIMITED_TXNS"
+	BankingAccountDetailV3FeaturesFeatureTypeADDITIONALCARDS               BankingAccountDetailV3FeaturesFeatureType = "ADDITIONAL_CARDS"
+	BankingAccountDetailV3FeaturesFeatureTypeBALANCETRANSFERS              BankingAccountDetailV3FeaturesFeatureType = "BALANCE_TRANSFERS"
+	BankingAccountDetailV3FeaturesFeatureTypeBILLPAYMENT                   BankingAccountDetailV3FeaturesFeatureType = "BILL_PAYMENT"
+	BankingAccountDetailV3FeaturesFeatureTypeBONUSREWARDS                  BankingAccountDetailV3FeaturesFeatureType = "BONUS_REWARDS"
+	BankingAccountDetailV3FeaturesFeatureTypeCARDACCESS                    BankingAccountDetailV3FeaturesFeatureType = "CARD_ACCESS"
+	BankingAccountDetailV3FeaturesFeatureTypeCASHBACKOFFER                 BankingAccountDetailV3FeaturesFeatureType = "CASHBACK_OFFER"
+	BankingAccountDetailV3FeaturesFeatureTypeCOMPLEMENTARYPRODUCTDISCOUNTS BankingAccountDetailV3FeaturesFeatureType = "COMPLEMENTARY_PRODUCT_DISCOUNTS"
+	BankingAccountDetailV3FeaturesFeatureTypeDIGITALBANKING                BankingAccountDetailV3FeaturesFeatureType = "DIGITAL_BANKING"
+	BankingAccountDetailV3FeaturesFeatureTypeDIGITALWALLET                 BankingAccountDetailV3FeaturesFeatureType = "DIGITAL_WALLET"
+	BankingAccountDetailV3FeaturesFeatureTypeDONATEINTEREST                BankingAccountDetailV3FeaturesFeatureType = "DONATE_INTEREST"
+	BankingAccountDetailV3FeaturesFeatureTypeEXTRAREPAYMENTS               BankingAccountDetailV3FeaturesFeatureType = "EXTRA_REPAYMENTS"
+	BankingAccountDetailV3FeaturesFeatureTypeFRAUDPROTECTION               BankingAccountDetailV3FeaturesFeatureType = "FRAUD_PROTECTION"
+	BankingAccountDetailV3FeaturesFeatureTypeFREETXNS                      BankingAccountDetailV3FeaturesFeatureType = "FREE_TXNS"
+	BankingAccountDetailV3FeaturesFeatureTypeFREETXNSALLOWANCE             BankingAccountDetailV3FeaturesFeatureType = "FREE_TXNS_ALLOWANCE"
+	BankingAccountDetailV3FeaturesFeatureTypeGUARANTOR                     BankingAccountDetailV3FeaturesFeatureType = "GUARANTOR"
+	BankingAccountDetailV3FeaturesFeatureTypeINSTALMENTPLAN                BankingAccountDetailV3FeaturesFeatureType = "INSTALMENT_PLAN"
+	BankingAccountDetailV3FeaturesFeatureTypeINSURANCE                     BankingAccountDetailV3FeaturesFeatureType = "INSURANCE"
+	BankingAccountDetailV3FeaturesFeatureTypeINTERESTFREE                  BankingAccountDetailV3FeaturesFeatureType = "INTEREST_FREE"
+	BankingAccountDetailV3FeaturesFeatureTypeINTERESTFREETRANSFERS         BankingAccountDetailV3FeaturesFeatureType = "INTEREST_FREE_TRANSFERS"
+	BankingAccountDetailV3FeaturesFeatureTypeLOYALTYPROGRAM                BankingAccountDetailV3FeaturesFeatureType = "LOYALTY_PROGRAM"
+	BankingAccountDetailV3FeaturesFeatureTypeNOTIFICATIONS                 BankingAccountDetailV3FeaturesFeatureType = "NOTIFICATIONS"
+	BankingAccountDetailV3FeaturesFeatureTypeNPPENABLED                    BankingAccountDetailV3FeaturesFeatureType = "NPP_ENABLED"
+	BankingAccountDetailV3FeaturesFeatureTypeNPPPAYID                      BankingAccountDetailV3FeaturesFeatureType = "NPP_PAYID"
+	BankingAccountDetailV3FeaturesFeatureTypeOFFSET                        BankingAccountDetailV3FeaturesFeatureType = "OFFSET"
+	BankingAccountDetailV3FeaturesFeatureTypeOTHER                         BankingAccountDetailV3FeaturesFeatureType = "OTHER"
+	BankingAccountDetailV3FeaturesFeatureTypeOVERDRAFT                     BankingAccountDetailV3FeaturesFeatureType = "OVERDRAFT"
+	BankingAccountDetailV3FeaturesFeatureTypeREDRAW                        BankingAccountDetailV3FeaturesFeatureType = "REDRAW"
+	BankingAccountDetailV3FeaturesFeatureTypeRELATIONSHIPMANAGEMENT        BankingAccountDetailV3FeaturesFeatureType = "RELATIONSHIP_MANAGEMENT"
+	BankingAccountDetailV3FeaturesFeatureTypeUNLIMITEDTXNS                 BankingAccountDetailV3FeaturesFeatureType = "UNLIMITED_TXNS"
 )
 
-// Defines values for BankingAccountDetailV2OpenStatus.
+// Defines values for BankingAccountDetailV3OpenStatus.
 const (
-	BankingAccountDetailV2OpenStatusCLOSED BankingAccountDetailV2OpenStatus = "CLOSED"
-	BankingAccountDetailV2OpenStatusOPEN   BankingAccountDetailV2OpenStatus = "OPEN"
+	BankingAccountDetailV3OpenStatusCLOSED BankingAccountDetailV3OpenStatus = "CLOSED"
+	BankingAccountDetailV3OpenStatusOPEN   BankingAccountDetailV3OpenStatus = "OPEN"
 )
 
-// Defines values for BankingAccountDetailV2SpecificAccountUType.
+// Defines values for BankingAccountDetailV3SpecificAccountUType.
 const (
-	CreditCard  BankingAccountDetailV2SpecificAccountUType = "creditCard"
-	Loan        BankingAccountDetailV2SpecificAccountUType = "loan"
-	TermDeposit BankingAccountDetailV2SpecificAccountUType = "termDeposit"
+	CreditCard  BankingAccountDetailV3SpecificAccountUType = "creditCard"
+	Loan        BankingAccountDetailV3SpecificAccountUType = "loan"
+	TermDeposit BankingAccountDetailV3SpecificAccountUType = "termDeposit"
+)
+
+// Defines values for BankingAccountV2AccountOwnership.
+const (
+	BankingAccountV2AccountOwnershipMANYPARTY BankingAccountV2AccountOwnership = "MANY_PARTY"
+	BankingAccountV2AccountOwnershipONEPARTY  BankingAccountV2AccountOwnership = "ONE_PARTY"
+	BankingAccountV2AccountOwnershipOTHER     BankingAccountV2AccountOwnership = "OTHER"
+	BankingAccountV2AccountOwnershipTWOPARTY  BankingAccountV2AccountOwnership = "TWO_PARTY"
+	BankingAccountV2AccountOwnershipUNKNOWN   BankingAccountV2AccountOwnership = "UNKNOWN"
+)
+
+// Defines values for BankingAccountV2OpenStatus.
+const (
+	BankingAccountV2OpenStatusCLOSED BankingAccountV2OpenStatus = "CLOSED"
+	BankingAccountV2OpenStatusOPEN   BankingAccountV2OpenStatus = "OPEN"
 )
 
 // Defines values for BankingDigitalWalletPayeeProvider.
@@ -532,46 +550,16 @@ const (
 	ListProductsParamsProductCategoryTRAVELCARDS             ListProductsParamsProductCategory = "TRAVEL_CARDS"
 )
 
-// BankingAccount defines model for BankingAccount.
-type BankingAccount struct {
-	// AccountId A unique ID of the account adhering to the standards for ID permanence
-	AccountId string `json:"accountId"`
-
-	// CreationDate Date that the account was created (if known)
-	CreationDate *string `json:"creationDate,omitempty"`
-
-	// DisplayName The display name of the account as defined by the bank. This should not incorporate account numbers or PANs. If it does the values should be masked according to the rules of the MaskedAccountString common type.
-	DisplayName string `json:"displayName"`
-
-	// IsOwned Flag indicating that the customer associated with the authorisation is an owner of the account. Does not indicate sole ownership, however. If not present then 'true' is assumed
-	IsOwned *bool `json:"isOwned,omitempty"`
-
-	// MaskedNumber A masked version of the account. Whether BSB/Account Number, Credit Card PAN or another number
-	MaskedNumber string `json:"maskedNumber"`
-
-	// Nickname A customer supplied nick name for the account
-	Nickname *string `json:"nickname,omitempty"`
-
-	// OpenStatus Open or closed status for the account. If not present then OPEN is assumed
-	OpenStatus *BankingAccountOpenStatus `json:"openStatus,omitempty"`
-
-	// ProductCategory The category to which a product or account belongs. See [here](#product-categories) for more details
-	ProductCategory BankingProductCategory `json:"productCategory"`
-
-	// ProductName The unique identifier of the account as defined by the data holder (akin to model number for the account)
-	ProductName string `json:"productName"`
-}
-
-// BankingAccountOpenStatus Open or closed status for the account. If not present then OPEN is assumed
-type BankingAccountOpenStatus string
-
-// BankingAccountDetailV2 defines model for BankingAccountDetailV2.
-type BankingAccountDetailV2 struct {
+// BankingAccountDetailV3 defines model for BankingAccountDetailV3.
+type BankingAccountDetailV3 struct {
 	// AccountId A unique ID of the account adhering to the standards for ID permanence
 	AccountId string `json:"accountId"`
 
 	// AccountNumber The unmasked account number for the account. Should not be supplied if the account number is a PAN requiring PCI compliance. Is expected to be formatted as digits only with leading zeros included and no punctuation or spaces
 	AccountNumber *string `json:"accountNumber,omitempty"`
+
+	// AccountOwnership Value indicating the number of customers that have ownership of the account, according to the data holder's definition of account ownership. Does not indicate that all account owners are eligible consumers
+	AccountOwnership BankingAccountDetailV3AccountOwnership `json:"accountOwnership"`
 
 	// Addresses The addresses for the account to be used for correspondence
 	Addresses *[]CommonPhysicalAddress `json:"addresses,omitempty"`
@@ -607,7 +595,7 @@ type BankingAccountDetailV2 struct {
 		AdditionalValue *string `json:"additionalValue,omitempty"`
 
 		// FeatureType The type of feature described
-		FeatureType BankingAccountDetailV2FeaturesFeatureType `json:"featureType"`
+		FeatureType BankingAccountDetailV3FeaturesFeatureType `json:"featureType"`
 
 		// IsActivated True if the feature is already activated and false if the feature is available for activation. Defaults to true if absent. (note this is an additional field appended to the feature object defined in the Product Reference payload)
 		IsActivated *bool `json:"isActivated,omitempty"`
@@ -633,7 +621,7 @@ type BankingAccountDetailV2 struct {
 	Nickname *string `json:"nickname,omitempty"`
 
 	// OpenStatus Open or closed status for the account. If not present then OPEN is assumed
-	OpenStatus *BankingAccountDetailV2OpenStatus `json:"openStatus,omitempty"`
+	OpenStatus *BankingAccountDetailV3OpenStatus `json:"openStatus,omitempty"`
 
 	// ProductCategory The category to which a product or account belongs. See [here](#product-categories) for more details
 	ProductCategory BankingProductCategory `json:"productCategory"`
@@ -642,18 +630,60 @@ type BankingAccountDetailV2 struct {
 	ProductName string `json:"productName"`
 
 	// SpecificAccountUType The type of structure to present account specific fields.
-	SpecificAccountUType *BankingAccountDetailV2SpecificAccountUType `json:"specificAccountUType,omitempty"`
+	SpecificAccountUType *BankingAccountDetailV3SpecificAccountUType `json:"specificAccountUType,omitempty"`
 	TermDeposit          *[]BankingTermDepositAccount                `json:"termDeposit,omitempty"`
 }
 
-// BankingAccountDetailV2FeaturesFeatureType The type of feature described
-type BankingAccountDetailV2FeaturesFeatureType string
+// BankingAccountDetailV3AccountOwnership Value indicating the number of customers that have ownership of the account, according to the data holder's definition of account ownership. Does not indicate that all account owners are eligible consumers
+type BankingAccountDetailV3AccountOwnership string
 
-// BankingAccountDetailV2OpenStatus Open or closed status for the account. If not present then OPEN is assumed
-type BankingAccountDetailV2OpenStatus string
+// BankingAccountDetailV3FeaturesFeatureType The type of feature described
+type BankingAccountDetailV3FeaturesFeatureType string
 
-// BankingAccountDetailV2SpecificAccountUType The type of structure to present account specific fields.
-type BankingAccountDetailV2SpecificAccountUType string
+// BankingAccountDetailV3OpenStatus Open or closed status for the account. If not present then OPEN is assumed
+type BankingAccountDetailV3OpenStatus string
+
+// BankingAccountDetailV3SpecificAccountUType The type of structure to present account specific fields.
+type BankingAccountDetailV3SpecificAccountUType string
+
+// BankingAccountV2 defines model for BankingAccountV2.
+type BankingAccountV2 struct {
+	// AccountId A unique ID of the account adhering to the standards for ID permanence
+	AccountId string `json:"accountId"`
+
+	// AccountOwnership Value indicating the number of customers that have ownership of the account, according to the data holder's definition of account ownership. Does not indicate that all account owners are eligible consumers
+	AccountOwnership BankingAccountV2AccountOwnership `json:"accountOwnership"`
+
+	// CreationDate Date that the account was created (if known)
+	CreationDate *string `json:"creationDate,omitempty"`
+
+	// DisplayName The display name of the account as defined by the bank. This should not incorporate account numbers or PANs. If it does the values should be masked according to the rules of the MaskedAccountString common type.
+	DisplayName string `json:"displayName"`
+
+	// IsOwned Flag indicating that the customer associated with the authorisation is an owner of the account. Does not indicate sole ownership, however. If not present then 'true' is assumed
+	IsOwned *bool `json:"isOwned,omitempty"`
+
+	// MaskedNumber A masked version of the account. Whether BSB/Account Number, Credit Card PAN or another number
+	MaskedNumber string `json:"maskedNumber"`
+
+	// Nickname A customer supplied nick name for the account
+	Nickname *string `json:"nickname,omitempty"`
+
+	// OpenStatus Open or closed status for the account. If not present then OPEN is assumed
+	OpenStatus *BankingAccountV2OpenStatus `json:"openStatus,omitempty"`
+
+	// ProductCategory The category to which a product or account belongs. See [here](#product-categories) for more details
+	ProductCategory BankingProductCategory `json:"productCategory"`
+
+	// ProductName The unique identifier of the account as defined by the data holder (akin to model number for the account)
+	ProductName string `json:"productName"`
+}
+
+// BankingAccountV2AccountOwnership Value indicating the number of customers that have ownership of the account, according to the data holder's definition of account ownership. Does not indicate that all account owners are eligible consumers
+type BankingAccountV2AccountOwnership string
+
+// BankingAccountV2OpenStatus Open or closed status for the account. If not present then OPEN is assumed
+type BankingAccountV2OpenStatus string
 
 // BankingAuthorisedEntity defines model for BankingAuthorisedEntity.
 type BankingAuthorisedEntity struct {
@@ -1692,7 +1722,7 @@ type BankingTransactionDetail struct {
 	// ExecutionDateTime The time the transaction was executed by the originating customer, if available
 	ExecutionDateTime *string `json:"executionDateTime,omitempty"`
 	ExtendedData      struct {
-		// ExtensionUType Optional extended data provided specific to transaction originated via NPP
+		// ExtensionUType Optional extended data specific to transactions originated via NPP
 		ExtensionUType *BankingTransactionDetailExtendedDataExtensionUType `json:"extensionUType,omitempty"`
 
 		// Payee Label of the target PayID.  Mandatory for an outbound payment. The name assigned to the BSB/Account Number or PayID (by the owner of the PayID)
@@ -1707,8 +1737,8 @@ type BankingTransactionDetail struct {
 			// EndToEndId An end to end ID for the payment created at initiation
 			EndToEndId *string `json:"endToEndId,omitempty"`
 
-			// ExtendedDescription An extended string description. Only present if specified by the extensionUType field
-			ExtendedDescription string `json:"extendedDescription"`
+			// ExtendedDescription An extended string description. Required if the extensionUType field is `x2p101Payload`
+			ExtendedDescription *string `json:"extendedDescription,omitempty"`
 
 			// PurposeCode Purpose of the payment.  Format is defined by NPP standards for the x2p1.01 overlay service
 			PurposeCode *string `json:"purposeCode,omitempty"`
@@ -1743,7 +1773,7 @@ type BankingTransactionDetail struct {
 	ValueDateTime *string `json:"valueDateTime,omitempty"`
 }
 
-// BankingTransactionDetailExtendedDataExtensionUType Optional extended data provided specific to transaction originated via NPP
+// BankingTransactionDetailExtendedDataExtensionUType Optional extended data specific to transactions originated via NPP
 type BankingTransactionDetailExtendedDataExtensionUType string
 
 // BankingTransactionDetailExtendedDataService Identifier of the applicable overlay service. Valid values are: X2P1.01
@@ -1914,18 +1944,18 @@ type RequestAccountIds struct {
 	Meta *Meta `json:"meta,omitempty"`
 }
 
-// ResponseBankingAccountByIdV2 defines model for ResponseBankingAccountByIdV2.
-type ResponseBankingAccountByIdV2 struct {
-	Data  BankingAccountDetailV2 `json:"data"`
+// ResponseBankingAccountByIdV3 defines model for ResponseBankingAccountByIdV3.
+type ResponseBankingAccountByIdV3 struct {
+	Data  BankingAccountDetailV3 `json:"data"`
 	Links Links                  `json:"links"`
 	Meta  *Meta                  `json:"meta,omitempty"`
 }
 
-// ResponseBankingAccountList defines model for ResponseBankingAccountList.
-type ResponseBankingAccountList struct {
+// ResponseBankingAccountListV2 defines model for ResponseBankingAccountListV2.
+type ResponseBankingAccountListV2 struct {
 	Data struct {
 		// Accounts The list of accounts returned. If the filter results in an empty set then this array may have no records
-		Accounts []BankingAccount `json:"accounts"`
+		Accounts []BankingAccountV2 `json:"accounts"`
 	} `json:"data"`
 	Links LinksPaginated `json:"links"`
 	Meta  MetaPaginated  `json:"meta"`
@@ -2037,7 +2067,7 @@ type ResponseErrorListV2 struct {
 
 // ListAccountsParams defines parameters for ListAccounts.
 type ListAccountsParams struct {
-	// ProductCategory Used to filter results on the productCategory field applicable to accounts. Any one of the valid values for this field can be supplied. If absent then all accounts returned.
+	// ProductCategory Used to filter results on the productCategory field applicable to accounts. Any one of the valid values for this field can be supplied. If absent then all accounts returned.)
 	ProductCategory *ListAccountsParamsProductCategory `form:"product-category,omitempty" json:"product-category,omitempty"`
 
 	// OpenStatus Used to filter results according to open/closed status. Values can be OPEN, CLOSED or ALL. If absent then ALL is assumed
@@ -2061,7 +2091,7 @@ type ListAccountsParams struct {
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
 	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
-	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.
+	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-R-Draft]](#nref-FAPI-R-Draft)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
 	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the Data Recipient Software Product. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
@@ -2103,7 +2133,7 @@ type ListBalancesBulkParams struct {
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
 	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
-	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.
+	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-R-Draft]](#nref-FAPI-R-Draft)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
 	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the Data Recipient Software Product. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
@@ -2136,7 +2166,7 @@ type ListBalancesSpecificAccountsParams struct {
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
 	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
-	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.
+	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-R-Draft]](#nref-FAPI-R-Draft)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
 	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the Data Recipient Software Product. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
@@ -2172,7 +2202,7 @@ type ListDirectDebitsBulkParams struct {
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
 	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
-	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.
+	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-R-Draft]](#nref-FAPI-R-Draft)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
 	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the Data Recipient Software Product. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
@@ -2205,7 +2235,7 @@ type ListDirectDebitsSpecificAccountsParams struct {
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
 	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
-	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.
+	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-R-Draft]](#nref-FAPI-R-Draft)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
 	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the Data Recipient Software Product. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
@@ -2226,7 +2256,7 @@ type GetAccountDetailParams struct {
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
 	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
-	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.
+	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-R-Draft]](#nref-FAPI-R-Draft)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
 	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the Data Recipient Software Product. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
@@ -2247,7 +2277,7 @@ type GetBalanceParams struct {
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
 	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
-	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.
+	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-R-Draft]](#nref-FAPI-R-Draft)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
 	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the Data Recipient Software Product. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
@@ -2274,7 +2304,7 @@ type ListDirectDebitsParams struct {
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
 	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
-	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.
+	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-R-Draft]](#nref-FAPI-R-Draft)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
 	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the Data Recipient Software Product. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
@@ -2301,7 +2331,7 @@ type ListScheduledPaymentsParams struct {
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
 	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
-	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.
+	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-R-Draft]](#nref-FAPI-R-Draft)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
 	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the Data Recipient Software Product. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
@@ -2343,7 +2373,7 @@ type GetTransactionsParams struct {
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
 	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
-	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.
+	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-R-Draft]](#nref-FAPI-R-Draft)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
 	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the Data Recipient Software Product. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
@@ -2364,7 +2394,7 @@ type GetTransactionDetailParams struct {
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
 	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
-	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.
+	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-R-Draft]](#nref-FAPI-R-Draft)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
 	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the Data Recipient Software Product. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
@@ -2394,7 +2424,7 @@ type ListPayeesParams struct {
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
 	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
-	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.
+	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-R-Draft]](#nref-FAPI-R-Draft)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
 	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the Data Recipient Software Product. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
@@ -2418,7 +2448,7 @@ type GetPayeeDetailParams struct {
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
 	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
-	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.
+	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-R-Draft]](#nref-FAPI-R-Draft)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
 	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the Data Recipient Software Product. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
@@ -2454,7 +2484,7 @@ type ListScheduledPaymentsBulkParams struct {
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
 	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
-	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.
+	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-R-Draft]](#nref-FAPI-R-Draft)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
 	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the Data Recipient Software Product. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
@@ -2487,7 +2517,7 @@ type ListScheduledPaymentsSpecificAccountsParams struct {
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
 	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
-	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.
+	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-R-Draft]](#nref-FAPI-R-Draft)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
 	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the Data Recipient Software Product. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
@@ -5368,7 +5398,7 @@ type ClientWithResponsesInterface interface {
 type ListAccountsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *ResponseBankingAccountList
+	JSON200      *ResponseBankingAccountListV2
 	JSON400      *ResponseErrorListV2
 	JSON406      *ResponseErrorListV2
 	JSON422      *ResponseErrorListV2
@@ -5493,7 +5523,7 @@ func (r ListDirectDebitsSpecificAccountsResponse) StatusCode() int {
 type GetAccountDetailResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *ResponseBankingAccountByIdV2
+	JSON200      *ResponseBankingAccountByIdV3
 	JSON400      *ResponseErrorListV2
 	JSON404      *ResponseErrorListV2
 	JSON406      *ResponseErrorListV2
@@ -5986,7 +6016,7 @@ func ParseListAccountsResponse(rsp *http.Response) (*ListAccountsResponse, error
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest ResponseBankingAccountList
+		var dest ResponseBankingAccountListV2
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -6221,7 +6251,7 @@ func ParseGetAccountDetailResponse(rsp *http.Response) (*GetAccountDetailRespons
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest ResponseBankingAccountByIdV2
+		var dest ResponseBankingAccountByIdV3
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}

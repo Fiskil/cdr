@@ -12,7 +12,7 @@
       "name": "MIT License",
       "url": "https://opensource.org/licenses/MIT"
     },
-    "version": "1.17.0"
+    "version": "1.23.0"
   },
   "servers": [
     {
@@ -27,13 +27,13 @@
           "Accounts"
         ],
         "summary": "Get Accounts",
-        "description": "Obtain a list of accounts",
+        "description": "Obtain a list of accounts.\n\nObsolete versions: [v1](includes/obsolete/get-accounts-v1.html)",
         "operationId": "listAccounts",
         "parameters": [
           {
             "name": "product-category",
             "in": "query",
-            "description": "Used to filter results on the productCategory field applicable to accounts. Any one of the valid values for this field can be supplied. If absent then all accounts returned.",
+            "description": "Used to filter results on the productCategory field applicable to accounts. Any one of the valid values for this field can be supplied. If absent then all accounts returned.)",
             "schema": {
               "type": "string",
               "enum": [
@@ -126,7 +126,7 @@
           {
             "name": "x-fapi-auth-date",
             "in": "header",
-            "description": "The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.",
+            "description": "The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-R-Draft]](#nref-FAPI-R-Draft)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.",
             "schema": {
               "type": "string",
               "x-conditional": true
@@ -174,7 +174,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ResponseBankingAccountList"
+                  "$ref": "#/components/schemas/ResponseBankingAccountListV2"
                 }
               }
             }
@@ -237,7 +237,7 @@
         "x-scopes": [
           "bank:accounts.basic:read"
         ],
-        "x-version": "1"
+        "x-version": "2"
       }
     },
     "/banking/accounts/balances": {
@@ -346,7 +346,7 @@
           {
             "name": "x-fapi-auth-date",
             "in": "header",
-            "description": "The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.",
+            "description": "The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-R-Draft]](#nref-FAPI-R-Draft)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.",
             "schema": {
               "type": "string",
               "x-conditional": true
@@ -518,7 +518,7 @@
           {
             "name": "x-fapi-auth-date",
             "in": "header",
-            "description": "The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.",
+            "description": "The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-R-Draft]](#nref-FAPI-R-Draft)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.",
             "schema": {
               "type": "string",
               "x-conditional": true
@@ -693,7 +693,7 @@
           {
             "name": "x-fapi-auth-date",
             "in": "header",
-            "description": "The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.",
+            "description": "The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-R-Draft]](#nref-FAPI-R-Draft)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.",
             "schema": {
               "type": "string",
               "x-conditional": true
@@ -814,7 +814,7 @@
           "Accounts"
         ],
         "summary": "Get Account Detail",
-        "description": "Obtain detailed information on a single account.\n\nObsolete versions: [v1](includes/obsolete/get-account-detail-v1.html)",
+        "description": "Obtain detailed information on a single account.\n\nObsolete versions: [v1](includes/obsolete/get-account-detail-v1.html), [v2](includes/obsolete/get-account-detail-v2.html)",
         "operationId": "getAccountDetail",
         "parameters": [
           {
@@ -856,7 +856,7 @@
           {
             "name": "x-fapi-auth-date",
             "in": "header",
-            "description": "The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.",
+            "description": "The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-R-Draft]](#nref-FAPI-R-Draft)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.",
             "schema": {
               "type": "string",
               "x-conditional": true
@@ -904,7 +904,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ResponseBankingAccountByIdV2"
+                  "$ref": "#/components/schemas/ResponseBankingAccountByIdV3"
                 }
               }
             }
@@ -967,7 +967,7 @@
         "x-scopes": [
           "bank:accounts.detail:read"
         ],
-        "x-version": "2"
+        "x-version": "3"
       }
     },
     "/banking/accounts/{accountId}/transactions": {
@@ -1089,7 +1089,7 @@
           {
             "name": "x-fapi-auth-date",
             "in": "header",
-            "description": "The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.",
+            "description": "The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-R-Draft]](#nref-FAPI-R-Draft)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.",
             "schema": {
               "type": "string",
               "x-conditional": true
@@ -1281,7 +1281,7 @@
           {
             "name": "x-fapi-auth-date",
             "in": "header",
-            "description": "The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.",
+            "description": "The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-R-Draft]](#nref-FAPI-R-Draft)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.",
             "schema": {
               "type": "string",
               "x-conditional": true
@@ -1353,7 +1353,7 @@
             }
           },
           "404": {
-            "description": "The following error codes MUST be supported:<br/><ul class=\"error-code-list\"><li>[404 - Unavailable Banking Account](#error-404-authorisation-unavailable-banking-account)</li><li>[404 - Invalid Banking Account](#error-404-authorisation-invalid-banking-account)</li><li>[Unavailable Resource](#error-404-resource-unavailable)</li><li>[Invalid Resource](#error-404-resource-invalid)</li></ul>",
+            "description": "The following error codes MUST be supported:<br/><ul class=\"error-code-list\"><li>[404 - Unavailable Banking Account](#error-404-authorisation-unavailable-banking-account)</li><li>[404 - Invalid Banking Account](#error-404-authorisation-invalid-banking-account)</li><li>[404 - Unavailable Resource](#error-404-resource-unavailable)</li><li>[404 - Invalid Resource](#error-404-resource-invalid)</li></ul>",
             "headers": {
               "x-fapi-interaction-id": {
                 "description": "An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.",
@@ -1466,7 +1466,7 @@
           {
             "name": "x-fapi-auth-date",
             "in": "header",
-            "description": "The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.",
+            "description": "The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-R-Draft]](#nref-FAPI-R-Draft)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.",
             "schema": {
               "type": "string",
               "x-conditional": true
@@ -1704,7 +1704,7 @@
           {
             "name": "x-fapi-auth-date",
             "in": "header",
-            "description": "The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.",
+            "description": "The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-R-Draft]](#nref-FAPI-R-Draft)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.",
             "schema": {
               "type": "string",
               "x-conditional": true
@@ -1876,7 +1876,7 @@
           {
             "name": "x-fapi-auth-date",
             "in": "header",
-            "description": "The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.",
+            "description": "The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-R-Draft]](#nref-FAPI-R-Draft)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.",
             "schema": {
               "type": "string",
               "x-conditional": true
@@ -2073,7 +2073,7 @@
           {
             "name": "x-fapi-auth-date",
             "in": "header",
-            "description": "The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.",
+            "description": "The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-R-Draft]](#nref-FAPI-R-Draft)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.",
             "schema": {
               "type": "string",
               "x-conditional": true
@@ -2311,7 +2311,7 @@
           {
             "name": "x-fapi-auth-date",
             "in": "header",
-            "description": "The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.",
+            "description": "The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-R-Draft]](#nref-FAPI-R-Draft)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.",
             "schema": {
               "type": "string",
               "x-conditional": true
@@ -2483,7 +2483,7 @@
           {
             "name": "x-fapi-auth-date",
             "in": "header",
-            "description": "The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.",
+            "description": "The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-R-Draft]](#nref-FAPI-R-Draft)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.",
             "schema": {
               "type": "string",
               "x-conditional": true
@@ -2685,7 +2685,7 @@
           {
             "name": "x-fapi-auth-date",
             "in": "header",
-            "description": "The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.",
+            "description": "The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-R-Draft]](#nref-FAPI-R-Draft)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.",
             "schema": {
               "type": "string",
               "x-conditional": true
@@ -2848,7 +2848,7 @@
           {
             "name": "x-fapi-auth-date",
             "in": "header",
-            "description": "The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.",
+            "description": "The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-R-Draft]](#nref-FAPI-R-Draft)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.",
             "schema": {
               "type": "string",
               "x-conditional": true
@@ -4149,7 +4149,7 @@
         },
         "description": "Defines a condition for the applicability of a tiered rate"
       },
-      "ResponseBankingAccountList": {
+      "ResponseBankingAccountListV2": {
         "required": [
           "data",
           "links",
@@ -4167,7 +4167,7 @@
                 "type": "array",
                 "description": "The list of accounts returned. If the filter results in an empty set then this array may have no records",
                 "items": {
-                  "$ref": "#/components/schemas/BankingAccount"
+                  "$ref": "#/components/schemas/BankingAccountV2"
                 }
               }
             }
@@ -4180,10 +4180,11 @@
           }
         }
       },
-      "BankingAccount": {
+      "BankingAccountV2": {
         "required": [
           "accountId",
           "displayName",
+          "accountOwnership",
           "maskedNumber",
           "productCategory",
           "productName"
@@ -4223,6 +4224,17 @@
             "default": true,
             "x-cds-type": "Boolean"
           },
+          "accountOwnership": {
+            "type": "string",
+            "description": "Value indicating the number of customers that have ownership of the account, according to the data holder's definition of account ownership. Does not indicate that all account owners are eligible consumers",
+            "enum": [
+              "UNKNOWN",
+              "ONE_PARTY",
+              "TWO_PARTY",
+              "MANY_PARTY",
+              "OTHER"
+            ]
+          },
           "maskedNumber": {
             "type": "string",
             "description": "A masked version of the account. Whether BSB/Account Number, Credit Card PAN or another number",
@@ -4237,7 +4249,7 @@
           }
         }
       },
-      "ResponseBankingAccountByIdV2": {
+      "ResponseBankingAccountByIdV3": {
         "required": [
           "data",
           "links"
@@ -4245,7 +4257,7 @@
         "type": "object",
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/BankingAccountDetailV2"
+            "$ref": "#/components/schemas/BankingAccountDetailV3"
           },
           "links": {
             "$ref": "#/components/schemas/Links"
@@ -4255,10 +4267,10 @@
           }
         }
       },
-      "BankingAccountDetailV2": {
+      "BankingAccountDetailV3": {
         "allOf": [
           {
-            "$ref": "#/components/schemas/BankingAccount"
+            "$ref": "#/components/schemas/BankingAccountV2"
           },
           {
             "type": "object",
@@ -4710,20 +4722,20 @@
                   },
                   "extensionUType": {
                     "type": "string",
-                    "description": "Optional extended data provided specific to transaction originated via NPP",
+                    "description": "Optional extended data specific to transactions originated via NPP",
                     "enum": [
                       "x2p101Payload"
                     ]
                   },
                   "x2p101Payload": {
-                    "required": [
+                    "x-conditional": [
                       "extendedDescription"
                     ],
                     "type": "object",
                     "properties": {
                       "extendedDescription": {
                         "type": "string",
-                        "description": "An extended string description. Only present if specified by the extensionUType field"
+                        "description": "An extended string description. Required if the extensionUType field is `x2p101Payload`"
                       },
                       "endToEndId": {
                         "type": "string",
@@ -4746,7 +4758,7 @@
                 "x-conditional": [
                   "payer",
                   "payee",
-                  "extendedDescription"
+                  "x2p101Payload"
                 ]
               }
             }
@@ -6036,7 +6048,7 @@
       "RequestHeader_x-fapi-auth-date": {
         "name": "x-fapi-auth-date",
         "in": "header",
-        "description": "The time when the customer last logged in to the Data Recipient Software Product. Required for all resource calls (customer present and unattended) if the customer has logged in. Not to be included for unauthenticated calls.",
+        "description": "The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-R-Draft]](#nref-FAPI-R-Draft)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.",
         "schema": {
           "type": "string",
           "x-conditional": true
@@ -6182,4 +6194,3 @@
     }
   }
 }
-
