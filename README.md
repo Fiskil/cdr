@@ -104,3 +104,10 @@ cd ${resource}
 oapi-codegen --old-config-style -generate client,types -package ${resource} cdr_${resource}.swagger.json > ${resource}.gen.go
 cd -
 ```
+
+```bash
+resource=common
+cd ${resource}
+oapi-codegen --old-config-style -generate client,types -package ${resource} cdr_${resource}.swagger.json > ${resource}.gen.go
+cd -
+```

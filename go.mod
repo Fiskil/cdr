@@ -3,16 +3,17 @@ module github.com/fiskil/cdr
 go 1.18
 
 require (
-	github.com/deepmap/oapi-codegen v1.11.0
+	github.com/deepmap/oapi-codegen v1.12.4
 	github.com/golang-jwt/jwt/v4 v4.4.2
 	github.com/jrapoport/chestnut v0.0.0-20211024210854-a610f59ea557
 	github.com/matryer/is v1.4.0
 	github.com/segmentio/ksuid v1.0.4
 	github.com/spf13/cobra v1.5.0
-	golang.org/x/crypto v0.0.0-20220513210258-46612604a0f9
+	golang.org/x/crypto v0.1.0
 )
 
 require (
+	github.com/apapsch/go-jsonmerge/v2 v2.0.0 // indirect
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/hashicorp/go-version v1.3.0 // indirect
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
@@ -26,7 +27,6 @@ require (
 	go.uber.org/atomic v1.7.0 // indirect
 	go.uber.org/multierr v1.6.0 // indirect
 	go.uber.org/zap v1.19.1 // indirect
-	golang.org/x/sys v0.0.0-20220721230656-c6bc011c0c49 // indirect
-	golang.org/x/term v0.0.0-20210927222741-03fcf44c2211 // indirect
-	gopkg.in/yaml.v3 v3.0.0 // indirect
+	golang.org/x/sys v0.2.0 // indirect
+	golang.org/x/term v0.2.0 // indirect
 )
