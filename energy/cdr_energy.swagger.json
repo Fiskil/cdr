@@ -6634,6 +6634,7 @@
           "issueDate" : {
             "description" : "The date that the invoice was actually issued (as opposed to generated or calculated)",
             "type" : "string",
+            "format": "date",
             "x-cds-type" : "DateString"
           },
           "dueDate" : {
