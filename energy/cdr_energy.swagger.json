@@ -56,7 +56,8 @@
           "name" : "updated-since",
           "required" : false,
           "schema" : {
-            "type" : "string"
+            "type" : "string",
+            "format" : "date-time"
           },
           "style" : "form",
           "x-cds-type" : "DateTimeString"
@@ -643,7 +644,8 @@
           "name" : "oldest-date",
           "required" : false,
           "schema" : {
-            "type" : "string"
+            "type" : "string",
+            "format" : "date-time"
           },
           "style" : "form",
           "x-cds-type" : "DateString"
@@ -654,7 +656,8 @@
           "name" : "newest-date",
           "required" : false,
           "schema" : {
-            "type" : "string"
+            "type" : "string",
+            "format" : "date-time"
           },
           "style" : "form",
           "x-cds-type" : "DateString"
@@ -895,7 +898,8 @@
           "name" : "oldest-date",
           "required" : false,
           "schema" : {
-            "type" : "string"
+            "type" : "string",
+            "format" : "date-time"
           },
           "style" : "form",
           "x-cds-type" : "DateString"
@@ -906,7 +910,8 @@
           "name" : "newest-date",
           "required" : false,
           "schema" : {
-            "type" : "string"
+            "type" : "string",
+            "format" : "date-time"
           },
           "style" : "form",
           "x-cds-type" : "DateString"
@@ -1101,7 +1106,8 @@
           "name" : "oldest-date",
           "required" : false,
           "schema" : {
-            "type" : "string"
+            "type" : "string",
+            "format" : "date-time"
           },
           "style" : "form",
           "x-cds-type" : "DateString"
@@ -1112,7 +1118,8 @@
           "name" : "newest-date",
           "required" : false,
           "schema" : {
-            "type" : "string"
+            "type" : "string",
+            "format" : "date-time"
           },
           "style" : "form",
           "x-cds-type" : "DateString"
@@ -3148,7 +3155,8 @@
           "name" : "newest-date",
           "required" : false,
           "schema" : {
-            "type" : "string"
+            "type" : "string",
+            "format" : "date-time"
           },
           "style" : "form",
           "x-cds-type" : "DateString"
@@ -3159,7 +3167,8 @@
           "name" : "oldest-date",
           "required" : false,
           "schema" : {
-            "type" : "string"
+            "type" : "string",
+            "format" : "date-time"
           },
           "style" : "form",
           "x-cds-type" : "DateString"
@@ -3376,7 +3385,8 @@
           "name" : "newest-date",
           "required" : false,
           "schema" : {
-            "type" : "string"
+            "type" : "string",
+            "format" : "date-time"
           },
           "style" : "form",
           "x-cds-type" : "DateString"
@@ -3387,7 +3397,8 @@
           "name" : "oldest-date",
           "required" : false,
           "schema" : {
-            "type" : "string"
+            "type" : "string",
+            "format" : "date-time"
           },
           "style" : "form",
           "x-cds-type" : "DateString"
@@ -3582,7 +3593,8 @@
           "name" : "newest-date",
           "required" : false,
           "schema" : {
-            "type" : "string"
+            "type" : "string",
+            "format" : "date-time"
           },
           "style" : "form",
           "x-cds-type" : "DateString"
@@ -3593,7 +3605,8 @@
           "name" : "oldest-date",
           "required" : false,
           "schema" : {
-            "type" : "string"
+            "type" : "string",
+            "format" : "date-time"
           },
           "style" : "form",
           "x-cds-type" : "DateString"
@@ -3803,7 +3816,8 @@
           "name" : "newest-time",
           "required" : false,
           "schema" : {
-            "type" : "string"
+            "type" : "string",
+            "format" : "date-time"
           },
           "style" : "form",
           "x-cds-type" : "DateTimeString"
@@ -3814,7 +3828,8 @@
           "name" : "oldest-time",
           "required" : false,
           "schema" : {
-            "type" : "string"
+            "type" : "string",
+            "format" : "date-time"
           },
           "style" : "form",
           "x-cds-type" : "DateTimeString"
@@ -4031,7 +4046,8 @@
           "name" : "newest-time",
           "required" : false,
           "schema" : {
-            "type" : "string"
+            "type" : "string",
+            "format" : "date-time"
           },
           "style" : "form",
           "x-cds-type" : "DateTimeString"
@@ -4042,7 +4058,8 @@
           "name" : "oldest-time",
           "required" : false,
           "schema" : {
-            "type" : "string"
+            "type" : "string",
+            "format" : "date-time"
           },
           "style" : "form",
           "x-cds-type" : "DateTimeString"
@@ -4237,7 +4254,8 @@
           "name" : "newest-time",
           "required" : false,
           "schema" : {
-            "type" : "string"
+            "type" : "string",
+            "format" : "date-time"
           },
           "style" : "form",
           "x-cds-type" : "DateTimeString"
@@ -4248,7 +4266,8 @@
           "name" : "oldest-time",
           "required" : false,
           "schema" : {
-            "type" : "string"
+            "type" : "string",
+            "format" : "date-time"
           },
           "style" : "form",
           "x-cds-type" : "DateTimeString"
@@ -4495,7 +4514,8 @@
         "name" : "newest-time",
         "required" : false,
         "schema" : {
-          "type" : "string"
+          "type" : "string",
+          "format" : "date-time"
         },
         "style" : "form",
         "x-cds-type" : "DateTimeString"
@@ -4507,7 +4527,8 @@
         "name" : "oldest-time",
         "required" : false,
         "schema" : {
-          "type" : "string"
+          "type" : "string",
+          "format" : "date-time"
         },
         "style" : "form",
         "x-cds-type" : "DateTimeString"
@@ -4519,7 +4540,8 @@
         "name" : "newest-date",
         "required" : false,
         "schema" : {
-          "type" : "string"
+          "type" : "string",
+          "format" : "date-time"
         },
         "style" : "form",
         "x-cds-type" : "DateString"
@@ -4531,7 +4553,8 @@
         "name" : "oldest-date",
         "required" : false,
         "schema" : {
-          "type" : "string"
+          "type" : "string",
+          "format" : "date-time"
         },
         "style" : "form",
         "x-cds-type" : "DateString"
@@ -4543,7 +4566,8 @@
         "name" : "newest-date",
         "required" : false,
         "schema" : {
-          "type" : "string"
+          "type" : "string",
+          "format" : "date-time"
         },
         "style" : "form",
         "x-cds-type" : "DateString"
@@ -4555,7 +4579,8 @@
         "name" : "oldest-date",
         "required" : false,
         "schema" : {
-          "type" : "string"
+          "type" : "string",
+          "format" : "date-time"
         },
         "style" : "form",
         "x-cds-type" : "DateString"
@@ -5371,16 +5396,19 @@
           "effectiveFrom" : {
             "description" : "The date and time from which this plan is effective (ie. is available for origination). Used to enable the articulation of products to the regime before they are available for customers to originate",
             "type" : "string",
+            "format" : "date-time",
             "x-cds-type" : "DateTimeString"
           },
           "effectiveTo" : {
             "description" : "The date and time at which this plan will be retired and will no longer be offered. Used to enable the managed deprecation of plans",
             "type" : "string",
+            "format" : "date-time",
             "x-cds-type" : "DateTimeString"
           },
           "lastUpdated" : {
             "description" : "The last date and time that the information for this plan was changed (or the creation date for the plan if it has never been altered)",
             "type" : "string",
+            "format" : "date-time",
             "x-cds-type" : "DateTimeString"
           },
           "displayName" : {
@@ -5528,11 +5556,13 @@
             "startDate" : {
               "description" : "Optional start date of the application of the controlled load rate",
               "type" : "string",
+              "format" : "date-time",
               "x-cds-type" : "DateString"
             },
             "endDate" : {
               "description" : "Optional end date of the application of the controlled load rate",
               "type" : "string",
+              "format" : "date-time",
               "x-cds-type" : "DateString"
             },
             "singleRate" : {
@@ -5727,6 +5757,7 @@
             "endDate" : {
               "description" : "Optional end date for the discount after which the discount is no longer available",
               "type" : "string",
+              "format" : "date-time",
               "x-cds-type" : "DateString"
             },
             "methodUType" : {
@@ -5921,11 +5952,13 @@
             "startDate" : {
               "description" : "The start date of the application of the feed in tariff",
               "type" : "string",
+              "format" : "date-time",
               "x-cds-type" : "DateString"
             },
             "endDate" : {
               "description" : "The end date of the application of the feed in tariff",
               "type" : "string",
+              "format" : "date-time",
               "x-cds-type" : "DateString"
             },
             "scheme" : {
@@ -6311,11 +6344,13 @@
           "validFromDate" : {
             "description" : "The latest start date from which the constituent data sets of this service point became valid",
             "type" : "string",
+            "format" : "date-time",
             "x-cds-type" : "DateString"
           },
           "lastUpdateDateTime" : {
             "description" : "The date and time that the information for this service point was modified",
             "type" : "string",
+            "format" : "date-time",
             "x-cds-type" : "DateTimeString"
           },
           "consumerProfile" : {
@@ -6357,11 +6392,13 @@
           "validFromDate" : {
             "description" : "The latest start date from which the constituent data sets of this service point became valid",
             "type" : "string",
+            "format" : "date-time",
             "x-cds-type" : "DateString"
           },
           "lastUpdateDateTime" : {
             "description" : "The date and time that the information for this service point was modified",
             "type" : "string",
+            "format" : "date-time",
             "x-cds-type" : "DateTimeString"
           },
           "consumerProfile" : {
@@ -6414,11 +6451,13 @@
           "readStartDate" : {
             "description" : "Date when the meter reads start in AEST and assumed to start from 12:00 am AEST.",
             "type" : "string",
+            "format" : "date-time",
             "x-cds-type" : "DateString"
           },
           "readEndDate" : {
             "description" : "Date when the meter reads end in AEST.  If absent then assumed to be equal to readStartDate.  In this case the entry represents data for a single date specified by readStartDate.",
             "type" : "string",
+            "format" : "date-time",
             "x-cds-type" : "DateString"
           },
           "unitOfMeasure" : {
@@ -6513,6 +6552,7 @@
           "creationDate" : {
             "description" : "The date that the account was created or opened. Mandatory if openStatus is OPEN",
             "type" : "string",
+            "format" : "date-time",
             "x-cds-type" : "DateString"
           }
         },
@@ -6586,11 +6626,13 @@
           "startDate" : {
             "description" : "Optional start date for the application of the concession",
             "type" : "string",
+            "format" : "date-time",
             "x-cds-type" : "DateString"
           },
           "endDate" : {
             "description" : "Optional end date for the application of the concession",
             "type" : "string",
+            "format" : "date-time",
             "x-cds-type" : "DateString"
           },
           "discountFrequency" : {
@@ -6634,11 +6676,13 @@
           "issueDate" : {
             "description" : "The date that the invoice was actually issued (as opposed to generated or calculated)",
             "type" : "string",
+            "format" : "date-time",
             "x-cds-type" : "DateString"
           },
           "dueDate" : {
             "description" : "The date that the invoice is due to be paid",
             "type" : "string",
+            "format" : "date-time",
             "x-cds-type" : "DateString"
           },
           "period" : {
@@ -6795,6 +6839,7 @@
           "executionDateTime" : {
             "description" : "The date and time that the transaction occurred",
             "type" : "string",
+            "format" : "date-time",
             "x-cds-type" : "DateTimeString"
           },
           "gst" : {
@@ -6853,11 +6898,13 @@
           "startDate" : {
             "description" : "Date and time when the usage period starts",
             "type" : "string",
+            "format" : "date-time",
             "x-cds-type" : "DateTimeString"
           },
           "endDate" : {
             "description" : "Date and time when the usage period ends",
             "type" : "string",
+            "format" : "date-time",
             "x-cds-type" : "DateTimeString"
           },
           "measureUnit" : {
@@ -6918,11 +6965,13 @@
           "startDate" : {
             "description" : "Date and time when the demand period starts",
             "type" : "string",
+            "format" : "date-time",
             "x-cds-type" : "DateTimeString"
           },
           "endDate" : {
             "description" : "Date and time when the demand period ends",
             "type" : "string",
+            "format" : "date-time",
             "x-cds-type" : "DateTimeString"
           },
           "rate" : {
@@ -6988,11 +7037,13 @@
           "startDate" : {
             "description" : "Optional start date for the application of the charge",
             "type" : "string",
+            "format" : "date-time",
             "x-cds-type" : "DateString"
           },
           "endDate" : {
             "description" : "Optional end date for the application of the charge",
             "type" : "string",
+            "format" : "date-time",
             "x-cds-type" : "DateString"
           },
           "type" : {
@@ -7684,6 +7735,7 @@
           "nextScheduledReadDate" : {
             "description" : "This date is the next scheduled meter read date (NSRD) if a manual Meter Reading is required",
             "type" : "string",
+            "format" : "date-time",
             "x-cds-type" : "DateString"
           }
         },
@@ -7971,6 +8023,7 @@
           "commissioningDate" : {
             "description" : "The date that the DER installation is commissioned",
             "type" : "string",
+            "format" : "date-time",
             "x-cds-type" : "DateString"
           },
           "status" : {
@@ -8003,11 +8056,13 @@
           "startDate" : {
             "description" : "The start date of the applicability of this plan",
             "type" : "string",
+            "format" : "date-time",
             "x-cds-type" : "DateString"
           },
           "endDate" : {
             "description" : "The end date of the applicability of this plan",
             "type" : "string",
+            "format" : "date-time",
             "x-cds-type" : "DateString"
           }
         },
@@ -8259,11 +8314,13 @@
           "startDate" : {
             "description" : "The start date of the period covered by this invoice",
             "type" : "string",
+            "format" : "date-time",
             "x-cds-type" : "DateString"
           },
           "endDate" : {
             "description" : "The end date of the period covered by this invoice",
             "type" : "string",
+            "format" : "date-time",
             "x-cds-type" : "DateString"
           }
         },
@@ -8286,6 +8343,7 @@
           "date" : {
             "description" : "The date by which the invoice must be paid to receive the pay on time discount",
             "type" : "string",
+            "format" : "date-time",
             "x-cds-type" : "DateString"
           }
         },
