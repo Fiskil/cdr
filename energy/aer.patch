@@ -1,0 +1,31 @@
+diff --git a/energy/energy.gen.go b/energy/energy.gen.go
+index f39d2ee..cedd8e5 100644
+--- a/energy/energy.gen.go
++++ b/energy/energy.gen.go
+@@ -1962,7 +1962,7 @@ type EnergyPlanContractFullV2 struct {
+ 	ControlledLoad *EnergyPlanControlledLoad `json:"controlledLoad,omitempty"`
+ 
+ 	// CoolingOffDays Number of days in the cooling off period for the contract.  Mandatory for plans with type of MARKET
+-	CoolingOffDays *int `json:"coolingOffDays,omitempty"`
++	CoolingOffDays *PatchedCoolingOffDays `json:"coolingOffDays,omitempty"`
+ 
+ 	// Discounts Optional list of discounts available for the contract
+ 	Discounts *EnergyPlanDiscounts `json:"discounts,omitempty"`
+@@ -2037,7 +2037,7 @@ type EnergyPlanContractFullV2AllOf struct {
+ 	BillFrequency []string `json:"billFrequency"`
+ 
+ 	// CoolingOffDays Number of days in the cooling off period for the contract.  Mandatory for plans with type of MARKET
+-	CoolingOffDays *int `json:"coolingOffDays,omitempty"`
++	CoolingOffDays *PatchedCoolingOffDays `json:"coolingOffDays,omitempty"`
+ 
+ 	// MeterTypes An array of the meter types that this contract is available for
+ 	MeterTypes *[]string `json:"meterTypes,omitempty"`
+@@ -2574,7 +2574,7 @@ type EnergyPlanTariffPeriod = []struct {
+ 		ChargePeriod EnergyPlanTariffPeriodDemandChargesChargePeriod `json:"chargePeriod"`
+ 
+ 		// Days The days that the demand tariff applies to
+-		Days *[]EnergyPlanTariffPeriodDemandChargesDays `json:"days,omitempty"`
++		Days *PatchedDemandChargesDays `json:"days,omitempty"`
+ 
+ 		// Description Description of the charge
+ 		Description *string `json:"description,omitempty"`
