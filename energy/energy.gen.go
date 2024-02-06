@@ -2488,19 +2488,7 @@ type EnergyPlanSolarFeedInTariffV2 = []struct {
 	Scheme EnergyPlanSolarFeedInTariffV2Scheme `json:"scheme"`
 
 	// SingleTariff Represents a constant tariff.  Mandatory if tariffUType is set to singleTariff
-	SingleTariff *struct {
-		// Rates Array of feed in rates
-		Rates []struct {
-			// MeasureUnit The measurement unit of rate. Assumed to be KWH if absent
-			MeasureUnit *EnergyPlanSolarFeedInTariffV2SingleTariffRatesMeasureUnit `json:"measureUnit,omitempty"`
-
-			// UnitPrice Unit price of usage per measure unit (exclusive of GST)
-			UnitPrice string `json:"unitPrice"`
-
-			// Volume Volume that this rate applies to. Only applicable for ‘stepped’ rates where different rates apply for different volumes of usage in a period
-			Volume *float32 `json:"volume,omitempty"`
-		} `json:"rates"`
-	} `json:"singleTariff,omitempty"`
+	SingleTariff *PatchedEnergyPlanSolarFeedInTariffSingleTariff `json:"singleTariff,omitempty"`
 
 	// StartDate The start date of the application of the feed in tariff
 	StartDate *string `json:"startDate,omitempty"`
@@ -2509,34 +2497,7 @@ type EnergyPlanSolarFeedInTariffV2 = []struct {
 	TariffUType EnergyPlanSolarFeedInTariffV2TariffUType `json:"tariffUType"`
 
 	// TimeVaryingTariffs Represents a tariff based on time.  Mandatory if tariffUType is set to timeVaryingTariffs
-	TimeVaryingTariffs *struct {
-		// Rates Array of feed in rates
-		Rates *[]struct {
-			// MeasureUnit The measurement unit of rate. Assumed to be KWH if absent
-			MeasureUnit *EnergyPlanSolarFeedInTariffV2TimeVaryingTariffsRatesMeasureUnit `json:"measureUnit,omitempty"`
-
-			// UnitPrice Unit price of usage per measure unit (exclusive of GST)
-			UnitPrice string `json:"unitPrice"`
-
-			// Volume Volume that this rate applies to. Only applicable for ‘stepped’ rates where different rates apply for different volumes of usage in a period
-			Volume *float32 `json:"volume,omitempty"`
-		} `json:"rates,omitempty"`
-
-		// TimeVariations Array of time periods for which this tariff is applicable
-		TimeVariations []struct {
-			// Days The days that the tariff applies to. At least one entry required
-			Days []EnergyPlanSolarFeedInTariffV2TimeVaryingTariffsTimeVariationsDays `json:"days"`
-
-			// EndTime The end of the time period per day for which the tariff applies.  If absent assumes end of day (ie. one second before midnight)
-			EndTime *string `json:"endTime,omitempty"`
-
-			// StartTime The beginning of the time period per day for which the tariff applies.  If absent assumes start of day (ie. midnight)
-			StartTime *string `json:"startTime,omitempty"`
-		} `json:"timeVariations"`
-
-		// Type The type of the charging time period. If absent applies to all periods
-		Type *EnergyPlanSolarFeedInTariffV2TimeVaryingTariffsType `json:"type,omitempty"`
-	} `json:"timeVaryingTariffs,omitempty"`
+	TimeVaryingTariffs *PatchedEnergyPlanSolarFeedInTariffTimeVaryingTariff `json:"timeVaryingTariffs,omitempty"`
 }
 
 // EnergyPlanSolarFeedInTariffV2PayerType The type of the payer

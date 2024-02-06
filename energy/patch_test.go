@@ -49,3 +49,61 @@ func TestPatchedDemandChargesDays(t *testing.T) {
 	is.NoErr(err)
 	is.Equal(string(bytes), `["MON","TUE","WED","THU","FRI"]`)
 }
+
+func TestPatchedEnergyPlanSolarFeedInTariffSingleTariffRate(t *testing.T) {
+	t.Parallel()
+	is := is.New(t)
+
+	var d energy.PatchedEnergyPlanSolarFeedInTariffSingleTariff
+
+	// unmarshal v2 with rates
+	err := json.Unmarshal([]byte(`{"rates": [{"measureUnit": "KVAR", "unitPrice": "3.0"}]}`), &d)
+	is.NoErr(err)
+	is.Equal(len(d.Rates), 1)
+	is.Equal(*d.Rates[0].MeasureUnit, "KVAR")
+	is.Equal(d.Rates[0].UnitPrice, "3.0")
+
+	bytes, err := json.Marshal(d)
+	is.NoErr(err)
+	is.Equal(string(bytes), `{"rates":[{"measureUnit":"KVAR","unitPrice":"3.0"}]}`)
+
+	// unmarshal v1 with amount
+	err = json.Unmarshal([]byte(`{"amount": "4.0"}`), &d)
+	is.NoErr(err)
+	is.Equal(len(d.Rates), 1)
+	is.Equal(*d.Rates[0].MeasureUnit, "KWH")
+	is.Equal(d.Rates[0].UnitPrice, "4.0")
+
+	bytes, err = json.Marshal(d)
+	is.NoErr(err)
+	is.Equal(string(bytes), `{"rates":[{"measureUnit":"KWH","unitPrice":"4.0"}]}`)
+}
+
+func TestPatchedEnergyPlanSolarFeedInTariffTimeVaryingTariffRate(t *testing.T) {
+	t.Parallel()
+	is := is.New(t)
+
+	var d energy.PatchedEnergyPlanSolarFeedInTariffTimeVaryingTariff
+
+	// unmarshal v2 with rates
+	err := json.Unmarshal([]byte(`{"rates": [{"measureUnit": "KVAR", "unitPrice": "3.0"}]}`), &d)
+	is.NoErr(err)
+	is.Equal(len(*d.Rates), 1)
+	is.Equal(*(*d.Rates)[0].MeasureUnit, "KVAR")
+	is.Equal((*d.Rates)[0].UnitPrice, "3.0")
+
+	bytes, err := json.Marshal(d)
+	is.NoErr(err)
+	is.Equal(string(bytes), `{"rates":[{"measureUnit":"KVAR","unitPrice":"3.0"}],"timeVariations":null}`)
+
+	// unmarshal v1 with amount
+	err = json.Unmarshal([]byte(`{"amount": "4.0"}`), &d)
+	is.NoErr(err)
+	is.Equal(len(*d.Rates), 1)
+	is.Equal(*(*d.Rates)[0].MeasureUnit, "KWH")
+	is.Equal((*d.Rates)[0].UnitPrice, "4.0")
+
+	bytes, err = json.Marshal(d)
+	is.NoErr(err)
+	is.Equal(string(bytes), `{"rates":[{"measureUnit":"KWH","unitPrice":"4.0"}],"timeVariations":null}`)
+}
