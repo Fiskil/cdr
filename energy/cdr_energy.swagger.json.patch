@@ -1,22 +1,22 @@
 [
   {
     "op": "add",
-    "path": "/components/schemas/EnergyPlanContractFullV2_allOf/properties/coolingOffDays/x-go-type",
+    "path": "/components/schemas/EnergyPlanContractFullV3/allOf/1/properties/coolingOffDays/x-go-type",
     "value": "PatchedCoolingOffDays"
   },
   {
     "op": "add",
-    "path": "/components/schemas/EnergyPlanSolarFeedInTariffV2/items/properties/singleTariff/x-go-type",
+    "path": "/components/schemas/EnergyPlanSolarFeedInTariffV3/items/properties/singleTariff/x-go-type",
     "value": "PatchedEnergyPlanSolarFeedInTariffSingleTariff"
   },
   {
     "op": "add",
-    "path": "/components/schemas/EnergyPlanSolarFeedInTariffV2/items/properties/timeVaryingTariffs/x-go-type",
+    "path": "/components/schemas/EnergyPlanSolarFeedInTariffV3/items/properties/timeVaryingTariffs/x-go-type",
     "value": "PatchedEnergyPlanSolarFeedInTariffTimeVaryingTariff"
   },
   {
     "op": "add",
-    "path": "/components/schemas/EnergyPlanTariffPeriod/items/properties/demandCharges/items/properties/days/x-go-type",
+    "path": "/components/schemas/EnergyPlanTariffPeriodV2/items/properties/demandCharges/items/properties/days/x-go-type",
     "value": "PatchedDemandChargesDays"
   }
 ]
