@@ -1,0 +1,4 @@
+package: banking
+generate:
+  models: true
+output: banking.gen.go

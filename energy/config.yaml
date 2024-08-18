@@ -1,0 +1,4 @@
+package: energy
+generate:
+  models: true
+output: energy.gen.go
