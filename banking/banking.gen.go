@@ -53,9 +53,49 @@ const (
 
 // Defines values for BankingAccountDetailV3SpecificAccountUType.
 const (
-	CreditCard  BankingAccountDetailV3SpecificAccountUType = "creditCard"
-	Loan        BankingAccountDetailV3SpecificAccountUType = "loan"
-	TermDeposit BankingAccountDetailV3SpecificAccountUType = "termDeposit"
+	BankingAccountDetailV3SpecificAccountUTypeCreditCard  BankingAccountDetailV3SpecificAccountUType = "creditCard"
+	BankingAccountDetailV3SpecificAccountUTypeLoan        BankingAccountDetailV3SpecificAccountUType = "loan"
+	BankingAccountDetailV3SpecificAccountUTypeTermDeposit BankingAccountDetailV3SpecificAccountUType = "termDeposit"
+)
+
+// Defines values for BankingAccountDetailV3AllOfFeaturesFeatureType.
+const (
+	BankingAccountDetailV3AllOfFeaturesFeatureTypeADDITIONALCARDS               BankingAccountDetailV3AllOfFeaturesFeatureType = "ADDITIONAL_CARDS"
+	BankingAccountDetailV3AllOfFeaturesFeatureTypeBALANCETRANSFERS              BankingAccountDetailV3AllOfFeaturesFeatureType = "BALANCE_TRANSFERS"
+	BankingAccountDetailV3AllOfFeaturesFeatureTypeBILLPAYMENT                   BankingAccountDetailV3AllOfFeaturesFeatureType = "BILL_PAYMENT"
+	BankingAccountDetailV3AllOfFeaturesFeatureTypeBONUSREWARDS                  BankingAccountDetailV3AllOfFeaturesFeatureType = "BONUS_REWARDS"
+	BankingAccountDetailV3AllOfFeaturesFeatureTypeCARDACCESS                    BankingAccountDetailV3AllOfFeaturesFeatureType = "CARD_ACCESS"
+	BankingAccountDetailV3AllOfFeaturesFeatureTypeCASHBACKOFFER                 BankingAccountDetailV3AllOfFeaturesFeatureType = "CASHBACK_OFFER"
+	BankingAccountDetailV3AllOfFeaturesFeatureTypeCOMPLEMENTARYPRODUCTDISCOUNTS BankingAccountDetailV3AllOfFeaturesFeatureType = "COMPLEMENTARY_PRODUCT_DISCOUNTS"
+	BankingAccountDetailV3AllOfFeaturesFeatureTypeDIGITALBANKING                BankingAccountDetailV3AllOfFeaturesFeatureType = "DIGITAL_BANKING"
+	BankingAccountDetailV3AllOfFeaturesFeatureTypeDIGITALWALLET                 BankingAccountDetailV3AllOfFeaturesFeatureType = "DIGITAL_WALLET"
+	BankingAccountDetailV3AllOfFeaturesFeatureTypeDONATEINTEREST                BankingAccountDetailV3AllOfFeaturesFeatureType = "DONATE_INTEREST"
+	BankingAccountDetailV3AllOfFeaturesFeatureTypeEXTRAREPAYMENTS               BankingAccountDetailV3AllOfFeaturesFeatureType = "EXTRA_REPAYMENTS"
+	BankingAccountDetailV3AllOfFeaturesFeatureTypeFRAUDPROTECTION               BankingAccountDetailV3AllOfFeaturesFeatureType = "FRAUD_PROTECTION"
+	BankingAccountDetailV3AllOfFeaturesFeatureTypeFREETXNS                      BankingAccountDetailV3AllOfFeaturesFeatureType = "FREE_TXNS"
+	BankingAccountDetailV3AllOfFeaturesFeatureTypeFREETXNSALLOWANCE             BankingAccountDetailV3AllOfFeaturesFeatureType = "FREE_TXNS_ALLOWANCE"
+	BankingAccountDetailV3AllOfFeaturesFeatureTypeGUARANTOR                     BankingAccountDetailV3AllOfFeaturesFeatureType = "GUARANTOR"
+	BankingAccountDetailV3AllOfFeaturesFeatureTypeINSTALMENTPLAN                BankingAccountDetailV3AllOfFeaturesFeatureType = "INSTALMENT_PLAN"
+	BankingAccountDetailV3AllOfFeaturesFeatureTypeINSURANCE                     BankingAccountDetailV3AllOfFeaturesFeatureType = "INSURANCE"
+	BankingAccountDetailV3AllOfFeaturesFeatureTypeINTERESTFREE                  BankingAccountDetailV3AllOfFeaturesFeatureType = "INTEREST_FREE"
+	BankingAccountDetailV3AllOfFeaturesFeatureTypeINTERESTFREETRANSFERS         BankingAccountDetailV3AllOfFeaturesFeatureType = "INTEREST_FREE_TRANSFERS"
+	BankingAccountDetailV3AllOfFeaturesFeatureTypeLOYALTYPROGRAM                BankingAccountDetailV3AllOfFeaturesFeatureType = "LOYALTY_PROGRAM"
+	BankingAccountDetailV3AllOfFeaturesFeatureTypeNOTIFICATIONS                 BankingAccountDetailV3AllOfFeaturesFeatureType = "NOTIFICATIONS"
+	BankingAccountDetailV3AllOfFeaturesFeatureTypeNPPENABLED                    BankingAccountDetailV3AllOfFeaturesFeatureType = "NPP_ENABLED"
+	BankingAccountDetailV3AllOfFeaturesFeatureTypeNPPPAYID                      BankingAccountDetailV3AllOfFeaturesFeatureType = "NPP_PAYID"
+	BankingAccountDetailV3AllOfFeaturesFeatureTypeOFFSET                        BankingAccountDetailV3AllOfFeaturesFeatureType = "OFFSET"
+	BankingAccountDetailV3AllOfFeaturesFeatureTypeOTHER                         BankingAccountDetailV3AllOfFeaturesFeatureType = "OTHER"
+	BankingAccountDetailV3AllOfFeaturesFeatureTypeOVERDRAFT                     BankingAccountDetailV3AllOfFeaturesFeatureType = "OVERDRAFT"
+	BankingAccountDetailV3AllOfFeaturesFeatureTypeREDRAW                        BankingAccountDetailV3AllOfFeaturesFeatureType = "REDRAW"
+	BankingAccountDetailV3AllOfFeaturesFeatureTypeRELATIONSHIPMANAGEMENT        BankingAccountDetailV3AllOfFeaturesFeatureType = "RELATIONSHIP_MANAGEMENT"
+	BankingAccountDetailV3AllOfFeaturesFeatureTypeUNLIMITEDTXNS                 BankingAccountDetailV3AllOfFeaturesFeatureType = "UNLIMITED_TXNS"
+)
+
+// Defines values for BankingAccountDetailV3AllOfSpecificAccountUType.
+const (
+	BankingAccountDetailV3AllOfSpecificAccountUTypeCreditCard  BankingAccountDetailV3AllOfSpecificAccountUType = "creditCard"
+	BankingAccountDetailV3AllOfSpecificAccountUTypeLoan        BankingAccountDetailV3AllOfSpecificAccountUType = "loan"
+	BankingAccountDetailV3AllOfSpecificAccountUTypeTermDeposit BankingAccountDetailV3AllOfSpecificAccountUType = "termDeposit"
 )
 
 // Defines values for BankingAccountV2AccountOwnership.
@@ -121,6 +161,14 @@ const (
 	BankingPayeeDetailV2TypeDIGITALWALLET BankingPayeeDetailV2Type = "DIGITAL_WALLET"
 	BankingPayeeDetailV2TypeDOMESTIC      BankingPayeeDetailV2Type = "DOMESTIC"
 	BankingPayeeDetailV2TypeINTERNATIONAL BankingPayeeDetailV2Type = "INTERNATIONAL"
+)
+
+// Defines values for BankingPayeeDetailV2AllOfPayeeUType.
+const (
+	BankingPayeeDetailV2AllOfPayeeUTypeBiller        BankingPayeeDetailV2AllOfPayeeUType = "biller"
+	BankingPayeeDetailV2AllOfPayeeUTypeDigitalWallet BankingPayeeDetailV2AllOfPayeeUType = "digitalWallet"
+	BankingPayeeDetailV2AllOfPayeeUTypeDomestic      BankingPayeeDetailV2AllOfPayeeUType = "domestic"
+	BankingPayeeDetailV2AllOfPayeeUTypeInternational BankingPayeeDetailV2AllOfPayeeUType = "international"
 )
 
 // Defines values for BankingPayeeV2Type.
@@ -264,17 +312,17 @@ const (
 
 // Defines values for BankingProductLendingRateV2LendingRateType.
 const (
-	BankingProductLendingRateV2LendingRateTypeBUNDLEDISCOUNTFIXED    BankingProductLendingRateV2LendingRateType = "BUNDLE_DISCOUNT_FIXED"
-	BankingProductLendingRateV2LendingRateTypeBUNDLEDISCOUNTVARIABLE BankingProductLendingRateV2LendingRateType = "BUNDLE_DISCOUNT_VARIABLE"
-	BankingProductLendingRateV2LendingRateTypeCASHADVANCE            BankingProductLendingRateV2LendingRateType = "CASH_ADVANCE"
-	BankingProductLendingRateV2LendingRateTypeDISCOUNT               BankingProductLendingRateV2LendingRateType = "DISCOUNT"
-	BankingProductLendingRateV2LendingRateTypeFIXED                  BankingProductLendingRateV2LendingRateType = "FIXED"
-	BankingProductLendingRateV2LendingRateTypeFLOATING               BankingProductLendingRateV2LendingRateType = "FLOATING"
-	BankingProductLendingRateV2LendingRateTypeINTRODUCTORY           BankingProductLendingRateV2LendingRateType = "INTRODUCTORY"
-	BankingProductLendingRateV2LendingRateTypeMARKETLINKED           BankingProductLendingRateV2LendingRateType = "MARKET_LINKED"
-	BankingProductLendingRateV2LendingRateTypePENALTY                BankingProductLendingRateV2LendingRateType = "PENALTY"
-	BankingProductLendingRateV2LendingRateTypePURCHASE               BankingProductLendingRateV2LendingRateType = "PURCHASE"
-	BankingProductLendingRateV2LendingRateTypeVARIABLE               BankingProductLendingRateV2LendingRateType = "VARIABLE"
+	BUNDLEDISCOUNTFIXED    BankingProductLendingRateV2LendingRateType = "BUNDLE_DISCOUNT_FIXED"
+	BUNDLEDISCOUNTVARIABLE BankingProductLendingRateV2LendingRateType = "BUNDLE_DISCOUNT_VARIABLE"
+	CASHADVANCE            BankingProductLendingRateV2LendingRateType = "CASH_ADVANCE"
+	DISCOUNT               BankingProductLendingRateV2LendingRateType = "DISCOUNT"
+	FIXED                  BankingProductLendingRateV2LendingRateType = "FIXED"
+	FLOATING               BankingProductLendingRateV2LendingRateType = "FLOATING"
+	INTRODUCTORY           BankingProductLendingRateV2LendingRateType = "INTRODUCTORY"
+	MARKETLINKED           BankingProductLendingRateV2LendingRateType = "MARKET_LINKED"
+	PENALTY                BankingProductLendingRateV2LendingRateType = "PENALTY"
+	PURCHASE               BankingProductLendingRateV2LendingRateType = "PURCHASE"
+	VARIABLE               BankingProductLendingRateV2LendingRateType = "VARIABLE"
 )
 
 // Defines values for BankingProductLendingRateV2LoanPurpose.
@@ -340,12 +388,12 @@ const (
 
 // Defines values for BankingScheduledPaymentToV2ToUType.
 const (
-	BankingScheduledPaymentToV2ToUTypeAccountId     BankingScheduledPaymentToV2ToUType = "accountId"
-	BankingScheduledPaymentToV2ToUTypeBiller        BankingScheduledPaymentToV2ToUType = "biller"
-	BankingScheduledPaymentToV2ToUTypeDigitalWallet BankingScheduledPaymentToV2ToUType = "digitalWallet"
-	BankingScheduledPaymentToV2ToUTypeDomestic      BankingScheduledPaymentToV2ToUType = "domestic"
-	BankingScheduledPaymentToV2ToUTypeInternational BankingScheduledPaymentToV2ToUType = "international"
-	BankingScheduledPaymentToV2ToUTypePayeeId       BankingScheduledPaymentToV2ToUType = "payeeId"
+	AccountId     BankingScheduledPaymentToV2ToUType = "accountId"
+	Biller        BankingScheduledPaymentToV2ToUType = "biller"
+	DigitalWallet BankingScheduledPaymentToV2ToUType = "digitalWallet"
+	Domestic      BankingScheduledPaymentToV2ToUType = "domestic"
+	International BankingScheduledPaymentToV2ToUType = "international"
+	PayeeId       BankingScheduledPaymentToV2ToUType = "payeeId"
 )
 
 // Defines values for BankingScheduledPaymentV2Status.
@@ -380,16 +428,6 @@ const (
 	BankingTransactionTypeTRANSFEROUTGOING BankingTransactionType = "TRANSFER_OUTGOING"
 )
 
-// Defines values for BankingTransactionDetailExtendedDataExtensionUType.
-const (
-	X2p101Payload BankingTransactionDetailExtendedDataExtensionUType = "x2p101Payload"
-)
-
-// Defines values for BankingTransactionDetailExtendedDataService.
-const (
-	X2P101 BankingTransactionDetailExtendedDataService = "X2P1.01"
-)
-
 // Defines values for BankingTransactionDetailStatus.
 const (
 	BankingTransactionDetailStatusPENDING BankingTransactionDetailStatus = "PENDING"
@@ -406,6 +444,16 @@ const (
 	BankingTransactionDetailTypePAYMENT          BankingTransactionDetailType = "PAYMENT"
 	BankingTransactionDetailTypeTRANSFERINCOMING BankingTransactionDetailType = "TRANSFER_INCOMING"
 	BankingTransactionDetailTypeTRANSFEROUTGOING BankingTransactionDetailType = "TRANSFER_OUTGOING"
+)
+
+// Defines values for BankingTransactionDetailAllOfExtendedDataExtensionUType.
+const (
+	X2p101Payload BankingTransactionDetailAllOfExtendedDataExtensionUType = "x2p101Payload"
+)
+
+// Defines values for BankingTransactionDetailAllOfExtendedDataService.
+const (
+	X2P101 BankingTransactionDetailAllOfExtendedDataService = "X2P1.01"
 )
 
 // Defines values for CommonPhysicalAddressAddressUType.
@@ -634,6 +682,66 @@ type BankingAccountDetailV3OpenStatus string
 // BankingAccountDetailV3SpecificAccountUType The type of structure to present account specific fields.
 type BankingAccountDetailV3SpecificAccountUType string
 
+// BankingAccountDetailV3AllOf defines model for BankingAccountDetailV3_allOf.
+type BankingAccountDetailV3AllOf struct {
+	// AccountNumber The unmasked account number for the account. Should not be supplied if the account number is a PAN requiring PCI compliance. Is expected to be formatted as digits only with leading zeros included and no punctuation or spaces.
+	AccountNumber *string `json:"accountNumber,omitempty"`
+
+	// Addresses The addresses for the account to be used for correspondence.
+	Addresses *[]CommonPhysicalAddress `json:"addresses,omitempty"`
+
+	// Bsb The unmasked BSB for the account. Is expected to be formatted as digits only with leading zeros included and no punctuation or spaces.
+	Bsb *string `json:"bsb,omitempty"`
+
+	// BundleName Optional field to indicate if this account is part of a bundle that is providing additional benefit to the customer.
+	BundleName *string                   `json:"bundleName,omitempty"`
+	CreditCard *BankingCreditCardAccount `json:"creditCard,omitempty"`
+
+	// DepositRate current rate to calculate interest earned being applied to deposit balances as it stands at the time of the API call.
+	DepositRate *string `json:"depositRate,omitempty"`
+
+	// DepositRates Fully described deposit rates for this account based on the equivalent structure in Product Reference.
+	DepositRates *[]BankingProductDepositRate `json:"depositRates,omitempty"`
+
+	// Features Array of features of the account based on the equivalent structure in Product Reference with the following additional field.
+	Features *[]struct {
+		// AdditionalInfo Display text providing more information on the feature. Mandatory if [_featureType_](#tocSproductfeaturetypedoc) is set to `OTHER`.
+		AdditionalInfo *string `json:"additionalInfo,omitempty"`
+
+		// AdditionalInfoUri Link to a web page with more information on this feature.
+		AdditionalInfoUri *string `json:"additionalInfoUri,omitempty"`
+
+		// AdditionalValue Generic field containing additional information relevant to the [_featureType_](#tocSproductfeaturetypedoc) specified. Whether mandatory or not is dependent on the value of the [_featureType_](#tocSproductfeaturetypedoc).
+		AdditionalValue *string `json:"additionalValue,omitempty"`
+
+		// FeatureType The type of feature described. For further details, refer to [Product Feature Types](#tocSproductfeaturetypedoc).
+		FeatureType BankingAccountDetailV3AllOfFeaturesFeatureType `json:"featureType"`
+
+		// IsActivated `true` if the feature is already activated and `false` if the feature is available for activation. Defaults to `true` if absent.<br>Note: this is an additional field appended to the feature object defined in the Product Reference payload.
+		IsActivated *bool `json:"isActivated,omitempty"`
+	} `json:"features,omitempty"`
+
+	// Fees Fees and charges applicable to the account based on the equivalent structure in Product Reference.
+	Fees *[]BankingProductFee `json:"fees,omitempty"`
+
+	// LendingRate The current rate to calculate interest payable being applied to lending balances as it stands at the time of the API call.
+	LendingRate *string `json:"lendingRate,omitempty"`
+
+	// LendingRates Fully described lending rates for this account based on the equivalent structure in Product Reference.
+	LendingRates *[]BankingProductLendingRateV2 `json:"lendingRates,omitempty"`
+	Loan         *BankingLoanAccountV2          `json:"loan,omitempty"`
+
+	// SpecificAccountUType The type of structure to present account specific fields.
+	SpecificAccountUType *BankingAccountDetailV3AllOfSpecificAccountUType `json:"specificAccountUType,omitempty"`
+	TermDeposit          *[]BankingTermDepositAccount                     `json:"termDeposit,omitempty"`
+}
+
+// BankingAccountDetailV3AllOfFeaturesFeatureType The type of feature described. For further details, refer to [Product Feature Types](#tocSproductfeaturetypedoc).
+type BankingAccountDetailV3AllOfFeaturesFeatureType string
+
+// BankingAccountDetailV3AllOfSpecificAccountUType The type of structure to present account specific fields.
+type BankingAccountDetailV3AllOfSpecificAccountUType string
+
 // BankingAccountV2 defines model for BankingAccountV2.
 type BankingAccountV2 struct {
 	// AccountId A unique ID of the account adhering to the standards for ID permanence.
@@ -833,48 +941,57 @@ type BankingDomesticPayeePayIdType string
 
 // BankingInternationalPayee defines model for BankingInternationalPayee.
 type BankingInternationalPayee struct {
-	BankDetails struct {
-		// AccountNumber Account Targeted for payment.
-		AccountNumber string `json:"accountNumber"`
-		BankAddress   *struct {
-			// Address Address of the recipient Bank.
-			Address string `json:"address"`
+	BankDetails        BankingInternationalPayeeBankDetails        `json:"bankDetails"`
+	BeneficiaryDetails BankingInternationalPayeeBeneficiaryDetails `json:"beneficiaryDetails"`
+}
 
-			// Name Name of the recipient Bank.
-			Name string `json:"name"`
-		} `json:"bankAddress,omitempty"`
+// BankingInternationalPayeeBankDetails defines model for BankingInternationalPayee_bankDetails.
+type BankingInternationalPayeeBankDetails struct {
+	// AccountNumber Account Targeted for payment.
+	AccountNumber string                                           `json:"accountNumber"`
+	BankAddress   *BankingInternationalPayeeBankDetailsBankAddress `json:"bankAddress,omitempty"`
 
-		// BeneficiaryBankBIC Swift bank code. Aligns with standard [ISO 9362](https://www.iso.org/standard/60390.html).
-		BeneficiaryBankBIC *string `json:"beneficiaryBankBIC,omitempty"`
+	// BeneficiaryBankBIC Swift bank code. Aligns with standard [ISO 9362](https://www.iso.org/standard/60390.html).
+	BeneficiaryBankBIC *string `json:"beneficiaryBankBIC,omitempty"`
 
-		// ChipNumber Number for the Clearing House Interbank Payments System.
-		ChipNumber *string `json:"chipNumber,omitempty"`
+	// ChipNumber Number for the Clearing House Interbank Payments System.
+	ChipNumber *string `json:"chipNumber,omitempty"`
 
-		// Country Country of the recipient institution. A valid [ISO 3166 Alpha-3](https://www.iso.org/iso-3166-country-codes.html) country code.
-		Country string `json:"country"`
+	// Country Country of the recipient institution. A valid [ISO 3166 Alpha-3](https://www.iso.org/iso-3166-country-codes.html) country code.
+	Country string `json:"country"`
 
-		// FedWireNumber Number for Fedwire payment (Federal Reserve Wire Network).
-		FedWireNumber *string `json:"fedWireNumber,omitempty"`
+	// FedWireNumber Number for Fedwire payment (Federal Reserve Wire Network).
+	FedWireNumber *string `json:"fedWireNumber,omitempty"`
 
-		// LegalEntityIdentifier The legal entity identifier (LEI) for the beneficiary. Aligns with [ISO 17442](https://www.iso.org/standard/59771.html).
-		LegalEntityIdentifier *string `json:"legalEntityIdentifier,omitempty"`
+	// LegalEntityIdentifier The legal entity identifier (LEI) for the beneficiary. Aligns with [ISO 17442](https://www.iso.org/standard/59771.html).
+	LegalEntityIdentifier *string `json:"legalEntityIdentifier,omitempty"`
 
-		// RoutingNumber International bank routing number.
-		RoutingNumber *string `json:"routingNumber,omitempty"`
+	// RoutingNumber International bank routing number.
+	RoutingNumber *string `json:"routingNumber,omitempty"`
 
-		// SortCode Sort code used for account identification in some jurisdictions.
-		SortCode *string `json:"sortCode,omitempty"`
-	} `json:"bankDetails"`
-	BeneficiaryDetails struct {
-		// Country Country where the beneficiary resides. A valid [ISO 3166 Alpha-3](https://www.iso.org/iso-3166-country-codes.html) country code.
-		Country string `json:"country"`
+	// SortCode Sort code used for account identification in some jurisdictions.
+	SortCode *string `json:"sortCode,omitempty"`
+}
 
-		// Message Response message for the payment.
-		Message *string `json:"message,omitempty"`
+// BankingInternationalPayeeBankDetailsBankAddress defines model for BankingInternationalPayee_bankDetails_bankAddress.
+type BankingInternationalPayeeBankDetailsBankAddress struct {
+	// Address Address of the recipient Bank.
+	Address string `json:"address"`
 
-		// Name Name of the beneficiary.
-		Name *string `json:"name,omitempty"`
-	} `json:"beneficiaryDetails"`
+	// Name Name of the recipient Bank.
+	Name string `json:"name"`
+}
+
+// BankingInternationalPayeeBeneficiaryDetails defines model for BankingInternationalPayee_beneficiaryDetails.
+type BankingInternationalPayeeBeneficiaryDetails struct {
+	// Country Country where the beneficiary resides. A valid [ISO 3166 Alpha-3](https://www.iso.org/iso-3166-country-codes.html) country code.
+	Country string `json:"country"`
+
+	// Message Response message for the payment.
+	Message *string `json:"message,omitempty"`
+
+	// Name Name of the beneficiary.
+	Name *string `json:"name,omitempty"`
 }
 
 // BankingLoanAccountV2 defines model for BankingLoanAccountV2.
@@ -959,6 +1076,20 @@ type BankingPayeeDetailV2PayeeUType string
 
 // BankingPayeeDetailV2Type The type of payee.<ul><li>`DOMESTIC` means a registered payee for domestic payments including NPP.<li>`INTERNATIONAL` means a registered payee for international payments.<li>`BILLER` means a registered payee for BPAY.<li>`DIGITAL_WALLET` means a registered payee for a bank's digital wallet.</ul>
 type BankingPayeeDetailV2Type string
+
+// BankingPayeeDetailV2AllOf defines model for BankingPayeeDetailV2_allOf.
+type BankingPayeeDetailV2AllOf struct {
+	Biller        *BankingBillerPayee        `json:"biller,omitempty"`
+	DigitalWallet *BankingDigitalWalletPayee `json:"digitalWallet,omitempty"`
+	Domestic      *BankingDomesticPayee      `json:"domestic,omitempty"`
+	International *BankingInternationalPayee `json:"international,omitempty"`
+
+	// PayeeUType Type of object included that describes the payee in detail.
+	PayeeUType BankingPayeeDetailV2AllOfPayeeUType `json:"payeeUType"`
+}
+
+// BankingPayeeDetailV2AllOfPayeeUType Type of object included that describes the payee in detail.
+type BankingPayeeDetailV2AllOfPayeeUType string
 
 // BankingPayeeV2 defines model for BankingPayeeV2.
 type BankingPayeeV2 struct {
@@ -1110,13 +1241,7 @@ type BankingProductDetailV4 struct {
 	Bundles *[]BankingProductBundle `json:"bundles,omitempty"`
 
 	// CardArt An array of card art images.
-	CardArt *[]struct {
-		// ImageUri URI reference to a PNG, JPG or GIF image with proportions defined by ISO 7810 ID-1 and width no greater than 512 pixels. The URI reference may be a link or url-encoded data URI according to **[[RFC2397]](#nref-RFC2397)**.
-		ImageUri string `json:"imageUri"`
-
-		// Title Display label for the specific image.
-		Title *string `json:"title,omitempty"`
-	} `json:"cardArt,omitempty"`
+	CardArt *[]BankingProductV4CardArt `json:"cardArt,omitempty"`
 
 	// Constraints Constraints on the application for or operation of the product such as minimum balances or limit thresholds.
 	Constraints *[]BankingProductConstraint `json:"constraints,omitempty"`
@@ -1159,6 +1284,30 @@ type BankingProductDetailV4 struct {
 
 	// ProductId A data holder specific unique identifier for this product. This identifier must be unique to a product but does not otherwise need to adhere to ID permanence guidelines.
 	ProductId string `json:"productId"`
+}
+
+// BankingProductDetailV4AllOf defines model for BankingProductDetailV4_allOf.
+type BankingProductDetailV4AllOf struct {
+	// Bundles An array of bundles that this product participates in. Each bundle is described by free form information but also by a list of product IDs of the other products that are included in the bundle. It is assumed that the current product is included in the bundle also.
+	Bundles *[]BankingProductBundle `json:"bundles,omitempty"`
+
+	// Constraints Constraints on the application for or operation of the product such as minimum balances or limit thresholds.
+	Constraints *[]BankingProductConstraint `json:"constraints,omitempty"`
+
+	// DepositRates Interest rates available for deposits.
+	DepositRates *[]BankingProductDepositRate `json:"depositRates,omitempty"`
+
+	// Eligibility Eligibility criteria for the product.
+	Eligibility *[]BankingProductEligibility `json:"eligibility,omitempty"`
+
+	// Features Array of features available for the product.
+	Features *[]BankingProductFeatureV2 `json:"features,omitempty"`
+
+	// Fees Fees applicable for the product.
+	Fees *[]BankingProductFee `json:"fees,omitempty"`
+
+	// LendingRates Interest rates charged against lending balances.
+	LendingRates *[]BankingProductLendingRateV2 `json:"lendingRates,omitempty"`
 }
 
 // BankingProductDiscount defines model for BankingProductDiscount.
@@ -1404,13 +1553,7 @@ type BankingProductV4 struct {
 	BrandName *string `json:"brandName,omitempty"`
 
 	// CardArt An array of card art images.
-	CardArt *[]struct {
-		// ImageUri URI reference to a PNG, JPG or GIF image with proportions defined by ISO 7810 ID-1 and width no greater than 512 pixels. The URI reference may be a link or url-encoded data URI according to **[[RFC2397]](#nref-RFC2397)**.
-		ImageUri string `json:"imageUri"`
-
-		// Title Display label for the specific image.
-		Title *string `json:"title,omitempty"`
-	} `json:"cardArt,omitempty"`
+	CardArt *[]BankingProductV4CardArt `json:"cardArt,omitempty"`
 
 	// Description A description of the product.
 	Description string `json:"description"`
@@ -1435,6 +1578,15 @@ type BankingProductV4 struct {
 
 	// ProductId A data holder specific unique identifier for this product. This identifier must be unique to a product but does not otherwise need to adhere to ID permanence guidelines.
 	ProductId string `json:"productId"`
+}
+
+// BankingProductV4CardArt defines model for BankingProductV4_cardArt.
+type BankingProductV4CardArt struct {
+	// ImageUri URI reference to a PNG, JPG or GIF image with proportions defined by ISO 7810 ID-1 and width no greater than 512 pixels. The URI reference may be a link or url-encoded data URI according to **[[RFC2397]](#nref-RFC2397)**.
+	ImageUri string `json:"imageUri"`
+
+	// Title Display label for the specific image.
+	Title *string `json:"title,omitempty"`
 }
 
 // BankingScheduledPaymentFrom Object containing details of the source of the payment. Currently only specifies an account ID but provided as an object to facilitate future extensibility and consistency with the _to_ object.
@@ -1709,30 +1861,8 @@ type BankingTransactionDetail struct {
 	Description string `json:"description"`
 
 	// ExecutionDateTime The time the transaction was executed by the originating customer, if available.
-	ExecutionDateTime *string `json:"executionDateTime,omitempty"`
-	ExtendedData      struct {
-		// ExtensionUType Optional extended data specific to transactions originated via NPP.
-		ExtensionUType *BankingTransactionDetailExtendedDataExtensionUType `json:"extensionUType,omitempty"`
-
-		// Payee Label of the target PayID. Mandatory for an outbound payment. The name assigned to the BSB/Account Number or PayID (by the owner of the PayID).
-		Payee *string `json:"payee,omitempty"`
-
-		// Payer Label of the originating payer. Mandatory for inbound payment.
-		Payer *string `json:"payer,omitempty"`
-
-		// Service Identifier of the applicable overlay service. Valid values are: `X2P1.01`.
-		Service       BankingTransactionDetailExtendedDataService `json:"service"`
-		X2p101Payload *struct {
-			// EndToEndId An end to end ID for the payment created at initiation.
-			EndToEndId *string `json:"endToEndId,omitempty"`
-
-			// ExtendedDescription An extended string description. Required if the _extensionUType_ field is `x2p101Payload`.
-			ExtendedDescription *string `json:"extendedDescription,omitempty"`
-
-			// PurposeCode Purpose of the payment. Format is defined by NPP standards for the x2p1.01 overlay service.
-			PurposeCode *string `json:"purposeCode,omitempty"`
-		} `json:"x2p101Payload,omitempty"`
-	} `json:"extendedData"`
+	ExecutionDateTime *string                                   `json:"executionDateTime,omitempty"`
+	ExtendedData      BankingTransactionDetailAllOfExtendedData `json:"extendedData"`
 
 	// IsDetailAvailable `true` if extended information is available using the transaction detail endpoint. `false` if extended data is not available.
 	IsDetailAvailable bool `json:"isDetailAvailable"`
@@ -1762,17 +1892,50 @@ type BankingTransactionDetail struct {
 	ValueDateTime *string `json:"valueDateTime,omitempty"`
 }
 
-// BankingTransactionDetailExtendedDataExtensionUType Optional extended data specific to transactions originated via NPP.
-type BankingTransactionDetailExtendedDataExtensionUType string
-
-// BankingTransactionDetailExtendedDataService Identifier of the applicable overlay service. Valid values are: `X2P1.01`.
-type BankingTransactionDetailExtendedDataService string
-
 // BankingTransactionDetailStatus Status of the transaction whether pending or posted. Note that there is currently no provision in the standards to guarantee the ability to correlate a pending transaction with an associated posted transaction.
 type BankingTransactionDetailStatus string
 
 // BankingTransactionDetailType The type of the transaction.
 type BankingTransactionDetailType string
+
+// BankingTransactionDetailAllOf defines model for BankingTransactionDetail_allOf.
+type BankingTransactionDetailAllOf struct {
+	ExtendedData BankingTransactionDetailAllOfExtendedData `json:"extendedData"`
+}
+
+// BankingTransactionDetailAllOfExtendedData defines model for BankingTransactionDetail_allOf_extendedData.
+type BankingTransactionDetailAllOfExtendedData struct {
+	// ExtensionUType Optional extended data specific to transactions originated via NPP.
+	ExtensionUType *BankingTransactionDetailAllOfExtendedDataExtensionUType `json:"extensionUType,omitempty"`
+
+	// Payee Label of the target PayID. Mandatory for an outbound payment. The name assigned to the BSB/Account Number or PayID (by the owner of the PayID).
+	Payee *string `json:"payee,omitempty"`
+
+	// Payer Label of the originating payer. Mandatory for inbound payment.
+	Payer *string `json:"payer,omitempty"`
+
+	// Service Identifier of the applicable overlay service. Valid values are: `X2P1.01`.
+	Service       BankingTransactionDetailAllOfExtendedDataService        `json:"service"`
+	X2p101Payload *BankingTransactionDetailAllOfExtendedDataX2p101Payload `json:"x2p101Payload,omitempty"`
+}
+
+// BankingTransactionDetailAllOfExtendedDataExtensionUType Optional extended data specific to transactions originated via NPP.
+type BankingTransactionDetailAllOfExtendedDataExtensionUType string
+
+// BankingTransactionDetailAllOfExtendedDataService Identifier of the applicable overlay service. Valid values are: `X2P1.01`.
+type BankingTransactionDetailAllOfExtendedDataService string
+
+// BankingTransactionDetailAllOfExtendedDataX2p101Payload defines model for BankingTransactionDetail_allOf_extendedData_x2p101Payload.
+type BankingTransactionDetailAllOfExtendedDataX2p101Payload struct {
+	// EndToEndId An end to end ID for the payment created at initiation.
+	EndToEndId *string `json:"endToEndId,omitempty"`
+
+	// ExtendedDescription An extended string description. Required if the _extensionUType_ field is `x2p101Payload`.
+	ExtendedDescription *string `json:"extendedDescription,omitempty"`
+
+	// PurposeCode Purpose of the payment. Format is defined by NPP standards for the x2p1.01 overlay service.
+	PurposeCode *string `json:"purposeCode,omitempty"`
+}
 
 // CommonPAFAddress Australian address formatted according to the file format defined by the [PAF file format](https://auspost.com.au/content/dam/auspost_corp/media/documents/australia-post-data-guide.pdf).
 type CommonPAFAddress struct {
@@ -1937,12 +2100,21 @@ type MetaPaginatedTransaction struct {
 	TotalRecords int `json:"totalRecords"`
 }
 
+// MetaPaginatedTransactionAllOf defines model for MetaPaginatedTransaction_allOf.
+type MetaPaginatedTransactionAllOf struct {
+	// IsQueryParamUnsupported `true` if _text_ query parameter is not supported.
+	IsQueryParamUnsupported *bool `json:"isQueryParamUnsupported,omitempty"`
+}
+
 // RequestAccountIds defines model for RequestAccountIds.
 type RequestAccountIds struct {
-	Data struct {
-		AccountIds []string `json:"accountIds"`
-	} `json:"data"`
-	Meta *Meta `json:"meta,omitempty"`
+	Data RequestAccountIdsData `json:"data"`
+	Meta *Meta                 `json:"meta,omitempty"`
+}
+
+// RequestAccountIdsData defines model for RequestAccountIds_data.
+type RequestAccountIdsData struct {
+	AccountIds []string `json:"accountIds"`
 }
 
 // ResponseBankingAccountByIdV3 defines model for ResponseBankingAccountByIdV3.
@@ -1954,12 +2126,15 @@ type ResponseBankingAccountByIdV3 struct {
 
 // ResponseBankingAccountListV2 defines model for ResponseBankingAccountListV2.
 type ResponseBankingAccountListV2 struct {
-	Data struct {
-		// Accounts The list of accounts returned. If the filter results in an empty set then this array may have no records.
-		Accounts []BankingAccountV2 `json:"accounts"`
-	} `json:"data"`
-	Links LinksPaginated `json:"links"`
-	Meta  MetaPaginated  `json:"meta"`
+	Data  ResponseBankingAccountListV2Data `json:"data"`
+	Links LinksPaginated                   `json:"links"`
+	Meta  MetaPaginated                    `json:"meta"`
+}
+
+// ResponseBankingAccountListV2Data defines model for ResponseBankingAccountListV2_data.
+type ResponseBankingAccountListV2Data struct {
+	// Accounts The list of accounts returned. If the filter results in an empty set then this array may have no records.
+	Accounts []BankingAccountV2 `json:"accounts"`
 }
 
 // ResponseBankingAccountsBalanceById defines model for ResponseBankingAccountsBalanceById.
@@ -1971,22 +2146,28 @@ type ResponseBankingAccountsBalanceById struct {
 
 // ResponseBankingAccountsBalanceList defines model for ResponseBankingAccountsBalanceList.
 type ResponseBankingAccountsBalanceList struct {
-	Data struct {
-		// Balances The list of balances returned.
-		Balances []BankingBalance `json:"balances"`
-	} `json:"data"`
-	Links LinksPaginated `json:"links"`
-	Meta  MetaPaginated  `json:"meta"`
+	Data  ResponseBankingAccountsBalanceListData `json:"data"`
+	Links LinksPaginated                         `json:"links"`
+	Meta  MetaPaginated                          `json:"meta"`
+}
+
+// ResponseBankingAccountsBalanceListData defines model for ResponseBankingAccountsBalanceList_data.
+type ResponseBankingAccountsBalanceListData struct {
+	// Balances The list of balances returned.
+	Balances []BankingBalance `json:"balances"`
 }
 
 // ResponseBankingDirectDebitAuthorisationList defines model for ResponseBankingDirectDebitAuthorisationList.
 type ResponseBankingDirectDebitAuthorisationList struct {
-	Data struct {
-		// DirectDebitAuthorisations The list of authorisations returned.
-		DirectDebitAuthorisations []BankingDirectDebit `json:"directDebitAuthorisations"`
-	} `json:"data"`
-	Links LinksPaginated `json:"links"`
-	Meta  MetaPaginated  `json:"meta"`
+	Data  ResponseBankingDirectDebitAuthorisationListData `json:"data"`
+	Links LinksPaginated                                  `json:"links"`
+	Meta  MetaPaginated                                   `json:"meta"`
+}
+
+// ResponseBankingDirectDebitAuthorisationListData defines model for ResponseBankingDirectDebitAuthorisationList_data.
+type ResponseBankingDirectDebitAuthorisationListData struct {
+	// DirectDebitAuthorisations The list of authorisations returned.
+	DirectDebitAuthorisations []BankingDirectDebit `json:"directDebitAuthorisations"`
 }
 
 // ResponseBankingPayeeByIdV2 defines model for ResponseBankingPayeeByIdV2.
@@ -1998,12 +2179,15 @@ type ResponseBankingPayeeByIdV2 struct {
 
 // ResponseBankingPayeeListV2 defines model for ResponseBankingPayeeListV2.
 type ResponseBankingPayeeListV2 struct {
-	Data struct {
-		// Payees The list of payees returned.
-		Payees []BankingPayeeV2 `json:"payees"`
-	} `json:"data"`
-	Links LinksPaginated `json:"links"`
-	Meta  MetaPaginated  `json:"meta"`
+	Data  ResponseBankingPayeeListV2Data `json:"data"`
+	Links LinksPaginated                 `json:"links"`
+	Meta  MetaPaginated                  `json:"meta"`
+}
+
+// ResponseBankingPayeeListV2Data defines model for ResponseBankingPayeeListV2_data.
+type ResponseBankingPayeeListV2Data struct {
+	// Payees The list of payees returned.
+	Payees []BankingPayeeV2 `json:"payees"`
 }
 
 // ResponseBankingProductByIdV4 defines model for ResponseBankingProductByIdV4.
@@ -2015,22 +2199,28 @@ type ResponseBankingProductByIdV4 struct {
 
 // ResponseBankingProductListV2 defines model for ResponseBankingProductListV2.
 type ResponseBankingProductListV2 struct {
-	Data struct {
-		// Products The list of products returned. If the filter results in an empty set then this array may have no records.
-		Products []BankingProductV4 `json:"products"`
-	} `json:"data"`
-	Links LinksPaginated `json:"links"`
-	Meta  MetaPaginated  `json:"meta"`
+	Data  ResponseBankingProductListV2Data `json:"data"`
+	Links LinksPaginated                   `json:"links"`
+	Meta  MetaPaginated                    `json:"meta"`
+}
+
+// ResponseBankingProductListV2Data defines model for ResponseBankingProductListV2_data.
+type ResponseBankingProductListV2Data struct {
+	// Products The list of products returned. If the filter results in an empty set then this array may have no records.
+	Products []BankingProductV4 `json:"products"`
 }
 
 // ResponseBankingScheduledPaymentsListV2 defines model for ResponseBankingScheduledPaymentsListV2.
 type ResponseBankingScheduledPaymentsListV2 struct {
-	Data struct {
-		// ScheduledPayments The list of scheduled payments to return.
-		ScheduledPayments []BankingScheduledPaymentV2 `json:"scheduledPayments"`
-	} `json:"data"`
-	Links LinksPaginated `json:"links"`
-	Meta  MetaPaginated  `json:"meta"`
+	Data  ResponseBankingScheduledPaymentsListV2Data `json:"data"`
+	Links LinksPaginated                             `json:"links"`
+	Meta  MetaPaginated                              `json:"meta"`
+}
+
+// ResponseBankingScheduledPaymentsListV2Data defines model for ResponseBankingScheduledPaymentsListV2_data.
+type ResponseBankingScheduledPaymentsListV2Data struct {
+	// ScheduledPayments The list of scheduled payments to return.
+	ScheduledPayments []BankingScheduledPaymentV2 `json:"scheduledPayments"`
 }
 
 // ResponseBankingTransactionById defines model for ResponseBankingTransactionById.
@@ -2042,28 +2232,34 @@ type ResponseBankingTransactionById struct {
 
 // ResponseBankingTransactionList defines model for ResponseBankingTransactionList.
 type ResponseBankingTransactionList struct {
-	Data struct {
-		Transactions []BankingTransaction `json:"transactions"`
-	} `json:"data"`
-	Links LinksPaginated           `json:"links"`
-	Meta  MetaPaginatedTransaction `json:"meta"`
+	Data  ResponseBankingTransactionListData `json:"data"`
+	Links LinksPaginated                     `json:"links"`
+	Meta  MetaPaginatedTransaction           `json:"meta"`
+}
+
+// ResponseBankingTransactionListData defines model for ResponseBankingTransactionList_data.
+type ResponseBankingTransactionListData struct {
+	Transactions []BankingTransaction `json:"transactions"`
 }
 
 // ResponseErrorListV2 defines model for ResponseErrorListV2.
 type ResponseErrorListV2 struct {
-	Errors []struct {
-		// Code The code of the error encountered. Where the error is specific to the respondent, an application-specific error code, expressed as a string value. If the error is application-specific, the URN code that the specific error extends must be provided in the meta object. Otherwise, the value is the error code URN.
-		Code string `json:"code"`
+	Errors []ResponseErrorListV2Errors `json:"errors"`
+}
 
-		// Detail A human-readable explanation specific to this occurrence of the problem.
-		Detail string `json:"detail"`
+// ResponseErrorListV2Errors defines model for ResponseErrorListV2_errors.
+type ResponseErrorListV2Errors struct {
+	// Code The code of the error encountered. Where the error is specific to the respondent, an application-specific error code, expressed as a string value. If the error is application-specific, the URN code that the specific error extends must be provided in the meta object. Otherwise, the value is the error code URN.
+	Code string `json:"code"`
 
-		// Meta Additional data for customised error codes.
-		Meta *MetaError `json:"meta,omitempty"`
+	// Detail A human-readable explanation specific to this occurrence of the problem.
+	Detail string `json:"detail"`
 
-		// Title A short, human-readable summary of the problem that MUST NOT change from occurrence to occurrence of the problem represented by the error code.
-		Title string `json:"title"`
-	} `json:"errors"`
+	// Meta Additional data for customised error codes.
+	Meta *MetaError `json:"meta,omitempty"`
+
+	// Title A short, human-readable summary of the problem that MUST NOT change from occurrence to occurrence of the problem represented by the error code.
+	Title string `json:"title"`
 }
 
 // ListAccountsParams defines parameters for ListAccounts.

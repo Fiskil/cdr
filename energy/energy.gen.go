@@ -21,23 +21,17 @@ const (
 	EnergyAccountDetailV4OpenStatusOPEN   EnergyAccountDetailV4OpenStatus = "OPEN"
 )
 
-// Defines values for EnergyAccountDetailV4PlansPlanDetailFuelType.
+// Defines values for EnergyAccountDetailV4AllOfPlanDetailFuelType.
 const (
-	EnergyAccountDetailV4PlansPlanDetailFuelTypeDUAL        EnergyAccountDetailV4PlansPlanDetailFuelType = "DUAL"
-	EnergyAccountDetailV4PlansPlanDetailFuelTypeELECTRICITY EnergyAccountDetailV4PlansPlanDetailFuelType = "ELECTRICITY"
-	EnergyAccountDetailV4PlansPlanDetailFuelTypeGAS         EnergyAccountDetailV4PlansPlanDetailFuelType = "GAS"
+	EnergyAccountDetailV4AllOfPlanDetailFuelTypeDUAL        EnergyAccountDetailV4AllOfPlanDetailFuelType = "DUAL"
+	EnergyAccountDetailV4AllOfPlanDetailFuelTypeELECTRICITY EnergyAccountDetailV4AllOfPlanDetailFuelType = "ELECTRICITY"
+	EnergyAccountDetailV4AllOfPlanDetailFuelTypeGAS         EnergyAccountDetailV4AllOfPlanDetailFuelType = "GAS"
 )
 
 // Defines values for EnergyAccountV2OpenStatus.
 const (
 	EnergyAccountV2OpenStatusCLOSED EnergyAccountV2OpenStatus = "CLOSED"
 	EnergyAccountV2OpenStatusOPEN   EnergyAccountV2OpenStatus = "OPEN"
-)
-
-// Defines values for EnergyBillingDemandTransactionV3CalculationFactorsType.
-const (
-	EnergyBillingDemandTransactionV3CalculationFactorsTypeDLF EnergyBillingDemandTransactionV3CalculationFactorsType = "DLF"
-	EnergyBillingDemandTransactionV3CalculationFactorsTypeMLF EnergyBillingDemandTransactionV3CalculationFactorsType = "MLF"
 )
 
 // Defines values for EnergyBillingDemandTransactionV3MeasureUnit.
@@ -65,12 +59,6 @@ const (
 	EnergyBillingDemandTransactionV3TimeOfUseTypeSHOULDER1           EnergyBillingDemandTransactionV3TimeOfUseType = "SHOULDER1"
 	EnergyBillingDemandTransactionV3TimeOfUseTypeSHOULDER2           EnergyBillingDemandTransactionV3TimeOfUseType = "SHOULDER2"
 	EnergyBillingDemandTransactionV3TimeOfUseTypeSOLAR               EnergyBillingDemandTransactionV3TimeOfUseType = "SOLAR"
-)
-
-// Defines values for EnergyBillingOtherTransactionCalculationFactorsType.
-const (
-	EnergyBillingOtherTransactionCalculationFactorsTypeDLF EnergyBillingOtherTransactionCalculationFactorsType = "DLF"
-	EnergyBillingOtherTransactionCalculationFactorsTypeMLF EnergyBillingOtherTransactionCalculationFactorsType = "MLF"
 )
 
 // Defines values for EnergyBillingOtherTransactionType.
@@ -104,12 +92,6 @@ const (
 	Usage        EnergyBillingTransactionV3TransactionUType = "usage"
 )
 
-// Defines values for EnergyBillingUsageTransactionV2CalculationFactorsType.
-const (
-	DLF EnergyBillingUsageTransactionV2CalculationFactorsType = "DLF"
-	MLF EnergyBillingUsageTransactionV2CalculationFactorsType = "MLF"
-)
-
 // Defines values for EnergyBillingUsageTransactionV2MeasureUnit.
 const (
 	EnergyBillingUsageTransactionV2MeasureUnitDAYS  EnergyBillingUsageTransactionV2MeasureUnit = "DAYS"
@@ -136,6 +118,12 @@ const (
 	EnergyBillingUsageTransactionV2TimeOfUseTypeSOLAR               EnergyBillingUsageTransactionV2TimeOfUseType = "SOLAR"
 )
 
+// Defines values for EnergyBillingUsageTransactionV2CalculationFactorsType.
+const (
+	DLF EnergyBillingUsageTransactionV2CalculationFactorsType = "DLF"
+	MLF EnergyBillingUsageTransactionV2CalculationFactorsType = "MLF"
+)
+
 // Defines values for EnergyConcessionAppliedTo.
 const (
 	CONTROLLEDLOAD EnergyConcessionAppliedTo = "CONTROLLED_LOAD"
@@ -151,25 +139,6 @@ const (
 	EnergyConcessionTypeVARIABLE        EnergyConcessionType = "VARIABLE"
 )
 
-// Defines values for EnergyDerRecordAcConnectionsDerDevicesStatus.
-const (
-	EnergyDerRecordAcConnectionsDerDevicesStatusACTIVE         EnergyDerRecordAcConnectionsDerDevicesStatus = "ACTIVE"
-	EnergyDerRecordAcConnectionsDerDevicesStatusDECOMMISSIONED EnergyDerRecordAcConnectionsDerDevicesStatus = "DECOMMISSIONED"
-	EnergyDerRecordAcConnectionsDerDevicesStatusINACTIVE       EnergyDerRecordAcConnectionsDerDevicesStatus = "INACTIVE"
-)
-
-// Defines values for EnergyDerRecordAcConnectionsDerDevicesType.
-const (
-	EnergyDerRecordAcConnectionsDerDevicesTypeFOSSIL     EnergyDerRecordAcConnectionsDerDevicesType = "FOSSIL"
-	EnergyDerRecordAcConnectionsDerDevicesTypeGEOTHERMAL EnergyDerRecordAcConnectionsDerDevicesType = "GEOTHERMAL"
-	EnergyDerRecordAcConnectionsDerDevicesTypeHYDRO      EnergyDerRecordAcConnectionsDerDevicesType = "HYDRO"
-	EnergyDerRecordAcConnectionsDerDevicesTypeOTHER      EnergyDerRecordAcConnectionsDerDevicesType = "OTHER"
-	EnergyDerRecordAcConnectionsDerDevicesTypeRENEWABLE  EnergyDerRecordAcConnectionsDerDevicesType = "RENEWABLE"
-	EnergyDerRecordAcConnectionsDerDevicesTypeSOLARPV    EnergyDerRecordAcConnectionsDerDevicesType = "SOLAR_PV"
-	EnergyDerRecordAcConnectionsDerDevicesTypeSTORAGE    EnergyDerRecordAcConnectionsDerDevicesType = "STORAGE"
-	EnergyDerRecordAcConnectionsDerDevicesTypeWIND       EnergyDerRecordAcConnectionsDerDevicesType = "WIND"
-)
-
 // Defines values for EnergyDerRecordAcConnectionsEquipmentType.
 const (
 	EnergyDerRecordAcConnectionsEquipmentTypeINVERTER EnergyDerRecordAcConnectionsEquipmentType = "INVERTER"
@@ -183,22 +152,30 @@ const (
 	EnergyDerRecordAcConnectionsStatusINACTIVE       EnergyDerRecordAcConnectionsStatus = "INACTIVE"
 )
 
+// Defines values for EnergyDerRecordDerDevicesStatus.
+const (
+	EnergyDerRecordDerDevicesStatusACTIVE         EnergyDerRecordDerDevicesStatus = "ACTIVE"
+	EnergyDerRecordDerDevicesStatusDECOMMISSIONED EnergyDerRecordDerDevicesStatus = "DECOMMISSIONED"
+	EnergyDerRecordDerDevicesStatusINACTIVE       EnergyDerRecordDerDevicesStatus = "INACTIVE"
+)
+
+// Defines values for EnergyDerRecordDerDevicesType.
+const (
+	EnergyDerRecordDerDevicesTypeFOSSIL     EnergyDerRecordDerDevicesType = "FOSSIL"
+	EnergyDerRecordDerDevicesTypeGEOTHERMAL EnergyDerRecordDerDevicesType = "GEOTHERMAL"
+	EnergyDerRecordDerDevicesTypeHYDRO      EnergyDerRecordDerDevicesType = "HYDRO"
+	EnergyDerRecordDerDevicesTypeOTHER      EnergyDerRecordDerDevicesType = "OTHER"
+	EnergyDerRecordDerDevicesTypeRENEWABLE  EnergyDerRecordDerDevicesType = "RENEWABLE"
+	EnergyDerRecordDerDevicesTypeSOLARPV    EnergyDerRecordDerDevicesType = "SOLAR_PV"
+	EnergyDerRecordDerDevicesTypeSTORAGE    EnergyDerRecordDerDevicesType = "STORAGE"
+	EnergyDerRecordDerDevicesTypeWIND       EnergyDerRecordDerDevicesType = "WIND"
+)
+
 // Defines values for EnergyInvoicePaymentStatus.
 const (
 	NOTPAID       EnergyInvoicePaymentStatus = "NOT_PAID"
 	PAID          EnergyInvoicePaymentStatus = "PAID"
 	PARTIALLYPAID EnergyInvoicePaymentStatus = "PARTIALLY_PAID"
-)
-
-// Defines values for EnergyInvoiceElectricityUsageChargesOtherChargesType.
-const (
-	EnergyInvoiceElectricityUsageChargesOtherChargesTypeENVIRONMENTAL EnergyInvoiceElectricityUsageChargesOtherChargesType = "ENVIRONMENTAL"
-	EnergyInvoiceElectricityUsageChargesOtherChargesTypeMETERING      EnergyInvoiceElectricityUsageChargesOtherChargesType = "METERING"
-	EnergyInvoiceElectricityUsageChargesOtherChargesTypeNETWORK       EnergyInvoiceElectricityUsageChargesOtherChargesType = "NETWORK"
-	EnergyInvoiceElectricityUsageChargesOtherChargesTypeOTHER         EnergyInvoiceElectricityUsageChargesOtherChargesType = "OTHER"
-	EnergyInvoiceElectricityUsageChargesOtherChargesTypeRCTI          EnergyInvoiceElectricityUsageChargesOtherChargesType = "RCTI"
-	EnergyInvoiceElectricityUsageChargesOtherChargesTypeREGULATED     EnergyInvoiceElectricityUsageChargesOtherChargesType = "REGULATED"
-	EnergyInvoiceElectricityUsageChargesOtherChargesTypeRETAILSERVICE EnergyInvoiceElectricityUsageChargesOtherChargesType = "RETAIL_SERVICE"
 )
 
 // Defines values for EnergyInvoiceGasUsageChargesOtherChargesType.
@@ -210,6 +187,14 @@ const (
 	EnergyInvoiceGasUsageChargesOtherChargesTypeRCTI          EnergyInvoiceGasUsageChargesOtherChargesType = "RCTI"
 	EnergyInvoiceGasUsageChargesOtherChargesTypeREGULATED     EnergyInvoiceGasUsageChargesOtherChargesType = "REGULATED"
 	EnergyInvoiceGasUsageChargesOtherChargesTypeRETAILSERVICE EnergyInvoiceGasUsageChargesOtherChargesType = "RETAIL_SERVICE"
+)
+
+// Defines values for EnergyPaymentSchedulePaymentScheduleUType.
+const (
+	CardDebit     EnergyPaymentSchedulePaymentScheduleUType = "cardDebit"
+	DigitalWallet EnergyPaymentSchedulePaymentScheduleUType = "digitalWallet"
+	DirectDebit   EnergyPaymentSchedulePaymentScheduleUType = "directDebit"
+	ManualPayment EnergyPaymentSchedulePaymentScheduleUType = "manualPayment"
 )
 
 // Defines values for EnergyPaymentScheduleCardDebitCalculationType.
@@ -254,14 +239,6 @@ const (
 	BALANCE    EnergyPaymentScheduleDirectDebitCalculationType = "BALANCE"
 	CALCULATED EnergyPaymentScheduleDirectDebitCalculationType = "CALCULATED"
 	STATIC     EnergyPaymentScheduleDirectDebitCalculationType = "STATIC"
-)
-
-// Defines values for EnergyPaymentSchedulePaymentScheduleUType.
-const (
-	CardDebit     EnergyPaymentSchedulePaymentScheduleUType = "cardDebit"
-	DigitalWallet EnergyPaymentSchedulePaymentScheduleUType = "digitalWallet"
-	DirectDebit   EnergyPaymentSchedulePaymentScheduleUType = "directDebit"
-	ManualPayment EnergyPaymentSchedulePaymentScheduleUType = "manualPayment"
 )
 
 // Defines values for EnergyPlanCustomerType.
@@ -319,6 +296,17 @@ const (
 const (
 	EnergyPlanContractFullV3TimeZoneAEST  EnergyPlanContractFullV3TimeZone = "AEST"
 	EnergyPlanContractFullV3TimeZoneLOCAL EnergyPlanContractFullV3TimeZone = "LOCAL"
+)
+
+// Defines values for EnergyPlanContractFullV3AllOfTermType.
+const (
+	EnergyPlanContractFullV3AllOfTermTypeN1YEAR  EnergyPlanContractFullV3AllOfTermType = "1_YEAR"
+	EnergyPlanContractFullV3AllOfTermTypeN2YEAR  EnergyPlanContractFullV3AllOfTermType = "2_YEAR"
+	EnergyPlanContractFullV3AllOfTermTypeN3YEAR  EnergyPlanContractFullV3AllOfTermType = "3_YEAR"
+	EnergyPlanContractFullV3AllOfTermTypeN4YEAR  EnergyPlanContractFullV3AllOfTermType = "4_YEAR"
+	EnergyPlanContractFullV3AllOfTermTypeN5YEAR  EnergyPlanContractFullV3AllOfTermType = "5_YEAR"
+	EnergyPlanContractFullV3AllOfTermTypeONGOING EnergyPlanContractFullV3AllOfTermType = "ONGOING"
+	EnergyPlanContractFullV3AllOfTermTypeOTHER   EnergyPlanContractFullV3AllOfTermType = "OTHER"
 )
 
 // Defines values for EnergyPlanContractV3PaymentOption.
@@ -658,12 +646,6 @@ const (
 	EnergyPlanTariffPeriodV2TypeRETAILSERVICE EnergyPlanTariffPeriodV2Type = "RETAIL_SERVICE"
 )
 
-// Defines values for EnergyServicePointConsumerProfileClassification.
-const (
-	EnergyServicePointConsumerProfileClassificationBUSINESS    EnergyServicePointConsumerProfileClassification = "BUSINESS"
-	EnergyServicePointConsumerProfileClassificationRESIDENTIAL EnergyServicePointConsumerProfileClassification = "RESIDENTIAL"
-)
-
 // Defines values for EnergyServicePointJurisdictionCode.
 const (
 	EnergyServicePointJurisdictionCodeACT EnergyServicePointJurisdictionCode = "ACT"
@@ -697,12 +679,6 @@ const (
 	EnergyServicePointServicePointStatusOFFMARKET   EnergyServicePointServicePointStatus = "OFF_MARKET"
 )
 
-// Defines values for EnergyServicePointDetailConsumerProfileClassification.
-const (
-	EnergyServicePointDetailConsumerProfileClassificationBUSINESS    EnergyServicePointDetailConsumerProfileClassification = "BUSINESS"
-	EnergyServicePointDetailConsumerProfileClassificationRESIDENTIAL EnergyServicePointDetailConsumerProfileClassification = "RESIDENTIAL"
-)
-
 // Defines values for EnergyServicePointDetailJurisdictionCode.
 const (
 	EnergyServicePointDetailJurisdictionCodeACT EnergyServicePointDetailJurisdictionCode = "ACT"
@@ -713,67 +689,6 @@ const (
 	EnergyServicePointDetailJurisdictionCodeSA  EnergyServicePointDetailJurisdictionCode = "SA"
 	EnergyServicePointDetailJurisdictionCodeTAS EnergyServicePointDetailJurisdictionCode = "TAS"
 	EnergyServicePointDetailJurisdictionCodeVIC EnergyServicePointDetailJurisdictionCode = "VIC"
-)
-
-// Defines values for EnergyServicePointDetailMetersRegistersConsumptionType.
-const (
-	EnergyServicePointDetailMetersRegistersConsumptionTypeACTUAL     EnergyServicePointDetailMetersRegistersConsumptionType = "ACTUAL"
-	EnergyServicePointDetailMetersRegistersConsumptionTypeCUMULATIVE EnergyServicePointDetailMetersRegistersConsumptionType = "CUMULATIVE"
-)
-
-// Defines values for EnergyServicePointDetailMetersRegistersRegisterConsumptionType.
-const (
-	EnergyServicePointDetailMetersRegistersRegisterConsumptionTypeACTIVE         EnergyServicePointDetailMetersRegistersRegisterConsumptionType = "ACTIVE"
-	EnergyServicePointDetailMetersRegistersRegisterConsumptionTypeACTIVEIMPORT   EnergyServicePointDetailMetersRegistersRegisterConsumptionType = "ACTIVE_IMPORT"
-	EnergyServicePointDetailMetersRegistersRegisterConsumptionTypeBASIC          EnergyServicePointDetailMetersRegistersRegisterConsumptionType = "BASIC"
-	EnergyServicePointDetailMetersRegistersRegisterConsumptionTypeINTERVAL       EnergyServicePointDetailMetersRegistersRegisterConsumptionType = "INTERVAL"
-	EnergyServicePointDetailMetersRegistersRegisterConsumptionTypePROFILEDATA    EnergyServicePointDetailMetersRegistersRegisterConsumptionType = "PROFILE_DATA"
-	EnergyServicePointDetailMetersRegistersRegisterConsumptionTypeREACTIVE       EnergyServicePointDetailMetersRegistersRegisterConsumptionType = "REACTIVE"
-	EnergyServicePointDetailMetersRegistersRegisterConsumptionTypeREACTIVEIMPORT EnergyServicePointDetailMetersRegistersRegisterConsumptionType = "REACTIVE_IMPORT"
-)
-
-// Defines values for EnergyServicePointDetailMetersRegistersTimeOfDay.
-const (
-	ALLDAY     EnergyServicePointDetailMetersRegistersTimeOfDay = "ALLDAY"
-	BUSINESS   EnergyServicePointDetailMetersRegistersTimeOfDay = "BUSINESS"
-	CONTROLLED EnergyServicePointDetailMetersRegistersTimeOfDay = "CONTROLLED"
-	DEMAND     EnergyServicePointDetailMetersRegistersTimeOfDay = "DEMAND"
-	EVENING    EnergyServicePointDetailMetersRegistersTimeOfDay = "EVENING"
-	INTERVAL   EnergyServicePointDetailMetersRegistersTimeOfDay = "INTERVAL"
-	OFFPEAK    EnergyServicePointDetailMetersRegistersTimeOfDay = "OFFPEAK"
-	PEAK       EnergyServicePointDetailMetersRegistersTimeOfDay = "PEAK"
-	SHOULDER   EnergyServicePointDetailMetersRegistersTimeOfDay = "SHOULDER"
-)
-
-// Defines values for EnergyServicePointDetailMetersSpecificationsInstallationType.
-const (
-	BASIC    EnergyServicePointDetailMetersSpecificationsInstallationType = "BASIC"
-	COMMS1   EnergyServicePointDetailMetersSpecificationsInstallationType = "COMMS1"
-	COMMS2   EnergyServicePointDetailMetersSpecificationsInstallationType = "COMMS2"
-	COMMS3   EnergyServicePointDetailMetersSpecificationsInstallationType = "COMMS3"
-	COMMS4   EnergyServicePointDetailMetersSpecificationsInstallationType = "COMMS4"
-	COMMS4C  EnergyServicePointDetailMetersSpecificationsInstallationType = "COMMS4C"
-	COMMS4D  EnergyServicePointDetailMetersSpecificationsInstallationType = "COMMS4D"
-	MRAM     EnergyServicePointDetailMetersSpecificationsInstallationType = "MRAM"
-	MRIM     EnergyServicePointDetailMetersSpecificationsInstallationType = "MRIM"
-	NCOLNUML EnergyServicePointDetailMetersSpecificationsInstallationType = "NCOLNUML"
-	PROF     EnergyServicePointDetailMetersSpecificationsInstallationType = "PROF"
-	SAMPLE   EnergyServicePointDetailMetersSpecificationsInstallationType = "SAMPLE"
-	UMCP     EnergyServicePointDetailMetersSpecificationsInstallationType = "UMCP"
-	VICAMI   EnergyServicePointDetailMetersSpecificationsInstallationType = "VICAMI"
-)
-
-// Defines values for EnergyServicePointDetailMetersSpecificationsStatus.
-const (
-	EnergyServicePointDetailMetersSpecificationsStatusCURRENT      EnergyServicePointDetailMetersSpecificationsStatus = "CURRENT"
-	EnergyServicePointDetailMetersSpecificationsStatusDISCONNECTED EnergyServicePointDetailMetersSpecificationsStatus = "DISCONNECTED"
-)
-
-// Defines values for EnergyServicePointDetailRelatedParticipantsRole.
-const (
-	DRSP EnergyServicePointDetailRelatedParticipantsRole = "DRSP"
-	FRMP EnergyServicePointDetailRelatedParticipantsRole = "FRMP"
-	LNSP EnergyServicePointDetailRelatedParticipantsRole = "LNSP"
 )
 
 // Defines values for EnergyServicePointDetailServicePointClassification.
@@ -790,11 +705,91 @@ const (
 
 // Defines values for EnergyServicePointDetailServicePointStatus.
 const (
-	ACTIVE      EnergyServicePointDetailServicePointStatus = "ACTIVE"
-	DEENERGISED EnergyServicePointDetailServicePointStatus = "DE_ENERGISED"
-	EXTINCT     EnergyServicePointDetailServicePointStatus = "EXTINCT"
-	GREENFIELD  EnergyServicePointDetailServicePointStatus = "GREENFIELD"
-	OFFMARKET   EnergyServicePointDetailServicePointStatus = "OFF_MARKET"
+	EnergyServicePointDetailServicePointStatusACTIVE      EnergyServicePointDetailServicePointStatus = "ACTIVE"
+	EnergyServicePointDetailServicePointStatusDEENERGISED EnergyServicePointDetailServicePointStatus = "DE_ENERGISED"
+	EnergyServicePointDetailServicePointStatusEXTINCT     EnergyServicePointDetailServicePointStatus = "EXTINCT"
+	EnergyServicePointDetailServicePointStatusGREENFIELD  EnergyServicePointDetailServicePointStatus = "GREENFIELD"
+	EnergyServicePointDetailServicePointStatusOFFMARKET   EnergyServicePointDetailServicePointStatus = "OFF_MARKET"
+)
+
+// Defines values for EnergyServicePointDetailRegistersConsumptionType.
+const (
+	EnergyServicePointDetailRegistersConsumptionTypeACTUAL     EnergyServicePointDetailRegistersConsumptionType = "ACTUAL"
+	EnergyServicePointDetailRegistersConsumptionTypeCUMULATIVE EnergyServicePointDetailRegistersConsumptionType = "CUMULATIVE"
+)
+
+// Defines values for EnergyServicePointDetailRegistersRegisterConsumptionType.
+const (
+	EnergyServicePointDetailRegistersRegisterConsumptionTypeACTIVE         EnergyServicePointDetailRegistersRegisterConsumptionType = "ACTIVE"
+	EnergyServicePointDetailRegistersRegisterConsumptionTypeACTIVEIMPORT   EnergyServicePointDetailRegistersRegisterConsumptionType = "ACTIVE_IMPORT"
+	EnergyServicePointDetailRegistersRegisterConsumptionTypeBASIC          EnergyServicePointDetailRegistersRegisterConsumptionType = "BASIC"
+	EnergyServicePointDetailRegistersRegisterConsumptionTypeINTERVAL       EnergyServicePointDetailRegistersRegisterConsumptionType = "INTERVAL"
+	EnergyServicePointDetailRegistersRegisterConsumptionTypePROFILEDATA    EnergyServicePointDetailRegistersRegisterConsumptionType = "PROFILE_DATA"
+	EnergyServicePointDetailRegistersRegisterConsumptionTypeREACTIVE       EnergyServicePointDetailRegistersRegisterConsumptionType = "REACTIVE"
+	EnergyServicePointDetailRegistersRegisterConsumptionTypeREACTIVEIMPORT EnergyServicePointDetailRegistersRegisterConsumptionType = "REACTIVE_IMPORT"
+)
+
+// Defines values for EnergyServicePointDetailRegistersTimeOfDay.
+const (
+	EnergyServicePointDetailRegistersTimeOfDayALLDAY     EnergyServicePointDetailRegistersTimeOfDay = "ALLDAY"
+	EnergyServicePointDetailRegistersTimeOfDayBUSINESS   EnergyServicePointDetailRegistersTimeOfDay = "BUSINESS"
+	EnergyServicePointDetailRegistersTimeOfDayCONTROLLED EnergyServicePointDetailRegistersTimeOfDay = "CONTROLLED"
+	EnergyServicePointDetailRegistersTimeOfDayDEMAND     EnergyServicePointDetailRegistersTimeOfDay = "DEMAND"
+	EnergyServicePointDetailRegistersTimeOfDayEVENING    EnergyServicePointDetailRegistersTimeOfDay = "EVENING"
+	EnergyServicePointDetailRegistersTimeOfDayINTERVAL   EnergyServicePointDetailRegistersTimeOfDay = "INTERVAL"
+	EnergyServicePointDetailRegistersTimeOfDayOFFPEAK    EnergyServicePointDetailRegistersTimeOfDay = "OFFPEAK"
+	EnergyServicePointDetailRegistersTimeOfDayPEAK       EnergyServicePointDetailRegistersTimeOfDay = "PEAK"
+	EnergyServicePointDetailRegistersTimeOfDaySHOULDER   EnergyServicePointDetailRegistersTimeOfDay = "SHOULDER"
+)
+
+// Defines values for EnergyServicePointDetailRelatedParticipantsRole.
+const (
+	DRSP EnergyServicePointDetailRelatedParticipantsRole = "DRSP"
+	FRMP EnergyServicePointDetailRelatedParticipantsRole = "FRMP"
+	LNSP EnergyServicePointDetailRelatedParticipantsRole = "LNSP"
+)
+
+// Defines values for EnergyServicePointDetailSpecificationsInstallationType.
+const (
+	BASIC    EnergyServicePointDetailSpecificationsInstallationType = "BASIC"
+	COMMS1   EnergyServicePointDetailSpecificationsInstallationType = "COMMS1"
+	COMMS2   EnergyServicePointDetailSpecificationsInstallationType = "COMMS2"
+	COMMS3   EnergyServicePointDetailSpecificationsInstallationType = "COMMS3"
+	COMMS4   EnergyServicePointDetailSpecificationsInstallationType = "COMMS4"
+	COMMS4C  EnergyServicePointDetailSpecificationsInstallationType = "COMMS4C"
+	COMMS4D  EnergyServicePointDetailSpecificationsInstallationType = "COMMS4D"
+	MRAM     EnergyServicePointDetailSpecificationsInstallationType = "MRAM"
+	MRIM     EnergyServicePointDetailSpecificationsInstallationType = "MRIM"
+	NCOLNUML EnergyServicePointDetailSpecificationsInstallationType = "NCOLNUML"
+	PROF     EnergyServicePointDetailSpecificationsInstallationType = "PROF"
+	SAMPLE   EnergyServicePointDetailSpecificationsInstallationType = "SAMPLE"
+	UMCP     EnergyServicePointDetailSpecificationsInstallationType = "UMCP"
+	VICAMI   EnergyServicePointDetailSpecificationsInstallationType = "VICAMI"
+)
+
+// Defines values for EnergyServicePointDetailSpecificationsStatus.
+const (
+	EnergyServicePointDetailSpecificationsStatusCURRENT      EnergyServicePointDetailSpecificationsStatus = "CURRENT"
+	EnergyServicePointDetailSpecificationsStatusDISCONNECTED EnergyServicePointDetailSpecificationsStatus = "DISCONNECTED"
+)
+
+// Defines values for EnergyServicePointConsumerProfileClassification.
+const (
+	BUSINESS    EnergyServicePointConsumerProfileClassification = "BUSINESS"
+	RESIDENTIAL EnergyServicePointConsumerProfileClassification = "RESIDENTIAL"
+)
+
+// Defines values for EnergyServicePointConsumerProfileThreshold.
+const (
+	HIGH   EnergyServicePointConsumerProfileThreshold = "HIGH"
+	LOW    EnergyServicePointConsumerProfileThreshold = "LOW"
+	MEDIUM EnergyServicePointConsumerProfileThreshold = "MEDIUM"
+)
+
+// Defines values for EnergyUsageReadReadUType.
+const (
+	BasicRead    EnergyUsageReadReadUType = "basicRead"
+	IntervalRead EnergyUsageReadReadUType = "intervalRead"
 )
 
 // Defines values for EnergyUsageReadBasicReadQuality.
@@ -810,31 +805,11 @@ const (
 	SUBSTITUTE      EnergyUsageReadIntervalReadReadQualitiesQuality = "SUBSTITUTE"
 )
 
-// Defines values for EnergyUsageReadReadUType.
-const (
-	BasicRead    EnergyUsageReadReadUType = "basicRead"
-	IntervalRead EnergyUsageReadReadUType = "intervalRead"
-)
-
-// Defines values for IntervalReads.
-const (
-	IntervalReadsFULL  IntervalReads = "FULL"
-	IntervalReadsMIN30 IntervalReads = "MIN_30"
-	IntervalReadsNONE  IntervalReads = "NONE"
-)
-
-// Defines values for OpenStatus.
-const (
-	OpenStatusALL    OpenStatus = "ALL"
-	OpenStatusCLOSED OpenStatus = "CLOSED"
-	OpenStatusOPEN   OpenStatus = "OPEN"
-)
-
 // Defines values for ListAccountsParamsOpenStatus.
 const (
-	ALL    ListAccountsParamsOpenStatus = "ALL"
-	CLOSED ListAccountsParamsOpenStatus = "CLOSED"
-	OPEN   ListAccountsParamsOpenStatus = "OPEN"
+	ListAccountsParamsOpenStatusALL    ListAccountsParamsOpenStatus = "ALL"
+	ListAccountsParamsOpenStatusCLOSED ListAccountsParamsOpenStatus = "CLOSED"
+	ListAccountsParamsOpenStatusOPEN   ListAccountsParamsOpenStatus = "OPEN"
 )
 
 // Defines values for ListUsageBulkParamsIntervalReads.
@@ -853,9 +828,9 @@ const (
 
 // Defines values for GetUsageForServicePointParamsIntervalReads.
 const (
-	GetUsageForServicePointParamsIntervalReadsFULL  GetUsageForServicePointParamsIntervalReads = "FULL"
-	GetUsageForServicePointParamsIntervalReadsMIN30 GetUsageForServicePointParamsIntervalReads = "MIN_30"
-	GetUsageForServicePointParamsIntervalReadsNONE  GetUsageForServicePointParamsIntervalReads = "NONE"
+	FULL  GetUsageForServicePointParamsIntervalReads = "FULL"
+	MIN30 GetUsageForServicePointParamsIntervalReads = "MIN_30"
+	NONE  GetUsageForServicePointParamsIntervalReads = "NONE"
 )
 
 // Defines values for ListPlansParamsType.
@@ -1038,89 +1013,83 @@ type EnergyAccountDetailV4 struct {
 	OpenStatus *EnergyAccountDetailV4OpenStatus `json:"openStatus,omitempty"`
 
 	// Plans The array of plans containing service points and associated plan details
-	Plans []struct {
-		// AuthorisedContacts An array of additional contacts that are authorised to act on this account
-		AuthorisedContacts *[]struct {
-			// FirstName For people with single names this field need not be present. The single name should be in the lastName field
-			FirstName *string `json:"firstName,omitempty"`
-
-			// LastName For people with single names the single name should be in this field
-			LastName string `json:"lastName"`
-
-			// MiddleNames Field is mandatory but array may be empty
-			MiddleNames *[]string `json:"middleNames,omitempty"`
-
-			// Prefix Also known as title or salutation. The prefix to the name (e.g. Mr, Mrs, Ms, Miss, Sir, etc)
-			Prefix *string `json:"prefix,omitempty"`
-
-			// Suffix Used for a trailing suffix to the name (e.g. Jr)
-			Suffix *string `json:"suffix,omitempty"`
-		} `json:"authorisedContacts,omitempty"`
-
-		// Nickname Optional display name for the plan provided by the customer to help differentiate multiple plans
-		Nickname *string `json:"nickname,omitempty"`
-
-		// PlanDetail Detail on the plan applicable to this account. Mandatory if openStatus is OPEN
-		PlanDetail *struct {
-			ElectricityContract *EnergyPlanContractV3 `json:"electricityContract,omitempty"`
-
-			// FuelType The fuel types covered by the plan
-			FuelType    EnergyAccountDetailV4PlansPlanDetailFuelType `json:"fuelType"`
-			GasContract *EnergyPlanContractV3                        `json:"gasContract,omitempty"`
-
-			// IsContingentPlan Flag that indicates that the plan is contingent on the customer taking up an alternate fuel plan from the same retailer (for instance, if the fuelType is ELECTRICITY then a GAS plan from the same retailer must be taken up). Has no meaning if the plan has a fuelType of DUAL. If absent the value is assumed to be false
-			IsContingentPlan *bool `json:"isContingentPlan,omitempty"`
-
-			// MeteringCharges Charges for metering included in the plan
-			MeteringCharges *[]struct {
-				// Description Description of the charge
-				Description *string `json:"description,omitempty"`
-
-				// DisplayName Display name of the charge
-				DisplayName string `json:"displayName"`
-
-				// MaximumValue The upper limit of the charge if the charge could occur in a range
-				MaximumValue *string `json:"maximumValue,omitempty"`
-
-				// MinimumValue Minimum value of the charge if the charge is a range or the absolute value of the charge if no range is specified
-				MinimumValue string `json:"minimumValue"`
-
-				// Period The charges that occur on a schedule indicates the frequency. Formatted according to [ISO 8601 Durations](https://en.wikipedia.org/wiki/ISO_8601#Durations) (excludes recurrence syntax)
-				Period *string `json:"period,omitempty"`
-			} `json:"meteringCharges,omitempty"`
-		} `json:"planDetail,omitempty"`
-
-		// PlanOverview Mandatory if openStatus is OPEN
-		PlanOverview *struct {
-			// DisplayName The name of the plan if one exists
-			DisplayName *string `json:"displayName,omitempty"`
-
-			// EndDate The end date of the applicability of this plan
-			EndDate *string `json:"endDate,omitempty"`
-
-			// StartDate The start date of the applicability of this plan
-			StartDate string `json:"startDate"`
-		} `json:"planOverview,omitempty"`
-
-		// ServicePointIds An array of servicePointIds, representing NMIs, that this account is linked to
-		ServicePointIds []string `json:"servicePointIds"`
-	} `json:"plans"`
+	Plans []EnergyAccountDetailV4AllOfPlans `json:"plans"`
 }
 
 // EnergyAccountDetailV4OpenStatus Open or closed status for the account. If not present then OPEN is assumed
 type EnergyAccountDetailV4OpenStatus string
 
-// EnergyAccountDetailV4PlansPlanDetailFuelType The fuel types covered by the plan
-type EnergyAccountDetailV4PlansPlanDetailFuelType string
+// EnergyAccountDetailV4AllOf The array of plans containing service points and associated plan details
+type EnergyAccountDetailV4AllOf struct {
+	// Plans The array of plans containing service points and associated plan details
+	Plans []EnergyAccountDetailV4AllOfPlans `json:"plans"`
+}
+
+// EnergyAccountDetailV4AllOfAuthorisedContacts defines model for EnergyAccountDetailV4_allOf_authorisedContacts.
+type EnergyAccountDetailV4AllOfAuthorisedContacts struct {
+	// FirstName For people with single names this field need not be present. The single name should be in the lastName field
+	FirstName *string `json:"firstName,omitempty"`
+
+	// LastName For people with single names the single name should be in this field
+	LastName string `json:"lastName"`
+
+	// MiddleNames Field is mandatory but array may be empty
+	MiddleNames *[]string `json:"middleNames,omitempty"`
+
+	// Prefix Also known as title or salutation. The prefix to the name (e.g. Mr, Mrs, Ms, Miss, Sir, etc)
+	Prefix *string `json:"prefix,omitempty"`
+
+	// Suffix Used for a trailing suffix to the name (e.g. Jr)
+	Suffix *string `json:"suffix,omitempty"`
+}
+
+// EnergyAccountDetailV4AllOfPlanDetail Detail on the plan applicable to this account. Mandatory if openStatus is OPEN
+type EnergyAccountDetailV4AllOfPlanDetail struct {
+	ElectricityContract *EnergyPlanContractV3 `json:"electricityContract,omitempty"`
+
+	// FuelType The fuel types covered by the plan
+	FuelType    EnergyAccountDetailV4AllOfPlanDetailFuelType `json:"fuelType"`
+	GasContract *EnergyPlanContractV3                        `json:"gasContract,omitempty"`
+
+	// IsContingentPlan Flag that indicates that the plan is contingent on the customer taking up an alternate fuel plan from the same retailer (for instance, if the fuelType is ELECTRICITY then a GAS plan from the same retailer must be taken up). Has no meaning if the plan has a fuelType of DUAL. If absent the value is assumed to be false
+	IsContingentPlan *bool `json:"isContingentPlan,omitempty"`
+
+	// MeteringCharges Charges for metering included in the plan
+	MeteringCharges *[]EnergyPlanDetailV3AllOfMeteringCharges `json:"meteringCharges,omitempty"`
+}
+
+// EnergyAccountDetailV4AllOfPlanDetailFuelType The fuel types covered by the plan
+type EnergyAccountDetailV4AllOfPlanDetailFuelType string
+
+// EnergyAccountDetailV4AllOfPlans defines model for EnergyAccountDetailV4_allOf_plans.
+type EnergyAccountDetailV4AllOfPlans struct {
+	// AuthorisedContacts An array of additional contacts that are authorised to act on this account
+	AuthorisedContacts *[]EnergyAccountDetailV4AllOfAuthorisedContacts `json:"authorisedContacts,omitempty"`
+
+	// Nickname Optional display name for the plan provided by the customer to help differentiate multiple plans
+	Nickname *string `json:"nickname,omitempty"`
+
+	// PlanDetail Detail on the plan applicable to this account. Mandatory if openStatus is OPEN
+	PlanDetail *EnergyAccountDetailV4AllOfPlanDetail `json:"planDetail,omitempty"`
+
+	// PlanOverview Mandatory if openStatus is OPEN
+	PlanOverview *EnergyAccountV2AllOfPlanOverview `json:"planOverview,omitempty"`
+
+	// ServicePointIds An array of servicePointIds, representing NMIs, that this account is linked to
+	ServicePointIds []string `json:"servicePointIds"`
+}
 
 // EnergyAccountListResponseV2 defines model for EnergyAccountListResponseV2.
 type EnergyAccountListResponseV2 struct {
-	Data struct {
-		// Accounts Array of accounts
-		Accounts []EnergyAccountV2 `json:"accounts"`
-	} `json:"data"`
-	Links LinksPaginated `json:"links"`
-	Meta  MetaPaginated  `json:"meta"`
+	Data  EnergyAccountListResponseV2Data `json:"data"`
+	Links LinksPaginated                  `json:"links"`
+	Meta  MetaPaginated                   `json:"meta"`
+}
+
+// EnergyAccountListResponseV2Data defines model for EnergyAccountListResponseV2_data.
+type EnergyAccountListResponseV2Data struct {
+	// Accounts Array of accounts
+	Accounts []EnergyAccountV2 `json:"accounts"`
 }
 
 // EnergyAccountV2 defines model for EnergyAccountV2.
@@ -1141,78 +1110,87 @@ type EnergyAccountV2 struct {
 	OpenStatus *EnergyAccountV2OpenStatus `json:"openStatus,omitempty"`
 
 	// Plans The array of plans containing service points and associated plan details
-	Plans []struct {
-		// Nickname Optional display name for the plan provided by the customer to help differentiate multiple plans
-		Nickname *string `json:"nickname,omitempty"`
-
-		// PlanOverview Mandatory if openStatus is OPEN
-		PlanOverview *struct {
-			// DisplayName The name of the plan if one exists
-			DisplayName *string `json:"displayName,omitempty"`
-
-			// EndDate The end date of the applicability of this plan
-			EndDate *string `json:"endDate,omitempty"`
-
-			// StartDate The start date of the applicability of this plan
-			StartDate string `json:"startDate"`
-		} `json:"planOverview,omitempty"`
-
-		// ServicePointIds An array of servicePointIds, representing NMIs, that this plan is linked to.  If there are no service points allocated to this plan then an empty array would be expected
-		ServicePointIds []string `json:"servicePointIds"`
-	} `json:"plans"`
+	Plans []EnergyAccountV2AllOfPlans `json:"plans"`
 }
 
 // EnergyAccountV2OpenStatus Open or closed status for the account. If not present then OPEN is assumed
 type EnergyAccountV2OpenStatus string
 
+// EnergyAccountV2AllOf The array of plans containing service points and associated plan details
+type EnergyAccountV2AllOf struct {
+	// Plans The array of plans containing service points and associated plan details
+	Plans []EnergyAccountV2AllOfPlans `json:"plans"`
+}
+
+// EnergyAccountV2AllOfPlanOverview Mandatory if openStatus is OPEN
+type EnergyAccountV2AllOfPlanOverview struct {
+	// DisplayName The name of the plan if one exists
+	DisplayName *string `json:"displayName,omitempty"`
+
+	// EndDate The end date of the applicability of this plan
+	EndDate *string `json:"endDate,omitempty"`
+
+	// StartDate The start date of the applicability of this plan
+	StartDate string `json:"startDate"`
+}
+
+// EnergyAccountV2AllOfPlans defines model for EnergyAccountV2_allOf_plans.
+type EnergyAccountV2AllOfPlans struct {
+	// Nickname Optional display name for the plan provided by the customer to help differentiate multiple plans
+	Nickname *string `json:"nickname,omitempty"`
+
+	// PlanOverview Mandatory if openStatus is OPEN
+	PlanOverview *EnergyAccountV2AllOfPlanOverview `json:"planOverview,omitempty"`
+
+	// ServicePointIds An array of servicePointIds, representing NMIs, that this plan is linked to.  If there are no service points allocated to this plan then an empty array would be expected
+	ServicePointIds []string `json:"servicePointIds"`
+}
+
 // EnergyBalanceListResponse defines model for EnergyBalanceListResponse.
 type EnergyBalanceListResponse struct {
-	Data struct {
-		// Balances Array of account balances
-		Balances []struct {
-			// AccountId The ID of the account
-			AccountId string `json:"accountId"`
+	Data  EnergyBalanceListResponseData `json:"data"`
+	Links LinksPaginated                `json:"links"`
+	Meta  MetaPaginated                 `json:"meta"`
+}
 
-			// Balance The current balance of the account.  A positive value indicates that amount is owing to be paid.  A negative value indicates that the account is in credit
-			Balance string `json:"balance"`
-		} `json:"balances"`
-	} `json:"data"`
-	Links LinksPaginated `json:"links"`
-	Meta  MetaPaginated  `json:"meta"`
+// EnergyBalanceListResponseData defines model for EnergyBalanceListResponse_data.
+type EnergyBalanceListResponseData struct {
+	// Balances Array of account balances
+	Balances []EnergyBalanceListResponseDataBalances `json:"balances"`
+}
+
+// EnergyBalanceListResponseDataBalances defines model for EnergyBalanceListResponse_data_balances.
+type EnergyBalanceListResponseDataBalances struct {
+	// AccountId The ID of the account
+	AccountId string `json:"accountId"`
+
+	// Balance The current balance of the account.  A positive value indicates that amount is owing to be paid.  A negative value indicates that the account is in credit
+	Balance string `json:"balance"`
 }
 
 // EnergyBalanceResponse defines model for EnergyBalanceResponse.
 type EnergyBalanceResponse struct {
-	Data struct {
-		// Balance The current balance of the account.  A positive value indicates that amount is owing to be paid.  A negative value indicates that the account is in credit
-		Balance string `json:"balance"`
-	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  *Meta `json:"meta,omitempty"`
+	Data  EnergyBalanceResponseData `json:"data"`
+	Links Links                     `json:"links"`
+	Meta  *Meta                     `json:"meta,omitempty"`
+}
+
+// EnergyBalanceResponseData defines model for EnergyBalanceResponse_data.
+type EnergyBalanceResponseData struct {
+	// Balance The current balance of the account.  A positive value indicates that amount is owing to be paid.  A negative value indicates that the account is in credit
+	Balance string `json:"balance"`
 }
 
 // EnergyBillingDemandTransactionV3 defines model for EnergyBillingDemandTransactionV3.
 type EnergyBillingDemandTransactionV3 struct {
 	// Adjustments Optional array of adjustments arising for this transaction
-	Adjustments *[]struct {
-		// Amount The amount of the adjustment
-		Amount string `json:"amount"`
-
-		// Description A free text description of the adjustment
-		Description string `json:"description"`
-	} `json:"adjustments,omitempty"`
+	Adjustments *[]EnergyBillingUsageTransactionV2Adjustments `json:"adjustments,omitempty"`
 
 	// Amount The amount charged or credited for this transaction prior to any adjustments being applied.  A negative value indicates a credit
 	Amount string `json:"amount"`
 
 	// CalculationFactors Additional calculation factors that inform the transaction
-	CalculationFactors *[]struct {
-		// Type The type of the calculation factor
-		Type EnergyBillingDemandTransactionV3CalculationFactorsType `json:"type"`
-
-		// Value The value of the calculation factor
-		Value float32 `json:"value"`
-	} `json:"calculationFactors,omitempty"`
+	CalculationFactors *[]EnergyBillingUsageTransactionV2CalculationFactors `json:"calculationFactors,omitempty"`
 
 	// Description Optional description of the transaction that can be used for display purposes
 	Description *string `json:"description,omitempty"`
@@ -1242,9 +1220,6 @@ type EnergyBillingDemandTransactionV3 struct {
 	TimeOfUseType EnergyBillingDemandTransactionV3TimeOfUseType `json:"timeOfUseType"`
 }
 
-// EnergyBillingDemandTransactionV3CalculationFactorsType The type of the calculation factor
-type EnergyBillingDemandTransactionV3CalculationFactorsType string
-
 // EnergyBillingDemandTransactionV3MeasureUnit The measurement unit of rate. Assumed to be KVA if absent
 type EnergyBillingDemandTransactionV3MeasureUnit string
 
@@ -1253,12 +1228,15 @@ type EnergyBillingDemandTransactionV3TimeOfUseType string
 
 // EnergyBillingListResponseV3 defines model for EnergyBillingListResponseV3.
 type EnergyBillingListResponseV3 struct {
-	Data struct {
-		// Transactions Array of transactions sorted by date and time in descending order
-		Transactions []EnergyBillingTransactionV3 `json:"transactions"`
-	} `json:"data"`
-	Links LinksPaginated `json:"links"`
-	Meta  MetaPaginated  `json:"meta"`
+	Data  EnergyBillingListResponseV3Data `json:"data"`
+	Links LinksPaginated                  `json:"links"`
+	Meta  MetaPaginated                   `json:"meta"`
+}
+
+// EnergyBillingListResponseV3Data defines model for EnergyBillingListResponseV3_data.
+type EnergyBillingListResponseV3Data struct {
+	// Transactions Array of transactions sorted by date and time in descending order
+	Transactions []EnergyBillingTransactionV3 `json:"transactions"`
 }
 
 // EnergyBillingOnceOffTransaction defines model for EnergyBillingOnceOffTransaction.
@@ -1279,25 +1257,13 @@ type EnergyBillingOnceOffTransaction struct {
 // EnergyBillingOtherTransaction defines model for EnergyBillingOtherTransaction.
 type EnergyBillingOtherTransaction struct {
 	// Adjustments Optional array of adjustments arising for this transaction
-	Adjustments *[]struct {
-		// Amount The amount of the adjustment
-		Amount string `json:"amount"`
-
-		// Description A free text description of the adjustment
-		Description string `json:"description"`
-	} `json:"adjustments,omitempty"`
+	Adjustments *[]EnergyBillingUsageTransactionV2Adjustments `json:"adjustments,omitempty"`
 
 	// Amount The amount of the charge
 	Amount string `json:"amount"`
 
 	// CalculationFactors Additional calculation factors that inform the transaction
-	CalculationFactors *[]struct {
-		// Type The type of the calculation factor
-		Type EnergyBillingOtherTransactionCalculationFactorsType `json:"type"`
-
-		// Value The value of the calculation factor
-		Value float32 `json:"value"`
-	} `json:"calculationFactors,omitempty"`
+	CalculationFactors *[]EnergyBillingUsageTransactionV2CalculationFactors `json:"calculationFactors,omitempty"`
 
 	// Description A free text description of the item
 	Description string `json:"description"`
@@ -1317,9 +1283,6 @@ type EnergyBillingOtherTransaction struct {
 	// Type Type of charge. Assumed to be other if absent
 	Type *EnergyBillingOtherTransactionType `json:"type,omitempty"`
 }
-
-// EnergyBillingOtherTransactionCalculationFactorsType The type of the calculation factor
-type EnergyBillingOtherTransactionCalculationFactorsType string
 
 // EnergyBillingOtherTransactionType Type of charge. Assumed to be other if absent
 type EnergyBillingOtherTransactionType string
@@ -1362,25 +1325,13 @@ type EnergyBillingTransactionV3TransactionUType string
 // EnergyBillingUsageTransactionV2 defines model for EnergyBillingUsageTransactionV2.
 type EnergyBillingUsageTransactionV2 struct {
 	// Adjustments Optional array of adjustments arising for this transaction
-	Adjustments *[]struct {
-		// Amount The amount of the adjustment
-		Amount string `json:"amount"`
-
-		// Description A free text description of the adjustment
-		Description string `json:"description"`
-	} `json:"adjustments,omitempty"`
+	Adjustments *[]EnergyBillingUsageTransactionV2Adjustments `json:"adjustments,omitempty"`
 
 	// Amount The amount charged or credited for this transaction prior to any adjustments being applied.  A negative value indicates a credit
 	Amount string `json:"amount"`
 
 	// CalculationFactors Additional calculation factors that inform the transaction
-	CalculationFactors *[]struct {
-		// Type The type of the calculation factor
-		Type EnergyBillingUsageTransactionV2CalculationFactorsType `json:"type"`
-
-		// Value The value of the calculation factor
-		Value float32 `json:"value"`
-	} `json:"calculationFactors,omitempty"`
+	CalculationFactors *[]EnergyBillingUsageTransactionV2CalculationFactors `json:"calculationFactors,omitempty"`
 
 	// Description Optional description of the transaction that can be used for display purposes
 	Description *string `json:"description,omitempty"`
@@ -1410,14 +1361,32 @@ type EnergyBillingUsageTransactionV2 struct {
 	Usage float32 `json:"usage"`
 }
 
-// EnergyBillingUsageTransactionV2CalculationFactorsType The type of the calculation factor
-type EnergyBillingUsageTransactionV2CalculationFactorsType string
-
 // EnergyBillingUsageTransactionV2MeasureUnit The measurement unit of rate. Assumed to be KWH if absent
 type EnergyBillingUsageTransactionV2MeasureUnit string
 
 // EnergyBillingUsageTransactionV2TimeOfUseType The time of use type that the transaction applies to
 type EnergyBillingUsageTransactionV2TimeOfUseType string
+
+// EnergyBillingUsageTransactionV2Adjustments defines model for EnergyBillingUsageTransactionV2_adjustments.
+type EnergyBillingUsageTransactionV2Adjustments struct {
+	// Amount The amount of the adjustment
+	Amount string `json:"amount"`
+
+	// Description A free text description of the adjustment
+	Description string `json:"description"`
+}
+
+// EnergyBillingUsageTransactionV2CalculationFactors defines model for EnergyBillingUsageTransactionV2_calculationFactors.
+type EnergyBillingUsageTransactionV2CalculationFactors struct {
+	// Type The type of the calculation factor
+	Type EnergyBillingUsageTransactionV2CalculationFactorsType `json:"type"`
+
+	// Value The value of the calculation factor
+	Value float32 `json:"value"`
+}
+
+// EnergyBillingUsageTransactionV2CalculationFactorsType The type of the calculation factor
+type EnergyBillingUsageTransactionV2CalculationFactorsType string
 
 // EnergyConcession defines model for EnergyConcession.
 type EnergyConcession struct {
@@ -1460,12 +1429,15 @@ type EnergyConcessionType string
 
 // EnergyConcessionsResponse defines model for EnergyConcessionsResponse.
 type EnergyConcessionsResponse struct {
-	Data struct {
-		// Concessions Array may be empty if no concessions exist
-		Concessions []EnergyConcession `json:"concessions"`
-	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  *Meta `json:"meta,omitempty"`
+	Data  EnergyConcessionsResponseData `json:"data"`
+	Links Links                         `json:"links"`
+	Meta  *Meta                         `json:"meta,omitempty"`
+}
+
+// EnergyConcessionsResponseData defines model for EnergyConcessionsResponse_data.
+type EnergyConcessionsResponseData struct {
+	// Concessions Array may be empty if no concessions exist
+	Concessions []EnergyConcession `json:"concessions"`
 }
 
 // EnergyDerDetailResponse defines model for EnergyDerDetailResponse.
@@ -1477,72 +1449,20 @@ type EnergyDerDetailResponse struct {
 
 // EnergyDerListResponse defines model for EnergyDerListResponse.
 type EnergyDerListResponse struct {
-	Data struct {
-		// DerRecords Array of meter reads
-		DerRecords []EnergyDerRecord `json:"derRecords"`
-	} `json:"data"`
-	Links LinksPaginated `json:"links"`
-	Meta  MetaPaginated  `json:"meta"`
+	Data  EnergyDerListResponseData `json:"data"`
+	Links LinksPaginated            `json:"links"`
+	Meta  MetaPaginated             `json:"meta"`
+}
+
+// EnergyDerListResponseData defines model for EnergyDerListResponse_data.
+type EnergyDerListResponseData struct {
+	// DerRecords Array of meter reads
+	DerRecords []EnergyDerRecord `json:"derRecords"`
 }
 
 // EnergyDerRecord defines model for EnergyDerRecord.
 type EnergyDerRecord struct {
-	AcConnections []struct {
-		// CommissioningDate The date that the DER installation is commissioned
-		CommissioningDate string `json:"commissioningDate"`
-
-		// ConnectionIdentifier AC Connection ID as defined in the DER register.  Does not align with CDR ID permanence standards
-		ConnectionIdentifier float32 `json:"connectionIdentifier"`
-
-		// Count Number of AC Connections in the group. For the suite of AC Connections to be considered as a group, all of the AC Connections included must have the same attributes
-		Count      int `json:"count"`
-		DerDevices []struct {
-			// Count Number of devices in the group of DER devices
-			Count int `json:"count"`
-
-			// DeviceIdentifier Unique identifier for a single DER device or a group of DER devices with the same attributes. Does not align with CDR ID permanence standards
-			DeviceIdentifier float32 `json:"deviceIdentifier"`
-
-			// Manufacturer The name of the device manufacturer. If absent then assumed to be “unknown”
-			Manufacturer *string `json:"manufacturer,omitempty"`
-
-			// ModelNumber The model number of the device. If absent then assumed to be “unknown”
-			ModelNumber *string `json:"modelNumber,omitempty"`
-
-			// NominalRatedCapacity Maximum output in kVA that is listed in the product specification by the manufacturer. This refers to the capacity of each unit within the device group. Default is 0 if value not known
-			NominalRatedCapacity float32 `json:"nominalRatedCapacity"`
-
-			// NominalStorageCapacity Maximum storage capacity in kVAh. This refers to the capacity of each storage module within the device group. Mandatory if type is equal to “STORAGE”. Default is 0 if value not known
-			NominalStorageCapacity *float32 `json:"nominalStorageCapacity,omitempty"`
-
-			// Status Code used to indicate the status of the device. This will be used to identify if an inverter is active or inactive or decommissioned
-			Status *EnergyDerRecordAcConnectionsDerDevicesStatus `json:"status,omitempty"`
-
-			// Subtype Used to indicate the primary technology used in the DER device. This field is also used to record for example the battery chemistry, or the type of PV panel. It is also used to record if a battery is contained in an electric vehicle connected in a vehicle-to-grid arrangement. If absent then assumed to be “other”
-			Subtype *string `json:"subtype,omitempty"`
-
-			// Type Used to indicate the primary technology used in the DER device
-			Type EnergyDerRecordAcConnectionsDerDevicesType `json:"type"`
-		} `json:"derDevices"`
-
-		// EquipmentType Indicates whether the DER device is connected via an inverter (and what category of inverter it is) or not (e.g. rotating machine). If absent, assume equipment type to be “OTHER”.
-		EquipmentType *EnergyDerRecordAcConnectionsEquipmentType `json:"equipmentType,omitempty"`
-
-		// InverterDeviceCapacity The rated AC output power that is listed in the product specified by the manufacturer. Mandatory if equipmentType is INVERTER. Default is 0 if value not known
-		InverterDeviceCapacity *float32 `json:"inverterDeviceCapacity,omitempty"`
-
-		// InverterModelNumber The inverter model number. Mandatory if equipmentType is INVERTER
-		InverterModelNumber *string `json:"inverterModelNumber,omitempty"`
-
-		// InverterSeries The inverter series. Mandatory if equipmentType is INVERTER
-		InverterSeries *string `json:"inverterSeries,omitempty"`
-
-		// ManufacturerName The name of the inverter manufacturer. Mandatory if equipmentType is INVERTER
-		ManufacturerName *string `json:"manufacturerName,omitempty"`
-
-		// Status Code used to indicate the status of the Inverter. This will be used to identify if an inverter is active or inactive or decommissioned
-		Status EnergyDerRecordAcConnectionsStatus `json:"status"`
-	} `json:"acConnections"`
+	AcConnections []EnergyDerRecordAcConnections `json:"acConnections"`
 
 	// ApprovedCapacity Approved small generating unit capacity as agreed with NSP in the connection agreement, expressed in kVA. Value of 0 indicates no DER record exists for the given servicePointId
 	ApprovedCapacity float32 `json:"approvedCapacity"`
@@ -1560,68 +1480,132 @@ type EnergyDerRecord struct {
 	IslandableInstallation bool `json:"islandableInstallation"`
 
 	// ProtectionMode Required only when the hasCentralProtectionAndControl flag is set to true.  One or more of the object fields will be provided to describe the protection modes in place
-	ProtectionMode *struct {
-		// ExportLimitKva Maximum amount of power (kVA) that may be exported from a connection point to the grid, as monitored by a control / relay function. An absent value indicates no limit
-		ExportLimitKva *float32 `json:"exportLimitKva,omitempty"`
-
-		// FrequencyRateOfChange Rate of change of frequency trip point (Hz/s).
-		FrequencyRateOfChange *float32 `json:"frequencyRateOfChange,omitempty"`
-
-		// InterTripScheme Description of the form of inter-trip (e.g. 'from local substation').
-		InterTripScheme *string `json:"interTripScheme,omitempty"`
-
-		// NeutralVoltageDisplacement Trip voltage.
-		NeutralVoltageDisplacement *float32 `json:"neutralVoltageDisplacement,omitempty"`
-
-		// OverFrequencyProtection Protective function limit in Hz.
-		OverFrequencyProtection *float32 `json:"overFrequencyProtection,omitempty"`
-
-		// OverFrequencyProtectionDelay Trip delay time in seconds.
-		OverFrequencyProtectionDelay *float32 `json:"overFrequencyProtectionDelay,omitempty"`
-
-		// OverVoltageProtection Protective function limit in V.
-		OverVoltageProtection *float32 `json:"overVoltageProtection,omitempty"`
-
-		// OverVoltageProtectionDelay Trip delay time in seconds.
-		OverVoltageProtectionDelay *float32 `json:"overVoltageProtectionDelay,omitempty"`
-
-		// SustainedOverVoltage Sustained over voltage.
-		SustainedOverVoltage *float32 `json:"sustainedOverVoltage,omitempty"`
-
-		// SustainedOverVoltageDelay Sustained Over voltage protection delay in seconds.
-		SustainedOverVoltageDelay *float32 `json:"sustainedOverVoltageDelay,omitempty"`
-
-		// UnderFrequencyProtection Protective function limit in Hz.
-		UnderFrequencyProtection *float32 `json:"underFrequencyProtection,omitempty"`
-
-		// UnderFrequencyProtectionDelay Trip delay time in seconds.
-		UnderFrequencyProtectionDelay *float32 `json:"underFrequencyProtectionDelay,omitempty"`
-
-		// UnderVoltageProtection Protective function limit in V.
-		UnderVoltageProtection *float32 `json:"underVoltageProtection,omitempty"`
-
-		// UnderVoltageProtectionDelay Trip delay time in seconds.
-		UnderVoltageProtectionDelay *float32 `json:"underVoltageProtectionDelay,omitempty"`
-
-		// VoltageVectorShift Trip angle in degrees.
-		VoltageVectorShift *float32 `json:"voltageVectorShift,omitempty"`
-	} `json:"protectionMode,omitempty"`
+	ProtectionMode *EnergyDerRecordProtectionMode `json:"protectionMode,omitempty"`
 
 	// ServicePointId Tokenised ID of the service point to be used for referring to the service point in the CDR API suite.  To be created in accordance with CDR ID permanence requirements
 	ServicePointId string `json:"servicePointId"`
 }
 
-// EnergyDerRecordAcConnectionsDerDevicesStatus Code used to indicate the status of the device. This will be used to identify if an inverter is active or inactive or decommissioned
-type EnergyDerRecordAcConnectionsDerDevicesStatus string
+// EnergyDerRecordAcConnections defines model for EnergyDerRecord_acConnections.
+type EnergyDerRecordAcConnections struct {
+	// CommissioningDate The date that the DER installation is commissioned
+	CommissioningDate string `json:"commissioningDate"`
 
-// EnergyDerRecordAcConnectionsDerDevicesType Used to indicate the primary technology used in the DER device
-type EnergyDerRecordAcConnectionsDerDevicesType string
+	// ConnectionIdentifier AC Connection ID as defined in the DER register.  Does not align with CDR ID permanence standards
+	ConnectionIdentifier float32 `json:"connectionIdentifier"`
+
+	// Count Number of AC Connections in the group. For the suite of AC Connections to be considered as a group, all of the AC Connections included must have the same attributes
+	Count      int                         `json:"count"`
+	DerDevices []EnergyDerRecordDerDevices `json:"derDevices"`
+
+	// EquipmentType Indicates whether the DER device is connected via an inverter (and what category of inverter it is) or not (e.g. rotating machine). If absent, assume equipment type to be “OTHER”.
+	EquipmentType *EnergyDerRecordAcConnectionsEquipmentType `json:"equipmentType,omitempty"`
+
+	// InverterDeviceCapacity The rated AC output power that is listed in the product specified by the manufacturer. Mandatory if equipmentType is INVERTER. Default is 0 if value not known
+	InverterDeviceCapacity *float32 `json:"inverterDeviceCapacity,omitempty"`
+
+	// InverterModelNumber The inverter model number. Mandatory if equipmentType is INVERTER
+	InverterModelNumber *string `json:"inverterModelNumber,omitempty"`
+
+	// InverterSeries The inverter series. Mandatory if equipmentType is INVERTER
+	InverterSeries *string `json:"inverterSeries,omitempty"`
+
+	// ManufacturerName The name of the inverter manufacturer. Mandatory if equipmentType is INVERTER
+	ManufacturerName *string `json:"manufacturerName,omitempty"`
+
+	// Status Code used to indicate the status of the Inverter. This will be used to identify if an inverter is active or inactive or decommissioned
+	Status EnergyDerRecordAcConnectionsStatus `json:"status"`
+}
 
 // EnergyDerRecordAcConnectionsEquipmentType Indicates whether the DER device is connected via an inverter (and what category of inverter it is) or not (e.g. rotating machine). If absent, assume equipment type to be “OTHER”.
 type EnergyDerRecordAcConnectionsEquipmentType string
 
 // EnergyDerRecordAcConnectionsStatus Code used to indicate the status of the Inverter. This will be used to identify if an inverter is active or inactive or decommissioned
 type EnergyDerRecordAcConnectionsStatus string
+
+// EnergyDerRecordDerDevices defines model for EnergyDerRecord_derDevices.
+type EnergyDerRecordDerDevices struct {
+	// Count Number of devices in the group of DER devices
+	Count int `json:"count"`
+
+	// DeviceIdentifier Unique identifier for a single DER device or a group of DER devices with the same attributes. Does not align with CDR ID permanence standards
+	DeviceIdentifier float32 `json:"deviceIdentifier"`
+
+	// Manufacturer The name of the device manufacturer. If absent then assumed to be “unknown”
+	Manufacturer *string `json:"manufacturer,omitempty"`
+
+	// ModelNumber The model number of the device. If absent then assumed to be “unknown”
+	ModelNumber *string `json:"modelNumber,omitempty"`
+
+	// NominalRatedCapacity Maximum output in kVA that is listed in the product specification by the manufacturer. This refers to the capacity of each unit within the device group. Default is 0 if value not known
+	NominalRatedCapacity float32 `json:"nominalRatedCapacity"`
+
+	// NominalStorageCapacity Maximum storage capacity in kVAh. This refers to the capacity of each storage module within the device group. Mandatory if type is equal to “STORAGE”. Default is 0 if value not known
+	NominalStorageCapacity *float32 `json:"nominalStorageCapacity,omitempty"`
+
+	// Status Code used to indicate the status of the device. This will be used to identify if an inverter is active or inactive or decommissioned
+	Status *EnergyDerRecordDerDevicesStatus `json:"status,omitempty"`
+
+	// Subtype Used to indicate the primary technology used in the DER device. This field is also used to record for example the battery chemistry, or the type of PV panel. It is also used to record if a battery is contained in an electric vehicle connected in a vehicle-to-grid arrangement. If absent then assumed to be “other”
+	Subtype *string `json:"subtype,omitempty"`
+
+	// Type Used to indicate the primary technology used in the DER device
+	Type EnergyDerRecordDerDevicesType `json:"type"`
+}
+
+// EnergyDerRecordDerDevicesStatus Code used to indicate the status of the device. This will be used to identify if an inverter is active or inactive or decommissioned
+type EnergyDerRecordDerDevicesStatus string
+
+// EnergyDerRecordDerDevicesType Used to indicate the primary technology used in the DER device
+type EnergyDerRecordDerDevicesType string
+
+// EnergyDerRecordProtectionMode Required only when the hasCentralProtectionAndControl flag is set to true.  One or more of the object fields will be provided to describe the protection modes in place
+type EnergyDerRecordProtectionMode struct {
+	// ExportLimitKva Maximum amount of power (kVA) that may be exported from a connection point to the grid, as monitored by a control / relay function. An absent value indicates no limit
+	ExportLimitKva *float32 `json:"exportLimitKva,omitempty"`
+
+	// FrequencyRateOfChange Rate of change of frequency trip point (Hz/s).
+	FrequencyRateOfChange *float32 `json:"frequencyRateOfChange,omitempty"`
+
+	// InterTripScheme Description of the form of inter-trip (e.g. 'from local substation').
+	InterTripScheme *string `json:"interTripScheme,omitempty"`
+
+	// NeutralVoltageDisplacement Trip voltage.
+	NeutralVoltageDisplacement *float32 `json:"neutralVoltageDisplacement,omitempty"`
+
+	// OverFrequencyProtection Protective function limit in Hz.
+	OverFrequencyProtection *float32 `json:"overFrequencyProtection,omitempty"`
+
+	// OverFrequencyProtectionDelay Trip delay time in seconds.
+	OverFrequencyProtectionDelay *float32 `json:"overFrequencyProtectionDelay,omitempty"`
+
+	// OverVoltageProtection Protective function limit in V.
+	OverVoltageProtection *float32 `json:"overVoltageProtection,omitempty"`
+
+	// OverVoltageProtectionDelay Trip delay time in seconds.
+	OverVoltageProtectionDelay *float32 `json:"overVoltageProtectionDelay,omitempty"`
+
+	// SustainedOverVoltage Sustained over voltage.
+	SustainedOverVoltage *float32 `json:"sustainedOverVoltage,omitempty"`
+
+	// SustainedOverVoltageDelay Sustained Over voltage protection delay in seconds.
+	SustainedOverVoltageDelay *float32 `json:"sustainedOverVoltageDelay,omitempty"`
+
+	// UnderFrequencyProtection Protective function limit in Hz.
+	UnderFrequencyProtection *float32 `json:"underFrequencyProtection,omitempty"`
+
+	// UnderFrequencyProtectionDelay Trip delay time in seconds.
+	UnderFrequencyProtectionDelay *float32 `json:"underFrequencyProtectionDelay,omitempty"`
+
+	// UnderVoltageProtection Protective function limit in V.
+	UnderVoltageProtection *float32 `json:"underVoltageProtection,omitempty"`
+
+	// UnderVoltageProtectionDelay Trip delay time in seconds.
+	UnderVoltageProtectionDelay *float32 `json:"underVoltageProtectionDelay,omitempty"`
+
+	// VoltageVectorShift Trip angle in degrees.
+	VoltageVectorShift *float32 `json:"voltageVectorShift,omitempty"`
+}
 
 // EnergyInvoice defines model for EnergyInvoice.
 type EnergyInvoice struct {
@@ -1652,28 +1636,13 @@ type EnergyInvoice struct {
 	IssueDate string `json:"issueDate"`
 
 	// PayOnTimeDiscount A discount for on time payment
-	PayOnTimeDiscount *struct {
-		// Date The date by which the invoice must be paid to receive the pay on time discount
-		Date string `json:"date"`
-
-		// DiscountAmount The amount that will be discounted if the invoice is paid by the date specified
-		DiscountAmount string `json:"discountAmount"`
-
-		// GstAmount The GST amount that will be discounted if the invoice is paid by the date specified.  If absent then zero is assumed
-		GstAmount *string `json:"gstAmount,omitempty"`
-	} `json:"payOnTimeDiscount,omitempty"`
+	PayOnTimeDiscount *EnergyInvoicePayOnTimeDiscount `json:"payOnTimeDiscount,omitempty"`
 
 	// PaymentStatus Indicator of the payment status for the invoice
 	PaymentStatus EnergyInvoicePaymentStatus `json:"paymentStatus"`
 
 	// Period Object containing the start and end date for the period covered by the invoice.  Mandatory if any usage or demand based charges are included in the invoice
-	Period *struct {
-		// EndDate The end date of the period covered by this invoice
-		EndDate string `json:"endDate"`
-
-		// StartDate The start date of the period covered by this invoice
-		StartDate string `json:"startDate"`
-	} `json:"period,omitempty"`
+	Period *EnergyInvoicePeriod `json:"period,omitempty"`
 
 	// ServicePoints Array of service point IDs to which this invoice applies. May be empty if the invoice contains no electricity usage related charges
 	ServicePoints []string `json:"servicePoints"`
@@ -1697,16 +1666,7 @@ type EnergyInvoiceAccountCharges struct {
 // EnergyInvoiceElectricityUsageCharges defines model for EnergyInvoiceElectricityUsageCharges.
 type EnergyInvoiceElectricityUsageCharges struct {
 	// OtherCharges Optional array of charges that may be part of the invoice (for e.g. environmental charges for C&I consumers) (exclusive of GST)
-	OtherCharges *[]struct {
-		// Amount The aggregate total of charges for this item (exclusive of GST)
-		Amount string `json:"amount"`
-
-		// Description A free text description of the type of charge
-		Description string `json:"description"`
-
-		// Type Type of charge. Assumed to be other if absent
-		Type *EnergyInvoiceElectricityUsageChargesOtherChargesType `json:"type,omitempty"`
-	} `json:"otherCharges,omitempty"`
+	OtherCharges *[]EnergyInvoiceGasUsageChargesOtherCharges `json:"otherCharges,omitempty"`
 
 	// TotalGenerationCredits The aggregate total of generation credits for the period covered by the invoice (exclusive of GST)
 	TotalGenerationCredits string `json:"totalGenerationCredits"`
@@ -1724,22 +1684,10 @@ type EnergyInvoiceElectricityUsageCharges struct {
 	TotalUsageCharges string `json:"totalUsageCharges"`
 }
 
-// EnergyInvoiceElectricityUsageChargesOtherChargesType Type of charge. Assumed to be other if absent
-type EnergyInvoiceElectricityUsageChargesOtherChargesType string
-
 // EnergyInvoiceGasUsageCharges defines model for EnergyInvoiceGasUsageCharges.
 type EnergyInvoiceGasUsageCharges struct {
 	// OtherCharges Optional array of charges that may be part of the invoice (for e.g. environmental charges for C&I consumers) (exclusive of GST)
-	OtherCharges *[]struct {
-		// Amount The aggregate total of charges for this item (exclusive of GST)
-		Amount string `json:"amount"`
-
-		// Description A free text description of the type of charge
-		Description string `json:"description"`
-
-		// Type Type of charge. Assumed to be other if absent
-		Type *EnergyInvoiceGasUsageChargesOtherChargesType `json:"type,omitempty"`
-	} `json:"otherCharges,omitempty"`
+	OtherCharges *[]EnergyInvoiceGasUsageChargesOtherCharges `json:"otherCharges,omitempty"`
 
 	// TotalGenerationCredits The aggregate total of generation credits for the period covered by the invoice (exclusive of GST)
 	TotalGenerationCredits string `json:"totalGenerationCredits"`
@@ -1757,17 +1705,53 @@ type EnergyInvoiceGasUsageCharges struct {
 	TotalUsageCharges string `json:"totalUsageCharges"`
 }
 
+// EnergyInvoiceGasUsageChargesOtherCharges defines model for EnergyInvoiceGasUsageCharges_otherCharges.
+type EnergyInvoiceGasUsageChargesOtherCharges struct {
+	// Amount The aggregate total of charges for this item (exclusive of GST)
+	Amount string `json:"amount"`
+
+	// Description A free text description of the type of charge
+	Description string `json:"description"`
+
+	// Type Type of charge. Assumed to be other if absent
+	Type *EnergyInvoiceGasUsageChargesOtherChargesType `json:"type,omitempty"`
+}
+
 // EnergyInvoiceGasUsageChargesOtherChargesType Type of charge. Assumed to be other if absent
 type EnergyInvoiceGasUsageChargesOtherChargesType string
 
 // EnergyInvoiceListResponse defines model for EnergyInvoiceListResponse.
 type EnergyInvoiceListResponse struct {
-	Data struct {
-		// Invoices Array of invoices sorted by issue date in descending order
-		Invoices []EnergyInvoice `json:"invoices"`
-	} `json:"data"`
-	Links LinksPaginated `json:"links"`
-	Meta  MetaPaginated  `json:"meta"`
+	Data  EnergyInvoiceListResponseData `json:"data"`
+	Links LinksPaginated                `json:"links"`
+	Meta  MetaPaginated                 `json:"meta"`
+}
+
+// EnergyInvoiceListResponseData defines model for EnergyInvoiceListResponse_data.
+type EnergyInvoiceListResponseData struct {
+	// Invoices Array of invoices sorted by issue date in descending order
+	Invoices []EnergyInvoice `json:"invoices"`
+}
+
+// EnergyInvoicePayOnTimeDiscount A discount for on time payment
+type EnergyInvoicePayOnTimeDiscount struct {
+	// Date The date by which the invoice must be paid to receive the pay on time discount
+	Date string `json:"date"`
+
+	// DiscountAmount The amount that will be discounted if the invoice is paid by the date specified
+	DiscountAmount string `json:"discountAmount"`
+
+	// GstAmount The GST amount that will be discounted if the invoice is paid by the date specified.  If absent then zero is assumed
+	GstAmount *string `json:"gstAmount,omitempty"`
+}
+
+// EnergyInvoicePeriod Object containing the start and end date for the period covered by the invoice.  Mandatory if any usage or demand based charges are included in the invoice
+type EnergyInvoicePeriod struct {
+	// EndDate The end date of the period covered by this invoice
+	EndDate string `json:"endDate"`
+
+	// StartDate The start date of the period covered by this invoice
+	StartDate string `json:"startDate"`
 }
 
 // EnergyPaymentSchedule defines model for EnergyPaymentSchedule.
@@ -1776,64 +1760,47 @@ type EnergyPaymentSchedule struct {
 	Amount *string `json:"amount,omitempty"`
 
 	// CardDebit Represents a regular credit card payment schedule. Mandatory if paymentScheduleUType is set to cardDebit
-	CardDebit *struct {
-		// CalculationType The mechanism by which the payment amount is calculated.  Explanation of values are as follows:<br/><ul><li>**STATIC** - Indicates a consistent, static amount, per payment</li><li>**BALANCE** - Indicates that the outstanding balance for the account is paid per period</li><li>**CALCULATED** - Indicates that the payment amount is variable and calculated using a pre-defined algorithm</li></ul>
-		CalculationType EnergyPaymentScheduleCardDebitCalculationType `json:"calculationType"`
-
-		// CardScheme The type of credit card held on file
-		CardScheme EnergyPaymentScheduleCardDebitCardScheme `json:"cardScheme"`
-
-		// PaymentFrequency The frequency that payments will occur.  Formatted according to [ISO 8601 Durations](https://en.wikipedia.org/wiki/ISO_8601#Durations) (excludes recurrence syntax)
-		PaymentFrequency string `json:"paymentFrequency"`
-	} `json:"cardDebit,omitempty"`
+	CardDebit *EnergyPaymentScheduleCardDebit `json:"cardDebit,omitempty"`
 
 	// DigitalWallet Represents a regular payment from a digital wallet. Mandatory if paymentScheduleUType is set to digitalWallet
-	DigitalWallet *struct {
-		// CalculationType The mechanism by which the payment amount is calculated.  Explanation of values are as follows:<br/><ul><li>**STATIC** - Indicates a consistent, static amount, per payment</li><li>**BALANCE** - Indicates that the outstanding balance for the account is paid per period</li><li>**CALCULATED** - Indicates that the payment amount is variable and calculated using a pre-defined algorithm</li></ul>
-		CalculationType EnergyPaymentScheduleDigitalWalletCalculationType `json:"calculationType"`
-
-		// Identifier The identifier of the digital wallet (dependent on type)
-		Identifier string `json:"identifier"`
-
-		// Name The display name of the wallet as given by the customer, else a default value defined by the data holder
-		Name string `json:"name"`
-
-		// PaymentFrequency The frequency that payments will occur.  Formatted according to [ISO 8601 Durations](https://en.wikipedia.org/wiki/ISO_8601#Durations) (excludes recurrence syntax)
-		PaymentFrequency string `json:"paymentFrequency"`
-
-		// Provider The provider of the digital wallet
-		Provider EnergyPaymentScheduleDigitalWalletProvider `json:"provider"`
-
-		// Type The type of the digital wallet identifier
-		Type EnergyPaymentScheduleDigitalWalletType `json:"type"`
-	} `json:"digitalWallet,omitempty"`
+	DigitalWallet *EnergyPaymentScheduleDigitalWallet `json:"digitalWallet,omitempty"`
 
 	// DirectDebit Represents a regular direct debit from a specified bank account. Mandatory if paymentScheduleUType is set to directDebit
-	DirectDebit *struct {
-		// AccountNumber The unmasked account number for the account to be debited. Is expected to be formatted as digits only with leading zeros included and no punctuation or spaces.  Is required if isTokenised is absent or false
-		AccountNumber *string `json:"accountNumber,omitempty"`
-
-		// Bsb The unmasked BSB for the account to be debited. Is expected to be formatted as digits only with leading zeros included and no punctuation or spaces.  Is required if isTokenised is absent or false
-		Bsb *string `json:"bsb,omitempty"`
-
-		// CalculationType The mechanism by which the payment amount is calculated.  Explanation of values are as follows:<br/><ul><li>**STATIC** - Indicates a consistent, static amount, per payment</li><li>**BALANCE** - Indicates that the outstanding balance for the account is paid per period</li><li>**CALCULATED** - Indicates that the payment amount is variable and calculated using a pre-defined algorithm</li></ul>
-		CalculationType EnergyPaymentScheduleDirectDebitCalculationType `json:"calculationType"`
-
-		// IsTokenised Flag indicating that the account details are tokenised, or held in a closed system, and is not accessible through any other channels. False if absent
-		IsTokenised *bool `json:"isTokenised,omitempty"`
-
-		// PaymentFrequency The frequency that payments will occur.  Formatted according to [ISO 8601 Durations](https://en.wikipedia.org/wiki/ISO_8601#Durations) (excludes recurrence syntax)
-		PaymentFrequency string `json:"paymentFrequency"`
-	} `json:"directDebit,omitempty"`
+	DirectDebit *EnergyPaymentScheduleDirectDebit `json:"directDebit,omitempty"`
 
 	// ManualPayment Represents a manual payment schedule where the customer pays in response to a delivered statement. Mandatory if paymentScheduleUType is set to manualPayment
-	ManualPayment *struct {
-		// BillFrequency The frequency with which a bill will be issued.  Formatted according to [ISO 8601 Durations](https://en.wikipedia.org/wiki/ISO_8601#Durations) (excludes recurrence syntax)
-		BillFrequency string `json:"billFrequency"`
-	} `json:"manualPayment,omitempty"`
+	ManualPayment *EnergyPaymentScheduleManualPayment `json:"manualPayment,omitempty"`
 
 	// PaymentScheduleUType The type of object present in this response
 	PaymentScheduleUType EnergyPaymentSchedulePaymentScheduleUType `json:"paymentScheduleUType"`
+}
+
+// EnergyPaymentSchedulePaymentScheduleUType The type of object present in this response
+type EnergyPaymentSchedulePaymentScheduleUType string
+
+// EnergyPaymentScheduleResponse defines model for EnergyPaymentScheduleResponse.
+type EnergyPaymentScheduleResponse struct {
+	Data  EnergyPaymentScheduleResponseData `json:"data"`
+	Links Links                             `json:"links"`
+	Meta  *Meta                             `json:"meta,omitempty"`
+}
+
+// EnergyPaymentScheduleResponseData defines model for EnergyPaymentScheduleResponse_data.
+type EnergyPaymentScheduleResponseData struct {
+	// PaymentSchedules Array may be empty if no payment schedule exist
+	PaymentSchedules []EnergyPaymentSchedule `json:"paymentSchedules"`
+}
+
+// EnergyPaymentScheduleCardDebit Represents a regular credit card payment schedule. Mandatory if paymentScheduleUType is set to cardDebit
+type EnergyPaymentScheduleCardDebit struct {
+	// CalculationType The mechanism by which the payment amount is calculated.  Explanation of values are as follows:<br/><ul><li>**STATIC** - Indicates a consistent, static amount, per payment</li><li>**BALANCE** - Indicates that the outstanding balance for the account is paid per period</li><li>**CALCULATED** - Indicates that the payment amount is variable and calculated using a pre-defined algorithm</li></ul>
+	CalculationType EnergyPaymentScheduleCardDebitCalculationType `json:"calculationType"`
+
+	// CardScheme The type of credit card held on file
+	CardScheme EnergyPaymentScheduleCardDebitCardScheme `json:"cardScheme"`
+
+	// PaymentFrequency The frequency that payments will occur.  Formatted according to [ISO 8601 Durations](https://en.wikipedia.org/wiki/ISO_8601#Durations) (excludes recurrence syntax)
+	PaymentFrequency string `json:"paymentFrequency"`
 }
 
 // EnergyPaymentScheduleCardDebitCalculationType The mechanism by which the payment amount is calculated.  Explanation of values are as follows:<br/><ul><li>**STATIC** - Indicates a consistent, static amount, per payment</li><li>**BALANCE** - Indicates that the outstanding balance for the account is paid per period</li><li>**CALCULATED** - Indicates that the payment amount is variable and calculated using a pre-defined algorithm</li></ul>
@@ -1841,6 +1808,27 @@ type EnergyPaymentScheduleCardDebitCalculationType string
 
 // EnergyPaymentScheduleCardDebitCardScheme The type of credit card held on file
 type EnergyPaymentScheduleCardDebitCardScheme string
+
+// EnergyPaymentScheduleDigitalWallet Represents a regular payment from a digital wallet. Mandatory if paymentScheduleUType is set to digitalWallet
+type EnergyPaymentScheduleDigitalWallet struct {
+	// CalculationType The mechanism by which the payment amount is calculated.  Explanation of values are as follows:<br/><ul><li>**STATIC** - Indicates a consistent, static amount, per payment</li><li>**BALANCE** - Indicates that the outstanding balance for the account is paid per period</li><li>**CALCULATED** - Indicates that the payment amount is variable and calculated using a pre-defined algorithm</li></ul>
+	CalculationType EnergyPaymentScheduleDigitalWalletCalculationType `json:"calculationType"`
+
+	// Identifier The identifier of the digital wallet (dependent on type)
+	Identifier string `json:"identifier"`
+
+	// Name The display name of the wallet as given by the customer, else a default value defined by the data holder
+	Name string `json:"name"`
+
+	// PaymentFrequency The frequency that payments will occur.  Formatted according to [ISO 8601 Durations](https://en.wikipedia.org/wiki/ISO_8601#Durations) (excludes recurrence syntax)
+	PaymentFrequency string `json:"paymentFrequency"`
+
+	// Provider The provider of the digital wallet
+	Provider EnergyPaymentScheduleDigitalWalletProvider `json:"provider"`
+
+	// Type The type of the digital wallet identifier
+	Type EnergyPaymentScheduleDigitalWalletType `json:"type"`
+}
 
 // EnergyPaymentScheduleDigitalWalletCalculationType The mechanism by which the payment amount is calculated.  Explanation of values are as follows:<br/><ul><li>**STATIC** - Indicates a consistent, static amount, per payment</li><li>**BALANCE** - Indicates that the outstanding balance for the account is paid per period</li><li>**CALCULATED** - Indicates that the payment amount is variable and calculated using a pre-defined algorithm</li></ul>
 type EnergyPaymentScheduleDigitalWalletCalculationType string
@@ -1851,41 +1839,37 @@ type EnergyPaymentScheduleDigitalWalletProvider string
 // EnergyPaymentScheduleDigitalWalletType The type of the digital wallet identifier
 type EnergyPaymentScheduleDigitalWalletType string
 
+// EnergyPaymentScheduleDirectDebit Represents a regular direct debit from a specified bank account. Mandatory if paymentScheduleUType is set to directDebit
+type EnergyPaymentScheduleDirectDebit struct {
+	// AccountNumber The unmasked account number for the account to be debited. Is expected to be formatted as digits only with leading zeros included and no punctuation or spaces.  Is required if isTokenised is absent or false
+	AccountNumber *string `json:"accountNumber,omitempty"`
+
+	// Bsb The unmasked BSB for the account to be debited. Is expected to be formatted as digits only with leading zeros included and no punctuation or spaces.  Is required if isTokenised is absent or false
+	Bsb *string `json:"bsb,omitempty"`
+
+	// CalculationType The mechanism by which the payment amount is calculated.  Explanation of values are as follows:<br/><ul><li>**STATIC** - Indicates a consistent, static amount, per payment</li><li>**BALANCE** - Indicates that the outstanding balance for the account is paid per period</li><li>**CALCULATED** - Indicates that the payment amount is variable and calculated using a pre-defined algorithm</li></ul>
+	CalculationType EnergyPaymentScheduleDirectDebitCalculationType `json:"calculationType"`
+
+	// IsTokenised Flag indicating that the account details are tokenised, or held in a closed system, and is not accessible through any other channels. False if absent
+	IsTokenised *bool `json:"isTokenised,omitempty"`
+
+	// PaymentFrequency The frequency that payments will occur.  Formatted according to [ISO 8601 Durations](https://en.wikipedia.org/wiki/ISO_8601#Durations) (excludes recurrence syntax)
+	PaymentFrequency string `json:"paymentFrequency"`
+}
+
 // EnergyPaymentScheduleDirectDebitCalculationType The mechanism by which the payment amount is calculated.  Explanation of values are as follows:<br/><ul><li>**STATIC** - Indicates a consistent, static amount, per payment</li><li>**BALANCE** - Indicates that the outstanding balance for the account is paid per period</li><li>**CALCULATED** - Indicates that the payment amount is variable and calculated using a pre-defined algorithm</li></ul>
 type EnergyPaymentScheduleDirectDebitCalculationType string
 
-// EnergyPaymentSchedulePaymentScheduleUType The type of object present in this response
-type EnergyPaymentSchedulePaymentScheduleUType string
-
-// EnergyPaymentScheduleResponse defines model for EnergyPaymentScheduleResponse.
-type EnergyPaymentScheduleResponse struct {
-	Data struct {
-		// PaymentSchedules Array may be empty if no payment schedule exist
-		PaymentSchedules []EnergyPaymentSchedule `json:"paymentSchedules"`
-	} `json:"data"`
-	Links Links `json:"links"`
-	Meta  *Meta `json:"meta,omitempty"`
+// EnergyPaymentScheduleManualPayment Represents a manual payment schedule where the customer pays in response to a delivered statement. Mandatory if paymentScheduleUType is set to manualPayment
+type EnergyPaymentScheduleManualPayment struct {
+	// BillFrequency The frequency with which a bill will be issued.  Formatted according to [ISO 8601 Durations](https://en.wikipedia.org/wiki/ISO_8601#Durations) (excludes recurrence syntax)
+	BillFrequency string `json:"billFrequency"`
 }
 
 // EnergyPlan defines model for EnergyPlan.
 type EnergyPlan struct {
 	// AdditionalInformation Object that contains links to additional information on specific topics
-	AdditionalInformation *struct {
-		// BundleUri A link to detail on bundles that this plan can be a part of
-		BundleUri *string `json:"bundleUri,omitempty"`
-
-		// EligibilityUri A link to detail on eligibility criteria for the plan
-		EligibilityUri *string `json:"eligibilityUri,omitempty"`
-
-		// OverviewUri A link to a general overview of the plan
-		OverviewUri *string `json:"overviewUri,omitempty"`
-
-		// PricingUri A link to detail on pricing for the plan
-		PricingUri *string `json:"pricingUri,omitempty"`
-
-		// TermsUri A link to terms and conditions for the plan
-		TermsUri *string `json:"termsUri,omitempty"`
-	} `json:"additionalInformation,omitempty"`
+	AdditionalInformation *EnergyPlanAdditionalInformation `json:"additionalInformation,omitempty"`
 
 	// ApplicationUri A link to an application web page where this plan can be applied for
 	ApplicationUri *string `json:"applicationUri,omitempty"`
@@ -1915,16 +1899,7 @@ type EnergyPlan struct {
 	FuelType EnergyPlanFuelType `json:"fuelType"`
 
 	// Geography Describes the geographical area that the plan is available for.  If absent then it is assumed the plan is not geographically limited
-	Geography *struct {
-		// Distributors Array of distributors for the plan. Must have at least one entry
-		Distributors []string `json:"distributors"`
-
-		// ExcludedPostcodes Array of valid Australian postcodes that are specifically excluded from the plan.  Each element is a single four digit postcode (e.g. 3000) or a range of postcodes defined by two four digit postcodes and a hyphen (e.g. 3000-3999)
-		ExcludedPostcodes *[]string `json:"excludedPostcodes,omitempty"`
-
-		// IncludedPostcodes Array of valid Australian postcodes that are included from the plan.  If absent defaults to all non-excluded postcodes.  Each element is a single four digit postcode (e.g. 3000) or a range of postcodes defined by two four digit postcodes and a hyphen (e.g. 3000-3999)
-		IncludedPostcodes *[]string `json:"includedPostcodes,omitempty"`
-	} `json:"geography,omitempty"`
+	Geography *EnergyPlanGeography `json:"geography,omitempty"`
 
 	// LastUpdated The last date and time that the information for this plan was changed (or the creation date for the plan if it has never been altered)
 	LastUpdated string `json:"lastUpdated"`
@@ -1978,10 +1953,7 @@ type EnergyPlanContractFullV3 struct {
 	Incentives *EnergyPlanIncentives `json:"incentives,omitempty"`
 
 	// IntrinsicGreenPower Describes intrinsic green power for the plan.  If present then the plan includes a percentage of green power in the base plan. Should not be present for gas contracts
-	IntrinsicGreenPower *struct {
-		// GreenPercentage Percentage of green power intrinsically included in the plan
-		GreenPercentage string `json:"greenPercentage"`
-	} `json:"intrinsicGreenPower,omitempty"`
+	IntrinsicGreenPower *EnergyPlanContractV3IntrinsicGreenPower `json:"intrinsicGreenPower,omitempty"`
 
 	// IsFixed Flag indicating whether prices are fixed or variable
 	IsFixed bool `json:"isFixed"`
@@ -2029,6 +2001,30 @@ type EnergyPlanContractFullV3TermType string
 // EnergyPlanContractFullV3TimeZone Required if pricingModel is set to TIME_OF_USE.  Defines the time zone to use for calculation of the time of use thresholds. Defaults to AEST if absent
 type EnergyPlanContractFullV3TimeZone string
 
+// EnergyPlanContractFullV3AllOf defines model for EnergyPlanContractFullV3_allOf.
+type EnergyPlanContractFullV3AllOf struct {
+	// BenefitPeriod Description of the benefit period.  Should only be present if termType has the value ONGOING
+	BenefitPeriod *string `json:"benefitPeriod,omitempty"`
+
+	// BillFrequency An array of the available billing schedules for this contract. Formatted according to [ISO 8601 Durations](https://en.wikipedia.org/wiki/ISO_8601#Durations) (excludes recurrence syntax)
+	BillFrequency []string `json:"billFrequency"`
+
+	// CoolingOffDays Number of days in the cooling off period for the contract.  Mandatory for plans with type of MARKET
+	CoolingOffDays *PatchedCoolingOffDays `json:"coolingOffDays,omitempty"`
+
+	// MeterTypes An array of the meter types that this contract is available for
+	MeterTypes *[]string `json:"meterTypes,omitempty"`
+
+	// TermType The term for the contract.  If absent assumes no specified term
+	TermType *EnergyPlanContractFullV3AllOfTermType `json:"termType,omitempty"`
+
+	// Terms Free text description of the terms for the contract
+	Terms *string `json:"terms,omitempty"`
+}
+
+// EnergyPlanContractFullV3AllOfTermType The term for the contract.  If absent assumes no specified term
+type EnergyPlanContractFullV3AllOfTermType string
+
 // EnergyPlanContractV3 defines model for EnergyPlanContractV3.
 type EnergyPlanContractV3 struct {
 	// AdditionalFeeInformation Free text field containing additional information of the fees for this contract
@@ -2053,10 +2049,7 @@ type EnergyPlanContractV3 struct {
 	Incentives *EnergyPlanIncentives `json:"incentives,omitempty"`
 
 	// IntrinsicGreenPower Describes intrinsic green power for the plan.  If present then the plan includes a percentage of green power in the base plan. Should not be present for gas contracts
-	IntrinsicGreenPower *struct {
-		// GreenPercentage Percentage of green power intrinsically included in the plan
-		GreenPercentage string `json:"greenPercentage"`
-	} `json:"intrinsicGreenPower,omitempty"`
+	IntrinsicGreenPower *EnergyPlanContractV3IntrinsicGreenPower `json:"intrinsicGreenPower,omitempty"`
 
 	// IsFixed Flag indicating whether prices are fixed or variable
 	IsFixed bool `json:"isFixed"`
@@ -2091,6 +2084,12 @@ type EnergyPlanContractV3PricingModel string
 
 // EnergyPlanContractV3TimeZone Required if pricingModel is set to TIME_OF_USE.  Defines the time zone to use for calculation of the time of use thresholds. Defaults to AEST if absent
 type EnergyPlanContractV3TimeZone string
+
+// EnergyPlanContractV3IntrinsicGreenPower Describes intrinsic green power for the plan.  If present then the plan includes a percentage of green power in the base plan. Should not be present for gas contracts
+type EnergyPlanContractV3IntrinsicGreenPower struct {
+	// GreenPercentage Percentage of green power intrinsically included in the plan
+	GreenPercentage string `json:"greenPercentage"`
+}
 
 // EnergyPlanControlledLoadV2 Required if pricing model is SINGLE_RATE_CONT_LOAD or TIME_OF_USE_CONT_LOAD or FLEXIBLE_CONT_LOAD
 type EnergyPlanControlledLoadV2 = []struct {
@@ -2204,22 +2203,7 @@ type EnergyPlanControlledLoadV2TimeOfUseRatesType string
 // EnergyPlanDetailV3 defines model for EnergyPlanDetailV3.
 type EnergyPlanDetailV3 struct {
 	// AdditionalInformation Object that contains links to additional information on specific topics
-	AdditionalInformation *struct {
-		// BundleUri A link to detail on bundles that this plan can be a part of
-		BundleUri *string `json:"bundleUri,omitempty"`
-
-		// EligibilityUri A link to detail on eligibility criteria for the plan
-		EligibilityUri *string `json:"eligibilityUri,omitempty"`
-
-		// OverviewUri A link to a general overview of the plan
-		OverviewUri *string `json:"overviewUri,omitempty"`
-
-		// PricingUri A link to detail on pricing for the plan
-		PricingUri *string `json:"pricingUri,omitempty"`
-
-		// TermsUri A link to terms and conditions for the plan
-		TermsUri *string `json:"termsUri,omitempty"`
-	} `json:"additionalInformation,omitempty"`
+	AdditionalInformation *EnergyPlanAdditionalInformation `json:"additionalInformation,omitempty"`
 
 	// ApplicationUri A link to an application web page where this plan can be applied for
 	ApplicationUri *string `json:"applicationUri,omitempty"`
@@ -2251,37 +2235,13 @@ type EnergyPlanDetailV3 struct {
 	GasContract *EnergyPlanContractFullV3  `json:"gasContract,omitempty"`
 
 	// Geography Describes the geographical area that the plan is available for.  If absent then it is assumed the plan is not geographically limited
-	Geography *struct {
-		// Distributors Array of distributors for the plan. Must have at least one entry
-		Distributors []string `json:"distributors"`
-
-		// ExcludedPostcodes Array of valid Australian postcodes that are specifically excluded from the plan.  Each element is a single four digit postcode (e.g. 3000) or a range of postcodes defined by two four digit postcodes and a hyphen (e.g. 3000-3999)
-		ExcludedPostcodes *[]string `json:"excludedPostcodes,omitempty"`
-
-		// IncludedPostcodes Array of valid Australian postcodes that are included from the plan.  If absent defaults to all non-excluded postcodes.  Each element is a single four digit postcode (e.g. 3000) or a range of postcodes defined by two four digit postcodes and a hyphen (e.g. 3000-3999)
-		IncludedPostcodes *[]string `json:"includedPostcodes,omitempty"`
-	} `json:"geography,omitempty"`
+	Geography *EnergyPlanGeography `json:"geography,omitempty"`
 
 	// LastUpdated The last date and time that the information for this plan was changed (or the creation date for the plan if it has never been altered)
 	LastUpdated string `json:"lastUpdated"`
 
 	// MeteringCharges Charges for metering included in the plan
-	MeteringCharges *[]struct {
-		// Description Description of the charge
-		Description *string `json:"description,omitempty"`
-
-		// DisplayName Display name of the charge
-		DisplayName string `json:"displayName"`
-
-		// MaximumValue The upper limit of the charge if the charge could occur in a range
-		MaximumValue *string `json:"maximumValue,omitempty"`
-
-		// MinimumValue Minimum value of the charge if the charge is a range or the absolute value of the charge if no range is specified
-		MinimumValue string `json:"minimumValue"`
-
-		// Period The charges that occur on a schedule indicates the frequency. Formatted according to [ISO 8601 Durations](https://en.wikipedia.org/wiki/ISO_8601#Durations) (excludes recurrence syntax)
-		Period *string `json:"period,omitempty"`
-	} `json:"meteringCharges,omitempty"`
+	MeteringCharges *[]EnergyPlanDetailV3AllOfMeteringCharges `json:"meteringCharges,omitempty"`
 
 	// PlanId The ID of the specific plan
 	PlanId string `json:"planId"`
@@ -2298,6 +2258,33 @@ type EnergyPlanDetailV3FuelType string
 
 // EnergyPlanDetailV3Type The type of the plan
 type EnergyPlanDetailV3Type string
+
+// EnergyPlanDetailV3AllOf defines model for EnergyPlanDetailV3_allOf.
+type EnergyPlanDetailV3AllOf struct {
+	ElectricityContract *EnergyPlanContractFullV3 `json:"electricityContract,omitempty"`
+	GasContract         *EnergyPlanContractFullV3 `json:"gasContract,omitempty"`
+
+	// MeteringCharges Charges for metering included in the plan
+	MeteringCharges *[]EnergyPlanDetailV3AllOfMeteringCharges `json:"meteringCharges,omitempty"`
+}
+
+// EnergyPlanDetailV3AllOfMeteringCharges defines model for EnergyPlanDetailV3_allOf_meteringCharges.
+type EnergyPlanDetailV3AllOfMeteringCharges struct {
+	// Description Description of the charge
+	Description *string `json:"description,omitempty"`
+
+	// DisplayName Display name of the charge
+	DisplayName string `json:"displayName"`
+
+	// MaximumValue The upper limit of the charge if the charge could occur in a range
+	MaximumValue *string `json:"maximumValue,omitempty"`
+
+	// MinimumValue Minimum value of the charge if the charge is a range or the absolute value of the charge if no range is specified
+	MinimumValue string `json:"minimumValue"`
+
+	// Period The charges that occur on a schedule indicates the frequency. Formatted according to [ISO 8601 Durations](https://en.wikipedia.org/wiki/ISO_8601#Durations) (excludes recurrence syntax)
+	Period *string `json:"period,omitempty"`
+}
 
 // EnergyPlanDiscounts Optional list of discounts available for the contract
 type EnergyPlanDiscounts = []struct {
@@ -2448,12 +2435,15 @@ type EnergyPlanIncentivesCategory string
 
 // EnergyPlanListResponse defines model for EnergyPlanListResponse.
 type EnergyPlanListResponse struct {
-	Data struct {
-		// Plans Array of plans
-		Plans []EnergyPlan `json:"plans"`
-	} `json:"data"`
-	Links LinksPaginated `json:"links"`
-	Meta  MetaPaginated  `json:"meta"`
+	Data  EnergyPlanListResponseData `json:"data"`
+	Links LinksPaginated             `json:"links"`
+	Meta  MetaPaginated              `json:"meta"`
+}
+
+// EnergyPlanListResponseData defines model for EnergyPlanListResponse_data.
+type EnergyPlanListResponseData struct {
+	// Plans Array of plans
+	Plans []EnergyPlan `json:"plans"`
 }
 
 // EnergyPlanResponseV3 defines model for EnergyPlanResponseV3.
@@ -2687,15 +2677,39 @@ type EnergyPlanTariffPeriodV2TimeZone string
 // EnergyPlanTariffPeriodV2Type Type of charge. Assumed to be other if absent
 type EnergyPlanTariffPeriodV2Type string
 
+// EnergyPlanAdditionalInformation Object that contains links to additional information on specific topics
+type EnergyPlanAdditionalInformation struct {
+	// BundleUri A link to detail on bundles that this plan can be a part of
+	BundleUri *string `json:"bundleUri,omitempty"`
+
+	// EligibilityUri A link to detail on eligibility criteria for the plan
+	EligibilityUri *string `json:"eligibilityUri,omitempty"`
+
+	// OverviewUri A link to a general overview of the plan
+	OverviewUri *string `json:"overviewUri,omitempty"`
+
+	// PricingUri A link to detail on pricing for the plan
+	PricingUri *string `json:"pricingUri,omitempty"`
+
+	// TermsUri A link to terms and conditions for the plan
+	TermsUri *string `json:"termsUri,omitempty"`
+}
+
+// EnergyPlanGeography Describes the geographical area that the plan is available for.  If absent then it is assumed the plan is not geographically limited
+type EnergyPlanGeography struct {
+	// Distributors Array of distributors for the plan. Must have at least one entry
+	Distributors []string `json:"distributors"`
+
+	// ExcludedPostcodes Array of valid Australian postcodes that are specifically excluded from the plan.  Each element is a single four digit postcode (e.g. 3000) or a range of postcodes defined by two four digit postcodes and a hyphen (e.g. 3000-3999)
+	ExcludedPostcodes *[]string `json:"excludedPostcodes,omitempty"`
+
+	// IncludedPostcodes Array of valid Australian postcodes that are included from the plan.  If absent defaults to all non-excluded postcodes.  Each element is a single four digit postcode (e.g. 3000) or a range of postcodes defined by two four digit postcodes and a hyphen (e.g. 3000-3999)
+	IncludedPostcodes *[]string `json:"includedPostcodes,omitempty"`
+}
+
 // EnergyServicePoint defines model for EnergyServicePoint.
 type EnergyServicePoint struct {
-	ConsumerProfile *struct {
-		// Classification A code that defines the consumer class as defined in the National Energy Retail Regulations, or in overriding Jurisdictional instruments
-		Classification *EnergyServicePointConsumerProfileClassification `json:"classification,omitempty"`
-
-		// Threshold A code that defines the consumption threshold as defined in the National Energy Retail Regulations, or in overriding Jurisdictional instruments. Note the details of enumeration values below: <ul><li>**LOW** - Consumption is less than the ‘lower consumption threshold’ as defined in the National Energy Retail Regulations</li><li>**MEDIUM** - Consumption is equal to or greater than the ‘lower consumption threshold’, but less than the ‘upper consumption threshold’, as defined in the National Energy Retail Regulations</li><li>**HIGH** - Consumption is equal to or greater than the ‘upper consumption threshold’ as defined in the National Energy Retail Regulations</li></ul>
-		Threshold *interface{} `json:"threshold,omitempty"`
-	} `json:"consumerProfile,omitempty"`
+	ConsumerProfile *EnergyServicePointConsumerProfile `json:"consumerProfile,omitempty"`
 
 	// IsGenerator This flag determines whether the energy at this connection point is to be treated as consumer load or as a generating unit(this may include generator auxiliary loads). If absent defaults to false. <br>**Note:** Only applicable for scheduled or semischeduled generators, does not indicate on site generation by consumer
 	IsGenerator *bool `json:"isGenerator,omitempty"`
@@ -2722,9 +2736,6 @@ type EnergyServicePoint struct {
 	ValidFromDate string `json:"validFromDate"`
 }
 
-// EnergyServicePointConsumerProfileClassification A code that defines the consumer class as defined in the National Energy Retail Regulations, or in overriding Jurisdictional instruments
-type EnergyServicePointConsumerProfileClassification string
-
 // EnergyServicePointJurisdictionCode Jurisdiction code to which the service point belongs.This code defines the jurisdictional rules which apply to the service point. Note the details of enumeration values below:<ul><li>**ALL** - All Jurisdictions</li><li>**ACT** - Australian Capital Territory</li><li>**NEM** - National Electricity Market</li><li>**NSW** - New South Wales</li><li>**QLD** - Queensland</li><li>**SA** - South Australia</li><li>**TAS** - Tasmania</li><li>**VIC** - Victoria</li></ul>
 type EnergyServicePointJurisdictionCode string
 
@@ -2736,23 +2747,8 @@ type EnergyServicePointServicePointStatus string
 
 // EnergyServicePointDetail defines model for EnergyServicePointDetail.
 type EnergyServicePointDetail struct {
-	ConsumerProfile *struct {
-		// Classification A code that defines the consumer class as defined in the National Energy Retail Regulations, or in overriding Jurisdictional instruments
-		Classification *EnergyServicePointDetailConsumerProfileClassification `json:"classification,omitempty"`
-
-		// Threshold A code that defines the consumption threshold as defined in the National Energy Retail Regulations, or in overriding Jurisdictional instruments. Note the details of enumeration values below: <ul><li>**LOW** - Consumption is less than the ‘lower consumption threshold’ as defined in the National Energy Retail Regulations</li><li>**MEDIUM** - Consumption is equal to or greater than the ‘lower consumption threshold’, but less than the ‘upper consumption threshold’, as defined in the National Energy Retail Regulations</li><li>**HIGH** - Consumption is equal to or greater than the ‘upper consumption threshold’ as defined in the National Energy Retail Regulations</li></ul>
-		Threshold *interface{} `json:"threshold,omitempty"`
-	} `json:"consumerProfile,omitempty"`
-	DistributionLossFactor struct {
-		// Code A code used to identify data loss factor for the service point values.  Refer to AEMO distribution loss factor documents for each financial year to interpret
-		Code string `json:"code"`
-
-		// Description Description of the data loss factor code and value
-		Description string `json:"description"`
-
-		// LossValue The value associated with the loss factor code
-		LossValue string `json:"lossValue"`
-	} `json:"distributionLossFactor"`
+	ConsumerProfile        *EnergyServicePointConsumerProfile             `json:"consumerProfile,omitempty"`
+	DistributionLossFactor EnergyServicePointDetailDistributionLossFactor `json:"distributionLossFactor"`
 
 	// IsGenerator This flag determines whether the energy at this connection point is to be treated as consumer load or as a generating unit(this may include generator auxiliary loads). If absent defaults to false. <br>**Note:** Only applicable for scheduled or semischeduled generators, does not indicate on site generation by consumer
 	IsGenerator *bool `json:"isGenerator,omitempty"`
@@ -2765,74 +2761,11 @@ type EnergyServicePointDetail struct {
 	Location           CommonPhysicalAddress `json:"location"`
 
 	// Meters The meters associated with the service point. This may be empty where there are no meters physically installed at the service point
-	Meters *[]struct {
-		// MeterId The meter ID uniquely identifies a meter for a given service point.  It is unique in the context of the service point.  It is not globally unique
-		MeterId string `json:"meterId"`
-
-		// Registers Usage data registers available from the meter. This may be empty where there are no meters physically installed at the service point
-		Registers *[]struct {
-			// AveragedDailyLoad The energy delivered through a connection point or metering point over an extended period normalised to a 'per day' basis (kWh). This value is calculated annually.
-			AveragedDailyLoad *float32 `json:"averagedDailyLoad,omitempty"`
-
-			// ConsumptionType Actual/Subtractive Indicator. Note the details of enumeration values below: <ul><li>**ACTUAL** implies volume of energy actually metered between two dates</li><li>**CUMULATIVE** indicates a meter reading for a specific date. A second Meter Reading is required to determine the consumption between those two Meter Reading dates</li></ul>
-			ConsumptionType *EnergyServicePointDetailMetersRegistersConsumptionType `json:"consumptionType,omitempty"`
-
-			// ControlledLoad Indicates whether the energy recorded by this register is created under a Controlled Load regime
-			ControlledLoad *bool `json:"controlledLoad,omitempty"`
-
-			// Multiplier Multiplier required to take a register value and turn it into a value representing billable energy
-			Multiplier *float32 `json:"multiplier,omitempty"`
-
-			// NetworkTariffCode The Network Tariff Code is a free text field containing a code supplied and published by the local network service provider
-			NetworkTariffCode *string `json:"networkTariffCode,omitempty"`
-
-			// RegisterConsumptionType Indicates the consumption type of register
-			RegisterConsumptionType EnergyServicePointDetailMetersRegistersRegisterConsumptionType `json:"registerConsumptionType"`
-
-			// RegisterId Unique identifier of the register within this service point.  Is not globally unique
-			RegisterId string `json:"registerId"`
-
-			// RegisterSuffix Register suffix of the meter register where the meter reads are obtained
-			RegisterSuffix *string `json:"registerSuffix,omitempty"`
-
-			// TimeOfDay Code to identify the time validity of register contents
-			TimeOfDay *EnergyServicePointDetailMetersRegistersTimeOfDay `json:"timeOfDay,omitempty"`
-
-			// UnitOfMeasure The unit of measure for data held in this register
-			UnitOfMeasure *string `json:"unitOfMeasure,omitempty"`
-		} `json:"registers,omitempty"`
-
-		// Specifications Technical characteristics of the meter
-		Specifications struct {
-			// InstallationType The metering Installation type code indicates whether the metering installation has to be manually read. Note the details of enumeration values below: <ul><li>**BASIC** - Accumulation Meter – Type 6</li><li>**COMMS1** - Interval Meter with communications – Type 1</li><li>**COMMS2** - Interval Meter with communications – Type 2</li><li>**COMMS3** - Interval Meter with communications – Type 3</li><li>**COMMS4** - Interval Meter with communications – Type 4</li><li>**COMMS4C** - CT connected metering installation that meets the minimum services specifications</li><li>**COMMS4D** - Whole current metering installation that meets the minimum services specifications</li><li>**MRAM** - Small customer metering installation – Type 4A</li><li>**MRIM** - Manually Read Interval Meter – Type 5</li><li>**UMCP** - Unmetered Supply – Type 7</li><li>**VICAMI** - A relevant metering installation as defined in clause 9.9C of the NER</li><li>**NCONUML** - Non-contestable unmeter load - Introduced as part of Global Settlement</li></ul>
-			InstallationType EnergyServicePointDetailMetersSpecificationsInstallationType `json:"installationType"`
-
-			// Manufacturer Free text field to identify the manufacturer of the installed meter
-			Manufacturer *string `json:"manufacturer,omitempty"`
-
-			// Model Free text field to identify the meter manufacturer’s designation for the meter model
-			Model *string `json:"model,omitempty"`
-
-			// NextScheduledReadDate This date is the next scheduled meter read date (NSRD) if a manual Meter Reading is required
-			NextScheduledReadDate *string `json:"nextScheduledReadDate,omitempty"`
-
-			// ReadType Code to denote the method and frequency of Meter Reading. The value is formatted as follows: <ul><li>First Character = Remote (R) or Manual (M)</li><li>Second Character = Mode: T = telephone W = wireless P = powerline I = infra-red G = galvanic V = visual </li><li>Third Character = Frequency of Scheduled Meter Readings: 1 = Twelve times per year 2 = Six times per year 3 = Four times per year D = Daily or weekly</li><li>Optional Fourth Character = to identify what interval length the meter is capable of reading. This includes five, 15 and 30 minute granularity as the following: A – 5 minute B – 15 minute C – 30 minute D – Cannot convert to 5 minute (i.e. due to metering installation de-energised) M - Manually Read Accumulation Meter</li></ul> For example, <ul><li>MV3 = Manual, Visual, Quarterly</li> <li>MV3M = Manual, Visual, Quarterly, Manually Read Accumulation Meter</li> <li>RWDC = Remote, Wireless, Daily, 30 minutes interval</li></ul>
-			ReadType *string `json:"readType,omitempty"`
-
-			// Status A code to denote the status of the meter. Note the details of enumeration values below: <ul><li>**CURRENT** -Applies when a meter is current and not disconnected</li><li>**DISCONNECTED** - Applies when a meter is present but has been remotely disconnected</li></ul>
-			Status EnergyServicePointDetailMetersSpecificationsStatus `json:"status"`
-		} `json:"specifications"`
-	} `json:"meters,omitempty"`
+	Meters *[]EnergyServicePointDetailMeters `json:"meters,omitempty"`
 
 	// NationalMeteringId The independent ID of the service point, known in the industry as the NMI
-	NationalMeteringId  string `json:"nationalMeteringId"`
-	RelatedParticipants []struct {
-		// Party The name of the party/organisation related to this service point
-		Party string `json:"party"`
-
-		// Role The role performed by this participant in relation to the service point. Note the details of enumeration values below: <ul><li>**FRMP** - Financially Responsible Market Participant</li><li>**LNSP** - Local Network Service Provider or Embedded Network Manager for child connection points</li><li>**DRSP** - wholesale Demand Response and/or market ancillary Service Provider and note that where it is not relevant for a NMI it will not be included</li></ul>
-		Role EnergyServicePointDetailRelatedParticipantsRole `json:"role"`
-	} `json:"relatedParticipants"`
+	NationalMeteringId  string                                        `json:"nationalMeteringId"`
+	RelatedParticipants []EnergyServicePointDetailRelatedParticipants `json:"relatedParticipants"`
 
 	// ServicePointClassification The classification of the service point as defined in MSATS procedures
 	ServicePointClassification EnergyServicePointDetailServicePointClassification `json:"servicePointClassification"`
@@ -2847,29 +2780,8 @@ type EnergyServicePointDetail struct {
 	ValidFromDate string `json:"validFromDate"`
 }
 
-// EnergyServicePointDetailConsumerProfileClassification A code that defines the consumer class as defined in the National Energy Retail Regulations, or in overriding Jurisdictional instruments
-type EnergyServicePointDetailConsumerProfileClassification string
-
 // EnergyServicePointDetailJurisdictionCode Jurisdiction code to which the service point belongs.This code defines the jurisdictional rules which apply to the service point. Note the details of enumeration values below:<ul><li>**ALL** - All Jurisdictions</li><li>**ACT** - Australian Capital Territory</li><li>**NEM** - National Electricity Market</li><li>**NSW** - New South Wales</li><li>**QLD** - Queensland</li><li>**SA** - South Australia</li><li>**TAS** - Tasmania</li><li>**VIC** - Victoria</li></ul>
 type EnergyServicePointDetailJurisdictionCode string
-
-// EnergyServicePointDetailMetersRegistersConsumptionType Actual/Subtractive Indicator. Note the details of enumeration values below: <ul><li>**ACTUAL** implies volume of energy actually metered between two dates</li><li>**CUMULATIVE** indicates a meter reading for a specific date. A second Meter Reading is required to determine the consumption between those two Meter Reading dates</li></ul>
-type EnergyServicePointDetailMetersRegistersConsumptionType string
-
-// EnergyServicePointDetailMetersRegistersRegisterConsumptionType Indicates the consumption type of register
-type EnergyServicePointDetailMetersRegistersRegisterConsumptionType string
-
-// EnergyServicePointDetailMetersRegistersTimeOfDay Code to identify the time validity of register contents
-type EnergyServicePointDetailMetersRegistersTimeOfDay string
-
-// EnergyServicePointDetailMetersSpecificationsInstallationType The metering Installation type code indicates whether the metering installation has to be manually read. Note the details of enumeration values below: <ul><li>**BASIC** - Accumulation Meter – Type 6</li><li>**COMMS1** - Interval Meter with communications – Type 1</li><li>**COMMS2** - Interval Meter with communications – Type 2</li><li>**COMMS3** - Interval Meter with communications – Type 3</li><li>**COMMS4** - Interval Meter with communications – Type 4</li><li>**COMMS4C** - CT connected metering installation that meets the minimum services specifications</li><li>**COMMS4D** - Whole current metering installation that meets the minimum services specifications</li><li>**MRAM** - Small customer metering installation – Type 4A</li><li>**MRIM** - Manually Read Interval Meter – Type 5</li><li>**UMCP** - Unmetered Supply – Type 7</li><li>**VICAMI** - A relevant metering installation as defined in clause 9.9C of the NER</li><li>**NCONUML** - Non-contestable unmeter load - Introduced as part of Global Settlement</li></ul>
-type EnergyServicePointDetailMetersSpecificationsInstallationType string
-
-// EnergyServicePointDetailMetersSpecificationsStatus A code to denote the status of the meter. Note the details of enumeration values below: <ul><li>**CURRENT** -Applies when a meter is current and not disconnected</li><li>**DISCONNECTED** - Applies when a meter is present but has been remotely disconnected</li></ul>
-type EnergyServicePointDetailMetersSpecificationsStatus string
-
-// EnergyServicePointDetailRelatedParticipantsRole The role performed by this participant in relation to the service point. Note the details of enumeration values below: <ul><li>**FRMP** - Financially Responsible Market Participant</li><li>**LNSP** - Local Network Service Provider or Embedded Network Manager for child connection points</li><li>**DRSP** - wholesale Demand Response and/or market ancillary Service Provider and note that where it is not relevant for a NMI it will not be included</li></ul>
-type EnergyServicePointDetailRelatedParticipantsRole string
 
 // EnergyServicePointDetailServicePointClassification The classification of the service point as defined in MSATS procedures
 type EnergyServicePointDetailServicePointClassification string
@@ -2884,62 +2796,161 @@ type EnergyServicePointDetailResponse struct {
 	Meta  *Meta                    `json:"meta,omitempty"`
 }
 
+// EnergyServicePointDetailDistributionLossFactor defines model for EnergyServicePointDetail_distributionLossFactor.
+type EnergyServicePointDetailDistributionLossFactor struct {
+	// Code A code used to identify data loss factor for the service point values.  Refer to AEMO distribution loss factor documents for each financial year to interpret
+	Code string `json:"code"`
+
+	// Description Description of the data loss factor code and value
+	Description string `json:"description"`
+
+	// LossValue The value associated with the loss factor code
+	LossValue string `json:"lossValue"`
+}
+
+// EnergyServicePointDetailMeters defines model for EnergyServicePointDetail_meters.
+type EnergyServicePointDetailMeters struct {
+	// MeterId The meter ID uniquely identifies a meter for a given service point.  It is unique in the context of the service point.  It is not globally unique
+	MeterId string `json:"meterId"`
+
+	// Registers Usage data registers available from the meter. This may be empty where there are no meters physically installed at the service point
+	Registers *[]EnergyServicePointDetailRegisters `json:"registers,omitempty"`
+
+	// Specifications Technical characteristics of the meter
+	Specifications EnergyServicePointDetailSpecifications `json:"specifications"`
+}
+
+// EnergyServicePointDetailRegisters defines model for EnergyServicePointDetail_registers.
+type EnergyServicePointDetailRegisters struct {
+	// AveragedDailyLoad The energy delivered through a connection point or metering point over an extended period normalised to a 'per day' basis (kWh). This value is calculated annually.
+	AveragedDailyLoad *float32 `json:"averagedDailyLoad,omitempty"`
+
+	// ConsumptionType Actual/Subtractive Indicator. Note the details of enumeration values below: <ul><li>**ACTUAL** implies volume of energy actually metered between two dates</li><li>**CUMULATIVE** indicates a meter reading for a specific date. A second Meter Reading is required to determine the consumption between those two Meter Reading dates</li></ul>
+	ConsumptionType *EnergyServicePointDetailRegistersConsumptionType `json:"consumptionType,omitempty"`
+
+	// ControlledLoad Indicates whether the energy recorded by this register is created under a Controlled Load regime
+	ControlledLoad *bool `json:"controlledLoad,omitempty"`
+
+	// Multiplier Multiplier required to take a register value and turn it into a value representing billable energy
+	Multiplier *float32 `json:"multiplier,omitempty"`
+
+	// NetworkTariffCode The Network Tariff Code is a free text field containing a code supplied and published by the local network service provider
+	NetworkTariffCode *string `json:"networkTariffCode,omitempty"`
+
+	// RegisterConsumptionType Indicates the consumption type of register
+	RegisterConsumptionType EnergyServicePointDetailRegistersRegisterConsumptionType `json:"registerConsumptionType"`
+
+	// RegisterId Unique identifier of the register within this service point.  Is not globally unique
+	RegisterId string `json:"registerId"`
+
+	// RegisterSuffix Register suffix of the meter register where the meter reads are obtained
+	RegisterSuffix *string `json:"registerSuffix,omitempty"`
+
+	// TimeOfDay Code to identify the time validity of register contents
+	TimeOfDay *EnergyServicePointDetailRegistersTimeOfDay `json:"timeOfDay,omitempty"`
+
+	// UnitOfMeasure The unit of measure for data held in this register
+	UnitOfMeasure *string `json:"unitOfMeasure,omitempty"`
+}
+
+// EnergyServicePointDetailRegistersConsumptionType Actual/Subtractive Indicator. Note the details of enumeration values below: <ul><li>**ACTUAL** implies volume of energy actually metered between two dates</li><li>**CUMULATIVE** indicates a meter reading for a specific date. A second Meter Reading is required to determine the consumption between those two Meter Reading dates</li></ul>
+type EnergyServicePointDetailRegistersConsumptionType string
+
+// EnergyServicePointDetailRegistersRegisterConsumptionType Indicates the consumption type of register
+type EnergyServicePointDetailRegistersRegisterConsumptionType string
+
+// EnergyServicePointDetailRegistersTimeOfDay Code to identify the time validity of register contents
+type EnergyServicePointDetailRegistersTimeOfDay string
+
+// EnergyServicePointDetailRelatedParticipants defines model for EnergyServicePointDetail_relatedParticipants.
+type EnergyServicePointDetailRelatedParticipants struct {
+	// Party The name of the party/organisation related to this service point
+	Party string `json:"party"`
+
+	// Role The role performed by this participant in relation to the service point. Note the details of enumeration values below: <ul><li>**FRMP** - Financially Responsible Market Participant</li><li>**LNSP** - Local Network Service Provider or Embedded Network Manager for child connection points</li><li>**DRSP** - wholesale Demand Response and/or market ancillary Service Provider and note that where it is not relevant for a NMI it will not be included</li></ul>
+	Role EnergyServicePointDetailRelatedParticipantsRole `json:"role"`
+}
+
+// EnergyServicePointDetailRelatedParticipantsRole The role performed by this participant in relation to the service point. Note the details of enumeration values below: <ul><li>**FRMP** - Financially Responsible Market Participant</li><li>**LNSP** - Local Network Service Provider or Embedded Network Manager for child connection points</li><li>**DRSP** - wholesale Demand Response and/or market ancillary Service Provider and note that where it is not relevant for a NMI it will not be included</li></ul>
+type EnergyServicePointDetailRelatedParticipantsRole string
+
+// EnergyServicePointDetailSpecifications Technical characteristics of the meter
+type EnergyServicePointDetailSpecifications struct {
+	// InstallationType The metering Installation type code indicates whether the metering installation has to be manually read. Note the details of enumeration values below: <ul><li>**BASIC** - Accumulation Meter – Type 6</li><li>**COMMS1** - Interval Meter with communications – Type 1</li><li>**COMMS2** - Interval Meter with communications – Type 2</li><li>**COMMS3** - Interval Meter with communications – Type 3</li><li>**COMMS4** - Interval Meter with communications – Type 4</li><li>**COMMS4C** - CT connected metering installation that meets the minimum services specifications</li><li>**COMMS4D** - Whole current metering installation that meets the minimum services specifications</li><li>**MRAM** - Small customer metering installation – Type 4A</li><li>**MRIM** - Manually Read Interval Meter – Type 5</li><li>**UMCP** - Unmetered Supply – Type 7</li><li>**VICAMI** - A relevant metering installation as defined in clause 9.9C of the NER</li><li>**NCONUML** - Non-contestable unmeter load - Introduced as part of Global Settlement</li></ul>
+	InstallationType EnergyServicePointDetailSpecificationsInstallationType `json:"installationType"`
+
+	// Manufacturer Free text field to identify the manufacturer of the installed meter
+	Manufacturer *string `json:"manufacturer,omitempty"`
+
+	// Model Free text field to identify the meter manufacturer’s designation for the meter model
+	Model *string `json:"model,omitempty"`
+
+	// NextScheduledReadDate This date is the next scheduled meter read date (NSRD) if a manual Meter Reading is required
+	NextScheduledReadDate *string `json:"nextScheduledReadDate,omitempty"`
+
+	// ReadType Code to denote the method and frequency of Meter Reading. The value is formatted as follows: <ul><li>First Character = Remote (R) or Manual (M)</li><li>Second Character = Mode: T = telephone W = wireless P = powerline I = infra-red G = galvanic V = visual </li><li>Third Character = Frequency of Scheduled Meter Readings: 1 = Twelve times per year 2 = Six times per year 3 = Four times per year D = Daily or weekly</li><li>Optional Fourth Character = to identify what interval length the meter is capable of reading. This includes five, 15 and 30 minute granularity as the following: A – 5 minute B – 15 minute C – 30 minute D – Cannot convert to 5 minute (i.e. due to metering installation de-energised) M - Manually Read Accumulation Meter</li></ul> For example, <ul><li>MV3 = Manual, Visual, Quarterly</li> <li>MV3M = Manual, Visual, Quarterly, Manually Read Accumulation Meter</li> <li>RWDC = Remote, Wireless, Daily, 30 minutes interval</li></ul>
+	ReadType *string `json:"readType,omitempty"`
+
+	// Status A code to denote the status of the meter. Note the details of enumeration values below: <ul><li>**CURRENT** -Applies when a meter is current and not disconnected</li><li>**DISCONNECTED** - Applies when a meter is present but has been remotely disconnected</li></ul>
+	Status EnergyServicePointDetailSpecificationsStatus `json:"status"`
+}
+
+// EnergyServicePointDetailSpecificationsInstallationType The metering Installation type code indicates whether the metering installation has to be manually read. Note the details of enumeration values below: <ul><li>**BASIC** - Accumulation Meter – Type 6</li><li>**COMMS1** - Interval Meter with communications – Type 1</li><li>**COMMS2** - Interval Meter with communications – Type 2</li><li>**COMMS3** - Interval Meter with communications – Type 3</li><li>**COMMS4** - Interval Meter with communications – Type 4</li><li>**COMMS4C** - CT connected metering installation that meets the minimum services specifications</li><li>**COMMS4D** - Whole current metering installation that meets the minimum services specifications</li><li>**MRAM** - Small customer metering installation – Type 4A</li><li>**MRIM** - Manually Read Interval Meter – Type 5</li><li>**UMCP** - Unmetered Supply – Type 7</li><li>**VICAMI** - A relevant metering installation as defined in clause 9.9C of the NER</li><li>**NCONUML** - Non-contestable unmeter load - Introduced as part of Global Settlement</li></ul>
+type EnergyServicePointDetailSpecificationsInstallationType string
+
+// EnergyServicePointDetailSpecificationsStatus A code to denote the status of the meter. Note the details of enumeration values below: <ul><li>**CURRENT** -Applies when a meter is current and not disconnected</li><li>**DISCONNECTED** - Applies when a meter is present but has been remotely disconnected</li></ul>
+type EnergyServicePointDetailSpecificationsStatus string
+
 // EnergyServicePointListResponse defines model for EnergyServicePointListResponse.
 type EnergyServicePointListResponse struct {
-	Data struct {
-		ServicePoints []EnergyServicePoint `json:"servicePoints"`
-	} `json:"data"`
-	Links LinksPaginated `json:"links"`
-	Meta  MetaPaginated  `json:"meta"`
+	Data  EnergyServicePointListResponseData `json:"data"`
+	Links LinksPaginated                     `json:"links"`
+	Meta  MetaPaginated                      `json:"meta"`
 }
+
+// EnergyServicePointListResponseData defines model for EnergyServicePointListResponse_data.
+type EnergyServicePointListResponseData struct {
+	ServicePoints []EnergyServicePoint `json:"servicePoints"`
+}
+
+// EnergyServicePointConsumerProfile defines model for EnergyServicePoint_consumerProfile.
+type EnergyServicePointConsumerProfile struct {
+	// Classification A code that defines the consumer class as defined in the National Energy Retail Regulations, or in overriding Jurisdictional instruments
+	Classification *EnergyServicePointConsumerProfileClassification `json:"classification,omitempty"`
+
+	// Threshold A code that defines the consumption threshold as defined in the National Energy Retail Regulations, or in overriding Jurisdictional instruments. Note the details of enumeration values below: <ul><li>**LOW** - Consumption is less than the ‘lower consumption threshold’ as defined in the National Energy Retail Regulations</li><li>**MEDIUM** - Consumption is equal to or greater than the ‘lower consumption threshold’, but less than the ‘upper consumption threshold’, as defined in the National Energy Retail Regulations</li><li>**HIGH** - Consumption is equal to or greater than the ‘upper consumption threshold’ as defined in the National Energy Retail Regulations</li></ul>
+	Threshold *EnergyServicePointConsumerProfileThreshold `json:"threshold,omitempty"`
+}
+
+// EnergyServicePointConsumerProfileClassification A code that defines the consumer class as defined in the National Energy Retail Regulations, or in overriding Jurisdictional instruments
+type EnergyServicePointConsumerProfileClassification string
+
+// EnergyServicePointConsumerProfileThreshold A code that defines the consumption threshold as defined in the National Energy Retail Regulations, or in overriding Jurisdictional instruments. Note the details of enumeration values below: <ul><li>**LOW** - Consumption is less than the ‘lower consumption threshold’ as defined in the National Energy Retail Regulations</li><li>**MEDIUM** - Consumption is equal to or greater than the ‘lower consumption threshold’, but less than the ‘upper consumption threshold’, as defined in the National Energy Retail Regulations</li><li>**HIGH** - Consumption is equal to or greater than the ‘upper consumption threshold’ as defined in the National Energy Retail Regulations</li></ul>
+type EnergyServicePointConsumerProfileThreshold string
 
 // EnergyUsageListResponse defines model for EnergyUsageListResponse.
 type EnergyUsageListResponse struct {
-	Data struct {
-		// Reads Array of meter reads sorted by NMI in ascending order followed by readStartDate in descending order
-		Reads []EnergyUsageRead `json:"reads"`
-	} `json:"data"`
-	Links LinksPaginated `json:"links"`
-	Meta  MetaPaginated  `json:"meta"`
+	Data  EnergyUsageListResponseData `json:"data"`
+	Links LinksPaginated              `json:"links"`
+	Meta  MetaPaginated               `json:"meta"`
+}
+
+// EnergyUsageListResponseData defines model for EnergyUsageListResponse_data.
+type EnergyUsageListResponseData struct {
+	// Reads Array of meter reads sorted by NMI in ascending order followed by readStartDate in descending order
+	Reads []EnergyUsageRead `json:"reads"`
 }
 
 // EnergyUsageRead defines model for EnergyUsageRead.
 type EnergyUsageRead struct {
 	// BasicRead Mandatory if readUType is set to basicRead
-	BasicRead *struct {
-		// Quality The quality of the read taken.  If absent then assumed to be ACTUAL
-		Quality *EnergyUsageReadBasicReadQuality `json:"quality,omitempty"`
-
-		// Value Meter read value.  If positive then it means consumption, if negative it means export
-		Value float32 `json:"value"`
-	} `json:"basicRead,omitempty"`
+	BasicRead *EnergyUsageReadBasicRead `json:"basicRead,omitempty"`
 
 	// ControlledLoad Indicates whether the energy recorded by this register is created under a Controlled Load regime
 	ControlledLoad *bool `json:"controlledLoad,omitempty"`
 
 	// IntervalRead Mandatory if readUType is set to intervalRead
-	IntervalRead *struct {
-		// AggregateValue The aggregate sum of the interval read values. If positive then it means net consumption, if negative it means net export
-		AggregateValue float32 `json:"aggregateValue"`
-
-		// IntervalReads Array of Interval read values. If positive then it means consumption, if negative it means export. Required when interval-reads query parameter equals FULL or  MIN_30.<br>Each read value indicates the read for the interval specified by readIntervalLength beginning at midnight of readStartDate (for example 00:00 to 00:30 would be the first reading in a 30 minute Interval)
-		IntervalReads *[]float32 `json:"intervalReads,omitempty"`
-
-		// ReadIntervalLength Read interval length in minutes. Required when interval-reads query parameter equals FULL or MIN_30
-		ReadIntervalLength *int `json:"readIntervalLength,omitempty"`
-
-		// ReadQualities  Specifies quality of reads that are not ACTUAL.  For read indices that are not specified, quality is assumed to be ACTUAL. If not present, all quality of all reads are assumed to be actual. Required when interval-reads query parameter equals FULL or MIN_30
-		ReadQualities *[]struct {
-			// EndInterval End interval for read quality flag
-			EndInterval int `json:"endInterval"`
-
-			// Quality The quality of the read taken
-			Quality EnergyUsageReadIntervalReadReadQualitiesQuality `json:"quality"`
-
-			// StartInterval Start interval for read quality flag. First read begins at 1
-			StartInterval int `json:"startInterval"`
-		} `json:"readQualities,omitempty"`
-	} `json:"intervalRead,omitempty"`
+	IntervalRead *EnergyUsageReadIntervalRead `json:"intervalRead,omitempty"`
 
 	// MeterId Meter id/serial number as it appears in customer’s bill. ID permanence rules do not apply.
 	MeterId *string `json:"meterId,omitempty"`
@@ -2966,14 +2977,50 @@ type EnergyUsageRead struct {
 	UnitOfMeasure *string `json:"unitOfMeasure,omitempty"`
 }
 
+// EnergyUsageReadReadUType Specify the type of the meter read data
+type EnergyUsageReadReadUType string
+
+// EnergyUsageReadBasicRead Mandatory if readUType is set to basicRead
+type EnergyUsageReadBasicRead struct {
+	// Quality The quality of the read taken.  If absent then assumed to be ACTUAL
+	Quality *EnergyUsageReadBasicReadQuality `json:"quality,omitempty"`
+
+	// Value Meter read value.  If positive then it means consumption, if negative it means export
+	Value float32 `json:"value"`
+}
+
 // EnergyUsageReadBasicReadQuality The quality of the read taken.  If absent then assumed to be ACTUAL
 type EnergyUsageReadBasicReadQuality string
 
+// EnergyUsageReadIntervalRead Mandatory if readUType is set to intervalRead
+type EnergyUsageReadIntervalRead struct {
+	// AggregateValue The aggregate sum of the interval read values. If positive then it means net consumption, if negative it means net export
+	AggregateValue float32 `json:"aggregateValue"`
+
+	// IntervalReads Array of Interval read values. If positive then it means consumption, if negative it means export. Required when interval-reads query parameter equals FULL or  MIN_30.<br>Each read value indicates the read for the interval specified by readIntervalLength beginning at midnight of readStartDate (for example 00:00 to 00:30 would be the first reading in a 30 minute Interval)
+	IntervalReads *[]float32 `json:"intervalReads,omitempty"`
+
+	// ReadIntervalLength Read interval length in minutes. Required when interval-reads query parameter equals FULL or MIN_30
+	ReadIntervalLength *int `json:"readIntervalLength,omitempty"`
+
+	// ReadQualities  Specifies quality of reads that are not ACTUAL.  For read indices that are not specified, quality is assumed to be ACTUAL. If not present, all quality of all reads are assumed to be actual. Required when interval-reads query parameter equals FULL or MIN_30
+	ReadQualities *[]EnergyUsageReadIntervalReadReadQualities `json:"readQualities,omitempty"`
+}
+
+// EnergyUsageReadIntervalReadReadQualities defines model for EnergyUsageRead_intervalRead_readQualities.
+type EnergyUsageReadIntervalReadReadQualities struct {
+	// EndInterval End interval for read quality flag
+	EndInterval int `json:"endInterval"`
+
+	// Quality The quality of the read taken
+	Quality EnergyUsageReadIntervalReadReadQualitiesQuality `json:"quality"`
+
+	// StartInterval Start interval for read quality flag. First read begins at 1
+	StartInterval int `json:"startInterval"`
+}
+
 // EnergyUsageReadIntervalReadReadQualitiesQuality The quality of the read taken
 type EnergyUsageReadIntervalReadReadQualitiesQuality string
-
-// EnergyUsageReadReadUType Specify the type of the meter read data
-type EnergyUsageReadReadUType string
 
 // Links defines model for Links.
 type Links struct {
@@ -3013,140 +3060,53 @@ type MetaPaginated struct {
 
 // RequestAccountIdList defines model for RequestAccountIdList.
 type RequestAccountIdList struct {
-	Data struct {
-		// AccountIds Array of specific accountIds to obtain data for
-		AccountIds []string `json:"accountIds"`
-	} `json:"data"`
-	Meta *Meta `json:"meta,omitempty"`
+	Data RequestAccountIdListData `json:"data"`
+	Meta *Meta                    `json:"meta,omitempty"`
+}
+
+// RequestAccountIdListData defines model for RequestAccountIdList_data.
+type RequestAccountIdListData struct {
+	// AccountIds Array of specific accountIds to obtain data for
+	AccountIds []string `json:"accountIds"`
 }
 
 // RequestServicePointIdList defines model for RequestServicePointIdList.
 type RequestServicePointIdList struct {
-	Data struct {
-		// ServicePointIds Array of specific servicePointIds to obtain data for
-		ServicePointIds []string `json:"servicePointIds"`
-	} `json:"data"`
-	Meta *Meta `json:"meta,omitempty"`
+	Data RequestServicePointIdListData `json:"data"`
+	Meta *Meta                         `json:"meta,omitempty"`
+}
+
+// RequestServicePointIdListData defines model for RequestServicePointIdList_data.
+type RequestServicePointIdListData struct {
+	// ServicePointIds Array of specific servicePointIds to obtain data for
+	ServicePointIds []string `json:"servicePointIds"`
 }
 
 // ResponseErrorListV2 defines model for ResponseErrorListV2.
 type ResponseErrorListV2 struct {
-	Errors []struct {
-		// Code The code of the error encountered. Where the error is specific to the respondent, an application-specific error code, expressed as a string value. If the error is application-specific, the URN code that the specific error extends must be provided in the meta object. Otherwise, the value is the error code URN.
-		Code string `json:"code"`
-
-		// Detail A human-readable explanation specific to this occurrence of the problem.
-		Detail string `json:"detail"`
-
-		// Meta Additional data for customised error codes
-		Meta *struct {
-			// Urn The CDR error code URN which the application-specific error code extends. Mandatory if the error `code` is an application-specific error rather than a standardised error code.
-			Urn *string `json:"urn,omitempty"`
-		} `json:"meta,omitempty"`
-
-		// Title A short, human-readable summary of the problem that MUST NOT change from occurrence to occurrence of the problem represented by the error code.
-		Title string `json:"title"`
-	} `json:"errors"`
+	Errors []ResponseErrorListV2Errors `json:"errors"`
 }
 
-// AccountId defines model for accountId.
-type AccountId = string
+// ResponseErrorListV2Errors defines model for ResponseErrorListV2_errors.
+type ResponseErrorListV2Errors struct {
+	// Code The code of the error encountered. Where the error is specific to the respondent, an application-specific error code, expressed as a string value. If the error is application-specific, the URN code that the specific error extends must be provided in the meta object. Otherwise, the value is the error code URN.
+	Code string `json:"code"`
 
-// IntervalReads defines model for interval-reads.
-type IntervalReads string
+	// Detail A human-readable explanation specific to this occurrence of the problem.
+	Detail string `json:"detail"`
 
-// NewestDate defines model for newest-date.
-type NewestDate = string
+	// Meta Additional data for customised error codes
+	Meta *ResponseErrorListV2Meta `json:"meta,omitempty"`
 
-// NewestDateInvoices defines model for newest-date-invoices.
-type NewestDateInvoices = string
+	// Title A short, human-readable summary of the problem that MUST NOT change from occurrence to occurrence of the problem represented by the error code.
+	Title string `json:"title"`
+}
 
-// NewestTime defines model for newest-time.
-type NewestTime = string
-
-// OldestDate defines model for oldest-date.
-type OldestDate = string
-
-// OldestDateInvoices defines model for oldest-date-invoices.
-type OldestDateInvoices = string
-
-// OldestTime defines model for oldest-time.
-type OldestTime = string
-
-// OpenStatus defines model for open-status.
-type OpenStatus string
-
-// Page defines model for page.
-type Page = int
-
-// PageSize defines model for page-size.
-type PageSize = int
-
-// ServicePointId defines model for servicePointId.
-type ServicePointId = string
-
-// XCdsClientHeaders defines model for x-cds-client-headers.
-type XCdsClientHeaders = string
-
-// XFapiAuthDate defines model for x-fapi-auth-date.
-type XFapiAuthDate = string
-
-// XFapiCustomerIpAddress defines model for x-fapi-customer-ip-address.
-type XFapiCustomerIpAddress = string
-
-// XFapiInteractionId defines model for x-fapi-interaction-id.
-type XFapiInteractionId = string
-
-// XMinV defines model for x-min-v.
-type XMinV = string
-
-// XV defines model for x-v.
-type XV = string
-
-// AccountConcessionsDetail defines model for accountConcessionsDetail.
-type AccountConcessionsDetail = EnergyConcessionsResponse
-
-// AccountDetailV3 defines model for accountDetailV3.
-type AccountDetailV3 = EnergyAccountDetailResponseV4
-
-// AccountListV2 defines model for accountListV2.
-type AccountListV2 = EnergyAccountListResponseV2
-
-// AccountPaymentScheduleDetail defines model for accountPaymentScheduleDetail.
-type AccountPaymentScheduleDetail = EnergyPaymentScheduleResponse
-
-// BalanceDetail defines model for balanceDetail.
-type BalanceDetail = EnergyBalanceResponse
-
-// BalanceList defines model for balanceList.
-type BalanceList = EnergyBalanceListResponse
-
-// BillingList defines model for billingList.
-type BillingList = EnergyBillingListResponseV3
-
-// DerDetail defines model for derDetail.
-type DerDetail = EnergyDerDetailResponse
-
-// DerList defines model for derList.
-type DerList = EnergyDerListResponse
-
-// InvoiceList defines model for invoiceList.
-type InvoiceList = EnergyInvoiceListResponse
-
-// PlanDetail defines model for planDetail.
-type PlanDetail = EnergyPlanResponseV3
-
-// PlanList defines model for planList.
-type PlanList = EnergyPlanListResponse
-
-// ServicePointDetail defines model for servicePointDetail.
-type ServicePointDetail = EnergyServicePointDetailResponse
-
-// ServicePointList defines model for servicePointList.
-type ServicePointList = EnergyServicePointListResponse
-
-// UsageList defines model for usageList.
-type UsageList = EnergyUsageListResponse
+// ResponseErrorListV2Meta Additional data for customised error codes
+type ResponseErrorListV2Meta struct {
+	// Urn The CDR error code URN which the application-specific error code extends. Mandatory if the error `code` is an application-specific error rather than a standardised error code.
+	Urn *string `json:"urn,omitempty"`
+}
 
 // ListAccountsParams defines parameters for ListAccounts.
 type ListAccountsParams struct {
@@ -3154,28 +3114,28 @@ type ListAccountsParams struct {
 	OpenStatus *ListAccountsParamsOpenStatus `form:"open-status,omitempty" json:"open-status,omitempty"`
 
 	// Page Page of results to request (standard pagination)
-	Page *Page `form:"page,omitempty" json:"page,omitempty"`
+	Page *int `form:"page,omitempty" json:"page,omitempty"`
 
 	// PageSize Page size to request.  Default is 25 (standard pagination)
-	PageSize *PageSize `form:"page-size,omitempty" json:"page-size,omitempty"`
+	PageSize *int `form:"page-size,omitempty" json:"page-size,omitempty"`
 
 	// XV Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
-	XV XV `json:"x-v"`
+	XV string `json:"x-v"`
 
 	// XMinV Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
-	XMinV *XMinV `json:"x-min-v,omitempty"`
+	XMinV *string `json:"x-min-v,omitempty"`
 
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
-	XFapiInteractionId *XFapiInteractionId `json:"x-fapi-interaction-id,omitempty"`
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
 	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-1.0-Baseline]](#nref-FAPI-1-0-Baseline)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
-	XFapiAuthDate *XFapiAuthDate `json:"x-fapi-auth-date,omitempty"`
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the data recipient. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
-	XFapiCustomerIpAddress *XFapiCustomerIpAddress `json:"x-fapi-customer-ip-address,omitempty"`
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
 
 	// XCdsClientHeaders The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the data recipient. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
-	XCdsClientHeaders *XCdsClientHeaders `json:"x-cds-client-headers,omitempty"`
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
 }
 
 // ListAccountsParamsOpenStatus defines parameters for ListAccounts.
@@ -3184,418 +3144,418 @@ type ListAccountsParamsOpenStatus string
 // ListBalancesBulkParams defines parameters for ListBalancesBulk.
 type ListBalancesBulkParams struct {
 	// Page Page of results to request (standard pagination)
-	Page *Page `form:"page,omitempty" json:"page,omitempty"`
+	Page *int `form:"page,omitempty" json:"page,omitempty"`
 
 	// PageSize Page size to request.  Default is 25 (standard pagination)
-	PageSize *PageSize `form:"page-size,omitempty" json:"page-size,omitempty"`
+	PageSize *int `form:"page-size,omitempty" json:"page-size,omitempty"`
 
 	// XV Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
-	XV XV `json:"x-v"`
+	XV string `json:"x-v"`
 
 	// XMinV Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
-	XMinV *XMinV `json:"x-min-v,omitempty"`
+	XMinV *string `json:"x-min-v,omitempty"`
 
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
-	XFapiInteractionId *XFapiInteractionId `json:"x-fapi-interaction-id,omitempty"`
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
 	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-1.0-Baseline]](#nref-FAPI-1-0-Baseline)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
-	XFapiAuthDate *XFapiAuthDate `json:"x-fapi-auth-date,omitempty"`
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the data recipient. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
-	XFapiCustomerIpAddress *XFapiCustomerIpAddress `json:"x-fapi-customer-ip-address,omitempty"`
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
 
 	// XCdsClientHeaders The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the data recipient. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
-	XCdsClientHeaders *XCdsClientHeaders `json:"x-cds-client-headers,omitempty"`
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
 }
 
 // ListBalancesForAccountsParams defines parameters for ListBalancesForAccounts.
 type ListBalancesForAccountsParams struct {
 	// Page Page of results to request (standard pagination)
-	Page *Page `form:"page,omitempty" json:"page,omitempty"`
+	Page *int `form:"page,omitempty" json:"page,omitempty"`
 
 	// PageSize Page size to request.  Default is 25 (standard pagination)
-	PageSize *PageSize `form:"page-size,omitempty" json:"page-size,omitempty"`
+	PageSize *int `form:"page-size,omitempty" json:"page-size,omitempty"`
 
 	// XV Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
-	XV XV `json:"x-v"`
+	XV string `json:"x-v"`
 
 	// XMinV Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
-	XMinV *XMinV `json:"x-min-v,omitempty"`
+	XMinV *string `json:"x-min-v,omitempty"`
 
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
-	XFapiInteractionId *XFapiInteractionId `json:"x-fapi-interaction-id,omitempty"`
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
 	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-1.0-Baseline]](#nref-FAPI-1-0-Baseline)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
-	XFapiAuthDate *XFapiAuthDate `json:"x-fapi-auth-date,omitempty"`
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the data recipient. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
-	XFapiCustomerIpAddress *XFapiCustomerIpAddress `json:"x-fapi-customer-ip-address,omitempty"`
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
 
 	// XCdsClientHeaders The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the data recipient. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
-	XCdsClientHeaders *XCdsClientHeaders `json:"x-cds-client-headers,omitempty"`
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
 }
 
 // ListBillingBulkParams defines parameters for ListBillingBulk.
 type ListBillingBulkParams struct {
 	// NewestTime Constrain the request to records with effective time at or before this date/time.  If absent defaults to current date/time.  Format is aligned to DateTimeString common type
-	NewestTime *NewestTime `form:"newest-time,omitempty" json:"newest-time,omitempty"`
+	NewestTime *string `form:"newest-time,omitempty" json:"newest-time,omitempty"`
 
 	// OldestTime Constrain the request to records with effective time at or after this date/time. If absent defaults to newest-time minus 12 months.  Format is aligned to DateTimeString common type
-	OldestTime *OldestTime `form:"oldest-time,omitempty" json:"oldest-time,omitempty"`
+	OldestTime *string `form:"oldest-time,omitempty" json:"oldest-time,omitempty"`
 
 	// Page Page of results to request (standard pagination)
-	Page *Page `form:"page,omitempty" json:"page,omitempty"`
+	Page *int `form:"page,omitempty" json:"page,omitempty"`
 
 	// PageSize Page size to request.  Default is 25 (standard pagination)
-	PageSize *PageSize `form:"page-size,omitempty" json:"page-size,omitempty"`
+	PageSize *int `form:"page-size,omitempty" json:"page-size,omitempty"`
 
 	// XV Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
-	XV XV `json:"x-v"`
+	XV string `json:"x-v"`
 
 	// XMinV Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
-	XMinV *XMinV `json:"x-min-v,omitempty"`
+	XMinV *string `json:"x-min-v,omitempty"`
 
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
-	XFapiInteractionId *XFapiInteractionId `json:"x-fapi-interaction-id,omitempty"`
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
 	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-1.0-Baseline]](#nref-FAPI-1-0-Baseline)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
-	XFapiAuthDate *XFapiAuthDate `json:"x-fapi-auth-date,omitempty"`
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the data recipient. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
-	XFapiCustomerIpAddress *XFapiCustomerIpAddress `json:"x-fapi-customer-ip-address,omitempty"`
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
 
 	// XCdsClientHeaders The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the data recipient. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
-	XCdsClientHeaders *XCdsClientHeaders `json:"x-cds-client-headers,omitempty"`
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
 }
 
 // ListBillingForAccountsParams defines parameters for ListBillingForAccounts.
 type ListBillingForAccountsParams struct {
 	// NewestTime Constrain the request to records with effective time at or before this date/time.  If absent defaults to current date/time.  Format is aligned to DateTimeString common type
-	NewestTime *NewestTime `form:"newest-time,omitempty" json:"newest-time,omitempty"`
+	NewestTime *string `form:"newest-time,omitempty" json:"newest-time,omitempty"`
 
 	// OldestTime Constrain the request to records with effective time at or after this date/time. If absent defaults to newest-time minus 12 months.  Format is aligned to DateTimeString common type
-	OldestTime *OldestTime `form:"oldest-time,omitempty" json:"oldest-time,omitempty"`
+	OldestTime *string `form:"oldest-time,omitempty" json:"oldest-time,omitempty"`
 
 	// Page Page of results to request (standard pagination)
-	Page *Page `form:"page,omitempty" json:"page,omitempty"`
+	Page *int `form:"page,omitempty" json:"page,omitempty"`
 
 	// PageSize Page size to request.  Default is 25 (standard pagination)
-	PageSize *PageSize `form:"page-size,omitempty" json:"page-size,omitempty"`
+	PageSize *int `form:"page-size,omitempty" json:"page-size,omitempty"`
 
 	// XV Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
-	XV XV `json:"x-v"`
+	XV string `json:"x-v"`
 
 	// XMinV Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
-	XMinV *XMinV `json:"x-min-v,omitempty"`
+	XMinV *string `json:"x-min-v,omitempty"`
 
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
-	XFapiInteractionId *XFapiInteractionId `json:"x-fapi-interaction-id,omitempty"`
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
 	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-1.0-Baseline]](#nref-FAPI-1-0-Baseline)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
-	XFapiAuthDate *XFapiAuthDate `json:"x-fapi-auth-date,omitempty"`
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the data recipient. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
-	XFapiCustomerIpAddress *XFapiCustomerIpAddress `json:"x-fapi-customer-ip-address,omitempty"`
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
 
 	// XCdsClientHeaders The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the data recipient. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
-	XCdsClientHeaders *XCdsClientHeaders `json:"x-cds-client-headers,omitempty"`
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
 }
 
 // ListInvoicesBulkParams defines parameters for ListInvoicesBulk.
 type ListInvoicesBulkParams struct {
 	// NewestDate Constrain the request to records with issue date at or before this date.  If absent defaults to current date.  Format is aligned to DateString common type
-	NewestDate *NewestDateInvoices `form:"newest-date,omitempty" json:"newest-date,omitempty"`
+	NewestDate *string `form:"newest-date,omitempty" json:"newest-date,omitempty"`
 
 	// OldestDate Constrain the request to records with issue date at or after this date. If absent defaults to newest-date minus 24 months.  Format is aligned to DateString common type
-	OldestDate *OldestDateInvoices `form:"oldest-date,omitempty" json:"oldest-date,omitempty"`
+	OldestDate *string `form:"oldest-date,omitempty" json:"oldest-date,omitempty"`
 
 	// Page Page of results to request (standard pagination)
-	Page *Page `form:"page,omitempty" json:"page,omitempty"`
+	Page *int `form:"page,omitempty" json:"page,omitempty"`
 
 	// PageSize Page size to request.  Default is 25 (standard pagination)
-	PageSize *PageSize `form:"page-size,omitempty" json:"page-size,omitempty"`
+	PageSize *int `form:"page-size,omitempty" json:"page-size,omitempty"`
 
 	// XV Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
-	XV XV `json:"x-v"`
+	XV string `json:"x-v"`
 
 	// XMinV Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
-	XMinV *XMinV `json:"x-min-v,omitempty"`
+	XMinV *string `json:"x-min-v,omitempty"`
 
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
-	XFapiInteractionId *XFapiInteractionId `json:"x-fapi-interaction-id,omitempty"`
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
 	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-1.0-Baseline]](#nref-FAPI-1-0-Baseline)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
-	XFapiAuthDate *XFapiAuthDate `json:"x-fapi-auth-date,omitempty"`
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the data recipient. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
-	XFapiCustomerIpAddress *XFapiCustomerIpAddress `json:"x-fapi-customer-ip-address,omitempty"`
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
 
 	// XCdsClientHeaders The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the data recipient. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
-	XCdsClientHeaders *XCdsClientHeaders `json:"x-cds-client-headers,omitempty"`
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
 }
 
 // ListInvoicesForAccountsParams defines parameters for ListInvoicesForAccounts.
 type ListInvoicesForAccountsParams struct {
 	// NewestDate Constrain the request to records with issue date at or before this date.  If absent defaults to current date.  Format is aligned to DateString common type
-	NewestDate *NewestDateInvoices `form:"newest-date,omitempty" json:"newest-date,omitempty"`
+	NewestDate *string `form:"newest-date,omitempty" json:"newest-date,omitempty"`
 
 	// OldestDate Constrain the request to records with issue date at or after this date. If absent defaults to newest-date minus 24 months.  Format is aligned to DateString common type
-	OldestDate *OldestDateInvoices `form:"oldest-date,omitempty" json:"oldest-date,omitempty"`
+	OldestDate *string `form:"oldest-date,omitempty" json:"oldest-date,omitempty"`
 
 	// Page Page of results to request (standard pagination)
-	Page *Page `form:"page,omitempty" json:"page,omitempty"`
+	Page *int `form:"page,omitempty" json:"page,omitempty"`
 
 	// PageSize Page size to request.  Default is 25 (standard pagination)
-	PageSize *PageSize `form:"page-size,omitempty" json:"page-size,omitempty"`
+	PageSize *int `form:"page-size,omitempty" json:"page-size,omitempty"`
 
 	// XV Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
-	XV XV `json:"x-v"`
+	XV string `json:"x-v"`
 
 	// XMinV Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
-	XMinV *XMinV `json:"x-min-v,omitempty"`
+	XMinV *string `json:"x-min-v,omitempty"`
 
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
-	XFapiInteractionId *XFapiInteractionId `json:"x-fapi-interaction-id,omitempty"`
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
 	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-1.0-Baseline]](#nref-FAPI-1-0-Baseline)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
-	XFapiAuthDate *XFapiAuthDate `json:"x-fapi-auth-date,omitempty"`
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the data recipient. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
-	XFapiCustomerIpAddress *XFapiCustomerIpAddress `json:"x-fapi-customer-ip-address,omitempty"`
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
 
 	// XCdsClientHeaders The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the data recipient. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
-	XCdsClientHeaders *XCdsClientHeaders `json:"x-cds-client-headers,omitempty"`
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
 }
 
 // GetAccountParams defines parameters for GetAccount.
 type GetAccountParams struct {
 	// XV Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
-	XV XV `json:"x-v"`
+	XV string `json:"x-v"`
 
 	// XMinV Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
-	XMinV *XMinV `json:"x-min-v,omitempty"`
+	XMinV *string `json:"x-min-v,omitempty"`
 
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
-	XFapiInteractionId *XFapiInteractionId `json:"x-fapi-interaction-id,omitempty"`
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
 	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-1.0-Baseline]](#nref-FAPI-1-0-Baseline)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
-	XFapiAuthDate *XFapiAuthDate `json:"x-fapi-auth-date,omitempty"`
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the data recipient. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
-	XFapiCustomerIpAddress *XFapiCustomerIpAddress `json:"x-fapi-customer-ip-address,omitempty"`
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
 
 	// XCdsClientHeaders The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the data recipient. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
-	XCdsClientHeaders *XCdsClientHeaders `json:"x-cds-client-headers,omitempty"`
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
 }
 
 // GetBalanceForAccountParams defines parameters for GetBalanceForAccount.
 type GetBalanceForAccountParams struct {
 	// XV Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
-	XV XV `json:"x-v"`
+	XV string `json:"x-v"`
 
 	// XMinV Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
-	XMinV *XMinV `json:"x-min-v,omitempty"`
+	XMinV *string `json:"x-min-v,omitempty"`
 
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
-	XFapiInteractionId *XFapiInteractionId `json:"x-fapi-interaction-id,omitempty"`
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
 	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-1.0-Baseline]](#nref-FAPI-1-0-Baseline)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
-	XFapiAuthDate *XFapiAuthDate `json:"x-fapi-auth-date,omitempty"`
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the data recipient. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
-	XFapiCustomerIpAddress *XFapiCustomerIpAddress `json:"x-fapi-customer-ip-address,omitempty"`
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
 
 	// XCdsClientHeaders The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the data recipient. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
-	XCdsClientHeaders *XCdsClientHeaders `json:"x-cds-client-headers,omitempty"`
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
 }
 
 // GetBillingForAccountParams defines parameters for GetBillingForAccount.
 type GetBillingForAccountParams struct {
 	// NewestTime Constrain the request to records with effective time at or before this date/time.  If absent defaults to current date/time.  Format is aligned to DateTimeString common type
-	NewestTime *NewestTime `form:"newest-time,omitempty" json:"newest-time,omitempty"`
+	NewestTime *string `form:"newest-time,omitempty" json:"newest-time,omitempty"`
 
 	// OldestTime Constrain the request to records with effective time at or after this date/time. If absent defaults to newest-time minus 12 months.  Format is aligned to DateTimeString common type
-	OldestTime *OldestTime `form:"oldest-time,omitempty" json:"oldest-time,omitempty"`
+	OldestTime *string `form:"oldest-time,omitempty" json:"oldest-time,omitempty"`
 
 	// Page Page of results to request (standard pagination)
-	Page *Page `form:"page,omitempty" json:"page,omitempty"`
+	Page *int `form:"page,omitempty" json:"page,omitempty"`
 
 	// PageSize Page size to request.  Default is 25 (standard pagination)
-	PageSize *PageSize `form:"page-size,omitempty" json:"page-size,omitempty"`
+	PageSize *int `form:"page-size,omitempty" json:"page-size,omitempty"`
 
 	// XV Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
-	XV XV `json:"x-v"`
+	XV string `json:"x-v"`
 
 	// XMinV Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
-	XMinV *XMinV `json:"x-min-v,omitempty"`
+	XMinV *string `json:"x-min-v,omitempty"`
 
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
-	XFapiInteractionId *XFapiInteractionId `json:"x-fapi-interaction-id,omitempty"`
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
 	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-1.0-Baseline]](#nref-FAPI-1-0-Baseline)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
-	XFapiAuthDate *XFapiAuthDate `json:"x-fapi-auth-date,omitempty"`
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the data recipient. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
-	XFapiCustomerIpAddress *XFapiCustomerIpAddress `json:"x-fapi-customer-ip-address,omitempty"`
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
 
 	// XCdsClientHeaders The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the data recipient. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
-	XCdsClientHeaders *XCdsClientHeaders `json:"x-cds-client-headers,omitempty"`
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
 }
 
 // GetConcessionsParams defines parameters for GetConcessions.
 type GetConcessionsParams struct {
 	// XV Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
-	XV XV `json:"x-v"`
+	XV string `json:"x-v"`
 
 	// XMinV Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
-	XMinV *XMinV `json:"x-min-v,omitempty"`
+	XMinV *string `json:"x-min-v,omitempty"`
 
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
-	XFapiInteractionId *XFapiInteractionId `json:"x-fapi-interaction-id,omitempty"`
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
 	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-1.0-Baseline]](#nref-FAPI-1-0-Baseline)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
-	XFapiAuthDate *XFapiAuthDate `json:"x-fapi-auth-date,omitempty"`
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the data recipient. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
-	XFapiCustomerIpAddress *XFapiCustomerIpAddress `json:"x-fapi-customer-ip-address,omitempty"`
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
 
 	// XCdsClientHeaders The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the data recipient. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
-	XCdsClientHeaders *XCdsClientHeaders `json:"x-cds-client-headers,omitempty"`
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
 }
 
 // GetInvoicesForAccountParams defines parameters for GetInvoicesForAccount.
 type GetInvoicesForAccountParams struct {
 	// NewestDate Constrain the request to records with issue date at or before this date.  If absent defaults to current date.  Format is aligned to DateString common type
-	NewestDate *NewestDateInvoices `form:"newest-date,omitempty" json:"newest-date,omitempty"`
+	NewestDate *string `form:"newest-date,omitempty" json:"newest-date,omitempty"`
 
 	// OldestDate Constrain the request to records with issue date at or after this date. If absent defaults to newest-date minus 24 months.  Format is aligned to DateString common type
-	OldestDate *OldestDateInvoices `form:"oldest-date,omitempty" json:"oldest-date,omitempty"`
+	OldestDate *string `form:"oldest-date,omitempty" json:"oldest-date,omitempty"`
 
 	// Page Page of results to request (standard pagination)
-	Page *Page `form:"page,omitempty" json:"page,omitempty"`
+	Page *int `form:"page,omitempty" json:"page,omitempty"`
 
 	// PageSize Page size to request.  Default is 25 (standard pagination)
-	PageSize *PageSize `form:"page-size,omitempty" json:"page-size,omitempty"`
+	PageSize *int `form:"page-size,omitempty" json:"page-size,omitempty"`
 
 	// XV Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
-	XV XV `json:"x-v"`
+	XV string `json:"x-v"`
 
 	// XMinV Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
-	XMinV *XMinV `json:"x-min-v,omitempty"`
+	XMinV *string `json:"x-min-v,omitempty"`
 
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
-	XFapiInteractionId *XFapiInteractionId `json:"x-fapi-interaction-id,omitempty"`
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
 	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-1.0-Baseline]](#nref-FAPI-1-0-Baseline)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
-	XFapiAuthDate *XFapiAuthDate `json:"x-fapi-auth-date,omitempty"`
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the data recipient. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
-	XFapiCustomerIpAddress *XFapiCustomerIpAddress `json:"x-fapi-customer-ip-address,omitempty"`
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
 
 	// XCdsClientHeaders The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the data recipient. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
-	XCdsClientHeaders *XCdsClientHeaders `json:"x-cds-client-headers,omitempty"`
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
 }
 
 // GetPaymentScheduleParams defines parameters for GetPaymentSchedule.
 type GetPaymentScheduleParams struct {
 	// XV Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
-	XV XV `json:"x-v"`
+	XV string `json:"x-v"`
 
 	// XMinV Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
-	XMinV *XMinV `json:"x-min-v,omitempty"`
+	XMinV *string `json:"x-min-v,omitempty"`
 
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
-	XFapiInteractionId *XFapiInteractionId `json:"x-fapi-interaction-id,omitempty"`
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
 	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-1.0-Baseline]](#nref-FAPI-1-0-Baseline)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
-	XFapiAuthDate *XFapiAuthDate `json:"x-fapi-auth-date,omitempty"`
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the data recipient. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
-	XFapiCustomerIpAddress *XFapiCustomerIpAddress `json:"x-fapi-customer-ip-address,omitempty"`
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
 
 	// XCdsClientHeaders The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the data recipient. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
-	XCdsClientHeaders *XCdsClientHeaders `json:"x-cds-client-headers,omitempty"`
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
 }
 
 // ListServicePointsParams defines parameters for ListServicePoints.
 type ListServicePointsParams struct {
 	// Page Page of results to request (standard pagination)
-	Page *Page `form:"page,omitempty" json:"page,omitempty"`
+	Page *int `form:"page,omitempty" json:"page,omitempty"`
 
 	// PageSize Page size to request.  Default is 25 (standard pagination)
-	PageSize *PageSize `form:"page-size,omitempty" json:"page-size,omitempty"`
+	PageSize *int `form:"page-size,omitempty" json:"page-size,omitempty"`
 
 	// XV Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
-	XV XV `json:"x-v"`
+	XV string `json:"x-v"`
 
 	// XMinV Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
-	XMinV *XMinV `json:"x-min-v,omitempty"`
+	XMinV *string `json:"x-min-v,omitempty"`
 
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
-	XFapiInteractionId *XFapiInteractionId `json:"x-fapi-interaction-id,omitempty"`
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
 	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-1.0-Baseline]](#nref-FAPI-1-0-Baseline)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
-	XFapiAuthDate *XFapiAuthDate `json:"x-fapi-auth-date,omitempty"`
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the data recipient. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
-	XFapiCustomerIpAddress *XFapiCustomerIpAddress `json:"x-fapi-customer-ip-address,omitempty"`
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
 
 	// XCdsClientHeaders The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the data recipient. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
-	XCdsClientHeaders *XCdsClientHeaders `json:"x-cds-client-headers,omitempty"`
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
 }
 
 // ListDERBulkParams defines parameters for ListDERBulk.
 type ListDERBulkParams struct {
 	// Page Page of results to request (standard pagination)
-	Page *Page `form:"page,omitempty" json:"page,omitempty"`
+	Page *int `form:"page,omitempty" json:"page,omitempty"`
 
 	// PageSize Page size to request.  Default is 25 (standard pagination)
-	PageSize *PageSize `form:"page-size,omitempty" json:"page-size,omitempty"`
+	PageSize *int `form:"page-size,omitempty" json:"page-size,omitempty"`
 
 	// XV Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
-	XV XV `json:"x-v"`
+	XV string `json:"x-v"`
 
 	// XMinV Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
-	XMinV *XMinV `json:"x-min-v,omitempty"`
+	XMinV *string `json:"x-min-v,omitempty"`
 
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
-	XFapiInteractionId *XFapiInteractionId `json:"x-fapi-interaction-id,omitempty"`
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
 	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-1.0-Baseline]](#nref-FAPI-1-0-Baseline)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
-	XFapiAuthDate *XFapiAuthDate `json:"x-fapi-auth-date,omitempty"`
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the data recipient. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
-	XFapiCustomerIpAddress *XFapiCustomerIpAddress `json:"x-fapi-customer-ip-address,omitempty"`
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
 
 	// XCdsClientHeaders The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the data recipient. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
-	XCdsClientHeaders *XCdsClientHeaders `json:"x-cds-client-headers,omitempty"`
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
 }
 
 // ListDERForServicePointsParams defines parameters for ListDERForServicePoints.
 type ListDERForServicePointsParams struct {
 	// Page Page of results to request (standard pagination)
-	Page *Page `form:"page,omitempty" json:"page,omitempty"`
+	Page *int `form:"page,omitempty" json:"page,omitempty"`
 
 	// PageSize Page size to request.  Default is 25 (standard pagination)
-	PageSize *PageSize `form:"page-size,omitempty" json:"page-size,omitempty"`
+	PageSize *int `form:"page-size,omitempty" json:"page-size,omitempty"`
 
 	// XV Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
-	XV XV `json:"x-v"`
+	XV string `json:"x-v"`
 
 	// XMinV Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
-	XMinV *XMinV `json:"x-min-v,omitempty"`
+	XMinV *string `json:"x-min-v,omitempty"`
 
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
-	XFapiInteractionId *XFapiInteractionId `json:"x-fapi-interaction-id,omitempty"`
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
 	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-1.0-Baseline]](#nref-FAPI-1-0-Baseline)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
-	XFapiAuthDate *XFapiAuthDate `json:"x-fapi-auth-date,omitempty"`
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the data recipient. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
-	XFapiCustomerIpAddress *XFapiCustomerIpAddress `json:"x-fapi-customer-ip-address,omitempty"`
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
 
 	// XCdsClientHeaders The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the data recipient. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
-	XCdsClientHeaders *XCdsClientHeaders `json:"x-cds-client-headers,omitempty"`
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
 }
 
 // ListUsageBulkParams defines parameters for ListUsageBulk.
@@ -3604,34 +3564,34 @@ type ListUsageBulkParams struct {
 	IntervalReads *ListUsageBulkParamsIntervalReads `form:"interval-reads,omitempty" json:"interval-reads,omitempty"`
 
 	// OldestDate Constrain the request to records with effective date at or after this date. If absent defaults to newest-date minus 24 months.  Format is aligned to DateString common type
-	OldestDate *OldestDate `form:"oldest-date,omitempty" json:"oldest-date,omitempty"`
+	OldestDate *string `form:"oldest-date,omitempty" json:"oldest-date,omitempty"`
 
 	// NewestDate Constrain the request to records with effective date at or before this date.  If absent defaults to current date.  Format is aligned to DateString common type
-	NewestDate *NewestDate `form:"newest-date,omitempty" json:"newest-date,omitempty"`
+	NewestDate *string `form:"newest-date,omitempty" json:"newest-date,omitempty"`
 
 	// Page Page of results to request (standard pagination)
-	Page *Page `form:"page,omitempty" json:"page,omitempty"`
+	Page *int `form:"page,omitempty" json:"page,omitempty"`
 
 	// PageSize Page size to request.  Default is 25 (standard pagination)
-	PageSize *PageSize `form:"page-size,omitempty" json:"page-size,omitempty"`
+	PageSize *int `form:"page-size,omitempty" json:"page-size,omitempty"`
 
 	// XV Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
-	XV XV `json:"x-v"`
+	XV string `json:"x-v"`
 
 	// XMinV Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
-	XMinV *XMinV `json:"x-min-v,omitempty"`
+	XMinV *string `json:"x-min-v,omitempty"`
 
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
-	XFapiInteractionId *XFapiInteractionId `json:"x-fapi-interaction-id,omitempty"`
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
 	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-1.0-Baseline]](#nref-FAPI-1-0-Baseline)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
-	XFapiAuthDate *XFapiAuthDate `json:"x-fapi-auth-date,omitempty"`
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the data recipient. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
-	XFapiCustomerIpAddress *XFapiCustomerIpAddress `json:"x-fapi-customer-ip-address,omitempty"`
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
 
 	// XCdsClientHeaders The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the data recipient. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
-	XCdsClientHeaders *XCdsClientHeaders `json:"x-cds-client-headers,omitempty"`
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
 }
 
 // ListUsageBulkParamsIntervalReads defines parameters for ListUsageBulk.
@@ -3640,37 +3600,37 @@ type ListUsageBulkParamsIntervalReads string
 // ListUsageForServicePointsParams defines parameters for ListUsageForServicePoints.
 type ListUsageForServicePointsParams struct {
 	// OldestDate Constrain the request to records with effective date at or after this date. If absent defaults to newest-date minus 24 months.  Format is aligned to DateString common type
-	OldestDate *OldestDate `form:"oldest-date,omitempty" json:"oldest-date,omitempty"`
+	OldestDate *string `form:"oldest-date,omitempty" json:"oldest-date,omitempty"`
 
 	// NewestDate Constrain the request to records with effective date at or before this date.  If absent defaults to current date.  Format is aligned to DateString common type
-	NewestDate *NewestDate `form:"newest-date,omitempty" json:"newest-date,omitempty"`
+	NewestDate *string `form:"newest-date,omitempty" json:"newest-date,omitempty"`
 
 	// IntervalReads Type of interval reads. Any one of the valid values for this field can be supplied. If absent defaults to NONE
 	IntervalReads *ListUsageForServicePointsParamsIntervalReads `form:"interval-reads,omitempty" json:"interval-reads,omitempty"`
 
 	// Page Page of results to request (standard pagination)
-	Page *Page `form:"page,omitempty" json:"page,omitempty"`
+	Page *int `form:"page,omitempty" json:"page,omitempty"`
 
 	// PageSize Page size to request.  Default is 25 (standard pagination)
-	PageSize *PageSize `form:"page-size,omitempty" json:"page-size,omitempty"`
+	PageSize *int `form:"page-size,omitempty" json:"page-size,omitempty"`
 
 	// XV Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
-	XV XV `json:"x-v"`
+	XV string `json:"x-v"`
 
 	// XMinV Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
-	XMinV *XMinV `json:"x-min-v,omitempty"`
+	XMinV *string `json:"x-min-v,omitempty"`
 
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
-	XFapiInteractionId *XFapiInteractionId `json:"x-fapi-interaction-id,omitempty"`
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
 	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-1.0-Baseline]](#nref-FAPI-1-0-Baseline)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
-	XFapiAuthDate *XFapiAuthDate `json:"x-fapi-auth-date,omitempty"`
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the data recipient. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
-	XFapiCustomerIpAddress *XFapiCustomerIpAddress `json:"x-fapi-customer-ip-address,omitempty"`
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
 
 	// XCdsClientHeaders The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the data recipient. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
-	XCdsClientHeaders *XCdsClientHeaders `json:"x-cds-client-headers,omitempty"`
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
 }
 
 // ListUsageForServicePointsParamsIntervalReads defines parameters for ListUsageForServicePoints.
@@ -3679,79 +3639,79 @@ type ListUsageForServicePointsParamsIntervalReads string
 // GetServicePointParams defines parameters for GetServicePoint.
 type GetServicePointParams struct {
 	// XV Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
-	XV XV `json:"x-v"`
+	XV string `json:"x-v"`
 
 	// XMinV Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
-	XMinV *XMinV `json:"x-min-v,omitempty"`
+	XMinV *string `json:"x-min-v,omitempty"`
 
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
-	XFapiInteractionId *XFapiInteractionId `json:"x-fapi-interaction-id,omitempty"`
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
 	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-1.0-Baseline]](#nref-FAPI-1-0-Baseline)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
-	XFapiAuthDate *XFapiAuthDate `json:"x-fapi-auth-date,omitempty"`
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the data recipient. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
-	XFapiCustomerIpAddress *XFapiCustomerIpAddress `json:"x-fapi-customer-ip-address,omitempty"`
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
 
 	// XCdsClientHeaders The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the data recipient. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
-	XCdsClientHeaders *XCdsClientHeaders `json:"x-cds-client-headers,omitempty"`
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
 }
 
 // GetDERForServicePointParams defines parameters for GetDERForServicePoint.
 type GetDERForServicePointParams struct {
 	// XV Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
-	XV XV `json:"x-v"`
+	XV string `json:"x-v"`
 
 	// XMinV Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
-	XMinV *XMinV `json:"x-min-v,omitempty"`
+	XMinV *string `json:"x-min-v,omitempty"`
 
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
-	XFapiInteractionId *XFapiInteractionId `json:"x-fapi-interaction-id,omitempty"`
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
 	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-1.0-Baseline]](#nref-FAPI-1-0-Baseline)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
-	XFapiAuthDate *XFapiAuthDate `json:"x-fapi-auth-date,omitempty"`
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the data recipient. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
-	XFapiCustomerIpAddress *XFapiCustomerIpAddress `json:"x-fapi-customer-ip-address,omitempty"`
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
 
 	// XCdsClientHeaders The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the data recipient. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
-	XCdsClientHeaders *XCdsClientHeaders `json:"x-cds-client-headers,omitempty"`
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
 }
 
 // GetUsageForServicePointParams defines parameters for GetUsageForServicePoint.
 type GetUsageForServicePointParams struct {
 	// OldestDate Constrain the request to records with effective date at or after this date. If absent defaults to newest-date minus 24 months.  Format is aligned to DateString common type
-	OldestDate *OldestDate `form:"oldest-date,omitempty" json:"oldest-date,omitempty"`
+	OldestDate *string `form:"oldest-date,omitempty" json:"oldest-date,omitempty"`
 
 	// NewestDate Constrain the request to records with effective date at or before this date.  If absent defaults to current date.  Format is aligned to DateString common type
-	NewestDate *NewestDate `form:"newest-date,omitempty" json:"newest-date,omitempty"`
+	NewestDate *string `form:"newest-date,omitempty" json:"newest-date,omitempty"`
 
 	// IntervalReads Type of interval reads. Any one of the valid values for this field can be supplied. If absent defaults to NONE
 	IntervalReads *GetUsageForServicePointParamsIntervalReads `form:"interval-reads,omitempty" json:"interval-reads,omitempty"`
 
 	// Page Page of results to request (standard pagination)
-	Page *Page `form:"page,omitempty" json:"page,omitempty"`
+	Page *int `form:"page,omitempty" json:"page,omitempty"`
 
 	// PageSize Page size to request.  Default is 25 (standard pagination)
-	PageSize *PageSize `form:"page-size,omitempty" json:"page-size,omitempty"`
+	PageSize *int `form:"page-size,omitempty" json:"page-size,omitempty"`
 
 	// XV Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
-	XV XV `json:"x-v"`
+	XV string `json:"x-v"`
 
 	// XMinV Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
-	XMinV *XMinV `json:"x-min-v,omitempty"`
+	XMinV *string `json:"x-min-v,omitempty"`
 
 	// XFapiInteractionId An **[[RFC4122]](#nref-RFC4122)** UUID used as a correlation id. If provided, the data holder must play back this value in the x-fapi-interaction-id response header. If not provided a **[[RFC4122]](#nref-RFC4122)** UUID value is required to be provided in the response header to track the interaction.
-	XFapiInteractionId *XFapiInteractionId `json:"x-fapi-interaction-id,omitempty"`
+	XFapiInteractionId *string `json:"x-fapi-interaction-id,omitempty"`
 
 	// XFapiAuthDate The time when the customer last logged in to the Data Recipient Software Product as described in **[[FAPI-1.0-Baseline]](#nref-FAPI-1-0-Baseline)**.  Required for all resource calls (customer present and unattended). Not required for unauthenticated calls.
-	XFapiAuthDate *XFapiAuthDate `json:"x-fapi-auth-date,omitempty"`
+	XFapiAuthDate *string `json:"x-fapi-auth-date,omitempty"`
 
 	// XFapiCustomerIpAddress The customer's original IP address if the customer is currently logged in to the data recipient. The presence of this header indicates that the API is being called in a customer present context. Not to be included for unauthenticated calls.
-	XFapiCustomerIpAddress *XFapiCustomerIpAddress `json:"x-fapi-customer-ip-address,omitempty"`
+	XFapiCustomerIpAddress *string `json:"x-fapi-customer-ip-address,omitempty"`
 
 	// XCdsClientHeaders The customer's original standard http headers [Base64](#common-field-types) encoded, including the original User Agent header, if the customer is currently logged in to the data recipient. Mandatory for customer present calls.  Not required for unattended or unauthenticated calls.
-	XCdsClientHeaders *XCdsClientHeaders `json:"x-cds-client-headers,omitempty"`
+	XCdsClientHeaders *string `json:"x-cds-client-headers,omitempty"`
 }
 
 // GetUsageForServicePointParamsIntervalReads defines parameters for GetUsageForServicePoint.
@@ -3775,16 +3735,16 @@ type ListPlansParams struct {
 	Brand *string `form:"brand,omitempty" json:"brand,omitempty"`
 
 	// Page Page of results to request (standard pagination)
-	Page *Page `form:"page,omitempty" json:"page,omitempty"`
+	Page *int `form:"page,omitempty" json:"page,omitempty"`
 
 	// PageSize Page size to request.  Default is 25 (standard pagination)
-	PageSize *PageSize `form:"page-size,omitempty" json:"page-size,omitempty"`
+	PageSize *int `form:"page-size,omitempty" json:"page-size,omitempty"`
 
 	// XV Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
-	XV XV `json:"x-v"`
+	XV string `json:"x-v"`
 
 	// XMinV Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
-	XMinV *XMinV `json:"x-min-v,omitempty"`
+	XMinV *string `json:"x-min-v,omitempty"`
 }
 
 // ListPlansParamsType defines parameters for ListPlans.
@@ -3799,10 +3759,10 @@ type ListPlansParamsEffective string
 // GetPlanParams defines parameters for GetPlan.
 type GetPlanParams struct {
 	// XV Version of the API end point requested by the client. Must be set to a positive integer. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If the value of [x-min-v](#request-headers) is equal to or higher than the value of [x-v](#request-headers) then the [x-min-v](#request-headers) header should be treated as absent. If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable. See [HTTP Headers](#request-headers)
-	XV XV `json:"x-v"`
+	XV string `json:"x-v"`
 
 	// XMinV Minimum version of the API end point requested by the client. Must be set to a positive integer if provided. The data holder should respond with the highest supported version between [x-min-v](#request-headers) and [x-v](#request-headers). If all versions requested are not supported then the data holder must respond with a 406 Not Acceptable.
-	XMinV *XMinV `json:"x-min-v,omitempty"`
+	XMinV *string `json:"x-min-v,omitempty"`
 }
 
 // ListBalancesForAccountsJSONRequestBody defines body for ListBalancesForAccounts for application/json ContentType.
