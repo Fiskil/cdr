@@ -1,7 +1,7 @@
 [
   {
     "op": "add",
-    "path": "/components/schemas/EnergyPlanContractFullV3/allOf/1/properties/coolingOffDays/x-go-type",
+    "path": "/components/schemas/EnergyPlanContractFullV3_allOf/properties/coolingOffDays/x-go-type",
     "value": "PatchedCoolingOffDays"
   },
   {

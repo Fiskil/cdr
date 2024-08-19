@@ -98,16 +98,20 @@ func TestTransactions(t *testing.T) {
 
 ## Generating Go
 
+Note that the cdr openapi specifications are obtained from [here](https://github.com/ConsumerDataStandardsAustralia/standards/tree/master/slate/source/includes/swagger). 
+
 ```bash
-resource=energy
+resource=banking
 cd ${resource}
-oapi-codegen --old-config-style -generate client,types -package ${resource} cdr_${resource}.swagger.json > ${resource}.gen.go
+oapi-codegen -config config.yaml cdr_${resource}.swagger.json > ${resource}.gen.go
 cd -
 ```
 
+However, for energy additional patching is required to be compatible with AER energy API endpoints. 
 ```bash
-resource=common
+resource=energy
 cd ${resource}
-oapi-codegen --old-config-style -generate client,types -package ${resource} cdr_${resource}.swagger.json > ${resource}.gen.go
+cat cdr_energy.swagger.json | json-patch -p cdr_energy.swagger.json.patch > patched_cdr_energy.swagger.json
+oapi-codegen -config config.yaml patched_cdr_${resource}.swagger.json > ${resource}.gen.go
 cd -
 ```

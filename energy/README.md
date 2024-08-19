@@ -7,5 +7,5 @@ You can apply JSON-patch with [json-patch](https://github.com/evanphx/json-patch
 ```
 $ cat cdr_energy.swagger.json | json-patch -p cdr_energy.swagger.json.patch > patched_cdr_energy.swagger.json
 
-$ oapi-codegen --old-config-style -generate client,types -package energy patched_cdr_energy.swagger.json > energy.gen.go
+$ oapi-codegen -config config.yaml patched_cdr_energy.swagger.json > energy.gen.go
 ```
