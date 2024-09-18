@@ -16,3 +16,6 @@
 #
 my_test.go
 my_tests/
+
+#IDE configuration
+.vscode/

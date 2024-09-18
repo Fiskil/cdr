@@ -6,21 +6,6 @@ import "encoding/json"
 // issue: https://github.com/ConsumerDataStandardsAustralia/standards-maintenance/issues/502
 type PatchedDemandChargesDays []EnergyPlanTariffPeriodDemandChargesDays
 
-// EnergyPlanTariffPeriodDemandChargesDays defines model for EnergyPlanTariffPeriod.DemandCharges.Days.
-type EnergyPlanTariffPeriodDemandChargesDays string
-
-// Defines values for EnergyPlanTariffPeriodDemandChargesDays.
-const (
-	EnergyPlanTariffPeriodDemandChargesDaysFRI            EnergyPlanTariffPeriodDemandChargesDays = "FRI"
-	EnergyPlanTariffPeriodDemandChargesDaysMON            EnergyPlanTariffPeriodDemandChargesDays = "MON"
-	EnergyPlanTariffPeriodDemandChargesDaysPUBLICHOLIDAYS EnergyPlanTariffPeriodDemandChargesDays = "PUBLIC_HOLIDAYS"
-	EnergyPlanTariffPeriodDemandChargesDaysSAT            EnergyPlanTariffPeriodDemandChargesDays = "SAT"
-	EnergyPlanTariffPeriodDemandChargesDaysSUN            EnergyPlanTariffPeriodDemandChargesDays = "SUN"
-	EnergyPlanTariffPeriodDemandChargesDaysTHU            EnergyPlanTariffPeriodDemandChargesDays = "THU"
-	EnergyPlanTariffPeriodDemandChargesDaysTUE            EnergyPlanTariffPeriodDemandChargesDays = "TUE"
-	EnergyPlanTariffPeriodDemandChargesDaysWED            EnergyPlanTariffPeriodDemandChargesDays = "WED"
-)
-
 type oldDemandChargesDays struct {
 	Weekdays bool `json:"weekdays"`
 	Saturday bool `json:"saturday"`
