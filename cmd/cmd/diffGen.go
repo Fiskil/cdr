@@ -66,7 +66,17 @@ file, with the '.json' extension changed to '.gen.go'`,
 			return fmt.Errorf("Error parsing file:%w", err)
 		}
 
+		//Create commentmap from newly generated file
+		cmap := ast.NewCommentMap(fs, replaceNode, replaceNode.Comments)
+
 		newnode := filterNodes(replaceNode, pack.exportedTypes, pack.exportedConsts)
+
+		//filter original comment groups by nodes that we keep
+		nf, ok := newnode.(*ast.File)
+		if !ok {
+			return fmt.Errorf("cast ast.Node as *ast.File:%w", err)
+		}
+		nf.Comments = cmap.Filter(newnode).Comments()
 
 		if targetFilePath == "" {
 			targetFilePath = strings.Replace(swaggerPath, ".json", ".gen.go", 1)
@@ -154,7 +164,8 @@ func genSwaggerModels(filepath string, packageName string) (string, error) {
 	})
 }
 
-func filterNodes(node ast.Node, typesToFilter map[string]bool, constsToFilter map[string]bool) ast.Node {
+func filterNodes(node *ast.File, typesToFilter map[string]bool, constsToFilter map[string]bool) ast.Node {
+
 	return astutil.Apply(node, func(c *astutil.Cursor) bool {
 		n := c.Node()
 		genDecl, ok := n.(*ast.GenDecl)
