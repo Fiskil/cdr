@@ -1,6 +1,3 @@
-/*
-Copyright © 2024 NAME HERE <EMAIL ADDRESS>
-*/
 package cmd
 
 import (
@@ -42,9 +39,12 @@ var diffGen = &cobra.Command{
 		}
 		return nil
 	},
-	Long: `Accepts two file paths: 1)golang package directory & 2)swagger file
-Command generates go models from the given swagger doc and removes the Types and Consts from 
-the newly generated models that were declared in the given go package before writing to stdOut`,
+	Long: `Accepts two file paths: 1)go package directory & 2)swagger/openAPI file
+Command generates go models from the given swagger doc then removes the Types and Consts 
+from the newly generated models that were already declared in the given go package.
+
+By default the diff-models are written to a file named the same as the openAPI/swagger 
+file, with the '.json' extension changed to '.gen.go'`,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		targetFilePath, _ := cmd.Flags().GetString("target")
 		packagePath := args[0]
