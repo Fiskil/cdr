@@ -2,6 +2,24 @@ package energy
 
 import "encoding/json"
 
+// EnergyPlanSolarFeedInTariffV2TimeVaryingTariffsTimeVariationsDays defines model for EnergyPlanSolarFeedInTariffV2.TimeVaryingTariffs.TimeVariations.Days.
+type EnergyPlanSolarFeedInTariffV2TimeVaryingTariffsTimeVariationsDays string
+
+// EnergyPlanSolarFeedInTariffV2TimeVaryingTariffsType The type of the charging time period. If absent applies to all periods
+type EnergyPlanSolarFeedInTariffV2TimeVaryingTariffsType string
+
+// Defines values for EnergyPlanSolarFeedInTariffV2TimeVaryingTariffsTimeVariationsDays.
+const (
+	EnergyPlanSolarFeedInTariffV2TimeVaryingTariffsTimeVariationsDaysFRI            EnergyPlanSolarFeedInTariffV2TimeVaryingTariffsTimeVariationsDays = "FRI"
+	EnergyPlanSolarFeedInTariffV2TimeVaryingTariffsTimeVariationsDaysMON            EnergyPlanSolarFeedInTariffV2TimeVaryingTariffsTimeVariationsDays = "MON"
+	EnergyPlanSolarFeedInTariffV2TimeVaryingTariffsTimeVariationsDaysPUBLICHOLIDAYS EnergyPlanSolarFeedInTariffV2TimeVaryingTariffsTimeVariationsDays = "PUBLIC_HOLIDAYS"
+	EnergyPlanSolarFeedInTariffV2TimeVaryingTariffsTimeVariationsDaysSAT            EnergyPlanSolarFeedInTariffV2TimeVaryingTariffsTimeVariationsDays = "SAT"
+	EnergyPlanSolarFeedInTariffV2TimeVaryingTariffsTimeVariationsDaysSUN            EnergyPlanSolarFeedInTariffV2TimeVaryingTariffsTimeVariationsDays = "SUN"
+	EnergyPlanSolarFeedInTariffV2TimeVaryingTariffsTimeVariationsDaysTHU            EnergyPlanSolarFeedInTariffV2TimeVaryingTariffsTimeVariationsDays = "THU"
+	EnergyPlanSolarFeedInTariffV2TimeVaryingTariffsTimeVariationsDaysTUE            EnergyPlanSolarFeedInTariffV2TimeVaryingTariffsTimeVariationsDays = "TUE"
+	EnergyPlanSolarFeedInTariffV2TimeVaryingTariffsTimeVariationsDaysWED            EnergyPlanSolarFeedInTariffV2TimeVaryingTariffsTimeVariationsDays = "WED"
+)
+
 type PatchedEnergyPlanSolarFeedInTariffTimeVaryingTariff struct {
 	// Amount is to support parsing EnergyPlanSolarFeedInTariff v1 response format
 	Amount string `json:"amount,omitempty"`
