@@ -119,5 +119,5 @@ cd -
 When new cdr resource type definitions are published they can be appended to the current package using the `diff-gen` subcommand of the `cdr` cli.
 `diff-gen` will generate go models from the provided openAPI/Swagger definition but omit those already declared in the given `.go` file. 
 ```bash
-./cdr diff-gen -package energy ./energy/energy.gen.go ./energy/cdr_energy.swagger.1.2.4.json > ./energy/energy.gen.1.2.4.go
+./cdr diff-gen ./energy/energy.gen.go ./energy/cdr_energy.swagger.1.2.4.json 
 ```
