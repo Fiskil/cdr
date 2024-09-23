@@ -115,3 +115,9 @@ cat cdr_energy.swagger.json | json-patch -p cdr_energy.swagger.json.patch > patc
 oapi-codegen -config config.yaml patched_cdr_${resource}.swagger.json > ${resource}.gen.go
 cd -
 ```
+
+When new cdr resource type definitions are published they can be appended to the current package using the `diff-gen` subcommand of the `cdr` cli.
+`diff-gen` will generate go models from the provided openAPI/Swagger definition but omit those already declared in the package. 
+```bash
+./cdr diff-gen ./energy ./energy/cdr_energy.swagger.1.2.4.json 
+```
