@@ -100,24 +100,17 @@ func TestTransactions(t *testing.T) {
 
 Note that the cdr openapi specifications are obtained from [here](https://github.com/ConsumerDataStandardsAustralia/standards/tree/master/slate/source/includes/swagger). 
 
-```bash
-resource=banking
-cd ${resource}
-oapi-codegen -config config.yaml cdr_${resource}.swagger.json > ${resource}.gen.go
-cd -
-```
+There are two ways to generate Go definitions.
 
-However, for energy additional patching is required to be compatible with AER energy API endpoints. 
-```bash
-resource=energy
-cd ${resource}
-cat cdr_energy.swagger.json | json-patch -p cdr_energy.swagger.json.patch > patched_cdr_energy.swagger.json
-oapi-codegen -config config.yaml patched_cdr_${resource}.swagger.json > ${resource}.gen.go
-cd -
-```
+### Generating for the latest version
 
-When new cdr resource type definitions are published they can be appended to the current package using the `diff-gen` subcommand of the `cdr` cli.
-`diff-gen` will generate go models from the provided openAPI/Swagger definition but omit those already declared in the package. 
-```bash
-./cdr diff-gen ./energy ./energy/cdr_energy.swagger.1.2.4.json 
-```
+To generate definitions for the latest version run `make update-latest`. This will fetch the latest API spec for each industry and generate go definitions in the `<industry>/<version>` package e.g. `energy/1.34.0`.
+
+### Generating a specific version
+
+To generate definitions for a specific version (for example if you want to use an older version of one API and a new version of a nother) you must use a different make target. First, identify the CDS version you want
+to generate code for. You can get this from the [CDS Changelog](https://consumerdatastandardsaustralia.github.io/standards/#changelog-and-archives). This will be the `ARCHIVE_VERSION`. Then run the following make target
+
+`make ARCHIVE_VESRION=<archive-version> update`
+
+This will fetch the API specs for all industries at the given version and generate go definitions in the `<industry>/<version>` package e.g. `energy/1.32.0`.
