@@ -11,9 +11,9 @@ cdr: clean
 
 # Updates the root industry package to the latest CDS version
 update-latest:
-	mkdir energy/$(CDS_VERSION)
-	mkdir banking/$(CDS_VERSION)
-	mkdir common/$(CDS_VERSION)
+	mkdir -p energy/$(CDS_VERSION)
+	mkdir -p banking/$(CDS_VERSION)
+	mkdir -p common/$(CDS_VERSION)
 
 	wget -O energy/$(CDS_VERSION)/cdr_energy.swagger.$(CDS_VERSION).json https://consumerdatastandardsaustralia.github.io/standards/includes/swagger/cds_energy.json;
 	wget -O common/$(CDS_VERSION)/cdr_common.swagger.$(CDS_VERSION).json https://consumerdatastandardsaustralia.github.io/standards/includes/swagger/cds_common.json;
@@ -25,9 +25,9 @@ update-latest:
 
 # Generates models for a specific version of the CDS for each industry in a sub-package
 update:
-	mkdir energy/$(ARCHIVE_VERSION)
-	mkdir banking/$(ARCHIVE_VERSION)
-	mkdir common/$(ARCHIVE_VERSION)
+	mkdir -p energy/$(ARCHIVE_VERSION)
+	mkdir -p banking/$(ARCHIVE_VERSION)
+	mkdir -p common/$(ARCHIVE_VERSION)
 
 	wget -O energy/$(ARCHIVE_VERSION)/cdr_energy.swagger.$(ARCHIVE_VERSION).json https://consumerdatastandardsaustralia.github.io/standards-archives/standards-$(ARCHIVE_VERSION)/includes/swagger/cds_energy.json;
 	wget -O banking/$(ARCHIVE_VERSION)/cdr_banking.swagger.$(ARCHIVE_VERSION).json https://consumerdatastandardsaustralia.github.io/standards-archives/standards-$(ARCHIVE_VERSION)/includes/swagger/cds_banking.json;
