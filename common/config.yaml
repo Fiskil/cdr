@@ -1,0 +1,6 @@
+package: cdrCommon
+generate:
+  client: true
+  models: true
+  embedded-spec: true
+output: common.gen.go
