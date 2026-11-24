@@ -27,7 +27,7 @@ update-latest: requirements
 
 	cd energy/$(CDS_VERSION) && go tool oapi-codegen -config ../config.yaml cdr_energy.swagger.$(CDS_VERSION).json
 	cd banking/$(CDS_VERSION) && go tool oapi-codegen -config ../config.yaml cdr_banking.swagger.$(CDS_VERSION).json
-	cd common/$(CDS_VERSION) && go tool oapi-codegen cdr_common.swagger.$(CDS_VERSION).json > common.gen.go
+	cd common/$(CDS_VERSION) && go tool oapi-codegen -config ../config.yaml cdr_common.swagger.$(CDS_VERSION).json
 
 # Generates models for a specific version of the CDS for each industry in a sub-package
 update: requirements
@@ -41,4 +41,4 @@ update: requirements
 
 	cd energy/$(ARCHIVE_VERSION) && go tool oapi-codegen -config ../config.yaml cdr_energy.swagger.$(ARCHIVE_VERSION).json
 	cd banking/$(ARCHIVE_VERSION) && go tool oapi-codegen -config ../config.yaml cdr_banking.swagger.$(ARCHIVE_VERSION).json
-	cd common/$(ARCHIVE_VERSION) && go tool oapi-codegen cdr_common.swagger.$(ARCHIVE_VERSION).json > common.gen.go
+	cd common/$(ARCHIVE_VERSION) && go tool oapi-codegen -config ../config.yaml cdr_common.swagger.$(ARCHIVE_VERSION).json
